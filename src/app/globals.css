@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-color-ligth: #575757;
+  --color-primary: #b1b2ff;
+  --color-secondary: #aac4ff;
+  --color-terciary: #d2daff;
+  --color-forty: #eef1ff;
+}
+
+body {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  color: var(--font-color-ligth);
+  margin: 0;
+
+  .inactive {
+    padding: 0.6em 1em;
+    border-radius: 2em;
+    transition: all 300ms;
+  }
+  .isActive {
+    color: #fff;
+    background-color: var(--color-secondary);
+    transition: all 500ms;
+    padding: 0.6em 1em;
+    border-radius: 2em;
+  }
+}
