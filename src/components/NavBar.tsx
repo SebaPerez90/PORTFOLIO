@@ -12,7 +12,7 @@ const NavBar = () => {
 
   return (
     <nav className='flex justify-between'>
-      <ul className='nav-bar flex w-full justify-end gap-10 items-center p-4'>
+      <ul className='nav-bar flex w-full justify-end gap-10 items-center p-4 font-medium'>
         <li>
           <Link
             href={'/'}
@@ -32,6 +32,13 @@ const NavBar = () => {
             href={'/proyects'}
             className={currentRoute == '/proyects' ? 'isActive' : 'inactive'}>
               {engLanguageActive ? 'proyects' : 'proyectos'}
+          </Link>
+        </li>
+        <li>
+          <Link
+            href={'/experience'}
+            className={currentRoute == '/experience' ? 'isActive' : 'inactive'}>
+              {engLanguageActive ? 'experience' : 'experiencia'}
           </Link>
         </li>
         <li>

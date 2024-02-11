@@ -1,16 +1,15 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
+import { Onest } from 'next/font/google';
 
-import SetUp from '@/components/SetUp';
+import Preference from '@/components/Preference';
 
 export const metadata: Metadata = {
   title: 'Sebastian Perez',
   description: 'portfolio',
 };
 
-const roboto = Roboto({
-  weight: ['500'],
+const onest = Onest({
   subsets: ['latin'],
 });
 
@@ -19,8 +18,8 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang='en'>
-      <body className={roboto.className}>
-        <SetUp />
+      <body className={onest.className}>
+        <Preference />
         {children}
       </body>
     </html>

@@ -1,0 +1,23 @@
+<svg 
+  version="1.1"
+  height="40" 
+  width="40"
+  xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="26" cy="20" r="10" fill="white" />
+    <circle cx="25" cy="19.5" r="9" fill="#222222" />
+    <circle cx="22" cy="18" r="7.8" fill="white" />
+    <circle cx="20" cy="17" r="7.5" fill="#3a3a3a" />
+    <path d="M11 10 L14 7" stroke="#ffffff" stroke-width="0.5" stroke-opacity=".8" />
+    <path d="M11 7 L14 10" stroke="#ffffff" stroke-width="0.5" stroke-opacity=".8" />
+    <path d="M10.5 8.5 L14.5 8.5" stroke="#ffffff" stroke-width="0.5" stroke-opacity=".8" />
+    <path d="M12.5 6.5 L12.5 10.5" stroke="#ffffff" stroke-width="0.5" stroke-opacity=".8" />
+    <path d="M13 15 L17 15" stroke="#ffffff" stroke-width="0.5" stroke-opacity=".8" />
+    <path d="M15 13 L15 17" stroke="#ffffff" stroke-width="0.5" stroke-opacity=".8" />
+    <path d="M13.5 13.5 L16.5 16.5" stroke="#ffffff" stroke-width="0.5" stroke-opacity=".8" />
+    <path d="M16.5 13.5 L13.5 16.5" stroke="#ffffff" stroke-width="0.5" stroke-opacity=".8" />
+    <path d="M8 12 L8 16" stroke="#ffffff" stroke-width="0.5" stroke-opacity=".8" />
+    <path d="M6 14 L10 14" stroke="#ffffff" stroke-width="0.5" stroke-opacity=".8" />
+    <path d="M6.5 12.5 L9.5 15.7" stroke="#ffffff" stroke-width="0.5" stroke-opacity=".8" />
+    <path d="M9.5 12.5 L6.5 15.7" stroke="#ffffff" stroke-width="0.5" stroke-opacity=".8"/>
+</svg>

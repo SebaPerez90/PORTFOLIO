@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --font-color-ligth: #575757;
+  --font-color-ligth: #6c6c6c;
   --color-primary: #b1b2ff;
   --color-secondary: #aac4ff;
   --color-terciary: #d2daff;
@@ -15,6 +15,32 @@ body {
   scroll-behavior: smooth;
   color: var(--font-color-ligth);
   margin: 0;
+  z-index: 100;
+  position: relative;
+
+  /* &::after {
+    content: '';
+    position: absolute;
+    background: url('../assets/avatar.png') no-repeat bottom center;
+    background-size: contain;
+    background-color: red;
+    border-radius: 50%;
+    min-width: max-content;
+    width: 35%;
+    height: 80%;
+    margin: 0 30%;
+    z-index: -1;
+  } */
+  
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    background: radial-gradient(circle, #3b3bff48, #8585ff28, #aaaaf828, #fff,#fff);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
 
   .inactive {
     padding: 0.6em 1em;
@@ -27,5 +53,32 @@ body {
     transition: all 500ms;
     padding: 0.6em 1em;
     border-radius: 2em;
+  }
+
+  /**Animations Files**/
+
+  @keyframes desactivating-dark-mode {
+    to {
+      transform: translate(3em);
+    }
+  }
+  @keyframes activating-dark-mode {
+    to {
+      transform: translate(-3em);
+    }
+  }
+
+  @keyframes sun-efect-icon {
+    to {
+      rotate: 360deg;
+    }
+  }
+  @keyframes moon-efect-icon {
+    50% {
+      transform: translateY(-0.3em) scale(0.8);
+    }
+    100% {
+      transform: translateY(1.5em);
+    }
   }
 }
