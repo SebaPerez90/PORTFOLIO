@@ -2,7 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Onest } from 'next/font/google';
 
-import Preference from '@/components/Preference';
+import NavBar from '@/components/header/NavBar';
 
 export const metadata: Metadata = {
   title: 'Sebastian Perez',
@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 
 const onest = Onest({
   subsets: ['latin'],
+  style: ['normal'],
 });
 
 export default function RootLayout({
@@ -19,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={onest.className}>
-        <Preference />
+        <NavBar />
         {children}
       </body>
     </html>

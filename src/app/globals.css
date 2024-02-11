@@ -10,37 +10,22 @@
   --color-forty: #eef1ff;
 }
 
+@layer utilities {
+  .clip-path-circle {
+    clip-path: circle(50% at 50% 50%);
+  }
+}
+@layer utilities {
+  .drop-shadow-img {
+    filter: drop-shadow(10px 0px 10px red);
+  }
+}
+
 body {
   box-sizing: border-box;
   scroll-behavior: smooth;
   color: var(--font-color-ligth);
   margin: 0;
-  z-index: 100;
-  position: relative;
-
-  /* &::after {
-    content: '';
-    position: absolute;
-    background: url('../assets/avatar.png') no-repeat bottom center;
-    background-size: contain;
-    background-color: red;
-    border-radius: 50%;
-    min-width: max-content;
-    width: 35%;
-    height: 80%;
-    margin: 0 30%;
-    z-index: -1;
-  } */
-  
-  &::before {
-    content: '';
-    position: absolute;
-    display: block;
-    background: radial-gradient(circle, #3b3bff48, #8585ff28, #aaaaf828, #fff,#fff);
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
 
   .inactive {
     padding: 0.6em 1em;
@@ -68,17 +53,22 @@ body {
     }
   }
 
-  @keyframes sun-efect-icon {
+  @keyframes sun-effect-icon {
     to {
       rotate: 360deg;
     }
   }
-  @keyframes moon-efect-icon {
+  @keyframes moon-effect-icon {
     50% {
       transform: translateY(-0.3em) scale(0.8);
     }
     100% {
       transform: translateY(1.5em);
+    }
+  }
+  @keyframes toggleLanguageEffect {
+    to {
+      transform: rotateY(360deg);
     }
   }
 }
