@@ -21,7 +21,7 @@ const NavBar = () => {
           ? 'relative flex justify-center items-center text-white before:absolute before:left-0 before:top-0 before:w-full before:h-full before:z-[2] before:bg-gradient-to-r from-[#0f0c29] bg-indigo-800 to-[#2c2c47]'
           : 'flex justify-center items-center bg-[#dedede]'
       }>
-      <div
+      <section
         className={
           darkThemeActive
             ? 'flex justify-center items-center w-max bg-gradient-to-tl from-[#030303] to-[#3e3f40] p-2 rounded-md mt-4 shadow-[4px_8px_10px_#00000058] z-10'
@@ -56,7 +56,7 @@ const NavBar = () => {
                     ? 'text-white rounded-[2em] p-[0.5em_1.5em] duration-500 '
                     : 'rounded-[2em] p-[0.5em_1.5em] duration-300'
                 }>
-                {engLanguageActive ? 'about me' : 'acerca de mi'}
+                {engLanguageActive ? 'about' : 'sobre mi'}
               </Link>
             </li>
             <li>
@@ -110,7 +110,7 @@ const NavBar = () => {
         <ThemeButtons />
 
         <LanguageButtons />
-      </div>
+      </section>
     </header>
   );
 };

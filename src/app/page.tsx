@@ -3,6 +3,8 @@
 import { useStore } from '@/store';
 import { Roboto } from 'next/font/google';
 
+import Contact from '@/components/main/Contact';
+
 import Image from 'next/image';
 import profile_avatar from '@/assets/images/avatar.png';
 
@@ -18,8 +20,8 @@ export default function Home() {
     <main
       className={
         darkThemeActive
-          ? 'relative text-white pt-10 flex justify-center items-center before:absolute before:left-0 before:top-0 before:w-full before:h-full before:z-[2] before:bg-gradient-to-r from-[#0f0c29] bg-indigo-800 to-[#2c2c47]'
-          : 'pt-10 flex justify-center items-center bg-[#dedede] relative'
+          ? 'relative text-white pt-10 flex flex-col justify-around items-center before:absolute before:left-0 before:top-0 before:w-full before:h-full before:z-[2] before:bg-gradient-to-r from-[#0f0c29] bg-indigo-800 to-[#2c2c47]'
+          : 'pt-10 flex flex-col justify-around items-center bg-[#dedede] relative'
       }>
       <section
         className={
@@ -97,13 +99,15 @@ export default function Home() {
               className={
                 darkThemeActive
                   ? 'mt-4 mr-32 self-end w-24 p-[1em_1.5em] bg-[#9147ff] font-bold text-[.6em]'
-                  : 'mt-4 mr-32 self-end w-24 p-[1em_1.5em] bg-[#DA0C81] font-bold text-[.6em] text-rose-50'
+                  : 'mt-4 mr-32 self-end w-24 p-[1em_1.5em] bg-[#DA0C81] font-bold text-[.6em] text-white'
               }>
               {engLanguageActive ? 'VIEW MORE' : 'VER MAS'}
             </button>
           </article>
         </section>
       </section>
+
+      <Contact />
     </main>
   );
 }

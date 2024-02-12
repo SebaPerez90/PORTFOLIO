@@ -34,7 +34,7 @@ const ThemeButtons = () => {
   };
 
   return (
-    <div className='flex gap-6 border-l-[3px] border-l-[##9BB8CD] px-6 justify-center items-center'>
+    <section className='flex gap-6 border-l-[3px] border-l-[##9BB8CD] px-6 justify-center items-center'>
       {darkThemeActive ? (
         <div className=' bg-[#9147ff4e] flex justify-between items-center w-20 h-8 rounded-full overflow-hidden'>
           <Image
@@ -62,7 +62,7 @@ const ThemeButtons = () => {
           />
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

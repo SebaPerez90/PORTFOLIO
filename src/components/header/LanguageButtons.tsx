@@ -22,7 +22,7 @@ const LanguageButtons = () => {
   };
 
   return (
-    <div className='flex'>
+    <section className='flex'>
       {engLanguageActive ? (
         <button onClick={toggleEfect}>
           <Image
@@ -48,7 +48,7 @@ const LanguageButtons = () => {
           />
         </button>
       )}
-    </div>
+    </section>
   );
 };
 

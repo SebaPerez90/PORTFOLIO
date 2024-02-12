@@ -5,7 +5,7 @@
 :root {
   --font-color-primary: #6c6c6c;
   --font-color-secondary: #909090;
-  --color-primary: #9bb8cd;
+  --btns-light-theme: #9bb8cd;
 }
 
 @layer utilities {
@@ -29,8 +29,6 @@ body {
   scroll-behavior: smooth;
   color: var(--font-color-primary);
   margin: 0;
-
-  /* after:content-[""] after:absolute after:left-0 after:top-0 after:w-full after:h-full after:-z-20 */
 
   /**Animations Files**/
   @keyframes desactivating-dark-mode {
