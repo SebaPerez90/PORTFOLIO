@@ -1,8 +1,9 @@
 'use client';
 
 import { useStore } from '@/store';
-import Image from 'next/image';
 import { Roboto } from 'next/font/google';
+
+import Image from 'next/image';
 import profile_avatar from '@/assets/images/avatar.png';
 
 const roboto = Roboto({
@@ -17,14 +18,13 @@ export default function Home() {
     <main
       className={
         darkThemeActive
-        /* !ESTAMOS TRABAJANDO EN EL BACKGROUND DEL MAIN SECTION */
-          ? 'asadooooooooooooooo relative bg-[#2D3250] text-white pt-10 flex justify-center items-center'
+          ? 'relative text-white pt-10 flex justify-center items-center before:absolute before:left-0 before:top-0 before:w-full before:h-full before:z-[2] before:bg-gradient-to-r from-[#0f0c29] bg-indigo-800 to-[#2c2c47]'
           : 'pt-10 flex justify-center items-center bg-[#dedede] relative'
       }>
       <section
         className={
           darkThemeActive
-            ? 'pt-24 mb-14 rounded-md bg-black shadow-[4px_8px_20px_#00000098] z-10 w-[90%] relative before:content-[""] before:absolute before:bg-[#fff] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle'
+            ? 'pt-24 mb-14 rounded-md bg-gradient-to-tl from-[#030303] to-[#3e3f40] shadow-[4px_8px_20px_#00000098] z-10 w-[90%] relative before:content-[""] before:absolute before:bg-[#fff] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle '
             : 'mb-14 pt-24 rounded-md bg-white shadow-[4px_8px_20px_#aaaaaa] z-10 w-[90%] relative before:content-[""] before:absolute before:bg-[#9BB8CD] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle'
         }>
         <Image
@@ -49,7 +49,7 @@ export default function Home() {
             <h1
               className={
                 darkThemeActive
-                  ? 'text-6xl text-[#9bb8cd]'
+                  ? 'text-6xl text-[#9147ff]'
                   : 'text-6xl text-[#DA0C81]'
               }
               style={roboto.style}>
@@ -59,7 +59,7 @@ export default function Home() {
               <span
                 className={
                   darkThemeActive
-                    ? 'text-[#9bb8cd] font-extrabold text-4xl'
+                    ? 'text-[#9147ff] font-extrabold text-4xl'
                     : 'text-[#DA0C81] font-extrabold text-4xl'
                 }>
                 {'</ '}
@@ -70,7 +70,7 @@ export default function Home() {
               <span
                 className={
                   darkThemeActive
-                    ? 'text-[#9bb8cd] font-extrabold text-4xl'
+                    ? 'text-[#9147ff] font-extrabold text-4xl'
                     : 'text-[#DA0C81] font-extrabold text-4xl'
                 }>
                 {'  >'}
@@ -96,7 +96,7 @@ export default function Home() {
             <button
               className={
                 darkThemeActive
-                  ? 'mt-4 mr-32 self-end w-24 p-[1em_1.5em] bg-[#9bb8cd] font-bold text-[.6em]'
+                  ? 'mt-4 mr-32 self-end w-24 p-[1em_1.5em] bg-[#9147ff] font-bold text-[.6em]'
                   : 'mt-4 mr-32 self-end w-24 p-[1em_1.5em] bg-[#DA0C81] font-bold text-[.6em] text-rose-50'
               }>
               {engLanguageActive ? 'VIEW MORE' : 'VER MAS'}

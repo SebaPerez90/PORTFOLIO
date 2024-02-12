@@ -18,13 +18,13 @@ const NavBar = () => {
     <header
       className={
         darkThemeActive
-          ? 'flex justify-center items-center text-white bg-[#2D3250]'
+          ? 'relative flex justify-center items-center text-white before:absolute before:left-0 before:top-0 before:w-full before:h-full before:z-[2] before:bg-gradient-to-r from-[#0f0c29] bg-indigo-800 to-[#2c2c47]'
           : 'flex justify-center items-center bg-[#dedede]'
       }>
       <div
         className={
           darkThemeActive
-            ? 'flex justify-center items-center w-max bg-black p-2 rounded-md mt-4 shadow-[4px_8px_10px_#00000058] z-10'
+            ? 'flex justify-center items-center w-max bg-gradient-to-tl from-[#030303] to-[#3e3f40] p-2 rounded-md mt-4 shadow-[4px_8px_10px_#00000058] z-10'
             : 'flex justify-center items-center w-max bg-white p-2 rounded-md mt-4 shadow-[4px_8px_10px_#c1c1c1] z-10'
         }>
         <nav className='flex justify-between '>
@@ -34,8 +34,12 @@ const NavBar = () => {
                 href={'/'}
                 className={
                   currentRoute == '/'
-                    ? 'text-white p-[0.5em_1.5em] duration-500 rounded-[2em] bg-[#9BB8CD] '
-                    : 'rounded-[2em] duration-300 p-[0.5em_1em]'
+                    ? darkThemeActive
+                      ? 'text-white p-[0.5em_1.5em] duration-500 rounded-[2em] bg-[#9147ff]'
+                      : 'text-white rounded-[2em] duration-300 p-[0.5em_1.5em] bg-[#9BB8CD]'
+                    : darkThemeActive
+                    ? 'text-white rounded-[2em] p-[0.5em_1.5em] duration-500 '
+                    : 'rounded-[2em] p-[0.5em_1.5em] duration-300'
                 }>
                 {engLanguageActive ? 'home' : 'inicio'}
               </Link>
@@ -45,8 +49,12 @@ const NavBar = () => {
                 href={'/about'}
                 className={
                   currentRoute == '/about'
-                    ? 'text-white p-[0.5em_1em] duration-500 rounded-[2em] bg-[#9BB8CD] '
-                    : 'rounded-[2em] duration-300 p-[0.5em_1em]'
+                    ? darkThemeActive
+                      ? 'text-white p-[0.5em_1.5em] duration-500 rounded-[2em] bg-[#9147ff]'
+                      : 'text-white rounded-[2em] duration-300 p-[0.5em_1.5em] bg-[#9BB8CD]'
+                    : darkThemeActive
+                    ? 'text-white rounded-[2em] p-[0.5em_1.5em] duration-500 '
+                    : 'rounded-[2em] p-[0.5em_1.5em] duration-300'
                 }>
                 {engLanguageActive ? 'about me' : 'acerca de mi'}
               </Link>
@@ -56,8 +64,12 @@ const NavBar = () => {
                 href={'/proyects'}
                 className={
                   currentRoute == '/proyects'
-                    ? 'text-white p-[0.5em_1em] duration-500 rounded-[2em] bg-[#9BB8CD] '
-                    : 'rounded-[2em] duration-300 p-[0.5em_1em]'
+                    ? darkThemeActive
+                      ? 'text-white p-[0.5em_1.5em] duration-500 rounded-[2em] bg-[#9147ff]'
+                      : 'text-white rounded-[2em] duration-300 p-[0.5em_1.5em] bg-[#9BB8CD]'
+                    : darkThemeActive
+                    ? 'text-white rounded-[2em] p-[0.5em_1.5em] duration-500 '
+                    : 'rounded-[2em] p-[0.5em_1.5em] duration-300'
                 }>
                 {engLanguageActive ? 'proyects' : 'proyectos'}
               </Link>
@@ -67,8 +79,12 @@ const NavBar = () => {
                 href={'/experience'}
                 className={
                   currentRoute == '/experience'
-                    ? 'text-white p-[0.5em_1em] duration-500 rounded-[2em] bg-[#9BB8CD] '
-                    : 'rounded-[2em] duration-300 p-[0.5em_1em]'
+                    ? darkThemeActive
+                      ? 'text-white p-[0.5em_1.5em] duration-500 rounded-[2em] bg-[#9147ff]'
+                      : 'text-white rounded-[2em] duration-300 p-[0.5em_1.5em] bg-[#9BB8CD]'
+                    : darkThemeActive
+                    ? 'text-white rounded-[2em] p-[0.5em_1.5em] duration-500 '
+                    : 'rounded-[2em] p-[0.5em_1.5em] duration-300'
                 }>
                 {engLanguageActive ? 'experience' : 'experiencia'}
               </Link>
@@ -78,8 +94,12 @@ const NavBar = () => {
                 href={'/contact'}
                 className={
                   currentRoute == '/contact'
-                    ? 'text-white p-[0.5em_1em] duration-500 rounded-[2em] bg-[#9BB8CD] '
-                    : 'rounded-[2em] duration-300 p-[0.5em_1em]'
+                    ? darkThemeActive
+                      ? 'text-white p-[0.5em_1.5em] duration-500 rounded-[2em] bg-[#9147ff]'
+                      : 'text-white rounded-[2em] duration-300 p-[0.5em_1.5em] bg-[#9BB8CD]'
+                    : darkThemeActive
+                    ? 'text-white rounded-[2em] p-[0.5em_1.5em] duration-500 '
+                    : 'rounded-[2em] p-[0.5em_1.5em] duration-300'
                 }>
                 {engLanguageActive ? 'hire me' : 'contratame'}
               </Link>
