@@ -34,7 +34,7 @@ const ThemeButtons = () => {
   };
 
   return (
-    <div className='flex gap-6 border-l-[3px] border-l-[#aac4ff] px-6 justify-center items-center'>
+    <div className='flex gap-6 border-l-[3px] border-l-[##9BB8CD] px-6 justify-center items-center'>
       {darkThemeActive ? (
         <div className='border-[1px] border-[#b1adcc] bg-[#3a3a3a] flex justify-between items-center w-20 h-8 rounded-full overflow-hidden'>
           <Image
@@ -46,7 +46,7 @@ const ThemeButtons = () => {
           <button
             onClick={toggleEfect}
             ref={buttonRef}
-            className='bg-[#534c7d] m-[1px] rounded-full border-2 h-7 w-7 z-20'></button>
+            className='bg-[#9bb8cd] m-[1px] rounded-full border-2 h-7 w-7 z-20'></button>
         </div>
       ) : (
         <div className='border-[1px] bg-[#ffa600] flex justify-between items-center w-20  h-8 rounded-full overflow-hidden shadow-[2px_2px_6px_#aaaaaa]'>

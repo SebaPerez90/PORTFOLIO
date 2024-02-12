@@ -18,54 +18,79 @@ const NavBar = () => {
     <header
       className={
         darkThemeActive
-          ? 'flex border-b-[2px] bg-black justify-end items-center text-white'
-          : 'flex border-b-[1px] border-b-[#d2daff] justify-end items-center'
+          ? 'flex justify-center items-center text-white bg-[#2D3250]'
+          : 'flex justify-center items-center bg-[#dedede]'
       }>
-      <nav className='flex justify-between'>
-        <ul className='nav-bar flex w-full justify-end items-center p-4 font-medium text-sm'>
-          <li>
-            <Link
-              href={'/'}
-              className={currentRoute == '/' ? 'isActive' : 'inactive'}>
-              {engLanguageActive ? 'home' : 'inicio'}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={'/about'}
-              className={currentRoute == '/about' ? 'isActive' : 'inactive'}>
-              {engLanguageActive ? 'about me' : 'acerca de mi'}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={'/proyects'}
-              className={currentRoute == '/proyects' ? 'isActive' : 'inactive'}>
-              {engLanguageActive ? 'proyects' : 'proyectos'}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={'/experience'}
-              className={
-                currentRoute == '/experience' ? 'isActive' : 'inactive'
-              }>
-              {engLanguageActive ? 'experience' : 'experiencia'}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={'/contact'}
-              className={currentRoute == '/contact' ? 'isActive' : 'inactive'}>
-              {engLanguageActive ? 'hire me' : 'contratame'}
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <div
+        className={
+          darkThemeActive
+            ? 'flex justify-center items-center w-max bg-black p-2 rounded-md mt-4 shadow-[4px_8px_10px_#00000058] z-10'
+            : 'flex justify-center items-center w-max bg-white p-2 rounded-md mt-4 shadow-[4px_8px_10px_#c1c1c1] z-10'
+        }>
+        <nav className='flex justify-between '>
+          <ul className='flex w-full justify-end items-center p-4 font-medium text-sm'>
+            <li>
+              <Link
+                href={'/'}
+                className={
+                  currentRoute == '/'
+                    ? 'text-white p-[0.5em_1.5em] duration-500 rounded-[2em] bg-[#9BB8CD] '
+                    : 'rounded-[2em] duration-300 p-[0.5em_1em]'
+                }>
+                {engLanguageActive ? 'home' : 'inicio'}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={'/about'}
+                className={
+                  currentRoute == '/about'
+                    ? 'text-white p-[0.5em_1em] duration-500 rounded-[2em] bg-[#9BB8CD] '
+                    : 'rounded-[2em] duration-300 p-[0.5em_1em]'
+                }>
+                {engLanguageActive ? 'about me' : 'acerca de mi'}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={'/proyects'}
+                className={
+                  currentRoute == '/proyects'
+                    ? 'text-white p-[0.5em_1em] duration-500 rounded-[2em] bg-[#9BB8CD] '
+                    : 'rounded-[2em] duration-300 p-[0.5em_1em]'
+                }>
+                {engLanguageActive ? 'proyects' : 'proyectos'}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={'/experience'}
+                className={
+                  currentRoute == '/experience'
+                    ? 'text-white p-[0.5em_1em] duration-500 rounded-[2em] bg-[#9BB8CD] '
+                    : 'rounded-[2em] duration-300 p-[0.5em_1em]'
+                }>
+                {engLanguageActive ? 'experience' : 'experiencia'}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={'/contact'}
+                className={
+                  currentRoute == '/contact'
+                    ? 'text-white p-[0.5em_1em] duration-500 rounded-[2em] bg-[#9BB8CD] '
+                    : 'rounded-[2em] duration-300 p-[0.5em_1em]'
+                }>
+                {engLanguageActive ? 'hire me' : 'contratame'}
+              </Link>
+            </li>
+          </ul>
+        </nav>
 
-      <ThemeButtons />
+        <ThemeButtons />
 
-      <LanguageButtons />
+        <LanguageButtons />
+      </div>
     </header>
   );
 };
