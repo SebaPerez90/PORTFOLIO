@@ -3,7 +3,8 @@
 import { useStore } from '@/store';
 import { Roboto } from 'next/font/google';
 
-import Contact from '@/components/main/Contact';
+import ContactForm from '@/components/body/ContactForm';
+import ContactInfo from '@/components/body/ContactInfo';
 
 import Image from 'next/image';
 import profile_avatar from '@/assets/images/avatar.png';
@@ -106,8 +107,11 @@ export default function Home() {
           </article>
         </section>
       </section>
-
-      <Contact />
+{/* shadow-[2px_18px_20px_#aaaaaa] */}
+      <section className='flex mb-20 justify-center items-center shadow-[2px_18px_20px_#aaaaaa] rounded-md'>
+        <ContactForm />
+        <ContactInfo />
+      </section>
     </main>
   );
 }
