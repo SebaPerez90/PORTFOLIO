@@ -70,6 +70,20 @@ body {
     color: #fff;
   }
 
+  .aaaa {
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #dedede;
+      width: 95%;
+      height: 95%;
+      margin: 1em;
+      -webkit-mask-image: linear-gradient(to right bottom, #ff0000, #ff000017 40%);
+      z-index: -1;
+    }
+  }
 
   @keyframes desactivating-dark-mode {
     to {

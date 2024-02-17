@@ -96,7 +96,7 @@ const Contact = () => {
 
       <textarea
         name='message'
-        placeholder={engLanguageActive ? 'MESSAGE' : 'MESAJE'}
+        placeholder={engLanguageActive ? 'MESSAGE' : 'MENSAJE'}
         className='text-[#da0c8184] h-[30%] outline-none resize-none w-[70%] border-b-2 placeholder:opacity-75 placeholder:absolute placeholder:bottom-0 placeholder:pb-2 placeholder:pl-1 placeholder:text-[0.7em] font-semibold focus-form-field'></textarea>
 
       <button

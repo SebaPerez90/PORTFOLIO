@@ -22,8 +22,8 @@ export const useStore = create<MyState>()(
         set({ darkThemeActive: get().darkThemeActive ? false : true }),
     }),
     {
-      name: 'preference', // name of item in the storage (must be unique)
-      storage: createJSONStorage(() => localStorage), // (optional) by default the 'localStorage' is used
+      name: 'preference',
+      storage: createJSONStorage(() => localStorage), 
       partialize: (state) => ({
         darkThemeActive: state.darkThemeActive,
         engLanguageActive: state.engLanguageActive,

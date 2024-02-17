@@ -3,11 +3,12 @@
 import { useStore } from '@/store';
 import { Roboto } from 'next/font/google';
 
-import ContactForm from '@/components/body/ContactForm';
-import ContactInfo from '@/components/body/ContactInfo';
+import ContactForm from '@/components/main/ContactForm';
+import ContactInfo from '@/components/main/ContactInfo';
 
 import Image from 'next/image';
 import profile_avatar from '@/assets/images/avatar.png';
+import Proyects from '@/components/main/Proyects';
 
 const roboto = Roboto({
   weight: ['700'],
@@ -27,8 +28,8 @@ export default function Home() {
       <section
         className={
           darkThemeActive
-            ? 'pt-24 mb-14 rounded-md bg-gradient-to-tl from-[#030303] to-[#3e3f40] shadow-[4px_8px_20px_#00000098] z-10 w-[90%] relative before:content-[""] before:absolute before:bg-[#fff] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle '
-            : 'mb-14 pt-24 rounded-md bg-white shadow-[4px_8px_20px_#aaaaaa] z-10 w-[90%] relative before:content-[""] before:absolute before:bg-[#9BB8CD] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle'
+            ? 'opacity-0 pt-24 mb-14 rounded-md bg-gradient-to-tl from-[#030303] to-[#3e3f40] shadow-[4px_8px_20px_#00000098] z-10 w-[90%] relative before:content-[""] before:absolute before:bg-[#fff] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle '
+            : 'opacity-0 mb-14 pt-24 rounded-md bg-white shadow-[4px_8px_20px_#aaaaaa] z-10 w-[90%] relative before:content-[""] before:absolute before:bg-[#9BB8CD] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle'
         }>
         <Image
           src={profile_avatar}
@@ -107,11 +108,13 @@ export default function Home() {
           </article>
         </section>
       </section>
-{/* shadow-[2px_18px_20px_#aaaaaa] */}
-      <section className='flex mb-20 justify-center items-center shadow-[2px_18px_20px_#aaaaaa] rounded-md'>
+
+      <section className='opacity-0 flex justify-center items-center shadow-[2px_18px_20px_#aaaaaa] rounded-md'>
         <ContactForm />
         <ContactInfo />
       </section>
+
+      <Proyects />
     </main>
   );
 }
