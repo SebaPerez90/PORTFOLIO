@@ -36,7 +36,7 @@ const ThemeButtons = () => {
   return (
     <section className='flex gap-6 border-l-[3px] border-l-[##9BB8CD] px-6 justify-center items-center'>
       {darkThemeActive ? (
-        <div className=' bg-[#9147ff4e] flex justify-between items-center w-20 h-8 rounded-full overflow-hidden'>
+        <div className='pr-[0.1em] py-[1.1rem] bg-[#9147ff4e] border-[1px] border-[#9147ff] flex justify-between items-center w-20 h-8 rounded-full overflow-hidden'>
           <Image
             className='scale-75 z-10'
             ref={iconRef}
@@ -49,7 +49,7 @@ const ThemeButtons = () => {
             className='bg-[#9147ff] m-[1px] rounded-full border-2 h-7 w-7 z-20'></button>
         </div>
       ) : (
-        <div className='bg-[#ffa600] flex justify-between items-center w-20  h-8 rounded-full overflow-hidden shadow-[2px_2px_6px_#aaaaaa]'>
+        <div className='pl-[0.1em]  bg-[#ffa600] flex justify-between items-center w-20  h-8 rounded-full overflow-hidden shadow-[2px_2px_6px_#aaaaaa]'>
           <button
             onClick={toggleEfect}
             ref={buttonRef}

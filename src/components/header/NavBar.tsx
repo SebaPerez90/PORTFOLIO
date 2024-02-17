@@ -24,8 +24,8 @@ const NavBar = () => {
       <section
         className={
           darkThemeActive
-            ? 'fixed top-0 z-20  flex justify-center items-center w-max bg-gradient-to-tl from-[#030303] to-[#3e3f40] p-2 rounded-md mt-4 shadow-[4px_8px_10px_#00000058]'
-            : 'fixed top-0 z-20  flex justify-center items-center w-max bg-white p-2 rounded-md mt-4 shadow-[4px_8px_10px_#c1c1c1]'
+            ? 'z-10 flex justify-center items-center w-max bg-gradient-to-tl from-[#030303] to-[#3e3f40] p-2 rounded-md shadow-[4px_8px_10px_#00000058]'
+            : 'z-10 flex justify-center items-center w-max bg-white p-2 rounded-md shadow-[4px_8px_10px_#c1c1c1]'
         }>
         <nav className='flex justify-between '>
           <ul className='flex w-full justify-end items-center p-4 font-medium text-sm'>
@@ -61,9 +61,9 @@ const NavBar = () => {
             </li>
             <li>
               <Link
-                href={'/proyects'}
+                href={'#proyects-section'}
                 className={
-                  currentRoute == '/proyects'
+                  currentRoute == '/#proyects-section'
                     ? darkThemeActive
                       ? 'text-white p-[0.5em_1.5em] duration-500 rounded-[2em] bg-[#9147ff]'
                       : 'text-white rounded-[2em] duration-300 p-[0.5em_1.5em] bg-[#9BB8CD]'
@@ -76,7 +76,7 @@ const NavBar = () => {
             </li>
             <li>
               <Link
-                href={'/contact'}
+                href={'#hire-section'}
                 className={
                   currentRoute == '/contact'
                     ? darkThemeActive

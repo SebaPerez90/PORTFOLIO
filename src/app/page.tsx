@@ -22,14 +22,14 @@ export default function Home() {
     <main
       className={
         darkThemeActive
-          ? 'relative text-white pt-10 flex flex-col justify-around items-center before:absolute before:left-0 before:top-0 before:w-full before:h-full before:z-[2] before:bg-gradient-to-r from-[#0f0c29] bg-indigo-800 to-[#2c2c47]'
+          ? 'pt-10 relative text-white flex flex-col justify-around items-center before:absolute before:left-0 before:top-0 before:w-full before:h-full before:z-[2] before:bg-gradient-to-r from-[#0f0c29] bg-indigo-800 to-[#2c2c47]'
           : 'pt-10 flex flex-col justify-around items-center bg-[#dedede] relative'
       }>
       <section
         className={
           darkThemeActive
-            ? 'opacity-0 pt-24 mb-14 rounded-md bg-gradient-to-tl from-[#030303] to-[#3e3f40] shadow-[4px_8px_20px_#00000098] z-10 w-[90%] relative before:content-[""] before:absolute before:bg-[#fff] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle '
-            : 'opacity-0 mb-14 pt-24 rounded-md bg-white shadow-[4px_8px_20px_#aaaaaa] z-10 w-[90%] relative before:content-[""] before:absolute before:bg-[#9BB8CD] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle'
+            ? 'pt-24 rounded-md bg-gradient-to-tl from-[#030303] to-[#3e3f40] shadow-[4px_8px_20px_#00000098] z-10 w-[90%] relative before:content-[""] before:absolute before:bg-[#fff] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle '
+            : 'pt-24 rounded-md bg-white shadow-[4px_8px_20px_#aaaaaa] z-10 w-[90%] relative before:content-[""] before:absolute before:bg-[#9BB8CD] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle'
         }>
         <Image
           src={profile_avatar}
@@ -109,9 +109,14 @@ export default function Home() {
         </section>
       </section>
 
-      <section className='opacity-0 flex justify-center items-center shadow-[2px_18px_20px_#aaaaaa] rounded-md'>
-        <ContactForm />
-        <ContactInfo />
+      <section id='hire-section' className='mt-20 text-center'>
+        <h1 className='text-5xl text-[#313131]' style={roboto.style}>
+          {engLanguageActive ? 'Hire Me' : 'Contrátame'}🤝
+        </h1>
+        <div className='mt-10 flex justify-center items-center shadow-[2px_18px_20px_#aaaaaa] rounded-md'>
+          <ContactForm />
+          <ContactInfo />
+        </div>
       </section>
 
       <Proyects />

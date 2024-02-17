@@ -56,11 +56,9 @@
   }
 }
 
+html,
 body {
-  box-sizing: border-box;
   scroll-behavior: smooth;
-  color: var(--font-color-primary);
-  margin: 0;
 
   .allow-send-form {
     box-shadow: 2px 18px 20px #aaaaaa;
@@ -79,8 +77,12 @@ body {
       background: #dedede;
       width: 95%;
       height: 95%;
-      margin: 1em;
-      -webkit-mask-image: linear-gradient(to right bottom, #ff0000, #ff000017 40%);
+      margin: 0.8em;
+      -webkit-mask-image: linear-gradient(
+        to right bottom,
+        #ff0000,
+        #ff000017 40%
+      );
       z-index: -1;
     }
   }

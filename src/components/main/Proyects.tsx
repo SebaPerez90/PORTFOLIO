@@ -127,14 +127,14 @@ const Proyects = () => {
   };
 
   return (
-    <section className='flex flex-col justify-center items-center'>
+    <section id='proyects-section' className='mt-20 flex flex-col justify-center items-center'>
       <h1 className='text-5xl text-[#313131]' style={roboto.style}>{engLanguageActive ? 'Projects' : 'Proyectos'}💻</h1>
 
       {projects.map((item, index) => (
         <article
-          className='gap-4 shadow-[2px_18px_20px_#aaaaaa] rounded-md p-8 w-3/4 mt-12 flex flex-col justify-center items-center bg-white'
+          className='relative z-10 aaaa gap-4 mt-20 shadow-[2px_18px_20px_#aaaaaa] rounded-md p-8 w-3/4 flex flex-col justify-center items-center bg-white'
           key={index}>
-          <h2 className='text-4xl text-[#313131]' style={roboto.style}>
+          <h2 className='text-4xl text-[#313131] ' style={roboto.style}>
             {item.title}
           </h2>
 
@@ -161,13 +161,13 @@ const Proyects = () => {
           )}
           <ul className='mt-4 flex gap-8'>
             <Link
-              className='text-white bg-[#9bb8cd] rounded-lg p-2 flex items-center gap-1'
+              className='text-white bg-[#da0c81] rounded-lg p-2 flex items-center gap-1'
               href={item.code}>
               <FiGithub />
               code
             </Link>
             <Link
-              className='text-white bg-[#9bb8cd] rounded-lg p-2 flex items-center gap-1'
+              className='text-white bg-[#da0c81] rounded-lg p-2 flex items-center gap-1'
               href={item.preview}>
               <FaLink />
               preview

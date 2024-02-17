@@ -19,7 +19,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang='en'>
-      <body className={onest.className}>
+      <body className='flex flex-col box-border m-0 text-[#6c6c6c]' style={onest.style}>
         <NavBar />
         {children}
       </body>

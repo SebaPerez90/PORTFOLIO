@@ -47,7 +47,7 @@ const Contact = () => {
 
   return (
     <form
-      className='pt-4 caret-[#DA0C81] h-[28rem] w-[25rem] bg-white rounded-[0.4em_0_0_0.4em] flex flex-col justify-center gap-8 items-center'
+      className=' caret-[#DA0C81] h-[28rem] w-[25rem] bg-white rounded-[0.4em_0_0_0.4em] flex flex-col justify-center gap-8 items-center'
       onSubmit={(e) => e.preventDefault()}>
       <div className='flex justify-start w-[70%] gap-5 '>
         <label className='relative w-[50%]'>
