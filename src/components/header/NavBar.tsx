@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import Link from 'next/link';
 
 import LanguageButtons from '@/components/header/LanguageButtons';
@@ -15,11 +15,9 @@ const NavBar = () => {
 
   // if (window.location.hash === '#projects-section') {
   //   console.log('ver esto eh, puede ser util');
-  //   // linkRef.current.style.border = '3px solid #f00';
   //   console.log(linkRef.current);
   // } else {
   //   console.log('es por aca');
-  //   // linkRef.current.style.border = '5px solid #390cda';
   //   console.log(linkRef.current);
   // }
 
@@ -59,12 +57,12 @@ const NavBar = () => {
     });
   };
   handleScroll();
-  
+
   return (
     <header
       className={
         darkThemeActive
-          ? 'bg-[#3485d5] relative flex justify-center items-center text-white'
+          ? 'bg-[#383838] relative flex justify-center items-center text-white'
           : 'bg-[#fff] flex justify-center items-center '
       }>
       <div
@@ -77,15 +75,15 @@ const NavBar = () => {
         <nav
           className={
             darkThemeActive
-              ? 'flex justify-center z-20 gap-1 '
-              : 'flex justify-center z-20 gap-1 '
+              ? 'mr-2 flex justify-center z-20 gap-1 '
+              : 'mr-2 flex justify-center z-20 gap-1 '
           }>
           {navLinks.map((item, index) => (
             <Link
               className={
                 darkThemeActive
-                  ? 'p-2 duration-500 text-[#ffffffee] font-bold hover:duration-500'
-                  : 'p-2 duration-500 text-[#505050db] font-semibold hover:duration-500'
+                  ? 'p-2 duration-300 text-[#ffffffee] font-bold hover:duration-300 hover:text-[#da0c81]'
+                  : 'p-2 duration-300 text-[#6c6c6cb4] font-bold hover:duration-300 hover:text-[#da0c81]'
               }
               aria-label={item.label}
               href={item.url}

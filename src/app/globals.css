@@ -70,11 +70,6 @@ body {
     color: #fff;
   }
 
-  /* .bbb {
-    backdrop-filter: 'blur(20px)';
-    background-color: 'rgb(255 255 255 / 5%)';
-    box-shadow: '0 0 5px rgb(0 0 0 / 55%)';
-  } */
   .aaaa {
     &::after {
       content: '';
