@@ -127,8 +127,8 @@ const Proyects = () => {
   };
 
   return (
-    <section id='proyects-section' className='mt-20 flex flex-col justify-center items-center'>
-      <h1 className='text-5xl text-[#313131]' style={roboto.style}>{engLanguageActive ? 'Projects' : 'Proyectos'}💻</h1>
+    <section id='projects-section' className='mt-20 flex flex-col justify-center items-center'>
+      <h1 className='text-5xl text-[#313131] ' style={roboto.style}>{engLanguageActive ? 'Projects' : 'Proyectos'}💻</h1>
 
       {projects.map((item, index) => (
         <article

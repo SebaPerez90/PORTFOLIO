@@ -1,101 +1,103 @@
 'use client';
 
+import React, { useRef, useEffect } from 'react';
 import Link from 'next/link';
-import React from 'react';
 
 import LanguageButtons from '@/components/header/LanguageButtons';
 import ThemeButtons from '@/components/header/ThemeButtons';
 
-import { usePathname } from 'next/navigation';
 import { useStore } from '@/store';
 
 const NavBar = () => {
-  const currentRoute = usePathname();
-
   const { engLanguageActive, darkThemeActive } = useStore();
 
+  const elementRef: any = useRef<HTMLDivElement>(null);
+
+  // if (window.location.hash === '#projects-section') {
+  //   console.log('ver esto eh, puede ser util');
+  //   // linkRef.current.style.border = '3px solid #f00';
+  //   console.log(linkRef.current);
+  // } else {
+  //   console.log('es por aca');
+  //   // linkRef.current.style.border = '5px solid #390cda';
+  //   console.log(linkRef.current);
+  // }
+
+  interface NavLinks {
+    titleES: string;
+    titleEN: string;
+    label: string;
+    url: string;
+  }
+
+  const navLinks: NavLinks[] = [
+    { titleES: 'inicio', titleEN: 'home', label: 'home', url: '/' },
+    { titleES: 'sobre mi', titleEN: 'about', label: 'about', url: '/about' },
+    {
+      titleES: 'proyectos',
+      titleEN: 'projects',
+      label: 'projects',
+      url: '#projects-section',
+    },
+    {
+      titleES: 'contrátame',
+      titleEN: 'hire me',
+      label: 'hire me',
+      url: '#hire-section',
+    },
+  ];
+
+  const handleScroll = () => {
+    document.addEventListener('scroll', () => {
+      if (window.scrollY !== 0) {
+        elementRef.current.style.backdropFilter = 'blur(20px)';
+        elementRef.current.style.background = '#ffffff0d';
+        elementRef.current.style.boxShadow = '0 0 5px #0000008c';
+      } else {
+        elementRef.current.style.background = 'inherit';
+      }
+    });
+  };
+  handleScroll();
+  
   return (
     <header
       className={
         darkThemeActive
-          ? 'relative flex justify-center items-center text-white before:absolute before:left-0 before:top-0 before:w-full before:h-full before:z-[2] before:bg-gradient-to-r from-[#0f0c29] bg-indigo-800 to-[#2c2c47]'
-          : 'flex justify-center items-center bg-[#dedede]'
+          ? 'bg-[#3485d5] relative flex justify-center items-center text-white'
+          : 'bg-[#fff] flex justify-center items-center '
       }>
-      <section
+      <div
+        ref={elementRef}
         className={
           darkThemeActive
-            ? 'z-10 flex justify-center items-center w-max bg-gradient-to-tl from-[#030303] to-[#3e3f40] p-2 rounded-md shadow-[4px_8px_10px_#00000058]'
-            : 'z-10 flex justify-center items-center w-max bg-white p-2 rounded-md shadow-[4px_8px_10px_#c1c1c1]'
+            ? 'shadow-[0_0_5px_#0000008c] bg-inherit fixed top-2 z-20 flex justify-center items-center w-max p-2 rounded-md '
+            : 'shadow-[0_0_5px_#0000008c] bg-inherit fixed top-2 z-20 flex justify-center items-center w-max p-2 rounded-md '
         }>
-        <nav className='flex justify-between '>
-          <ul className='flex w-full justify-end items-center p-4 font-medium text-sm'>
-            <li>
-              <Link
-                href={'/'}
-                className={
-                  currentRoute == '/'
-                    ? darkThemeActive
-                      ? 'text-white p-[0.5em_1.5em] duration-500 rounded-[2em] bg-[#9147ff]'
-                      : 'text-white rounded-[2em] duration-300 p-[0.5em_1.5em] bg-[#9BB8CD]'
-                    : darkThemeActive
-                    ? 'text-white rounded-[2em] p-[0.5em_1.5em] duration-500 '
-                    : 'rounded-[2em] p-[0.5em_1.5em] duration-300'
-                }>
-                {engLanguageActive ? 'home' : 'inicio'}
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={'/about'}
-                className={
-                  currentRoute == '/about'
-                    ? darkThemeActive
-                      ? 'text-white p-[0.5em_1.5em] duration-500 rounded-[2em] bg-[#9147ff]'
-                      : 'text-white rounded-[2em] duration-300 p-[0.5em_1.5em] bg-[#9BB8CD]'
-                    : darkThemeActive
-                    ? 'text-white rounded-[2em] p-[0.5em_1.5em] duration-500 '
-                    : 'rounded-[2em] p-[0.5em_1.5em] duration-300'
-                }>
-                {engLanguageActive ? 'about' : 'sobre mi'}
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={'#proyects-section'}
-                className={
-                  currentRoute == '/#proyects-section'
-                    ? darkThemeActive
-                      ? 'text-white p-[0.5em_1.5em] duration-500 rounded-[2em] bg-[#9147ff]'
-                      : 'text-white rounded-[2em] duration-300 p-[0.5em_1.5em] bg-[#9BB8CD]'
-                    : darkThemeActive
-                    ? 'text-white rounded-[2em] p-[0.5em_1.5em] duration-500 '
-                    : 'rounded-[2em] p-[0.5em_1.5em] duration-300'
-                }>
-                {engLanguageActive ? 'proyects' : 'proyectos'}
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={'#hire-section'}
-                className={
-                  currentRoute == '/contact'
-                    ? darkThemeActive
-                      ? 'text-white p-[0.5em_1.5em] duration-500 rounded-[2em] bg-[#9147ff]'
-                      : 'text-white rounded-[2em] duration-300 p-[0.5em_1.5em] bg-[#9BB8CD]'
-                    : darkThemeActive
-                    ? 'text-white rounded-[2em] p-[0.5em_1.5em] duration-500 '
-                    : 'rounded-[2em] p-[0.5em_1.5em] duration-300'
-                }>
-                {engLanguageActive ? 'hire me' : 'contratame'}
-              </Link>
-            </li>
-          </ul>
+        <nav
+          className={
+            darkThemeActive
+              ? 'flex justify-center z-20 gap-1 '
+              : 'flex justify-center z-20 gap-1 '
+          }>
+          {navLinks.map((item, index) => (
+            <Link
+              className={
+                darkThemeActive
+                  ? 'p-2 duration-500 text-[#ffffffee] font-bold hover:duration-500'
+                  : 'p-2 duration-500 text-[#505050db] font-semibold hover:duration-500'
+              }
+              aria-label={item.label}
+              href={item.url}
+              key={index}>
+              {engLanguageActive ? item.titleEN : item.titleES}
+            </Link>
+          ))}
         </nav>
 
         <ThemeButtons />
-
         <LanguageButtons />
-      </section>
+      </div>
     </header>
   );
 };

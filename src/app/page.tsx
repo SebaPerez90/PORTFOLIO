@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useStore } from '@/store';
 import { Roboto } from 'next/font/google';
 
@@ -22,8 +23,8 @@ export default function Home() {
     <main
       className={
         darkThemeActive
-          ? 'pt-10 relative text-white flex flex-col justify-around items-center before:absolute before:left-0 before:top-0 before:w-full before:h-full before:z-[2] before:bg-gradient-to-r from-[#0f0c29] bg-indigo-800 to-[#2c2c47]'
-          : 'pt-10 flex flex-col justify-around items-center bg-[#dedede] relative'
+          ? 'pt-20 gap-28 relative text-white flex flex-col justify-around items-center before:absolute before:left-0 before:top-0 before:w-full before:h-full before:z-[2] before:bg-gradient-to-r from-[#0f0c29] bg-indigo-800 to-[#2c2c47]'
+          : 'pt-20 gap-28 flex flex-col justify-around items-center bg-[#dedede] relative'
       }>
       <section
         className={
@@ -34,7 +35,7 @@ export default function Home() {
         <Image
           src={profile_avatar}
           alt='profile-avatar-image'
-          className='h-1/2 w-1/2 drop-shadow-img relative left-[10%] max-w-[20em]'
+          className='opacity-[0.01] h-1/2 w-1/2 drop-shadow-img relative left-[10%] max-w-[20em]'
           priority
         />
 
@@ -110,7 +111,7 @@ export default function Home() {
       </section>
 
       <section id='hire-section' className='mt-20 text-center'>
-        <h1 className='text-5xl text-[#313131]' style={roboto.style}>
+        <h1 className='text-5xl text-[#313131] ' style={roboto.style}>
           {engLanguageActive ? 'Hire Me' : 'Contrátame'}🤝
         </h1>
         <div className='mt-10 flex justify-center items-center shadow-[2px_18px_20px_#aaaaaa] rounded-md'>

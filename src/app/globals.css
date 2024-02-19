@@ -5,8 +5,10 @@
 :root {
   --font-color-primary: #6c6c6c;
   --font-color-secondary: #909090;
-  --btns-light-theme: #9bb8cd;
-  --secondary-light-theme: #b784b7;
+  /* buttons */
+  --light-primary: #da0c81;
+  --light-seconday: #b784b7;
+  --light-tertiary: #9bb8cd;
 }
 
 @layer utilities {
@@ -68,6 +70,11 @@ body {
     color: #fff;
   }
 
+  /* .bbb {
+    backdrop-filter: 'blur(20px)';
+    background-color: 'rgb(255 255 255 / 5%)';
+    box-shadow: '0 0 5px rgb(0 0 0 / 55%)';
+  } */
   .aaaa {
     &::after {
       content: '';
