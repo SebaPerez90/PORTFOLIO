@@ -1,5 +1,3 @@
-import React, { useRef } from 'react';
-
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -18,8 +16,6 @@ const roboto = Roboto({
 
 const Proyects = () => {
   const { darkThemeActive, engLanguageActive } = useStore();
-
-  const imageRef = useRef<HTMLImageElement>(null);
 
   const addingTagSkill = (skill: string) => {
     switch (skill) {
@@ -131,7 +127,13 @@ const Proyects = () => {
   };
 
   const changeFocus = () => {
-    console.log('should change focus');
+    // if (myRef.current) {
+    //   myRef.current.style.border = '42px solid #f00';
+    //   myRef.current.style.boxShadow = '20px 20px 50px #0000008c';
+    //   console.log('do something');
+    // } else {
+    //   console.log('something goes wrong');
+    // }
   };
 
   return (
@@ -185,22 +187,8 @@ const Proyects = () => {
               preview
             </Link>
           </ul>
-          <section className='section-slider'>
+          <section>
             <div className='carrousel-container'>
-              <button
-                onClick={changeFocus}
-                // id='btn-forward'
-                // className='opacity-0 z-30 absolute left-72 scale-125 rounded-full p-1 text-white bg-[#1212127d]'
-              >
-                <FaArrowLeft />
-              </button>
-              <button
-                onClick={changeFocus}
-                // id='btn-backward'
-                // className='opacity-0 z-30 absolute right-72 scale-125 rounded-full p-1 text-white bg-[#1212127d] rotate-180'
-              >
-                <FaArrowLeft />
-              </button>
               {item.screen_shoots.map((item, index) => (
                 <Image
                   key={index}
@@ -213,35 +201,6 @@ const Proyects = () => {
               ))}
             </div>
           </section>
-          {/* <div className='relative mt-12 flex justify-center items-center h-[15rem] card-image-container'>
-            <button
-              onClick={changeFocus}
-              className='z-30 absolute left-0 scale-125 rounded-full p-1 text-white bg-[#1212127d]'>
-              <FaArrowLeft />
-            </button>
-            {item.screen_shoots.map((item, index) => (
-              <Image
-                key={index}
-                src={item}
-                width={300}
-                height={300}
-                loading='lazy'
-                alt='screen-shoot'
-                ref={imageRef}
-                style={{
-                  objectFit: 'cover',
-                  width: '100%',
-                  height: '100%',
-                }}
-                className={'element-' + index}
-              />
-            ))}
-            <button
-              onClick={changeFocus}
-              className='z-30 absolute right-0 scale-125 rounded-full p-1 text-white bg-[#1212127d] rotate-180'>
-              <FaArrowLeft />
-            </button>
-          </div> */}
         </article>
       ))}
     </section>
