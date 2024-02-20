@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { FiGithub } from 'react-icons/fi';
 import { FaLink } from 'react-icons/fa6';
@@ -127,12 +128,16 @@ const Proyects = () => {
   };
 
   return (
-    <section id='projects-section' className='mt-20 flex flex-col justify-center items-center'>
-      <h1 className='text-5xl text-[#313131] ' style={roboto.style}>{engLanguageActive ? 'Projects' : 'Proyectos'}💻</h1>
+    <section
+      id='projects-section'
+      className='mt-20 flex flex-col justify-center items-center'>
+      <h1 className='text-5xl text-[#313131] ' style={roboto.style}>
+        {engLanguageActive ? 'Projects' : 'Proyectos'}💻
+      </h1>
 
       {projects.map((item, index) => (
         <article
-          className='relative z-10 aaaa gap-4 mt-20 shadow-[2px_18px_20px_#aaaaaa] rounded-md p-8 w-3/4 flex flex-col justify-center items-center bg-white'
+          className='shadow-fade-box after:absolute after:-z-10 after:left-0 after:top-0 after:bg-[#dedede] after:w-[95%] after:h-[95%] after:m-[0.8em] relative z-10 gap-4 mt-20 shadow-[2px_18px_20px_#aaaaaa] rounded-md p-8 w-3/4 flex flex-col justify-center items-center bg-white'
           key={index}>
           <h2 className='text-4xl text-[#313131] ' style={roboto.style}>
             {item.title}
@@ -173,6 +178,17 @@ const Proyects = () => {
               preview
             </Link>
           </ul>
+          <div>
+            {item.screen_shoots.map((item, index) => (
+              <Image
+                key={index}
+                src={item}
+                width={300}
+                height={300}
+                alt='screen-shoot'
+              />
+            ))}
+          </div>
         </article>
       ))}
     </section>

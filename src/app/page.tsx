@@ -29,13 +29,13 @@ export default function Home() {
       <section
         className={
           darkThemeActive
-            ? 'pt-24 rounded-md bg-gradient-to-tl from-[#030303] to-[#3e3f40] shadow-[4px_8px_20px_#00000098] z-10 w-[90%] relative before:content-[""] before:absolute before:bg-[#fff] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle '
-            : 'pt-24 rounded-md bg-white shadow-[4px_8px_20px_#aaaaaa] z-10 w-[90%] relative before:content-[""] before:absolute before:bg-[#9BB8CD] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle'
+            ? 'overflow-hidden pt-24 rounded-md bg-gradient-to-tl from-[#030303] to-[#3e3f40] shadow-[4px_8px_20px_#00000098] z-10 w-[90%] relative before:content-[""] before:absolute before:bg-[#fff] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle '
+            : 'overflow-hidden pt-24 rounded-md bg-white shadow-[4px_8px_20px_#aaaaaa] z-10 w-[90%] relative before:content-[""] before:absolute before:bg-[#9BB8CD] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle'
         }>
         <Image
           src={profile_avatar}
           alt='profile-avatar-image'
-          className='opacity-[0.01] h-1/2 w-1/2 drop-shadow-img relative left-[10%] max-w-[20em]'
+          className='h-1/2 w-1/2 drop-shadow-img relative left-[10%] max-w-[20em]'
           priority
         />
 

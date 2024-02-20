@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --font-color-primary: #6c6c6c;
-  --font-color-secondary: #909090;
+  /* fonts */
+  --font-primary: #6c6c6c;
+  --font-secondary: #909090;
   /* buttons */
-  --light-primary: #da0c81;
-  --light-seconday: #b784b7;
-  --light-tertiary: #9bb8cd;
+  --btn-primary: #da0c81;
+  --btn-seconday: #b784b7;
+  --btn-tertiary: #9bb8cd;
 }
 
 @layer utilities {
@@ -58,6 +59,18 @@
   }
 }
 
+@layer utilities {
+  .shadow-fade-box {
+    &::after {
+      -webkit-mask-image: linear-gradient(
+        to right bottom,
+        #ff0000,
+        #ff000017 40%
+      );
+    }
+  }
+}
+
 html,
 body {
   scroll-behavior: smooth;
@@ -68,25 +81,6 @@ body {
     background: #da0c81;
     opacity: 1;
     color: #fff;
-  }
-
-  .aaaa {
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      background: #dedede;
-      width: 95%;
-      height: 95%;
-      margin: 0.8em;
-      -webkit-mask-image: linear-gradient(
-        to right bottom,
-        #ff0000,
-        #ff000017 40%
-      );
-      z-index: -1;
-    }
   }
 
   @keyframes desactivating-dark-mode {

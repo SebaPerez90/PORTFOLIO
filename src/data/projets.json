@@ -5,7 +5,12 @@
     "descriptionEN": "",
     "code": "https://github.com/SebaPerez90/WeatherApp",
     "preview": "https://sebaperez90.github.io/WeatherApp/",
-    "skills": ["React.js", "Tailwind CSS", "Javascript"]
+    "skills": ["React.js", "Tailwind CSS", "Javascript"],
+    "screen_shoots": [
+      "/svg/project_1/screen-shoot-1.svg",
+      "/svg/project_1/screen-shoot-2.svg",
+      "/svg/project_1/screen-shoot-3.svg"
+    ]
   },
   {
     "title": "Rock-Papper-Scissors",
@@ -13,7 +18,12 @@
     "descriptionEN": "",
     "code": "https://github.com/SebaPerez90/Rock-Papper-Scissors",
     "preview": "https://sebaperez90.github.io/Rock-Papper-Scissors/",
-    "skills": ["React.js", "Tailwind CSS", "Javascript"]
+    "skills": ["React.js", "Tailwind CSS", "Javascript"],
+    "screen_shoots": [
+      "/svg/project_2/screen-shoot-1.svg",
+      "/svg/project_2/screen-shoot-2.svg",
+      "/svg/project_2/screen-shoot-3.svg"
+    ]
   },
   {
     "title": "ToDo List",
@@ -21,7 +31,12 @@
     "descriptionEN": "",
     "code": "https://github.com/SebaPerez90/ToDo-List",
     "preview": "https://sebaperez90.github.io/ToDo-List/",
-    "skills": ["React.js", "Tailwind CSS", "Javascript"]
+    "skills": ["React.js", "Tailwind CSS", "Javascript"],
+    "screen_shoots": [
+      "/svg/project_3/screen-shoot-1.svg",
+      "/svg/project_3/screen-shoot-2.svg",
+      "/svg/project_3/screen-shoot-3.svg"
+    ]
   },
   {
     "title": "Interactive Card Details",
@@ -29,7 +44,12 @@
     "descriptionEN": "",
     "code": "https://github.com/SebaPerez90/Interactive-Card-Details",
     "preview": "https://sebaperez90.github.io/Interactive-Card-Details/",
-    "skills": ["React.js", "Javascript", "Sass"]
+    "skills": ["React.js", "Javascript", "Sass"],
+    "screen_shoots": [
+      "/svg/project_4/screen-shoot-1.svg",
+      "/svg/project_4/screen-shoot-2.svg",
+      "/svg/project_4/screen-shoot-3.svg"
+    ]
   },
   {
     "title": "Calculator",
@@ -37,7 +57,12 @@
     "descriptionEN": "",
     "code": "https://github.com/SebaPerez90/Calculator-React.js",
     "preview": "https://sebaperez90.github.io/Interactive-Card-Details/",
-    "skills": ["React.js", "Javascript", "CSS"]
+    "skills": ["React.js", "Javascript", "CSS"],
+    "screen_shoots": [
+      "/svg/project_5/screen-shoot-1.svg",
+      "/svg/project_5/screen-shoot-2.svg",
+      "/svg/project_5/screen-shoot-3.svg"
+    ]
   },
   {
     "title": "First Proyect",
@@ -45,6 +70,11 @@
     "descriptionEN": "",
     "code": "https://github.com/SebaPerez90/SebaPerez90.github.io",
     "preview": "https://sebaperez90.github.io/",
-    "skills": ["HTML", "CSS", "Javascript"]
+    "skills": ["HTML", "CSS", "Javascript"],
+    "screen_shoots": [
+      "/svg/project_6/screen-shoot-1.svg",
+      "/svg/project_6/screen-shoot-2.svg",
+      "/svg/project_6/screen-shoot-3.svg"
+    ]
   }
 ]

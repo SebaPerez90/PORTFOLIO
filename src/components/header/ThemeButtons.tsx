@@ -34,7 +34,7 @@ const ThemeButtons = () => {
   };
 
   return (
-    <section className='flex gap-6 border-l-[3px] border-l-[##9BB8CD] px-6 justify-center items-center'>
+    <section className='flex gap-6 border-l-[3px] border-l-[inherit] px-6 justify-center items-center'>
       {darkThemeActive ? (
         <div className='pr-[0.1em] py-[1.1rem] bg-[#9147ff4e] border-[1px] border-[#9147ff] flex justify-between items-center w-20 h-8 rounded-full overflow-hidden'>
           <Image

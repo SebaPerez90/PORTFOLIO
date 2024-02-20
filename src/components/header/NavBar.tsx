@@ -75,8 +75,8 @@ const NavBar = () => {
         <nav
           className={
             darkThemeActive
-              ? 'mr-2 flex justify-center z-20 gap-1 '
-              : 'mr-2 flex justify-center z-20 gap-1 '
+              ? 'mr-3 flex justify-center z-20 gap-1 '
+              : 'mr-3 flex justify-center z-20 gap-1 '
           }>
           {navLinks.map((item, index) => (
             <Link
