@@ -101,8 +101,8 @@ export default function Home() {
             <button
               className={
                 darkThemeActive
-                  ? 'mt-4 mr-32 self-end w-24 p-[1em_1.5em] bg-[#9147ff] font-bold text-[.6em]'
-                  : 'mt-4 mr-32 self-end w-24 p-[1em_1.5em] bg-[#DA0C81] font-bold text-[.6em] text-white'
+                  ? 'mt-4 mr-32 self-end w-24 p-[1em_1.5em] bg-[#9147ff] font-bold text-[.6em] rounded-sm duration-300 hover:translate-y-[0.3em] hover:shadow-[none] hover:duration-300 hover:bg-[#9147ff] hover:hover:translate-y-[-0.3em] hover:hover:translate-x-[-0.2em] hover:shadow-[0px_8px_7px_#0000002c]'
+                  : 'mt-4 mr-32 self-end w-24 p-[1em_1.5em] bg-[#af4882] font-bold text-[.6em] rounded-sm duration-300  hover:duration-300 hover:bg-[#da0c81]  text-white hover:translate-y-[-0.3em] hover:translate-x-[-0.2em] hover:shadow-[0px_8px_7px_#0000002c]'
               }>
               {engLanguageActive ? 'VIEW MORE' : 'VER MAS'}
             </button>

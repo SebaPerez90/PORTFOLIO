@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useRef } from 'react';
 
 import Link from 'next/link';
 import Image from 'next/image';
 
 import { FiGithub } from 'react-icons/fi';
 import { FaLink } from 'react-icons/fa6';
+import { FaArrowLeft } from 'react-icons/fa';
 
 import projects from '@/data/projets.json';
 import { Roboto } from 'next/font/google';
@@ -18,7 +19,9 @@ const roboto = Roboto({
 const Proyects = () => {
   const { darkThemeActive, engLanguageActive } = useStore();
 
-  const test = (skill: string) => {
+  const imageRef = useRef<HTMLImageElement>(null);
+
+  const addingTagSkill = (skill: string) => {
     switch (skill) {
       case 'React.js':
         return (
@@ -127,6 +130,10 @@ const Proyects = () => {
     }
   };
 
+  const changeFocus = () => {
+    console.log('should change focus');
+  };
+
   return (
     <section
       id='projects-section'
@@ -149,7 +156,7 @@ const Proyects = () => {
                 className='cursor-default scale-90 rounded-full text-xs gap-1 flex items-center bg-gradient-to-b from-[#676767b0] to-black text-white p-[0.5em_1.8em]'
                 key={index}>
                 {/* Insert dynamically the icon corresponding to the value of item.skill */}
-                {test(skill)}
+                {addingTagSkill(skill)}
                 <span>{skill}</span>
               </div>
             ))}
@@ -166,29 +173,75 @@ const Proyects = () => {
           )}
           <ul className='mt-4 flex gap-8'>
             <Link
-              className='text-white bg-[#da0c81] rounded-lg p-2 flex items-center gap-1'
+              className='rounded-sm text-white bg-[#af4882] hover:bg-[#da0c81]  hover:hover:translate-y-[-0.3em] hover:hover:translate-x-[-0.2em] hover:shadow-[0px_8px_7px_#0000002c] font-bold p-[1em_1.5em] text-[.75em]  flex items-center gap-1 duration-300 hover:duration-300'
               href={item.code}>
               <FiGithub />
               code
             </Link>
             <Link
-              className='text-white bg-[#da0c81] rounded-lg p-2 flex items-center gap-1'
+              className='rounded-sm text-white bg-[#af4882] hover:bg-[#da0c81]  hover:hover:translate-y-[-0.3em] hover:hover:translate-x-[-0.2em] hover:shadow-[0px_8px_7px_#0000002c] font-bold p-[1em_1.5em] text-[.75em]  flex items-center gap-1 duration-300 hover:duration-300'
               href={item.preview}>
               <FaLink />
               preview
             </Link>
           </ul>
-          <div>
+          <section className='section-slider'>
+            <div className='carrousel-container'>
+              <button
+                onClick={changeFocus}
+                // id='btn-forward'
+                // className='opacity-0 z-30 absolute left-72 scale-125 rounded-full p-1 text-white bg-[#1212127d]'
+              >
+                <FaArrowLeft />
+              </button>
+              <button
+                onClick={changeFocus}
+                // id='btn-backward'
+                // className='opacity-0 z-30 absolute right-72 scale-125 rounded-full p-1 text-white bg-[#1212127d] rotate-180'
+              >
+                <FaArrowLeft />
+              </button>
+              {item.screen_shoots.map((item, index) => (
+                <Image
+                  key={index}
+                  src={item}
+                  width={300}
+                  height={300}
+                  loading='lazy'
+                  alt='screen-shoot'
+                />
+              ))}
+            </div>
+          </section>
+          {/* <div className='relative mt-12 flex justify-center items-center h-[15rem] card-image-container'>
+            <button
+              onClick={changeFocus}
+              className='z-30 absolute left-0 scale-125 rounded-full p-1 text-white bg-[#1212127d]'>
+              <FaArrowLeft />
+            </button>
             {item.screen_shoots.map((item, index) => (
               <Image
                 key={index}
                 src={item}
                 width={300}
                 height={300}
+                loading='lazy'
                 alt='screen-shoot'
+                ref={imageRef}
+                style={{
+                  objectFit: 'cover',
+                  width: '100%',
+                  height: '100%',
+                }}
+                className={'element-' + index}
               />
             ))}
-          </div>
+            <button
+              onClick={changeFocus}
+              className='z-30 absolute right-0 scale-125 rounded-full p-1 text-white bg-[#1212127d] rotate-180'>
+              <FaArrowLeft />
+            </button>
+          </div> */}
         </article>
       ))}
     </section>
