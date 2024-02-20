@@ -187,7 +187,7 @@ const Proyects = () => {
               preview
             </Link>
           </ul>
-          <section>
+          <section className='w-[35em]'>
             <div className='carrousel-container'>
               {item.screen_shoots.map((item, index) => (
                 <Image
