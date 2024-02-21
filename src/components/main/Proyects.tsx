@@ -126,16 +126,6 @@ const Proyects = () => {
     }
   };
 
-  const changeFocus = () => {
-    // if (myRef.current) {
-    //   myRef.current.style.border = '42px solid #f00';
-    //   myRef.current.style.boxShadow = '20px 20px 50px #0000008c';
-    //   console.log('do something');
-    // } else {
-    //   console.log('something goes wrong');
-    // }
-  };
-
   return (
     <section
       id='projects-section'
@@ -173,22 +163,8 @@ const Proyects = () => {
               {item.descriptionES}
             </p>
           )}
-          <ul className='mt-4 flex gap-8'>
-            <Link
-              className='rounded-sm text-white bg-[#af4882] hover:bg-[#da0c81]  hover:hover:translate-y-[-0.3em] hover:hover:translate-x-[-0.2em] hover:shadow-[0px_8px_7px_#0000002c] font-bold p-[1em_1.5em] text-[.75em]  flex items-center gap-1 duration-300 hover:duration-300'
-              href={item.code}>
-              <FiGithub />
-              code
-            </Link>
-            <Link
-              className='rounded-sm text-white bg-[#af4882] hover:bg-[#da0c81]  hover:hover:translate-y-[-0.3em] hover:hover:translate-x-[-0.2em] hover:shadow-[0px_8px_7px_#0000002c] font-bold p-[1em_1.5em] text-[.75em]  flex items-center gap-1 duration-300 hover:duration-300'
-              href={item.preview}>
-              <FaLink />
-              preview
-            </Link>
-          </ul>
-          <section className='w-[35em]'>
-            <div className='carrousel-container'>
+          <section className='slider-container'>
+            <div className='img-container'>
               {item.screen_shoots.map((item, index) => (
                 <Image
                   key={index}
@@ -200,6 +176,20 @@ const Proyects = () => {
                 />
               ))}
             </div>
+            <ul className='flex flex-col gap-8 absolute right-[-3.5em]'>
+              <Link
+                className='rounded-sm text-white bg-[#da0c81] hover:bg-[#af4882]  hover:hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#0000002c] font-bold p-[1em_1.5em] text-[.75em]  flex items-center gap-1 duration-300 hover:duration-300'
+                href={item.code}>
+                <FiGithub />
+                code
+              </Link>
+              <Link
+                className='rounded-sm text-white bg-[#da0c81] hover:bg-[#af4882]  hover:hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#0000002c] font-bold p-[1em_1.5em] text-[.75em]  flex items-center gap-1 duration-300 hover:duration-300'
+                href={item.preview}>
+                <FaLink />
+                preview
+              </Link>
+            </ul>
           </section>
         </article>
       ))}
