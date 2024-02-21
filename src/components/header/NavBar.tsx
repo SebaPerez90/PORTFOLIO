@@ -38,10 +38,10 @@ const NavBar = () => {
       url: '#projects-section',
     },
     {
-      titleES: 'contrátame',
-      titleEN: 'hire me',
-      label: 'hire me',
-      url: '#hire-section',
+      titleES: 'contáctame',
+      titleEN: 'contact me',
+      label: 'contact me',
+      url: '#contact-section',
     },
   ];
 

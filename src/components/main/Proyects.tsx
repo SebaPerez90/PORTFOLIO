@@ -3,7 +3,6 @@ import Image from 'next/image';
 
 import { FiGithub } from 'react-icons/fi';
 import { FaLink } from 'react-icons/fa6';
-import { FaArrowLeft } from 'react-icons/fa';
 
 import projects from '@/data/projets.json';
 import { Roboto } from 'next/font/google';
@@ -130,40 +129,57 @@ const Proyects = () => {
     <section
       id='projects-section'
       className='mt-20 flex flex-col justify-center items-center'>
-      <h1 className='text-5xl text-[#313131] ' style={roboto.style}>
-        {engLanguageActive ? 'Projects' : 'Proyectos'}💻
+      <h1
+        className='text-3xl [letter-spacing:15px] text-[#313131] '
+        style={roboto.style}>
+        {engLanguageActive ? 'PROJECTS' : 'PROYECTOS'}💻
       </h1>
 
       {projects.map((item, index) => (
-        <article
-          className='shadow-fade-box after:absolute after:-z-10 after:left-0 after:top-0 after:bg-[#dedede] after:w-[95%] after:h-[95%] after:m-[0.8em] relative z-10 gap-4 mt-20 shadow-[2px_18px_20px_#aaaaaa] rounded-md p-8 w-3/4 flex flex-col justify-center items-center bg-white'
-          key={index}>
-          <h2 className='text-4xl text-[#313131] ' style={roboto.style}>
-            {item.title}
-          </h2>
-
-          <div className='flex'>
-            {item.skills.map((skill, index) => (
-              <div
-                className='cursor-default scale-90 rounded-full text-xs gap-1 flex items-center bg-gradient-to-b from-[#676767b0] to-black text-white p-[0.5em_1.8em]'
-                key={index}>
-                {/* Insert dynamically the icon corresponding to the value of item.skill */}
-                {addingTagSkill(skill)}
-                <span>{skill}</span>
+        <div className='flex mt-20 w-4/5 rounded-md' key={index}>
+          <article className='rounded-[0.5em_0_0_0.5em] gap-12 pt-10 pb-4 shadow-fade-box after:absolute after:-z-10 after:left-0 after:top-0 after:bg-[#dedede] after:w-[95%] after:h-[95%] after:m-[0.8em] relative z-10  flex flex-col justify-around items-center bg-white'>
+            <h2
+              className='text-4xl text-[#313131] text-center'
+              style={roboto.style}>
+              {item.title}
+            </h2>
+            <div className='flex flex-col gap-4'>
+              <div className='flex justify-center gap-1'>
+                {item.skills.map((skill, index) => (
+                  <p
+                    className='p-[0.2em_0.8em] text-xs cursor-default gap-1 w-max rounded-full flex items-center bg-gradient-to-b from-[#676767b0] to-black text-white'
+                    key={index}>
+                    {/* Insert dynamically the icon corresponding to the value of item.skill */}
+                    {addingTagSkill(skill)}
+                    <span>{skill}</span>
+                  </p>
+                ))}
               </div>
-            ))}
-          </div>
 
-          {engLanguageActive ? (
-            <p className='text-[#909090] ml-4 text-[0.9em]'>
-              {item.descriptionES}
-            </p>
-          ) : (
-            <p className='text-[#909090] ml-4 text-[0.9em]'>
-              {item.descriptionES}
-            </p>
-          )}
-          <section className='slider-container'>
+              <div className='px-8'>
+                {engLanguageActive ? (
+                  <p className='text-[#909090] ml-4 text-[0.9em]'>
+                    {item.descriptionES}
+                  </p>
+                ) : (
+                  <p className='text-[#909090] ml-4 text-[0.9em]'>
+                    {item.descriptionES}
+                  </p>
+                )}
+              </div>
+            </div>
+            <ul className='flex gap-8 translate-y-[-2em]'>
+              <Link className='btn-primary' href={item.code}>
+                <FiGithub className='text-xl' />
+                code
+              </Link>
+              <Link className='btn-primary' href={item.preview}>
+                <FaLink className='text-xl' />
+                preview
+              </Link>
+            </ul>
+          </article>
+          <article className='slider-container'>
             <div className='img-container'>
               {item.screen_shoots.map((item, index) => (
                 <Image
@@ -176,22 +192,8 @@ const Proyects = () => {
                 />
               ))}
             </div>
-            <ul className='flex flex-col gap-8 absolute right-[-3.5em]'>
-              <Link
-                className='rounded-sm text-white bg-[#da0c81] hover:bg-[#af4882]  hover:hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#0000002c] font-bold p-[1em_1.5em] text-[.75em]  flex items-center gap-1 duration-300 hover:duration-300'
-                href={item.code}>
-                <FiGithub />
-                code
-              </Link>
-              <Link
-                className='rounded-sm text-white bg-[#da0c81] hover:bg-[#af4882]  hover:hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#0000002c] font-bold p-[1em_1.5em] text-[.75em]  flex items-center gap-1 duration-300 hover:duration-300'
-                href={item.preview}>
-                <FaLink />
-                preview
-              </Link>
-            </ul>
-          </section>
-        </article>
+          </article>
+        </div>
       ))}
     </section>
   );
