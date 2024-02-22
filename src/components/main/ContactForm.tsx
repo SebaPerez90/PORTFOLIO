@@ -101,7 +101,7 @@ const Contact = () => {
 
       <button
         ref={buttonRef}
-        className='flex justify-center cursor-not-allowed  items-center p-[1em_1.5em] bg-[#da0c8153] font-bold text-[.6em] translate-y-[-1em] rounded-full text-[#ffffff9d] w-[70%] duration-1000 opacity-75'>
+        className='flex justify-center cursor-not-allowed items-center text-[#ffffff9d] w-[70%] opacity-75 duration-300 rounded-md text-[0.8em] bg-[#4c598e]  font-bold p-[1em_1.5em]'>
         {engLanguageActive ? 'SEND' : 'ENVIAR'}
         <MdOutlineEmail className='ml-1 translate-y-[-0.1em]' />
       </button>
