@@ -73,33 +73,33 @@ export default function Home() {
                 {'  >'}
               </span>
             </h2>
-            <div className='[text-shadow:none] mt-3'>
-              <ul className='gap-2 flex m-[0_auto] justify-evenly items-center w-1/2 '>
+            <div className='[text-shadow:none] mt-4'>
+              <ul className='gap-4 flex m-[0_auto] justify-evenly items-center w-1/2 '>
                 <li>
                   <Link
-                    className='btn-primary p-[0.5em_0.85em] flex bg-[#2c3136] '
+                    className='btn-primary p-[0.5em_0.85em ] flex bg-[#2c3136] '
                     href={'https://github.com/SebaPerez90'}
                     target='_blank'>
                     <FiGithub />
-                    <span className='text-[0.6em] translate-y-[0.15em]'>
+                    <span className='text-[0.8em] translate-y-[0.15em]'>
                       GITHUB
                     </span>
                   </Link>
                 </li>
                 <li>
                   <Link
-                    className='btn-primary  p-[0.5em_0.85em] flex bg-[#0077B5]'
+                    className='btn-primary  p-[0.5em_0.85em ] flex bg-[#0077B5]'
                     href={'https://www.linkedin.com/in/sebaperez90/'}
                     target='_blank'>
                     <FaLinkedinIn />
-                    <span className='text-[0.6em] translate-y-[0.15em]'>
+                    <span className='text-[0.8em] translate-y-[0.15em]'>
                       LINKEDIN
                     </span>
                   </Link>
                 </li>
-                <li className='btn-primary  p-[0.5em_0.85em] flex bg-white text-[#8EA7E9] outline outline-1 outline-[#8EA7E9]'>
+                <li className='btn-primary  p-[0.5em_0.85em ] flex bg-white text-[#8EA7E9] outline outline-1 outline-[#8EA7E9]'>
                   <FaRegFileAlt className='' />
-                  <span className='text-[0.6em] translate-y-[0.15em]'>
+                  <span className='text-[0.8em] translate-y-[0.15em]'>
                     RESUME
                   </span>
                 </li>
@@ -126,7 +126,7 @@ export default function Home() {
               className={
                 darkThemeActive
                   ? 'mt-4 mr-32 self-end w-24 p-[1em_1.5em] bg-[#9147ff] font-bold text-[.6em] rounded-sm duration-300 hover:translate-y-[0.3em] hover:shadow-[none] hover:duration-300 hover:bg-[#9147ff] hover:hover:translate-y-[-0.3em] hover:hover:translate-x-[-0.2em] hover:shadow-[0px_8px_7px_#0000002c]'
-                  : 'btn-primary m-[0_auto] text-[0.8em] mt-4'
+                  : 'btn-primary m-[0_auto] mt-4'
               }>
               {engLanguageActive ? 'VIEW MORE' : 'VER MAS'}
             </button>
@@ -136,7 +136,7 @@ export default function Home() {
           <Image
             src={profile_avatar}
             alt='profile-avatar-image'
-            className='opacity-5 w-[20em] h-[20em] drop-shadow-[10px_0px_20px_#000000b3] z-10 object-contain relative left-14'
+            className='w-[20em] h-[20em] drop-shadow-[10px_0px_20px_#000000b3] z-10 object-contain relative left-14'
             priority
           />
         </div>

@@ -28,7 +28,7 @@ const ContactInfo = () => {
     }
   };
   return (
-    <aside className='h-[28rem] rounded-[0_0.4em_0.4em_0] flex flex-col justify-around bg-[#b784b7] py-4 px-10'>
+    <aside className='h-[28rem] rounded-[0_0.4em_0.4em_0] flex flex-col justify-around bg-[#7286D3] py-4 px-10'>
       <h1 className='text-4xl font-bold text-white text-shadow text-center'>
         {engLanguageActive ? 'Contact Me' : 'Contactame'}
       </h1>

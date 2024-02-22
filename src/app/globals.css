@@ -2,20 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* fonts */
-  --font-primary: #6c6c6c;
-  --font-secondary: #909090;
-  /* buttons */
-  --btn-primary: #da0c81;
-  --btn-seconday: #b784b7;
-  --btn-tertiary: #9bb8cd;
-  /* #DCF2F1 */
-}
+/* #DCF2F1 */
 
 @layer components {
   .btn-primary {
-    @apply rounded-2xl text-white hover:outline-1 hover:outline hover:outline-[#7285d373] hover:text-[#7286D3] bg-[#7286D3] hover:bg-[#DCF2F1] hover:hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] font-bold p-[1em_1.5em] flex items-center gap-1 duration-300 hover:duration-300;
+    @apply rounded-md text-[0.8em] text-white hover:outline-1 hover:outline hover:outline-[#7285d373] hover:text-[#7286D3] bg-[#7286D3] hover:bg-[#DCF2F1] hover:hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] font-bold p-[1em_1.5em] flex items-center gap-1 duration-300 hover:duration-300;
   }
 }
 
@@ -84,7 +75,7 @@ body {
       top: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to right, #fff, #da0c8151);
+      background: linear-gradient(to right, #fff, #ffd28f);
       border-radius: 0 0.5em 0.5em 0;
       z-index: -1;
     }
@@ -112,7 +103,7 @@ body {
         top: 5em;
       }
       &::-webkit-scrollbar-thumb {
-        background-color: #da0c81d5;
+        background-color: #7286d3;
         border-radius: 1em;
         position: relative;
         top: 5em;

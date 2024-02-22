@@ -139,7 +139,7 @@ const Proyects = () => {
         <div className='flex mt-20 w-4/5 rounded-md' key={index}>
           <article className='rounded-[0.5em_0_0_0.5em] gap-12 pt-10 pb-4 shadow-fade-box after:absolute after:-z-10 after:left-0 after:top-0 after:bg-[#dedede] after:w-[95%] after:h-[95%] after:m-[0.8em] relative z-10  flex flex-col justify-around items-center bg-white'>
             <h2
-              className='text-4xl text-[#313131] text-center'
+              className='text-4xl text-[#7286D3] text-center'
               style={roboto.style}>
               {item.title}
             </h2>
