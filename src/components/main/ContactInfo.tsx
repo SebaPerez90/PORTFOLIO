@@ -60,7 +60,7 @@ const ContactInfo = () => {
           priority
           className='rounded-[1.6em] h-[auto] w-[22rem]'
         />
-        <span className='absolute text-[#f00] scale-[2] bottom-[2.5em] z-20 right-[5em] after:absolute after:top-[0.6em] after:left-[0.26em] after:w-[8px] after:h-[100%] after:bg-[#1f1f1fc5] after:clip-path-elipse'>
+        <span className='absolute text-[#f00] scale-[2] bottom-[2.5em] z-20 right-[5em] after:absolute after:top-[0.6em] after:left-[0.26em] after:w-[8px] after:h-[100%] after:bg-[#1f1f1fc5] after:[clip-path:ellipse(50%_6%_at_50%_50%)]'>
           <FaLocationDot />
         </span>
       </div>

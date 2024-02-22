@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
 import { useStore } from '@/store';
 import { Roboto } from 'next/font/google';
 
@@ -10,6 +9,11 @@ import ContactInfo from '@/components/main/ContactInfo';
 import Image from 'next/image';
 import profile_avatar from '@/assets/images/avatar.png';
 import Proyects from '@/components/main/Proyects';
+
+import { FaRegFileAlt } from 'react-icons/fa';
+import { FiGithub } from 'react-icons/fi';
+import { FaLinkedinIn } from 'react-icons/fa';
+import Link from 'next/link';
 
 const roboto = Roboto({
   weight: ['700'],
@@ -29,43 +33,31 @@ export default function Home() {
       <section
         className={
           darkThemeActive
-            ? 'overflow-hidden pt-24 rounded-md bg-gradient-to-tl from-[#030303] to-[#3e3f40] shadow-[4px_8px_20px_#00000098] z-10 w-[90%] relative before:content-[""] before:absolute before:bg-[#fff] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle '
-            : 'overflow-hidden pt-24 rounded-md bg-white shadow-[4px_8px_20px_#aaaaaa] z-10 w-[90%] relative before:content-[""] before:absolute before:bg-[#9BB8CD] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle'
+            ? 'overflow-hidden pt-24 rounded-md bg-gradient-to-tl from-[#030303] to-[#3e3f40] shadow-[4px_8px_20px_#00000098] z-10 w-[90%] relative before:absolute before:bg-[#fff] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle '
+            : 'w-[80%] flex  rounded-md bg-white shadow-[4px_8px_20px_#aaaaaa] relative'
         }>
-        <Image
-          src={profile_avatar}
-          alt='profile-avatar-image'
-          className='h-1/2 w-1/2 drop-shadow-img relative left-[10%] max-w-[20em]'
-          priority
-        />
-
-        <section className='absolute z-50 top-0 flex flex-col items-center justify-around h-full w-full'>
-          <div
+        <section className='absolute z-20 flex flex-col h-full justify-evenly items-end w-full'>
+          <header
             className={
               darkThemeActive
-                ? 'ml-40 text-shadow text-center text-white'
-                : 'ml-40 text-shadow text-center text-[#7b7b7b]'
+                ? 'text-center text-white'
+                : '[text-shadow:2px_2px_2px_rgba(0,0,0,0.45)] text-center self-center font-semibold'
             }>
-            <p className='font-medium'>
-              {engLanguageActive
-                ? 'Hello There! My name is'
-                : 'Hola! Mi nombre es'}
-            </p>
             <h1
               className={
                 darkThemeActive
                   ? 'text-6xl text-[#9147ff]'
-                  : 'text-6xl text-[#DA0C81]'
+                  : 'text-6xl text-[#7286D3]'
               }
               style={roboto.style}>
               Sebastian Perez
             </h1>
-            <h2 className='text-2xl flex justify-center items-center'>
+            <h2 className='text-2xl flex justify-center items-center text-[#E5E0FF]'>
               <span
                 className={
                   darkThemeActive
-                    ? 'text-[#9147ff] font-extrabold text-4xl'
-                    : 'text-[#DA0C81] font-extrabold text-4xl'
+                    ? 'text-[#9147ff] text-4xl'
+                    : 'text-[#7286D3] text-4xl'
                 }>
                 {'</ '}
               </span>
@@ -75,39 +67,79 @@ export default function Home() {
               <span
                 className={
                   darkThemeActive
-                    ? 'text-[#9147ff] font-extrabold text-4xl'
-                    : 'text-[#DA0C81] font-extrabold text-4xl'
+                    ? 'text-[#9147ff] text-4xl'
+                    : 'text-[#7286D3] text-4xl'
                 }>
                 {'  >'}
               </span>
             </h2>
-          </div>
+            <div className='[text-shadow:none] mt-3'>
+              <ul className='gap-2 flex m-[0_auto] justify-evenly items-center w-1/2 '>
+                <li>
+                  <Link
+                    className='btn-primary p-[0.5em_0.85em] flex bg-[#2c3136] '
+                    href={'https://github.com/SebaPerez90'}
+                    target='_blank'>
+                    <FiGithub />
+                    <span className='text-[0.6em] translate-y-[0.15em]'>
+                      GITHUB
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className='btn-primary  p-[0.5em_0.85em] flex bg-[#0077B5]'
+                    href={'https://www.linkedin.com/in/sebaperez90/'}
+                    target='_blank'>
+                    <FaLinkedinIn />
+                    <span className='text-[0.6em] translate-y-[0.15em]'>
+                      LINKEDIN
+                    </span>
+                  </Link>
+                </li>
+                <li className='btn-primary  p-[0.5em_0.85em] flex bg-white text-[#8EA7E9] outline outline-1 outline-[#8EA7E9]'>
+                  <FaRegFileAlt className='' />
+                  <span className='text-[0.6em] translate-y-[0.15em]'>
+                    RESUME
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </header>
           <article
             className={
               darkThemeActive
                 ? 'flex flex-col w-full mr-8 text-white'
-                : 'flex flex-col w-full mr-8 text-[#909090]'
+                : 'mr-10 w-[25em] text-[#3333339e] font-semibold text-xs'
             }>
-            <p className='self-end w-1/3 font-medium text-sm'>
+            <p>
               {engLanguageActive
                 ? 'I am a self-taught student and freelancer. Currently, I live in Buenos Aires, Argentina.'
-                : 'Soy estudiante autodidacta y freelancer. Actualmente vivo en Buenos Aires, Argentina.  '}
+                : 'Hola! me llamo Sebastian Perez, vivo en Buenos Aires, Berazategui. Soy un estudiante autodidacta con un enfoque en el desarrollo front-end, aunque también tengo conocimientos en el área de back-end.'}
             </p>
-            <p className='self-end w-1/3 font-medium text-sm mt-2'>
+            <p className='mt-2'>
               {engLanguageActive
                 ? 'I am looking for formal employment within a company, as I have a lot to offer.'
-                : 'Estoy buscando una inserción formal a una empresa, ya que soy un persona que tengo mucho que ofrecer.'}
+                : 'Tengo dos años de experiencia en el desarrollo web y aunque tengo por delante un largo trayecto de formación. Estoy seguro que puedo aportar mucho valor a cualquier equipo de trabajo 😁'}
             </p>
             <button
               className={
                 darkThemeActive
                   ? 'mt-4 mr-32 self-end w-24 p-[1em_1.5em] bg-[#9147ff] font-bold text-[.6em] rounded-sm duration-300 hover:translate-y-[0.3em] hover:shadow-[none] hover:duration-300 hover:bg-[#9147ff] hover:hover:translate-y-[-0.3em] hover:hover:translate-x-[-0.2em] hover:shadow-[0px_8px_7px_#0000002c]'
-                  : 'mt-4 mr-32 self-end w-24 p-[1em_1.5em] bg-[#af4882] font-bold text-[.6em] rounded-sm duration-300  hover:duration-300 hover:bg-[#da0c81]  text-white hover:translate-y-[-0.3em] hover:translate-x-[-0.2em] hover:shadow-[0px_8px_7px_#0000002c]'
+                  : 'btn-primary m-[0_auto] text-[0.8em] mt-4'
               }>
               {engLanguageActive ? 'VIEW MORE' : 'VER MAS'}
             </button>
           </article>
         </section>
+        <div className='h-[32em] relative before:absolute before:w-[28em] before:h-[28em] before:left-0 before:bottom-0 before:[clip-path:circle(50%_at_50%_50%)] before:bg-[#FFD28F] flex items-end'>
+          <Image
+            src={profile_avatar}
+            alt='profile-avatar-image'
+            className='opacity-5 w-[20em] h-[20em] drop-shadow-[10px_0px_20px_#000000b3] z-10 object-contain relative left-14'
+            priority
+          />
+        </div>
       </section>
 
       <section id='contact-section' className='mt-20 text-center'>

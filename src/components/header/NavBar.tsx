@@ -69,14 +69,14 @@ const NavBar = () => {
         ref={elementRef}
         className={
           darkThemeActive
-            ? 'shadow-[0_0_5px_#0000008c] bg-inherit fixed top-2 z-20 flex justify-center items-center w-max p-2 rounded-md '
-            : 'shadow-[0_0_5px_#0000008c] bg-inherit fixed top-2 z-20 flex justify-center items-center w-max p-2 rounded-md '
+            ? 'shadow-[0_0_5px_#0000008c] bg-inherit fixed top-2 z-30 flex justify-center items-center w-max p-2 rounded-md '
+            : 'shadow-[0_0_5px_#0000008c] bg-inherit fixed top-2 z-30 flex justify-center items-center w-max p-2 rounded-md '
         }>
         <nav
           className={
             darkThemeActive
-              ? 'mr-3 flex justify-center z-20 gap-1 '
-              : 'mr-3 flex justify-center z-20 gap-1 '
+              ? 'mr-3 flex justify-center z-30 gap-1 '
+              : 'mr-3 flex justify-center z-30 gap-1 '
           }>
           {navLinks.map((item, index) => (
             <Link

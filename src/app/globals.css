@@ -10,33 +10,21 @@
   --btn-primary: #da0c81;
   --btn-seconday: #b784b7;
   --btn-tertiary: #9bb8cd;
+  /* #DCF2F1 */
 }
 
 @layer components {
   .btn-primary {
-    @apply rounded-xl text-white bg-[#da0c81] hover:bg-[#da0c8153] hover:hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] font-bold p-[1em_1.5em] flex items-center gap-1 duration-300 hover:duration-300;
+    @apply rounded-2xl text-white hover:outline-1 hover:outline hover:outline-[#7285d373] hover:text-[#7286D3] bg-[#7286D3] hover:bg-[#DCF2F1] hover:hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] font-bold p-[1em_1.5em] flex items-center gap-1 duration-300 hover:duration-300;
   }
 }
+
 @layer utilities {
-  .clip-path-circle {
-    clip-path: circle(50% at 50% 50%);
+  .test {
+    border: 1px solid red;
   }
 }
-@layer utilities {
-  .clip-path-elipse {
-    clip-path: ellipse(50% 6% at 50% 50%);
-  }
-}
-@layer utilities {
-  .drop-shadow-img {
-    filter: drop-shadow(10px 0px 20px #00000098);
-  }
-}
-@layer utilities {
-  .text-shadow {
-    text-shadow: 5px 7px 5px #0000002c;
-  }
-}
+
 @layer utilities {
   .focus-form-field {
     border-left: 1px solid transparent;
@@ -131,44 +119,6 @@ body {
       }
     }
   }
-
-  /* <button
-              onClick={changeFocus}
-              id='btn-forward'
-              // className='opacity-0 z-30 absolute left-72 scale-125 rounded-full p-1 text-white bg-[#1212127d]'
-            >
-              <FaArrowLeft />
-            </button>
-            <button
-              onClick={changeFocus}
-              id='btn-backward'
-              // className='opacity-0 z-30 absolute right-72 scale-125 rounded-full p-1 text-white bg-[#1212127d] rotate-180'
-            >
-              <FaArrowLeft />
-            </button>
-  #btn-forward {
-    z-index: 20;
-    position: absolute;
-    right: 0.5em;
-    top: 75%;
-    scale: 1.25;
-    border-radius: 2em;
-    padding: 0.5em;
-    color: #fff;
-    background: #1212127d;
-    rotate: 180deg;
-  }
-  #btn-backward {
-    z-index: 20;
-    position: absolute;
-    left: 0.5em;
-    top: 75%;
-    scale: 1.25;
-    border-radius: 2em;
-    padding: 0.5em;
-    color: #fff;
-    background: #1212127d;
-  } */
 
   .allow-send-form {
     box-shadow: 2px 18px 20px #aaaaaa;
