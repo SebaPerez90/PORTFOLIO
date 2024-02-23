@@ -2,7 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-/* #DCF2F1 */
+/* 
+shadow-[14px_30px_20px_-10px_#0000004f] box shadow
+[text-shadow:2px_2px_2px_rgba(0,0,0,0.45)] text shadow
+
+azules
+#4D4DFF
+
+#3655B3
+
+#D3DEFF
+
+#A6BCFF
+
+
+
+*/
 
 @layer components {
   .btn-primary {

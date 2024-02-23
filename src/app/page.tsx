@@ -7,13 +7,15 @@ import ContactForm from '@/components/main/ContactForm';
 import ContactInfo from '@/components/main/ContactInfo';
 
 import Image from 'next/image';
-import profile_avatar from '@/assets/images/avatar.png';
+import profile_avatar from '@/assets/images/avatar.webp';
 import Proyects from '@/components/main/Proyects';
 
 import { FaRegFileAlt } from 'react-icons/fa';
 import { FiGithub } from 'react-icons/fi';
 import { FaLinkedinIn } from 'react-icons/fa';
+
 import Link from 'next/link';
+import Skills from '@/components/main/Skills';
 
 const roboto = Roboto({
   weight: ['700'],
@@ -34,44 +36,30 @@ export default function Home() {
         className={
           darkThemeActive
             ? 'overflow-hidden pt-24 rounded-md bg-gradient-to-tl from-[#030303] to-[#3e3f40] shadow-[4px_8px_20px_#00000098] z-10 w-[90%] relative before:absolute before:bg-[#fff] before:w-[25.7rem] before:h-[25.7rem] before:-z-10 before:left-[5%] before:clip-path-circle '
-            : 'w-[80%] flex  rounded-md bg-white shadow-[4px_8px_20px_#aaaaaa] relative'
+            : 'opacity-5 w-[80%] flex  rounded-md bg-white shadow-[14px_30px_20px_-10px_#0000004f] relative'
         }>
         <section className='absolute z-20 flex flex-col h-full justify-evenly items-end w-full'>
           <header
             className={
               darkThemeActive
                 ? 'text-center text-white'
-                : '[text-shadow:2px_2px_2px_rgba(0,0,0,0.45)] text-center self-center font-semibold'
+                : 'text-center self-center font-semibold'
             }>
             <h1
               className={
                 darkThemeActive
                   ? 'text-6xl text-[#9147ff]'
-                  : 'text-6xl text-[#7286D3]'
+                  : 'text-6xl text-custom-pink-600'
               }
               style={roboto.style}>
               Sebastian Perez
             </h1>
-            <h2 className='text-2xl flex justify-center items-center text-[#E5E0FF]'>
-              <span
-                className={
-                  darkThemeActive
-                    ? 'text-[#9147ff] text-4xl'
-                    : 'text-[#7286D3] text-4xl'
-                }>
-                {'</ '}
-              </span>
+            <h2 className='text-2xl flex justify-center items-center text-custom-pink-300'>
+              <span>{'</ '}</span>
               {engLanguageActive
                 ? `Frontend Developer`
                 : 'Desarrollador Frontend'}
-              <span
-                className={
-                  darkThemeActive
-                    ? 'text-[#9147ff] text-4xl'
-                    : 'text-[#7286D3] text-4xl'
-                }>
-                {'  >'}
-              </span>
+              <span>{'  >'}</span>
             </h2>
             <div className='[text-shadow:none] mt-4'>
               <ul className='gap-4 flex m-[0_auto] justify-evenly items-center w-1/2 '>
@@ -132,29 +120,31 @@ export default function Home() {
             </button>
           </article>
         </section>
-        <div className='h-[32em] relative before:absolute before:w-[28em] before:h-[28em] before:left-0 before:bottom-0 before:[clip-path:circle(50%_at_50%_50%)] before:bg-[#FFD28F] flex items-end'>
+        <div className='h-[32em] relative before:absolute before:w-[25em] before:h-[25em] before:left-0 before:bottom-0 before:[clip-path:circle(50%_at_50%_50%)] before:bg-custom-pink-200  flex items-end'>
           <Image
             src={profile_avatar}
             alt='profile-avatar-image'
-            className='w-[20em] h-[20em] drop-shadow-[10px_0px_20px_#000000b3] z-10 object-contain relative left-14'
+            className='opacity-5 w-[20em] h-[20em] drop-shadow-[10px_0px_20px_#000000b3] z-10 object-contain relative left-14'
             priority
           />
         </div>
       </section>
 
-      <section id='contact-section' className='mt-20 text-center'>
+      <section id='contact-section' className='opacity-5 mt-20 text-center'>
         <h1
           className='text-3xl [letter-spacing:15px] text-[#313131]'
           style={roboto.style}>
           {engLanguageActive ? 'CONTACT ME' : 'CONTÁCTAME'}🤝
         </h1>
-        <div className='mt-10 flex justify-center items-center shadow-[2px_18px_20px_#aaaaaa] rounded-md'>
+        <div className='opacity-5 mt-10 flex justify-center items-center shadow-[2px_18px_20px_#aaaaaa] rounded-md'>
           <ContactForm />
           <ContactInfo />
         </div>
       </section>
 
       <Proyects />
+
+      <Skills />
     </main>
   );
 }

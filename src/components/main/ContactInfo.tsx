@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useStore } from '@/store';
 
 import Image from 'next/image';
-import location from '@/assets/images/location.png';
+import location from '@/assets/images/location.webp';
 
 import { MdOutlineEmail } from 'react-icons/md';
 import { FaLocationDot } from 'react-icons/fa6';
@@ -28,7 +28,7 @@ const ContactInfo = () => {
     }
   };
   return (
-    <aside className='h-[28rem] rounded-[0_0.4em_0.4em_0] flex flex-col justify-around bg-[#7286D3] py-4 px-10'>
+    <aside className='h-[28rem] rounded-[0_0.4em_0.4em_0] flex flex-col justify-around bg-[#83A2FF] py-6 px-10'>
       <h1 className='text-4xl font-bold text-white text-shadow text-center'>
         {engLanguageActive ? 'Contact Me' : 'Contactame'}
       </h1>
