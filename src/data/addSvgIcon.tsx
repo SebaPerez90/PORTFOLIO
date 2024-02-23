@@ -139,9 +139,9 @@ const addSvgIcon = (skill: string) => {
           viewBox='0 0 512 228'>
           <defs>
             <linearGradient x1='57.7%' y1='2%' x2='57.7%' y2='94.4%' id='a'>
-              <stop stop-color='#97D9F6' offset='0%' />
-              <stop stop-color='#0F80CC' offset='92%' />
-              <stop stop-color='#0F80CC' offset='100%' />
+              <stop stopColor='#97D9F6' offset='0%' />
+              <stop stopColor='#0F80CC' offset='92%' />
+              <stop stopColor='#0F80CC' offset='100%' />
             </linearGradient>
           </defs>
           <path
@@ -209,12 +209,12 @@ const addSvgIcon = (skill: string) => {
               x2='83.228%'
               y1='56.385%'
               y2='96.08%'>
-              <stop offset='0%' stop-color='#FFF' />
-              <stop offset='100%' stop-color='#FFF' stop-opacity='0' />
+              <stop offset='0%' stopColor='#FFF' />
+              <stop offset='100%' stopColor='#FFF' stopOpacity='0' />
             </linearGradient>
             <linearGradient id='d' x1='50%' x2='49.953%' y1='0%' y2='73.438%'>
-              <stop offset='0%' stop-color='#FFF' />
-              <stop offset='100%' stop-color='#FFF' stop-opacity='0' />
+              <stop offset='0%' stopColor='#FFF' />
+              <stop offset='100%' stopColor='#FFF' stopOpacity='0' />
             </linearGradient>
             <circle id='a' cx='128' cy='128' r='128' />
           </defs>
