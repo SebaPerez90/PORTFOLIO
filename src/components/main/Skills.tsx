@@ -31,15 +31,16 @@ interface Skills {
 const Skills = () => {
   const { engLanguageActive } = useStore();
 
-  const dateRef = useRef<HTMLSpanElement>(null);
-
-  const date = new Date();
+  const dateRef = useRef<HTMLTimeElement>(null);
 
   setInterval(() => {
     const date = new Date();
+    const hours = date.getHours();
+    const minutes =
+      date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
 
     if (dateRef.current) {
-      dateRef.current.innerHTML = date.toLocaleTimeString();
+      dateRef.current.innerHTML = `${hours}:${minutes}`;
     }
   }, 1000);
 
@@ -68,55 +69,45 @@ const Skills = () => {
         {engLanguageActive ? 'SKILLS & SERVICES' : 'HABILIDADES Y SERVICIOS '}🤓
       </h1>
 
-      <section className='py-12 w-full h-full'>
-        <div className='m-[0_auto] w-72 h-[30rem] flex flex-col justify-between border-[10px] border-[#313131] bg-white rounded-lg'>
-          <div className='w-full bg-[#464545] py-2 font-black text-white flex justify-between'>
-            <div className='pl-2 flex relative'>
-              <span className='z-10  [letter-spacing:1px]' ref={dateRef}></span>
-              <span className='absolute left-[44px] bg-[#464545] p-[0.2em_3em_0.2em_0.4em]  z-20'>
-                <FaWhatsapp />
-              </span>
-            </div>
-            <div></div>
-            <div className='flex'>
-              <span>
+      <section className='py-64 w-full h-full'>
+        <div className='relative flex flex-col w-[80%] m-[0_auto] '>
+          <div className='w-64 h-[30rem] flex flex-col justify-between border-[10px] border-[#252525] bg-white rounded-[25px]'>
+            <div className='py-1 rounded-[13px_13px_0_0] w-full bg-[#4a4a4a] px-2 text-white flex justify-between items-center'>
+              <div className='flex items-center gap-2 pl-2'>
+                <time className='' ref={dateRef}></time>
+                <FaWhatsapp className='text-green-400 scale-110' />
+              </div>
+              <span className='rounded-full h-[9px] w-[9px] border-black border-4 bg-[#b6b4b4]'></span>
+              <div className='flex'>
                 <HiWifi />
-              </span>
-              <span>
                 <FaSignal />
-              </span>
-              <span>
                 <MdBattery50 />
-              </span>
+              </div>
+            </div>
+
+            <article className='flex flex-col items-center justify-center bg-white h-full'>
+              <Image
+                src={mobile}
+                alt='mobile-screen'
+                className='object-cover w-[90%] m-[0_auto] h-auto rounded-sm'
+              />
+              <h1 className=' text-lg font-semibold text-[#333333b2] text-center'>
+                titulo
+              </h1>
+              <p className='px-3 text-sm text-[#33333380]'>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis
+                labore, aspernatur odit temporibus, fugiat corporis laudantium
+                vitae magni a doloribus totam sit doloremque veniam reiciendis
+                cum voluptatem impedit architecto enim!
+              </p>
+            </article>
+            <div className='rounded-[0_0_13px_13px] text-xl w-full bg-[#4a4a4a] py-2 font-black text-white flex justify-around'>
+              <IoChevronBackOutline />
+              <IoMdHome />
+              <FaBars />
             </div>
           </div>
-          <Image
-            src={mobile}
-            alt='mobile-screen'
-            className='object-cover w-auto h-auto '
-          />
-          <div className='bg-white border-2 '>
-            <h1 className='text-lg font-semibold text-[#333333ac] text-center'>
-              titulo
-            </h1>
-            <p className='text-sm text-[#3333338e]'>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis
-              labore, aspernatur odit temporibus, fugiat corporis laudantium
-              vitae magni a doloribus totam sit doloremque veniam reiciendis cum
-              voluptatem impedit architecto enim!
-            </p>
-          </div>
-          <div className='w-full bg-[#464545] py-2 font-black text-white flex justify-around'>
-            <span>
-              <IoChevronBackOutline />
-            </span>
-            <span>
-              <IoMdHome />
-            </span>
-            <span>
-              <FaBars />
-            </span>
-          </div>
+          <div className='bg-black absolute bottom-[-10em] blur-[200px] h-1/2 w-64 [clip-path:ellipse(50%_6%_at_50%_50%)]'></div>
         </div>
       </section>
 
