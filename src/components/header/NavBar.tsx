@@ -30,7 +30,12 @@ const NavBar = () => {
 
   const navLinks: NavLinks[] = [
     { titleES: 'inicio', titleEN: 'home', label: 'home', url: '/' },
-    { titleES: 'sobre mi', titleEN: 'about', label: 'about', url: '/about' },
+    {
+      titleES: 'sobre mi',
+      titleEN: 'about',
+      label: 'about',
+      url: '#about-section',
+    },
     {
       titleES: 'proyectos',
       titleEN: 'projects',
