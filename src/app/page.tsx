@@ -16,6 +16,7 @@ import { FaLinkedinIn } from 'react-icons/fa';
 
 import Link from 'next/link';
 import Skills from '@/components/main/Skills';
+import About from '@/components/main/About';
 
 const roboto = Roboto({
   weight: ['700'],
@@ -32,6 +33,8 @@ export default function Home() {
           ? 'pt-32 gap-28 relative text-white flex flex-col justify-around items-center before:absolute before:left-0 before:top-0 before:w-full before:h-full before:z-[2] before:bg-gradient-to-r from-[#0f0c29] bg-indigo-800 to-[#2c2c47]'
           : 'pt-32 gap-28 flex flex-col justify-around items-center bg-[#dedede] relative'
       }>
+      <About />
+
       <section
         className={
           darkThemeActive

@@ -3,31 +3,19 @@ import { Roboto } from 'next/font/google';
 import type { Metadata } from 'next';
 
 import Image from 'next/image';
-import profile_avatar from '@/assets/images/avatar.png';
 
 const roboto = Roboto({
   weight: ['400'],
   subsets: ['latin'],
 });
 
-export const metadata: Metadata = {
-  title: 'About Section',
-};
-
-const About = () => {
+const Aboutttt = () => {
   return (
     <section
       style={roboto.style}
       className='bg-[#dedede] flex flex-col gap-8 items-center'>
       <article className='aaaa shadow-[2px_18px_20px_#aaaaaa] z-10 relative rounded-lg gap-4 flex justify-evenly bg-white items-center w-[85%] h-[30rem] mt-10'>
-        <div className='z-30 rounded-[50%] overflow-hidden border-2 border-[#ff00003d] h-[25rem]'>
-          <Image
-            src={profile_avatar}
-            alt='profile_avatar'
-            priority
-            className='opacity-[0.03] object-cover w-full h-full'
-          />
-        </div>
+        <div className='z-30 rounded-[50%] overflow-hidden border-2 border-[#ff00003d] h-[25rem]'></div>
         <div className='w-2/4 h-full flex flex-col justify-center items-center gap-4'>
           <header className='font-bold w-full text-black text-center'>
             <h1 className='text-3xl'>Hey 👋</h1>
@@ -131,4 +119,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Aboutttt;

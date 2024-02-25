@@ -81,7 +81,7 @@ const Skills = () => {
           <div className='w-64 h-[30rem] flex flex-col justify-between border-[10px] border-[#252525] bg-white rounded-[25px]'>
             <div className='py-1 rounded-[13px_13px_0_0] w-full bg-[#4a4a4a] px-2 text-white flex justify-between items-center'>
               <div className='flex items-center gap-2 pl-2'>
-                <time className='' ref={dateRef}></time>
+                <time ref={dateRef}></time>
                 <FaWhatsapp className='text-green-400 scale-110' />
               </div>
               <span className='rounded-full h-[9px] w-[9px] border-black border-4 bg-[#b6b4b4]'></span>
