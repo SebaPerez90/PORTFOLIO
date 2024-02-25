@@ -6,6 +6,7 @@ import { Roboto } from 'next/font/google';
 import addSvgIcon from '@/data/addSvgIcon';
 
 import Image from 'next/image';
+import lg_icon from '@/assets/images/lg-icon.webp';
 import mobile from '@/assets/images/mobile.webp';
 import desktop from '@/assets/images/desktop.webp';
 import team from '@/assets/images/team.webp';
@@ -17,6 +18,7 @@ import { FaWhatsapp } from 'react-icons/fa6';
 import { HiWifi } from 'react-icons/hi';
 import { MdBattery50 } from 'react-icons/md';
 import { FaSignal } from 'react-icons/fa';
+import { FaPowerOff } from 'react-icons/fa';
 
 const roboto = Roboto({
   weight: ['900'],
@@ -62,7 +64,7 @@ const Skills = () => {
   return (
     <section
       id='projects-section'
-      className='mt-20 w-[100%] bg-gradient-to-b from-[#dedede] via-light-100 to-[#dedede] flex flex-col justify-center items-center'>
+      className='mt-20 w-[100%] bg-gradient-to-b from-[#dedede] via-light-200 to-[#dedede] flex flex-col justify-center items-center'>
       <h1
         className='text-3xl opacity-5 [letter-spacing:15px] text-[#313131] '
         style={roboto.style}>
@@ -70,7 +72,12 @@ const Skills = () => {
       </h1>
 
       <section className='py-64 w-full h-full'>
-        <div className='relative flex flex-col w-[80%] m-[0_auto] '>
+        <h1
+          className='text-center text-3xl mb-10 text-[#333333d7]'
+          style={roboto.style}>
+          What can I offer for you?
+        </h1>
+        <div className='relative flex justify-between items-end w-[70%] m-[0_auto] border-2'>
           <div className='w-64 h-[30rem] flex flex-col justify-between border-[10px] border-[#252525] bg-white rounded-[25px]'>
             <div className='py-1 rounded-[13px_13px_0_0] w-full bg-[#4a4a4a] px-2 text-white flex justify-between items-center'>
               <div className='flex items-center gap-2 pl-2'>
@@ -108,6 +115,20 @@ const Skills = () => {
             </div>
           </div>
           <div className='bg-black absolute bottom-[-10em] blur-[200px] h-1/2 w-64 [clip-path:ellipse(50%_6%_at_50%_50%)]'></div>
+
+          {/* other section */}
+          <div className='flex flex-col justify-center items-center'>
+            <div className='h-[18em] w-[28em] rounded-[0.5em_0.5em_0_0] bg-white border-[1.5em] border-[#2d2d2d] border-b-0'></div>
+            <div className='flex items-center relative h-8 w-[28em] rounded-[0_0_0.5em_0.5em] bg-[#2d2d2d]'>
+              <div className='absolute left-[45%] text-sm text-white font-black flex items-center gap-1'>
+                <Image src={lg_icon} alt='lg_icon' width={18} height={18} />
+                <span>LG</span>
+              </div>
+              <FaPowerOff className='absolute right-8 text-white text-lg' />
+            </div>
+            <div className='h-12 w-8 bg-[#2d2d2d]'></div>
+            <div className='h-4 w-[20em] bg-[#2d2d2d] rounded-[0.5em_0.5em_0_0]'></div>
+          </div>
         </div>
       </section>
 
