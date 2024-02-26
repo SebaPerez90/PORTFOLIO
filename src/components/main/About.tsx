@@ -30,7 +30,7 @@ const About = () => {
               ? 'PERSONAL INFORMATION'
               : 'INFORMACION PERSONAL'}
           </h2>
-          <ul className='flex flex-col gap-2 self-start text-sm cursor-defaul font-semibold text-[#33333391]'>
+          <ul className='flex flex-col gap-2 self-start text-sm cursor-default font-semibold text-[#33333391]'>
             <li className='flex items-center gap-2'>
               {engLanguageActive ? 'Full Name' : 'Nombre Completo'}:
               <span className='font-normal'>Sebastian Perez</span>

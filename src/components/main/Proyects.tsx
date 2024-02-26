@@ -21,16 +21,16 @@ const Proyects = () => {
   return (
     <section
       id='projects-section'
-      className='opacity-5 mt-20 flex flex-col justify-center items-center'>
+      className='mt-20 flex flex-col justify-center items-center'>
       <h1
-        className='text-3xl [letter-spacing:15px] text-[#313131] '
+        className='text-3xl [letter-spacing:15px] text-[#313131]'
         style={roboto.style}>
         {engLanguageActive ? 'PROJECTS' : 'PROYECTOS'}💻
       </h1>
 
       {projects.map((item, index) => (
         <div
-          className='flex mt-20 w-4/5 rounded-md shadow-[14px_30px_20px_-10px_#0000004f]'
+          className='overflow-hidden flex mt-20 w-4/5 rounded-md shadow-[14px_30px_20px_-10px_#0000004f]'
           key={index}>
           <article className='rounded-[0.5em_0_0_0.5em] gap-12 pt-10 pb-4 shadow-fade-boxxx after:[-webkit-mask-image:linear-gradient(to_right_bottom,#ff0000,#ff000017_50%)] after:absolute after:-z-10 after:left-0 after:top-0 after:bg-[#dedede] after:w-[95%] after:h-[95%] after:m-[0.8em] relative z-10  flex flex-col justify-around items-center bg-white'>
             <h2
@@ -74,8 +74,8 @@ const Proyects = () => {
               </Link>
             </ul>
           </article>
-          <article className='slider-container'>
-            <div className='img-container'>
+          <article className='relative flex items-center p-[0_2em_0_0] rounded-[0_0.5em_0.5em_0] z-10 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:-z-10 before:bg-gradient-to-l to-white from-light-200 lig'>
+            <div className='custom-scrollbar flex w-[25em] [scroll-snap-type:x_mandatory] overflow-x-auto web'>
               {item.screen_shoots.map((item, index) => (
                 <Image
                   key={index}
@@ -84,6 +84,7 @@ const Proyects = () => {
                   height={300}
                   loading='lazy'
                   alt='screen-shoot'
+                  className='sticky left-0 h-full w-full object-cover snap-center'
                 />
               ))}
             </div>

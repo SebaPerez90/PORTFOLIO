@@ -144,7 +144,7 @@ const Skills = () => {
             <ul className='px-8  gap-6 flex-wrap flex flex-col justify-around items-start h-[50%] w-full '>
               {item.skills.map((skill, index) => (
                 <li
-                  className='text-xs cursor-defaul font-semibold text-[#3333339e] gap-2 flex items-center w-max'
+                  className='text-xs cursor-default font-semibold text-[#3333339e] gap-2 flex items-center w-max'
                   key={index}>
                   {/* Insert dynamically the icon corresponding to the value of item.skill */}
                   {addSvgIcon(skill)}
