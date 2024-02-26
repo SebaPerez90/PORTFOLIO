@@ -22,7 +22,7 @@ const LanguageButtons = () => {
   };
 
   return (
-    <section className='flex'>
+    <section className='flex mt-2'>
       {engLanguageActive ? (
         <button onClick={toggleEfect}>
           <Image

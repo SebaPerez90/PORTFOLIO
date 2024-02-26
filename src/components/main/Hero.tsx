@@ -19,7 +19,7 @@ const roboto = Roboto({
 const Hero = () => {
   const { engLanguageActive } = useStore();
   return (
-    <section className='bg-white flex items-center justify-between pl-12 w-full h-[28em]'>
+    <section className='bg-white flex items-center justify-between pl-16 w-full h-[34em]'>
       <article className='w-[30em] flex flex-col items-start gap-4'>
         <h1
           style={roboto.style}
@@ -39,7 +39,7 @@ const Hero = () => {
         </footer>
       </article>
 
-      <div className='flex items-end justify-end self-end bg-[#333333e3] h-[28em] w-[35em] '>
+      <div className='flex items-end justify-end self-end bg-[#333333e3] h-[34em] w-[35em] '>
         <div className=' w-auto h-[23em] relative before:absolute before:w-[25em] before:h-[25em] before:rounded-full before:-z-10 z-10 before:bg-gradient-to-tr from-light-500 via-[#DCBFFF] to-white   before:left-[-5em] before:bottom-0'>
           <Image
             src={profile_image}

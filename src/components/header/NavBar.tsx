@@ -1,7 +1,9 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import icon from '@/assets/images/icon-hero.png';
 
 import LanguageButtons from '@/components/header/LanguageButtons';
 import ThemeButtons from '@/components/header/ThemeButtons';
@@ -50,45 +52,49 @@ const NavBar = () => {
     },
   ];
 
-  const handleScroll = () => {
-    document.addEventListener('scroll', () => {
-      if (window.scrollY !== 0) {
-        elementRef.current.style.backdropFilter = 'blur(20px)';
-        elementRef.current.style.background = '#ffffff0d';
-        elementRef.current.style.boxShadow = '0 0 5px #0000008c';
-      } else {
-        elementRef.current.style.background = 'inherit';
-      }
-    });
-  };
-  handleScroll();
+  // const handleScroll = () => {
+  //   document.addEventListener('scroll', () => {
+  //     if (window.scrollY !== 0) {
+  //       elementRef.current.style.backdropFilter = 'blur(20px)';
+  //       elementRef.current.style.background = '#ffffff0d';
+  //       elementRef.current.style.boxShadow = '0 0 5px #0000008c';
+  //     } else {
+  //       elementRef.current.style.background = 'inherit';
+  //     }
+  //   });
+  // };
+  // handleScroll();
 
   return (
     <header
       className={
         darkThemeActive
-          ? 'bg-[#383838] relative flex justify-center items-center text-white'
-          : 'bg-[#fff] flex justify-center items-center '
+          ? 'bg-[#383838] relative flex justify-center items-center'
+          : 'flex justify-between items-center '
       }>
+      <div className='pl-4 flex items-center gap-2 text-[#333333ac] font-extrabold'>
+        <Image src={icon} alt='icon' />
+        <p>Seba Perez</p>
+      </div>
       <div
         ref={elementRef}
         className={
           darkThemeActive
             ? 'shadow-[0_0_5px_#0000008c] bg-inherit fixed top-2 z-30 flex justify-center items-center w-max p-2 rounded-md '
-            : 'shadow-[0_0_5px_#0000008c] bg-inherit fixed top-2 z-30 flex justify-center items-center w-max p-2 rounded-md '
+            : 'bg-[#333333e3] flex justify-end items-center  w-[35em] pr-4 pt-2'
         }>
         <nav
           className={
             darkThemeActive
-              ? 'mr-3 flex justify-center z-30 gap-1 '
-              : 'mr-3 flex justify-center z-30 gap-1 '
+              ? 'flex justify-center z-30'
+              : 'flex justify-center z-30 gap-4'
           }>
           {navLinks.map((item, index) => (
             <Link
               className={
                 darkThemeActive
                   ? 'p-2 duration-300 text-[#ffffffee] font-bold hover:duration-300 hover:text-[#da0c81]'
-                  : 'p-2 duration-300 text-[#6c6c6cb4] font-bold hover:duration-300 hover:text-[#da0c81]'
+                  : 'text-sm p-2 pt-4 text-white font-normal'
               }
               aria-label={item.label}
               href={item.url}
