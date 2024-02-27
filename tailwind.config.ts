@@ -16,6 +16,8 @@ const config: Config = {
           '300': '#D3DEFF',
           '400': '#3655B3',
           '500': '#4D4DFF',
+          '600': '#c8ffd4',
+          '700': '#dcbfff',
         },
       },
     },

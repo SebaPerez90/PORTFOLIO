@@ -1,12 +1,10 @@
-'use client';
-
-import React, { useRef } from 'react';
+import { useRef } from 'react';
+import { useStore } from '@/store';
 
 import Image from 'next/image';
 import moon_icon from '@/assets/svg/moon-icon.svg';
 import sun_icon from '@/assets/svg/sun-icon.svg';
-
-import { useStore } from '@/store';
+import LanguageButtons from './LanguageButtons';
 
 const ThemeButtons = () => {
   const { darkThemeActive, toggleTheme } = useStore();
@@ -34,7 +32,7 @@ const ThemeButtons = () => {
   };
 
   return (
-    <section className='flex px-4 justify-center items-center'>
+    <div className='flex justify-center items-center gap-2 pr-4'>
       {darkThemeActive ? (
         <div className='pr-[0.1em] py-[1.1rem] bg-[#9147ff4e] border-[1px] border-[#9147ff] flex justify-between items-center w-20 h-8 rounded-full overflow-hidden'>
           <Image
@@ -49,7 +47,7 @@ const ThemeButtons = () => {
             className='bg-[#9147ff] m-[1px] rounded-full border-2 h-7 w-7 z-20'></button>
         </div>
       ) : (
-        <div className='border-2 pl-[0.1em] mt-2 bg-[#ffa600] flex justify-between items-center w-16  h-7 rounded-full overflow-hidden'>
+        <div className='border-2 pl-[0.1em] bg-[#ffa600] flex justify-between items-center w-16  h-7 rounded-full overflow-hidden'>
           <button
             onClick={toggleEfect}
             ref={buttonRef}
@@ -62,7 +60,8 @@ const ThemeButtons = () => {
           />
         </div>
       )}
-    </section>
+      <LanguageButtons />
+    </div>
   );
 };
 

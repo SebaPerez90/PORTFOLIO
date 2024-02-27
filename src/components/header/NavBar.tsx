@@ -1,27 +1,15 @@
 'use client';
 
-import React, { useRef } from 'react';
 import Link from 'next/link';
+
 import Image from 'next/image';
 import icon from '@/assets/images/icon-hero.png';
 
-import LanguageButtons from '@/components/header/LanguageButtons';
 import ThemeButtons from '@/components/header/ThemeButtons';
-
 import { useStore } from '@/store';
 
 const NavBar = () => {
   const { engLanguageActive, darkThemeActive } = useStore();
-
-  const elementRef: any = useRef<HTMLDivElement>(null);
-
-  // if (window.location.hash === '#projects-section') {
-  //   console.log('ver esto eh, puede ser util');
-  //   console.log(linkRef.current);
-  // } else {
-  //   console.log('es por aca');
-  //   console.log(linkRef.current);
-  // }
 
   interface NavLinks {
     titleES: string;
@@ -65,48 +53,48 @@ const NavBar = () => {
   // };
   // handleScroll();
 
+  // const elementRef: any = useRef<HTMLDivElement>(null);
+
+  // if (window.location.hash === '#projects-section') {
+  //   console.log('ver esto eh, puede ser util');
+  //   console.log(linkRef.current);
+  // } else {
+  //   console.log('es por aca');
+  //   console.log(linkRef.current);
+  // }
+
   return (
     <header
       className={
         darkThemeActive
           ? 'bg-[#383838] relative flex justify-center items-center'
-          : 'flex justify-between items-center '
+          : 'z-20 flex justify-between items-center '
       }>
-      <div className='pl-4 flex items-center gap-2 text-[#333333ac] font-extrabold'>
+      <div className='pl-8 pt-4 flex items-center gap-2 [letter-spacing:-1px] text-[#333333ac] font-extrabold'>
         <Image src={icon} alt='icon' />
-        <p>Seba Perez</p>
+        <span>Seba Perez</span>
       </div>
-      <div
-        ref={elementRef}
+      <nav
         className={
           darkThemeActive
-            ? 'shadow-[0_0_5px_#0000008c] bg-inherit fixed top-2 z-30 flex justify-center items-center w-max p-2 rounded-md '
-            : 'bg-[#333333e3] flex justify-end items-center  w-[35em] pr-4 pt-2'
+            ? 'flex justify-center'
+            : 'flex justify-end gap-4 w-[35em] pt-2 bg-gradient-to-l from-light-500 to-[#DCBFFF]'
         }>
-        <nav
-          className={
-            darkThemeActive
-              ? 'flex justify-center z-30'
-              : 'flex justify-center z-30 gap-4'
-          }>
-          {navLinks.map((item, index) => (
-            <Link
-              className={
-                darkThemeActive
-                  ? 'p-2 duration-300 text-[#ffffffee] font-bold hover:duration-300 hover:text-[#da0c81]'
-                  : 'text-sm p-2 pt-4 text-white font-normal'
-              }
-              aria-label={item.label}
-              href={item.url}
-              key={index}>
-              {engLanguageActive ? item.titleEN : item.titleES}
-            </Link>
-          ))}
-        </nav>
-
+        {navLinks.map((item, index) => (
+          <Link
+            className={
+              darkThemeActive
+                ? 'p-2 duration-300 text-[#ffffffee] font-bold hover:duration-300 hover:text-[#da0c81]'
+                : 'text-sm p-2 pt-4 text-white [text-shadow:2px_2px_0px_rgba(0,0,0,0.69)] font-normal'
+            }
+            aria-label={item.label}
+            href={item.url}
+            key={index}>
+            {engLanguageActive ? item.titleEN : item.titleES}
+          </Link>
+        ))}
         <ThemeButtons />
-        <LanguageButtons />
-      </div>
+      </nav>
     </header>
   );
 };

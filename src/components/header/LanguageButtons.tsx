@@ -1,17 +1,14 @@
-'use client';
+import { useRef } from 'react';
+import { useStore } from '@/store';
 
-import React, { useRef } from 'react';
 import Image from 'next/image';
-
 import english_icon from '@/assets/images/english-icon.png';
 import spanish_icon from '@/assets/images/spanish-icon.png';
-
-import { useStore } from '@/store';
 
 const LanguageButtons = () => {
   const { toggleLanguage, engLanguageActive } = useStore();
 
-  const buttonRef: any = useRef(null);
+  const buttonRef: React.MutableRefObject<any> = useRef(null);
 
   const toggleEfect = () => {
     buttonRef.current.style.animation = 'toggleLanguageEffect 900ms';
@@ -22,33 +19,27 @@ const LanguageButtons = () => {
   };
 
   return (
-    <section className='flex mt-2'>
+    <button onClick={toggleEfect}>
       {engLanguageActive ? (
-        <button onClick={toggleEfect}>
-          <Image
-            src={spanish_icon}
-            alt='english-icon-reference'
-            priority
-            width={35}
-            height={35}
-            className='right-2 relative'
-            ref={buttonRef}
-          />
-        </button>
+        <Image
+          src={spanish_icon}
+          alt='english-icon-reference'
+          priority
+          width={35}
+          height={35}
+          ref={buttonRef}
+        />
       ) : (
-        <button onClick={toggleEfect}>
-          <Image
-            src={english_icon}
-            alt='spanish-icon-reference'
-            priority
-            width={35}
-            height={35}
-            className='right-2 relative'
-            ref={buttonRef}
-          />
-        </button>
+        <Image
+          src={english_icon}
+          alt='icon-reference'
+          priority
+          width={35}
+          height={35}
+          ref={buttonRef}
+        />
       )}
-    </section>
+    </button>
   );
 };
 
