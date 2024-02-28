@@ -82,9 +82,8 @@ const About = () => {
         <div className='relative flex flex-col items-center justify-center'>
           <Image
             src={developer_cartoon}
-            alt=''
+            alt='eveloper_cartoon_img'
             priority
-            placeholder='blur'
             className='[filter:drop-shadow(0_0_1px_#000)] h-96 w-max order-1'
           />
           <span className='w-1/2 h-4 rounded-[50%] bg-[#00000049] absolute bottom-6 order-2'></span>

@@ -66,7 +66,7 @@ const Skills = () => {
       id='projects-section'
       className='mt-20 w-[100%] bg-gradient-to-b from-[#dedede] via-light-200 to-[#dedede] flex flex-col justify-center items-center'>
       <h1
-        className='text-3xl opacity-5 [letter-spacing:15px] text-[#313131] '
+        className='text-3xl [letter-spacing:15px] text-[#313131] '
         style={roboto.style}>
         {engLanguageActive ? 'SKILLS & SERVICES' : 'HABILIDADES Y SERVICIOS '}🤓
       </h1>
