@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { Roboto } from 'next/font/google';
 
 import { FaRegFileAlt } from 'react-icons/fa';
-// import { BsGithub } from 'react-icons/bs';
 import { FaGithub } from 'react-icons/fa6';
 
 import { FaLinkedinIn } from 'react-icons/fa';

@@ -8,7 +8,6 @@ import Proyects from '@/components/main/Proyects';
 import About from '@/components/main/About';
 import Skills from '@/components/main/Skills';
 import ContactForm from '@/components/main/ContactForm';
-import ContactInfo from '@/components/main/ContactInfo';
 
 const roboto = Roboto({
   weight: ['700'],
@@ -31,19 +30,9 @@ export default function Home() {
 
       <Skills />
 
-      <section id='contact-section' className='mt-20 text-center'>
-        <h1
-          className='text-3xl [letter-spacing:15px] text-[#313131]'
-          style={roboto.style}>
-          {engLanguageActive ? 'CONTACT ME' : 'CONTÁCTAME'}🤝
-        </h1>
-        <div className='mt-10 flex justify-center items-center shadow-[2px_18px_20px_#aaaaaa] rounded-md'>
-          <ContactForm />
-          <ContactInfo />
-        </div>
-      </section>
-
       <Proyects />
+
+      <ContactForm />
     </main>
   );
 }

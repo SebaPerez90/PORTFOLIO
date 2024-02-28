@@ -1,10 +1,21 @@
 'use client';
 
-import React, { useState, useRef, ChangeEvent } from 'react';
+import { useState, useRef, ChangeEvent } from 'react';
+import { Roboto } from 'next/font/google';
 import { useStore } from '@/store';
 
 import { MdOutlineEmail } from 'react-icons/md';
 import { FaCheck } from 'react-icons/fa6';
+
+import Link from 'next/link';
+import Image from 'next/image';
+import form_image from '@/assets/images/candidate.webp';
+import location_image from '@/assets/images/location.webp';
+
+const roboto = Roboto({
+  weight: ['700'],
+  subsets: ['latin'],
+});
 
 const Contact = () => {
   const { engLanguageActive, darkThemeActive } = useStore();
@@ -14,7 +25,7 @@ const Contact = () => {
   const emailFieldRef = useRef<HTMLInputElement>(null);
   const errorMessageRef = useRef<HTMLSpanElement>(null);
 
-  // this function check the e-mail input value is a valid address and toggle effect send button if pass the check
+  // this function check the email input value is a valid address and toggle effect send button if pass the check
   const checkEmail = (e: ChangeEvent<HTMLInputElement>): void => {
     const email = e.target.value;
     const regExp =
@@ -46,67 +57,123 @@ const Contact = () => {
   };
 
   return (
-    <form
-      className=' caret-[#DA0C81] h-[28rem] w-[25rem] bg-white rounded-[0.4em_0_0_0.4em] flex flex-col justify-center gap-8 items-center'
-      onSubmit={(e) => e.preventDefault()}>
-      <div className='flex justify-start w-[70%] gap-5 '>
-        <label className='relative w-[50%]'>
-          <input
-            onChange={() => console.log('sacar esto , es solo plantilla')}
-            type='text'
-            name='name'
-            autoComplete='off'
-            placeholder={engLanguageActive ? 'FIRST NAME' : 'NOMBRE'}
-            className='focus-form-field text-[#da0c8184] capitalize border-b-2 pb-1 pl-1 outline-none placeholder:opacity-75 placeholder:text-[0.7em] font-semibold w-[100%] '
-          />
-        </label>
-        <label className='w-[50%]'>
-          <input
-            onChange={() => console.log('sacar esto , es solo plantilla')}
-            type='last-name'
-            name='last-name'
-            autoComplete='off'
-            placeholder={engLanguageActive ? 'LAST NAME' : 'APELLIDO'}
-            className='focus-form-field text-[#da0c8184] capitalize border-b-2 pb-1 pl-1 outline-none placeholder:opacity-75 placeholder:text-[0.7em] font-semibold w-[100%]'
-          />
-        </label>
+    <footer
+      id='contact-section'
+      className='mt-20 text-center  flex flex-col items-center justify-around w-full'>
+      <div className='relative gap-20 py-16 w-full flex flex-col justify-center items-center bg-gradient-to-b  from-light-400 to-light-200'>
+        <h1
+          className='text-xl [letter-spacing:10px] text-white border-[6px] border-white p-4'
+          style={roboto.style}>
+          {engLanguageActive ? 'CONTACT ME' : 'CONTÁCTAME'}🤝
+        </h1>
+        <section className='z-50 rounded-lg shadow-[14px_30px_20px_-10px_#0000004f]  bg-white flex  w-[50em] h-[28em] justify-around overflow-hidden'>
+          <form
+            className=' bg-white flex flex-col justify-center gap-8 items-center'
+            onSubmit={(e) => e.preventDefault()}>
+            <label htmlFor='name' className=''>
+              <input
+                type='text'
+                name='name'
+                autoComplete='off'
+                placeholder={engLanguageActive ? 'FIRST NAME' : 'NOMBRE'}
+                className='capitalize border-b-2 pb-1 pl-1 outline-none placeholder:opacity-75 placeholder:text-[0.7em] font-semibold w-[100%] '
+              />
+            </label>
+
+            <label htmlFor='email' className='relative '>
+              <span className='absolute right-2 text-red-500 text-xl top-2'>
+                {checked ? <FaCheck className='text-green-500 text-sm' /> : '*'}
+              </span>
+              <span
+                ref={errorMessageRef}
+                className='absolute bottom-[-1.5em] w-full text-center text-xs font-semibold text-red-500 opacity-0'>
+                {engLanguageActive
+                  ? 'must be a valid email address'
+                  : 'debe ser una dirección de email valida'}
+              </span>
+              <input
+                onChange={checkEmail}
+                type='text'
+                name='email'
+                autoComplete='off'
+                placeholder={engLanguageActive ? 'E-MAIIL' : 'CORREO'}
+                className='pb-1 pl-1 outline-none border-b-2 w-full placeholder:opacity-75 placeholder:text-[0.7em] font-semibold'
+                ref={emailFieldRef}
+              />
+            </label>
+
+            <textarea
+              name='message'
+              placeholder={engLanguageActive ? 'MESSAGE' : 'MENSAJE'}
+              className='h-[30%] w-full outline-none resize-none border-b-2 placeholder:opacity-75 placeholder:absolute placeholder:bottom-0 placeholder:pb-2 placeholder:pl-1 placeholder:text-[0.7em] font-semibold'></textarea>
+
+            <button
+              ref={buttonRef}
+              className='flex justify-center cursor-not-allowed items-center rounded-md'>
+              {engLanguageActive ? 'SEND' : 'ENVIAR'}
+              <MdOutlineEmail />
+            </button>
+          </form>
+          <div className='relative flex before:absolute before:z-20 before:right-[-12em]  before:rounded-[50%]  before:bottom-0 before:w-[25em] before:h-full before:scale-110 before:bg-light-300 after:absolute after:z-10 after:right-[-8em] after:rounded-[50%]  after:bottom-0 after:w-[25em] after:h-full after:scale-125 after:bg-light-50'>
+            <span className='absolute z-30 right-[-18em] rounded-[50%]  bottom-0 w-[25em] h-full bg-light-200 '></span>
+            <Image
+              src={form_image}
+              priority
+              alt='form-image-reference'
+              className='w-[20em] h-[20em] z-40'
+            />
+          </div>
+        </section>
       </div>
-
-      <label className='relative w-[70%] mt-4'>
-        <span className='absolute right-2 text-red-500 text-xl top-2'>
-          {checked ? <FaCheck className='text-green-500 text-sm' /> : '*'}
-        </span>
-        <span
-          ref={errorMessageRef}
-          className='absolute bottom-[-1.5em] w-full text-center text-xs font-semibold text-red-500 opacity-0'>
-          {engLanguageActive
-            ? 'must be a valid email address'
-            : 'debe ser una dirección de email valida'}
-        </span>
-        <input
-          onChange={checkEmail}
-          type='text'
-          name='e-mail'
-          autoComplete='off'
-          placeholder={engLanguageActive ? 'E-MAIIL' : 'CORREO'}
-          className='focus-form-field text-[#da0c8184] pb-1 pl-1 outline-none border-b-2 w-full placeholder:opacity-75 placeholder:text-[0.7em] font-semibold'
-          ref={emailFieldRef}
-        />
-      </label>
-
-      <textarea
-        name='message'
-        placeholder={engLanguageActive ? 'MESSAGE' : 'MENSAJE'}
-        className='text-[#da0c8184] h-[30%] outline-none resize-none w-[70%] border-b-2 placeholder:opacity-75 placeholder:absolute placeholder:bottom-0 placeholder:pb-2 placeholder:pl-1 placeholder:text-[0.7em] font-semibold focus-form-field'></textarea>
-
-      <button
-        ref={buttonRef}
-        className='flex justify-center cursor-not-allowed items-center text-[#ffffff9d] w-[70%] opacity-75 duration-300 rounded-md text-[0.8em] bg-[#4c598e]  font-bold p-[1em_1.5em]'>
-        {engLanguageActive ? 'SEND' : 'ENVIAR'}
-        <MdOutlineEmail className='ml-1 translate-y-[-0.1em]' />
-      </button>
-    </form>
+      <div className='gap-10 flex flex-col items-center bg-white w-full pb-4 pt-8'>
+        <div>
+          <h1 className='font-extrabold text-4xl text-light-400'>Seba Perez</h1>
+          <span className='text-[#333333ac] text-sm font-bold relative bottom-2 [letter-spacing:-1px]'>
+            {'< Frontend Developer >'}
+          </span>
+          <p className='w-[30em] text-[0.8em] font-semibold text-[#3333339e] mt-2'>
+            Agradezco mucho que hayas llegado hasta esta sección del portfolio.
+            Cualquier tipo de feedback es útil para continuar aprendiendo y
+            mejorando.
+          </p>
+        </div>
+        <ul className='flex justify-center gap-10 font-semibold text-light-500 opacity-70'>
+          <li>
+            <Link
+              href={'https://www.linkedin.com/in/sebaperez90/'}
+              target='_blank'>
+              Linkedin
+            </Link>
+          </li>
+          <li>
+            <Link href={'https://github.com/SebaPerez90'} target='_blank'>
+              Github
+            </Link>
+          </li>
+          <li>
+            <Link href={''} target='_blank'>
+              Facebook
+            </Link>
+          </li>
+          <li>
+            <Link href={'#home'}>Home</Link>
+          </li>
+        </ul>
+      </div>
+    </footer>
   );
 };
 
 export default Contact;
+/*<cite>{`"discipline is our destiny ..."`}</cite>
+
+ <div className='w-[30em] h-auto overflow-hidden'>
+        <Image
+          src={location_image}
+          alt='location_image'
+          priority
+          className='w-full h-full object-cover'
+        />
+      </div>
+
+*/

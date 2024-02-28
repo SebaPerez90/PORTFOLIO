@@ -65,6 +65,7 @@ const NavBar = () => {
 
   return (
     <header
+      id='home'
       className={
         darkThemeActive
           ? 'bg-[#383838] relative flex justify-center items-center'
