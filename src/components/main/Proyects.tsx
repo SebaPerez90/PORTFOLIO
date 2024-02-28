@@ -21,7 +21,7 @@ const Proyects = () => {
   return (
     <section
       id='projects-section'
-      className='mt-20 flex flex-col justify-center items-center'>
+      className='mt-32  flex flex-col justify-center items-center'>
       <h1
         className='text-3xl [letter-spacing:15px] text-[#313131]'
         style={roboto.style}>

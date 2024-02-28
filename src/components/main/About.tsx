@@ -16,7 +16,7 @@ const About = () => {
   return (
     <section
       id='about-section'
-      className='w-[80%] flex flex-col justify-around items-center'>
+      className='mt-32 w-[80%] flex flex-col justify-around items-center'>
       <h1
         className='text-center text-3xl [letter-spacing:15px] text-[#313131] '
         style={roboto.style}>

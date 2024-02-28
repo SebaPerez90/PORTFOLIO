@@ -64,14 +64,14 @@ const Skills = () => {
   return (
     <section
       id='projects-section'
-      className='mt-20 w-[100%] bg-gradient-to-b from-[#dedede] via-light-200 to-[#dedede] flex flex-col justify-center items-center'>
+      className='mt-32 w-[100%] bg-gradient-to-b from-[#dedede] via-light-200 to-[#dedede] flex flex-col justify-center items-center'>
       <h1
         className='text-3xl [letter-spacing:15px] text-[#313131] '
         style={roboto.style}>
         {engLanguageActive ? 'SKILLS & SERVICES' : 'HABILIDADES Y SERVICIOS '}🤓
       </h1>
 
-      <section className='py-64 w-full h-full'>
+      <section className='py-40 w-full h-full'>
         <h1
           className='text-center text-3xl mb-10 text-[#333333d7]'
           style={roboto.style}>
