@@ -11,21 +11,23 @@ const Footer = () => {
   const { engLanguageActive } = useStore();
 
   return (
-    <div className='aaaa flex-wrap relative gap-20 flex justify-center items-end  bg-white w-full py-6 pb-10'>
-      <div className=' relative w-[35em] h-[20em]  rounded-lg before:animate-[location-animation2_1s_ease-out_alternate-reverse_infinite] before:w-8 before:h-2 before:rounded-[50%] before:absolute before:bottom-[8.2em] before:right-[3.7em] before:z-10 '>
+    <div className='flex-wrap relative gap-20 flex justify-center items-end  bg-white w-full py-6 pb-10'>
+      <div className=' relative w-[30em] h-[20em] overflow-hidden rounded-xl before:animate-[location-animation2_1s_ease-out_alternate-reverse_infinite] before:w-8 before:h-2 before:rounded-[50%] before:absolute before:bottom-[5.3em] before:right-[6em] before:z-30 '>
         <span>
-          <FaLocationDot className='animate-[location-animation_1s_ease-out_alternate-reverse_infinite] absolute bottom-[4em] right-14 z-20 text-red-500 text-4xl ' />
+          <FaLocationDot className='animate-[location-animation_1s_ease-out_alternate-reverse_infinite] absolute bottom-[2.7em] right-24 z-30 text-red-400 text-4xl ' />
         </span>
         <Image
           src={location_image}
           alt='location_image'
           priority
-          className='w-full h-full object-cover z-10'
+          className='w-full h-full object-cover z-10 relative'
         />
-        <address className='gap-1 flex items-center justify-center text-base w-max font-semibold text-[#333333c6] '>
-          <FaLocationDot className='text-red-500' />
-          calle 1 nº 626, Berazategui, Buenos Aires
-        </address>
+        <div className=' absolute bg-[#00000027] w-full h-full z-20 top-0 flex  items-center justify-center'>
+          <address className='gap-1 flex items-center justify-center text-base w-max font-medium text-white border-2 p-4 bg-[#00000062] relative bottom-20'>
+            <FaLocationDot className='text-red-400' />
+            calle 1 nº 626, Berazategui, Buenos Aires
+          </address>
+        </div>
       </div>
 
       <div className=''>
