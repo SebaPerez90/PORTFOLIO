@@ -4,14 +4,14 @@ import { useStore } from '@/store';
 
 import Link from 'next/link';
 import Image from 'next/image';
-import location_image from '@/assets/images/Captura de pantalla (195).png';
+import location_image from '@/assets/images/location.webp';
 import { FaLocationDot } from 'react-icons/fa6';
 
 const Footer = () => {
   const { engLanguageActive } = useStore();
 
   return (
-    <div className='flex-wrap relative gap-20 flex justify-center items-end  bg-white w-full py-6 pb-10'>
+    <div className='flex-wrap relative gap-20 flex justify-center items-end  bg-white w-full py-6 pb-4'>
       <div className=' relative w-[30em] h-[20em] overflow-hidden rounded-xl before:animate-[location-animation2_1s_ease-out_alternate-reverse_infinite] before:w-8 before:h-2 before:rounded-[50%] before:absolute before:bottom-[5.3em] before:right-[6em] before:z-30 '>
         <span>
           <FaLocationDot className='animate-[location-animation_1s_ease-out_alternate-reverse_infinite] absolute bottom-[2.7em] right-24 z-30 text-red-400 text-4xl ' />
@@ -30,8 +30,8 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className=''>
-        <div className='flex flex-col items-center'>
+      <div>
+        <div className='flex flex-col items-center relative bottom-12'>
           <h1 className='font-extrabold text-4xl text-light-400'>Seba Perez</h1>
           <span className='text-[#333333ac] text-sm font-bold relative bottom-2 [letter-spacing:-1px]'>
             {'< Frontend Developer >'}
