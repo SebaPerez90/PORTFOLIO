@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Onest } from 'next/font/google';
 
 import NavBar from '@/components/header/NavBar';
+import Footer from '@/components/main/Footer';
 
 export const metadata: Metadata = {
   title: 'Sebastian Perez',
@@ -23,6 +24,7 @@ export default function RootLayout({
         <NavBar />
         {children}
       </body>
+      <Footer />
     </html>
   );
 }

@@ -16,7 +16,7 @@ const roboto = Roboto({
 });
 
 const Proyects = () => {
-  const { darkThemeActive, engLanguageActive } = useStore();
+  const { engLanguageActive } = useStore();
 
   return (
     <section

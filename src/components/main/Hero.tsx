@@ -1,14 +1,11 @@
 import { useStore } from '@/store';
+import { Roboto } from 'next/font/google';
 
 import Image from 'next/image';
 import profile_image from '@/assets/images/avatar.webp';
-import Link from 'next/link';
-
-import { Roboto } from 'next/font/google';
 
 import { FaRegFileAlt } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa6';
-
 import { FaLinkedinIn } from 'react-icons/fa';
 import { HiOutlineArrowLongRight } from 'react-icons/hi2';
 
@@ -20,6 +17,7 @@ const roboto = Roboto({
 const Hero = () => {
   const { engLanguageActive } = useStore();
   return (
+    // dark:relative dark:text-white dark:before:absolute dark:before:left-0 dark:before:top-0 dark:before:w-full dark:before:h-full dark:before:z-[2] dark:before:bg-gradient-to-r from-[#0f0c29] to-[#2c2c47]
     <section className='relative bg-white flex items-center justify-between pl-16 w-full h-[34em]'>
       <span className='z-10 absolute h-12 w-12 rounded-full bg-[#dcbfff] blur-md [box-shadow:0_0_40px_#dcbfff] duration-300 left-0 top-0 animate-[bouncing2_16s_linear_alternate-reverse_infinite]'></span>
       <span className='z-10 absolute h-8 w-8 rounded-full bg-[#c8ffd4] blur-md [box-shadow:0_0_40px_#c8ffd4] duration-300 right-[50%] top-0 animate-[bouncing_16s_linear_alternate-reverse_infinite]'></span>

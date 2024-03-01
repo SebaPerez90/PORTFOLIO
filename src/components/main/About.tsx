@@ -98,7 +98,6 @@ const About = () => {
               alt='avatar_profile'
               className='rounded-[50%] w-full h-full object-cover bg-black'
               priority
-              placeholder='blur'
             />
           </div>
           <div className='flex flex-col justify-evenly w-3/4 text-sm font-semibold text-[#33333391]'>

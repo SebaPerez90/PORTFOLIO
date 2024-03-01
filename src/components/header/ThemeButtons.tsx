@@ -1,19 +1,34 @@
-import { useRef } from 'react';
-import { useStore } from '@/store';
+import { useRef, useEffect, useState } from 'react';
 
 import Image from 'next/image';
 import moon_icon from '@/assets/svg/moon-icon.svg';
 import sun_icon from '@/assets/svg/sun-icon.svg';
+
 import LanguageButtons from './LanguageButtons';
 
 const ThemeButtons = () => {
-  const { darkThemeActive, toggleTheme } = useStore();
-
   const iconRef: any = useRef(null);
   const buttonRef: any = useRef(null);
 
+  const [theme, setTheme]: any = useState(
+    localStorage.getItem('tema') ?? localStorage.setItem('tema', 'light')
+  );
+
+  useEffect(() => {
+    localStorage.setItem('tema', theme);
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'ligth' : 'dark');
+  };
+
   const toggleEfect = () => {
-    if (darkThemeActive) {
+    if (theme === 'dark') {
       buttonRef.current.style.animation =
         'activating-dark-mode 300ms linear 1 forwards';
       iconRef.current.style.animation =
@@ -33,7 +48,7 @@ const ThemeButtons = () => {
 
   return (
     <div className='flex justify-center items-center gap-2 pr-4'>
-      {darkThemeActive ? (
+      {theme === 'dark' ? (
         <div className='pr-[0.1em] py-[1.1rem] bg-[#9147ff4e] border-[1px] border-[#9147ff] flex justify-between items-center w-20 h-8 rounded-full overflow-hidden'>
           <Image
             className='scale-75 z-10'

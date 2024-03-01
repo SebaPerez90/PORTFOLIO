@@ -1,5 +1,3 @@
-'use client';
-
 import { useState, useRef, ChangeEvent } from 'react';
 import { Roboto } from 'next/font/google';
 import { useStore } from '@/store';
@@ -16,7 +14,7 @@ const roboto = Roboto({
 });
 
 const Contact = () => {
-  const { engLanguageActive, darkThemeActive } = useStore();
+  const { engLanguageActive } = useStore();
   const [checked, setChecked] = useState(false);
 
   const buttonRef = useRef<HTMLButtonElement>(null);
