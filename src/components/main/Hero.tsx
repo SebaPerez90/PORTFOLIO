@@ -35,14 +35,14 @@ const Hero = () => {
           años de experiencia en el desarrollo web. Actualmente estoy en
           busqueda laboral activa 😁
         </p>
-        <footer className='flex gap-4'>
+        <div className='flex gap-4'>
           <button className='duration-200 hover:duration-200 font-bold py-[0.3em] pl-2 pr-6 flex justify-around items-center gap-4 border rounded-full bg-gradient-to-r to-light-200 from-light-500 text-white [text-shadow:0_0_3px_#000]'>
             <span className='border-4  border-white rounded-full p-4 bg-gradient-to-b from-[#b0b0b0] via-white to-white text-[#33333391] flex justify-center items-center'>
               <FaRegFileAlt />
             </span>
             resume
           </button>
-        </footer>
+        </div>
       </article>
 
       <div className='flex items-end justify-end self-end bg-gradient-to-l from-light-500 to-[#DCBFFF]  h-[34em] w-[35em] '>

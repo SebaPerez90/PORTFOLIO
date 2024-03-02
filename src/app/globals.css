@@ -65,6 +65,92 @@ body {
     border-radius: 1em;
   }
 
+  .work-experience-container {
+    > :nth-child(2) {
+      h1 {
+        background: #ffffff81;
+        padding: 0.3em;
+        margin-bottom: 0.3em;
+        color: transparent;
+        border-radius: 0.2em;
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: -1em;
+          bottom: -0.5em;
+          width: 2em;
+          height: 200%;
+          background: #dedede46;
+          filter: blur(6px);
+          animation: skeleton-loader 800ms ease-out infinite;
+        }
+      }
+      p {
+        background: #ffffff81;
+        margin-bottom: 0.3em;
+        color: transparent;
+        border-radius: 0.2em;
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: -1em;
+          bottom: -0.5em;
+          width: 2em;
+          height: 200%;
+          background: #dedede46;
+          filter: blur(6px);
+          animation: skeleton-loader-paragraph 800ms ease-out infinite;
+        }
+      }
+      span {
+        background: #ffffff81;
+        padding: 0.5em 1.5em;
+        margin-top: 0.5em;
+        color: transparent;
+        border-radius: 0.2em;
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: -1em;
+          bottom: -0.5em;
+          width: 2em;
+          height: 200%;
+          background: #dedede46;
+          filter: blur(6px);
+          animation: skeleton-loader 800ms ease-out infinite;
+        }
+      }
+      &::before {
+        background: #dedede;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        left: -1.25em;
+        top: 0;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        border-top: 3px solid #4d4dff;
+        border-left: 3px solid #4d4dff;
+        animation: spiner 500ms linear infinite;
+      }
+    }
+    > :nth-child(4) {
+      height: 23em;
+      position: relative;
+    }
+  }
+
   .allow-send-form {
     border-radius: 0.37em;
     font-size: 0.8em;
@@ -87,6 +173,24 @@ body {
     }
   }
 
+  @keyframes spiner {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes skeleton-loader {
+    to {
+      transform: translateX(10em);
+    }
+  }
+
+  @keyframes skeleton-loader-paragraph {
+    to {
+      transform: translateX(20em);
+    }
+  }
+
   @keyframes location-animation2 {
     to {
       transform: scaleX(1);
@@ -97,6 +201,7 @@ body {
       background-color: #000;
     }
   }
+
   @keyframes location-animation {
     from {
       transform: translateY(0);
@@ -105,6 +210,7 @@ body {
       transform: translateY(-0.2em);
     }
   }
+
   @keyframes bouncing {
     0 {
       transform: translate(0em, 15em) scale(1.2);
@@ -119,6 +225,7 @@ body {
       transform: translate(-6em, 28em) scale(3);
     }
   }
+
   @keyframes bouncing2 {
     0% {
       transform: translate(1em, 12em) scale(1.2);
@@ -133,6 +240,7 @@ body {
       transform: translate(5em, 15em) scale(0.8);
     }
   }
+
   @keyframes bouncing3 {
     0% {
       transform: translate(2em, -5em) scale(1.5) rotate('360deg');
@@ -154,6 +262,7 @@ body {
       transform: translate(3em);
     }
   }
+
   @keyframes activating-dark-mode {
     to {
       transform: translate(-3em);
@@ -165,6 +274,7 @@ body {
       rotate: 360deg;
     }
   }
+
   @keyframes moon-effect-icon {
     50% {
       transform: translateY(-0.3em) scale(0.8);
@@ -173,11 +283,13 @@ body {
       transform: translateY(1.5em);
     }
   }
+
   @keyframes toggleLanguageEffect {
     to {
       transform: rotateY(360deg);
     }
   }
+
   @keyframes location-icon-effect {
     from {
       transform: translateY(0em);

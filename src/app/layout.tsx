@@ -23,8 +23,8 @@ export default function RootLayout({
       <body className='flex flex-col box-border m-0' style={onest.style}>
         <NavBar />
         {children}
+        <Footer />
       </body>
-      <Footer />
     </html>
   );
 }
