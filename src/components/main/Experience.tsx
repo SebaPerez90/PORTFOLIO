@@ -1,5 +1,4 @@
 import { useStore } from '@/store';
-import { CgSandClock } from 'react-icons/cg';
 
 interface WorkExperienceInfo {
   company: string;
@@ -14,7 +13,7 @@ const Experience = () => {
   const workExperience: WorkExperienceInfo[] = [
     {
       company: '"XXXXXXXX"',
-      position: ['Frontend Developer', 'Desarrollador Frontend'],
+      position: ['Web Developer', 'Desarrollador Web'],
       date: 'xxxxxxxxx',
       tasks_description: [
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit illum natus dolore, amet assumenda, architecto maiores voluptatibus ex aspernatur, omnis error cumque. Perferendis similique quaerat tenetur quo ab sapiente. Omnis.',
@@ -62,9 +61,15 @@ const Experience = () => {
   return (
     <section className='w-[50em]'>
       <div className='gap-32 border-l-4 border-[#6161619b] flex  flex-col justify-between items-center relative work-experience-container z-10'>
-        <span className='absolute left-[-0.7em] bottom-[9em] w-52 h-44 bg-[#dedede] text-6xl font-black z-50 text-light-500 pt-10'>
-          . . .
-        </span>
+        <div className='absolute left-[-1em] flex gap-4 justify-center bottom-[9em] w-52 h-44 bg-[#dedede] text-6xl font-black z-50 text-light-500 pt-10'>
+          <span className='animate-[loading_1s_linear_infinite]'>.</span>
+          <span className='animate-[loading_1s_linear_infinite] [animation-delay:200ms]'>
+            .
+          </span>
+          <span className='animate-[loading_1s_linear_infinite] [animation-delay:400ms]'>
+            .
+          </span>
+        </div>
         {workExperience.map((item, key) => (
           <article
             key={key}
