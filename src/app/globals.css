@@ -65,11 +65,19 @@ body {
     border-radius: 1em;
   }
 
+  .content-available {
+    display: block;
+    padding: 0 2em 1em 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    margin-top: 5em;
+  }
   .work-experience-container {
     > :nth-child(2) {
       h1 {
         background: #ffffff81;
-        padding: 0.3em;
+        height: 2em;
         margin-bottom: 0.3em;
         color: transparent;
         border-radius: 0.2em;
