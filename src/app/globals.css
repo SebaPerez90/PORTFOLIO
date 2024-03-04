@@ -73,6 +73,7 @@ body {
     gap: 1.5em;
     margin-top: 5em;
   }
+
   .work-experience-container {
     > :nth-child(2) {
       h1 {
