@@ -76,7 +76,7 @@ body {
   .work-experience-container {
     > :nth-child(2) {
       h1 {
-        background: #ffffff81;
+        background: #ecececc7;
         height: 2em;
         margin-bottom: 0.3em;
         color: transparent;
@@ -91,7 +91,7 @@ body {
           bottom: -0.5em;
           width: 2em;
           height: 200%;
-          background: #dedede46;
+          background: #ffffff81;
           filter: blur(6px);
           animation: skeleton-loader 800ms ease-out infinite;
 
@@ -103,7 +103,7 @@ body {
         }
       }
       p {
-        background: #ffffff81;
+        background: #ecececc7;
         margin-bottom: 0.3em;
         color: transparent;
         border-radius: 0.2em;
@@ -117,7 +117,7 @@ body {
           bottom: -0.5em;
           width: 2em;
           height: 200%;
-          background: #dedede46;
+          background: #ffffff81;
           filter: blur(6px);
           animation: skeleton-loader-paragraph 800ms ease-out infinite;
 
@@ -129,7 +129,7 @@ body {
         }
       }
       span {
-        background: #ffffff81;
+        background: #ecececc7;
         padding: 0.5em 1.5em;
         margin-top: 0.5em;
         color: transparent;
@@ -144,7 +144,7 @@ body {
           bottom: -0.5em;
           width: 2em;
           height: 200%;
-          background: #dedede46;
+          background: #ffffff81;
           filter: blur(6px);
           animation: skeleton-loader 800ms ease-out infinite;
         }
@@ -158,8 +158,8 @@ body {
         width: 3.2em;
         height: 3.2em;
         border-radius: 50%;
-        background: #dedede;
-        border: 4px solid #ffffff7d;
+        background: #fff;
+        border: 6px solid #dedede;
         border-left-color: #4d4dff;
         animation: spiner 500ms ease infinite;
 
