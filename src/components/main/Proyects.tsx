@@ -21,7 +21,7 @@ const Proyects = () => {
   return (
     <section
       id='projects-section'
-      className='mt-32  flex flex-col justify-center items-center'>
+      className='mt-32 lg:w-[80%] w-[70%] flex flex-col justify-center items-center'>
       <h1
         className='text-3xl [letter-spacing:15px] text-[#313131]'
         style={roboto.style}>
@@ -30,11 +30,11 @@ const Proyects = () => {
 
       {projects.map((item, index) => (
         <div
-          className='overflow-hidden flex mt-20 w-4/5 rounded-md shadow-[14px_30px_20px_-10px_#0000004f]'
+          className='flex-col lg:flex-row flex mt-40 rounded-md shadow-[14px_30px_20px_-10px_#0000004f]'
           key={index}>
-          <article className='rounded-[0.5em_0_0_0.5em] gap-12 pt-10 pb-4 shadow-fade-boxxx after:[-webkit-mask-image:linear-gradient(to_right_bottom,#ff0000,#ff000017_50%)] after:absolute after:-z-10 after:left-0 after:top-0 after:bg-[#dedede] after:w-[95%] after:h-[95%] after:m-[0.8em] relative z-10  flex flex-col justify-around items-center bg-white'>
+          <article className='rounded-[0.5em_0_0_0.5em] gap-12 flex flex-col justify-around items-center bg-white w-full lg:w-1/2 py-8'>
             <h2
-              className='text-4xl text-[#7286D3] text-center'
+              className='text-4xl text-center font-extrabold text-[#454545d3]'
               style={roboto.style}>
               {item.title}
             </h2>
@@ -51,31 +51,35 @@ const Proyects = () => {
                 ))}
               </div>
 
-              <div className='px-8'>
+              <div className='w-[70%] m-[0_auto]'>
                 {engLanguageActive ? (
-                  <p className='text-[#909090] ml-4 text-[0.9em]'>
+                  <p className='font-semibold text-[#45454590] ml-4'>
                     {item.descriptionES}
                   </p>
                 ) : (
-                  <p className='text-[#909090] ml-4 text-[0.9em]'>
+                  <p className='font-semibold text-[#45454590] ml-4'>
                     {item.descriptionES}
                   </p>
                 )}
               </div>
             </div>
-            <ul className='flex gap-8 translate-y-[-2em]'>
-              <Link className='btn-primary' href={item.code}>
+            <ul className='flex gap-10 items-center'>
+              <Link
+                className='flex items-center p-[0.8em_2em] gap-2 text-white rounded-full bg-gradient-to-b from-light-900 via-light-900 font-bold to-[#7d27ffae] border-[1px] border-[#4f2194] hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] duration-200 active:border-[#dedede] hover:bg-[#4f2194] hover:border-light-900 hover:text-[#ffffff93]'
+                href={item.code}>
                 <FiGithub className='text-xl' />
                 code
               </Link>
-              <Link className='btn-primary' href={item.preview}>
+              <Link
+                className='flex items-center p-[0.8em_2em] gap-2 text-white rounded-full bg-gradient-to-b from-light-900 via-light-900 font-bold to-[#7d27ffae] border-[1px] border-[#4f2194] hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] duration-200 active:border-[#dedede] hover:bg-[#4f2194] hover:border-light-900 hover:text-[#ffffff93]'
+                href={item.preview}>
                 <FaLink className='text-xl' />
                 preview
               </Link>
             </ul>
           </article>
-          <article className='relative flex items-center p-[0_2em_0_0] rounded-[0_0.5em_0.5em_0] z-10 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:-z-10 before:bg-gradient-to-l to-white from-light-200 lig'>
-            <div className='custom-scrollbar flex w-[25em] [scroll-snap-type:x_mandatory] overflow-x-auto web'>
+          <article className='w-full lg:w-1/2 flex justify-center bg-light-700 items-center rounded-[0_0.5em_0.5em_0]'>
+            <div className='custom-scrollbar flex w-[90%] [scroll-snap-type:x_mandatory] overflow-x-auto web'>
               {item.screen_shoots.map((item, index) => (
                 <Image
                   key={index}

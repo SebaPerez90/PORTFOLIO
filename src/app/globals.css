@@ -7,39 +7,6 @@ shadow-[14px_30px_20px_-10px_#0000004f] box shadow
 [text-shadow:2px_2px_2px_rgba(0,0,0,0.45)] text shadow
 */
 
-@layer components {
-  .btn-primary {
-    @apply rounded-md text-[0.8em] text-white hover:outline-1 hover:outline hover:outline-[#7285d373] hover:text-[#7286D3] bg-[#7286D3] hover:bg-[#DCF2F1] hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] font-bold p-[1em_1.5em] flex items-center gap-1 duration-300 hover:duration-300;
-  }
-}
-
-@layer utilities {
-  .focus-form-field {
-    border-left: 1px solid transparent;
-    border-top: 1px solid transparent;
-    border-right: 1px solid transparent;
-    padding: 0.2em 0.4em;
-    border-radius: 0.2em 0.2em 0 0;
-
-    &:hover {
-      border-left: 1px solid #b784b72d;
-      border-top: 1px solid #b784b72d;
-      border-right: 1px solid #b784b72d;
-      transition: all 300ms;
-    }
-    &:focus {
-      background-color: #b784b72d;
-      border-radius: 0.2em;
-      border-bottom: transparent;
-
-      &::placeholder {
-        color: transparent;
-        transition: all 300ms;
-      }
-    }
-  }
-}
-
 @layer utilities {
   .custom-scrollbar {
     &::-webkit-scrollbar {
@@ -47,7 +14,7 @@ shadow-[14px_30px_20px_-10px_#0000004f] box shadow
       width: 11px;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: #3655b3;
+      background-color: #7f27ff;
       border-radius: 1em;
     }
   }

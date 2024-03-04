@@ -20,6 +20,7 @@ const config: Config = {
           '600': '#c8ffd4',
           '700': '#dcbfff',
           '800': '#4df672',
+          '900': '#7F27FF',
         },
       },
     },
