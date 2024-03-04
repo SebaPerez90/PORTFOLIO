@@ -9,16 +9,16 @@ import Experience from '@/components/main/Experience';
 
 export default function Home() {
   return (
-    <main className='gap-28 flex flex-col justify-around items-center bg-[#dedede]'>
+    <main className='gap-32 flex flex-col justify-around items-center bg-[#dedede]'>
       <Hero />
-
-      <Experience />
 
       <About />
 
-      <Skills />
+      <Experience />
 
       <Proyects />
+
+      <Skills />
 
       <ContactForm />
     </main>
