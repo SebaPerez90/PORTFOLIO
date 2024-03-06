@@ -91,7 +91,7 @@ const About = () => {
         </div>
       </div>
 
-      <article className='max-[500px]:gap-16 pt-12 pb-16 gap-4 flex flex-col justify-center shadow-[14px_30px_20px_-10px_#0000004f] md:rounded-[0_0_0.375em_0.375em] bg-white'>
+      <article className='gap-16 pt-12 pb-16 flex flex-col justify-center shadow-[14px_30px_20px_-10px_#0000004f] md:rounded-[0_0_0.375em_0.375em] bg-white'>
         <div className='flex justify-between'>
           <div className='max-[500px]:[display:none] rounded-[50%] h-[11em] w-[11em]  md:h-[14em] md:w-[14em] xl:h-[17em] xl:w-[17em] overflow-hidden ml-8 translate-x-1 md:translate-x-14'>
             <Image
@@ -109,20 +109,20 @@ const About = () => {
             </h1>
             <p className='w-[70%] text-sm font-semibold text-[#33333391]'>
               {engLanguageActive
-                ? "I'm a self-taught systems student. I prefer front-end development, but I also have knowledge in back-end. I acknowledge that I'm behind on projects reflecting back-end experience, but they'll come 😅"
-                : 'Soy un estudiante autodidacta de sistemas.Tengo preferencia por el desarrollo front-end, lo cual no quita que también tenga conocimientos del área back-end. Sé que estoy en deuda con los proyectos que reflejen la experiencia en el back, pero ya van a llegar 😅'}
+                ? `I'm a self-taught student currently enrolled in the "Soy Henry" bootcamp. While I primarily focus on front-end development, I also possess knowledge and skills that allow me to work in backend areas. I know I owe some projects showcasing backend experience, but they're on their way 😅.`
+                : 'Soy un estudiante autodidacta actualmente cursando el bootcamp de "Soy Henry". Tengo un mayor enfoque en el desarrollo front-end, pero también tengo conocimientos y herramientas que me pueden permitir trabajar en el área back-end. Sé que estoy en deuda con los proyectos que reflejen la experiencia en el back, pero ya van a llegar 😅'}
             </p>
           </div>
         </div>
         <hr className='border-[1px] border-light-300 mx-20' />
         <div className='flex flex-col gap-4 items-center pl-4 md:pl-12 md:pr-6 text-sm font-semibold text-[#33333391]'>
-          <h2 className='text-2xl text-[#333333bc] font-extrabold'>
-            {engLanguageActive ? 'Expectations' : 'Expectativas'}
+          <h2 className='text-2xl text-[#333333bc] font-extrabold translate-y-[-1em]'>
+            {engLanguageActive ? 'Expectations' : 'Expectativas'} 🚀
           </h2>
           <p className='w-[80%] lg:w-[50em]'>
             {engLanguageActive
-              ? 'My main goal is to enter the professional world, leveraging fundamental qualities like determination and perseverance to adapt to any team. I have no specific salary expectations as I believe adequate compensation should follow exemplary performance. Thus, my aim is to continuously build knowledge to enhance my professional development.'
-              : 'Mi objetivo principal es ingresar al mundo profesional, aprovechando cualidades fundamentales como la determinación y la perseverancia para adaptarme a cualquier equipo. No tengo expectativas salariales específicas ya que creo que la remuneración adecuada debe seguir un desempeño ejemplar. Por lo tanto, mi objetivo es continuar construyendo conocimientos para mejorar mi desarrollo profesional.'}
+              ? `My main goal is to enter the professional job market, leveraging fundamental qualities such as determination and perseverance to adapt to any development team. I don't have specific salary expectations because I believe that appropriate compensation should be accompanied by exemplary performance. Therefore, my objective is to continue building knowledge to enhance my professional development.`
+              : 'Mi objetivo principal es la inserción al mundo laboral profesional. Aprovechando cualidades fundamentales que poseo como la determinación y la perseverancia para adaptarme a cualquier equipo de desarrollo. No tengo expectativas salariales específicas ya que creo que la remuneración acorde, debe estar acompañada de un desempeño ejemplar. Por lo tanto, mi objetivo es continuar construyendo conocimientos para mejorar mi desarrollo profesional.'}
           </p>
           <p className='w-[80%] lg:w-[50em]'>
             {engLanguageActive
