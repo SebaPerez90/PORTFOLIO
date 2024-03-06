@@ -63,16 +63,18 @@ const NavBar = () => {
   // }
 
   return (
-    <header id='home' className='z-20 flex justify-between items-center '>
+    <header
+      id='home'
+      className='max-[520px]:pb-2 z-20 flex justify-between items-center '>
       <div className='pl-8 pt-4 flex items-center gap-2 [letter-spacing:-1px] text-[#333333ac] font-extrabold'>
         <Image src={icon} alt='icon' />
         <span>Seba Perez</span>
       </div>
       {/* w-[35em] bg-gradient-to-l from-light-500 to-[#DCBFFF] */}
-      <nav className='flex justify-end gap-4 pt-2 '>
+      <nav className='[display:none] md:flex justify-end gap-4 pt-2 '>
         {navLinks.map((item, index) => (
           <Link
-            className='text-sm p-2 pt-4 text-white [text-shadow:2px_2px_0px_rgba(0,0,0,0.69)] font-normal'
+            className='text-sm p-2 pt-4 lg:text-white text-[#383838c4] font-bold lg:[text-shadow:2px_2px_0px_rgba(0,0,0,0.69)] lg:font-normal'
             aria-label={item.label}
             href={item.url}
             key={index}>

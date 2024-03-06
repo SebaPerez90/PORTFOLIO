@@ -22,7 +22,9 @@ shadow-[14px_30px_20px_-10px_#0000004f] box shadow
 
 html,
 body {
+  overflow-x: hidden;
   scroll-behavior: smooth;
+
   &::-webkit-scrollbar {
     background-color: #ffffff17;
     width: 14px;
