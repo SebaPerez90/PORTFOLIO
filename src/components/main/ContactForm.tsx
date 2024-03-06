@@ -109,7 +109,8 @@ const Contact = () => {
 
             <button
               ref={buttonRef}
-              className='flex justify-center cursor-not-allowed items-center rounded-md'>
+              // flex items-center p-[0.8em_2em] gap-2 text-white rounded-full bg-gradient-to-b from-light-900 via-light-900 font-bold to-[#7d27ffae] border-[1px] border-[#4f2194] hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] duration-200 active:border-[#dedede] hover:bg-[#4f2194] hover:border-light-900 hover:text-[#ffffff93]
+              className='cursor-not-allowed'>
               {engLanguageActive ? 'SEND' : 'ENVIAR'}
               <VscSend />
             </button>

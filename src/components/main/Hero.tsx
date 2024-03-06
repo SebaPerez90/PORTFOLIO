@@ -45,8 +45,8 @@ const Hero = () => {
         </div>
       </article>
 
-      <div className='flex items-end justify-end self-end bg-gradient-to-l from-light-500 to-[#DCBFFF]  h-[34em] w-[35em] '>
-        <div className=' w-auto h-[23em] relative before:absolute before:w-[25em] before:h-[25em] before:rounded-full before:-z-10 z-10 before:bg-white  before:left-[-5em] before:bottom-0'>
+      <div className='flex items-end justify-end self-end lg:bg-gradient-to-l from-light-500 to-[#DCBFFF] h-[40em] w-[38em]'>
+        <div className=' w-auto h-[23em] relative before:absolute before:w-[25em] before:h-[25em] before:rounded-full before:-z-10 z-10 before:bg-light-700 lg:before:bg-white before:left-[-5em] before:bottom-0 border-2 border-[red]'>
           <Image
             src={profile_image}
             alt='profile-image'
