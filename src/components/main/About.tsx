@@ -23,14 +23,14 @@ const About = () => {
         {engLanguageActive ? 'ABOUT ME' : 'SOBRE MI'}
       </h1>
 
-      <div className='pl-0 md:pl-10 lg:pl-0 flex justify-center items-center bg-[#333333ee] md:bg-light-200 w-full py-16 mt-8 rounded-[0.375em_0.375em_0_0]'>
+      <div className='pl-0 md:pl-10 lg:pl-0 flex justify-center items-center bg-[#333333ee] md:bg-light-200 w-full py-16 mt-8 md:rounded-[0.375em_0.375em_0_0]'>
         <div className='z-30 gap-10 md:gap-8 shadow-none md:shadow-[14px_30px_20px_-10px_#0000004f] rounded-md px-6 py-10 flex flex-col justify-around md:justify-evenly items-center h-96 w-max bg-none md:bg-white'>
-          <h2 className='text-3xl md:text-[0.8em] text-white md:text-[#333333bc] [letter-spacing:5px] font-extrabold'>
+          <h2 className='max-[430px]:[letter-spacing:1px] text-balance max-[430px]:text-lg text-xl md:text-[0.8em] text-white md:text-[#333333bc] [letter-spacing:5px] font-extrabold'>
             {engLanguageActive
               ? 'PERSONAL INFORMATION'
               : 'INFORMACION PERSONAL'}
           </h2>
-          <ul className='flex flex-col  md:[text-shadow:none] gap-3 md:gap-2 self-start text-lg md:text-sm cursor-default font-light md:font-semibold text-white md:text-[#33333391]'>
+          <ul className='max-[430px]:text-xs flex flex-col gap-3 md:gap-2 self-start text-sm cursor-default font-light md:font-semibold text-white md:text-[#33333391]'>
             <li className='flex items-center gap-2'>
               {engLanguageActive ? 'Full Name' : 'Nombre Completo'}:
               <span className='font-normal'>Sebastian Perez</span>
@@ -91,9 +91,9 @@ const About = () => {
         </div>
       </div>
 
-      <article className=' pt-4 pb-16 gap-4 flex flex-col justify-center shadow-[14px_30px_20px_-10px_#0000004f] rounded-[0_0_0.375em_0.375em] bg-white'>
+      <article className='max-[500px]:gap-16 pt-12 pb-16 gap-4 flex flex-col justify-center shadow-[14px_30px_20px_-10px_#0000004f] md:rounded-[0_0_0.375em_0.375em] bg-white'>
         <div className='flex justify-between'>
-          <div className='rounded-[50%] xl:h-[17em] h-[14em] xl:w-[17em] w-[14em] overflow-hidden ml-8 translate-x-14'>
+          <div className='max-[500px]:[display:none] rounded-[50%] h-[11em] w-[11em]  md:h-[14em] md:w-[14em] xl:h-[17em] xl:w-[17em] overflow-hidden ml-8 translate-x-1 md:translate-x-14'>
             <Image
               src={avatar_profile}
               alt='avatar_profile'
@@ -101,7 +101,7 @@ const About = () => {
               priority
             />
           </div>
-          <div className='flex flex-col items-center justify-evenly w-3/4'>
+          <div className='gap-4 md:gap-0 flex flex-col items-center justify-evenly w-3/4 max-[500px]:w-full'>
             <h1 className='text-2xl text-[#333333bc] font-extrabold'>
               {engLanguageActive
                 ? 'Hello There! Soy sebastian 👋'
@@ -115,16 +115,16 @@ const About = () => {
           </div>
         </div>
         <hr className='border-[1px] border-light-300 mx-20' />
-        <div className='flex flex-col gap-4 items-center pl-12 pr-6 text-sm font-semibold text-[#33333391]'>
+        <div className='flex flex-col gap-4 items-center pl-4 md:pl-12 md:pr-6 text-sm font-semibold text-[#33333391]'>
           <h2 className='text-2xl text-[#333333bc] font-extrabold'>
             {engLanguageActive ? 'Expectations' : 'Expectativas'}
           </h2>
-          <p className='lg:w-[50em]'>
+          <p className='w-[80%] lg:w-[50em]'>
             {engLanguageActive
               ? 'My main goal is to enter the professional world, leveraging fundamental qualities like determination and perseverance to adapt to any team. I have no specific salary expectations as I believe adequate compensation should follow exemplary performance. Thus, my aim is to continuously build knowledge to enhance my professional development.'
               : 'Mi objetivo principal es ingresar al mundo profesional, aprovechando cualidades fundamentales como la determinación y la perseverancia para adaptarme a cualquier equipo. No tengo expectativas salariales específicas ya que creo que la remuneración adecuada debe seguir un desempeño ejemplar. Por lo tanto, mi objetivo es continuar construyendo conocimientos para mejorar mi desarrollo profesional.'}
           </p>
-          <p className='lg:w-[50em]'>
+          <p className='w-[80%] lg:w-[50em]'>
             {engLanguageActive
               ? "I also recognize the importance of formal education, so once I'm employed, I intend to continue my academic training."
               : 'También reconozco la importancia de la educación formal, por lo que una vez que esté trabajando, planeo continuar con mi formación académica.'}
