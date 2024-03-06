@@ -36,7 +36,7 @@ body {
 
   .content-available {
     display: block;
-    padding: 0 2em 1em 2em;
+    /* padding: 0 1em 1em 1em; */
     display: flex;
     flex-direction: column;
     gap: 1.5em;
@@ -141,9 +141,8 @@ body {
         }
       }
     }
-    > :nth-child(4) {
-      height: 23em;
-      position: relative;
+    > :nth-child(5) {
+      margin-top: 9em;
     }
 
     @keyframes loading {

@@ -5,7 +5,6 @@ import { Roboto } from 'next/font/google';
 import Image from 'next/image';
 import soyHenry_logo from '@/assets/images/soyHenry-logo.webp';
 import utn_logo from '@/assets/images/utn-logo.webp';
-import waiter_bg from '@/assets/images/bg-image-waiter.webp';
 
 import workExperience from '@/data/workExperience.json';
 
@@ -28,13 +27,13 @@ const Experience = () => {
     <>
       <section className='shadow-[14px_30px_20px_-10px_#0000004f] py-20 bg-white  w-full lg:w-[80%] lg:rounded-lg'>
         <h1
-          className='text-3xl [letter-spacing:15px] text-[#313131be] text-center'
+          className='text-3xl [letter-spacing:10px] text-[#313131be] text-center'
           style={roboto.style}>
           {engLanguageActive ? 'WORK EXPERIENCE' : 'EXPERIENCIA LABORAL'}💼
         </h1>
 
-        <div className='m-[0_auto] gap-32 mt-40 w-[90%] border-l-4 border-[#6161619b] flex flex-col justify-around items-center relative work-experience-container z-10 lg:w-[80%]'>
-          <div className='absolute left-[-1em] flex gap-4 justify-center bottom-[9em] w-52 h-44 bg-white text-6xl font-black z-50 text-light-500 pt-10'>
+        <div className='max-[480px]:ml-14 ml-24 m-[0_auto] gap-32 mt-40 w-[90%] border-l-4 border-[#6161619b] flex flex-col justify-around items-center relative work-experience-container z-10 lg:w-[80%]'>
+          <div className='absolute left-[-1em] flex gap-4 justify-center bottom-[35%] pt-6 w-36 h-36 bg-white text-6xl font-black z-50 text-light-500 '>
             <span className='animate-[loading_1s_linear_infinite]'>.</span>
             <span className='animate-[loading_1s_linear_infinite] [animation-delay:200ms]'>
               .
@@ -46,7 +45,7 @@ const Experience = () => {
           {workExperience.map((item, key) => (
             <article
               key={key}
-              className='relative w-full flex justify-around  items-start text-black before:absolute before:w-8 before:h-8 before:rounded-full before:bg-light-800 before:left-[-1em] before:top-0'>
+              className='flex-col items-center gap-3 sm:gap-0 sm:flex-row relative w-full flex justify-around sm:items-start before:absolute before:w-8 before:h-8 before:rounded-full before:bg-light-800 before:left-[-1em] before:top-0'>
               <div className='flex flex-col items-center'>
                 <h1 className='font-bold text-light-500 text-center w-full text-2xl'>
                   {item.company}
@@ -58,7 +57,7 @@ const Experience = () => {
                   {item.date}
                 </span>
               </div>
-              <p className='w-[20em] text-lg text-[#373737c4] font-semibold'>
+              <p className='w-[60%] sm:w-[20em] text-sm lg:text-base text-[#474747c4] font-semibold'>
                 {engLanguageActive
                   ? item.tasks_description[0]
                   : item.tasks_description[1]}
@@ -66,6 +65,7 @@ const Experience = () => {
             </article>
           ))}
         </div>
+
         <article className='flex flex-col items-center self-center mt-32 w-[80%] m-[0_auto]'>
           <h1 className='text-[#333333ac] text-2xl font-extrabold text-center'>
             Detalles de mi experiencia
