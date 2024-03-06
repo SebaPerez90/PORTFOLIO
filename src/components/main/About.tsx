@@ -20,7 +20,7 @@ const About = () => {
       <h1
         className='text-center text-3xl [letter-spacing:15px] text-[#313131be]'
         style={roboto.style}>
-        {engLanguageActive ? 'ABOUT ME' : 'SOBRE MI'}
+        {engLanguageActive ? 'ABOUT ME' : 'SOBRE MI'} 🤠
       </h1>
 
       <div className='pl-0 md:pl-10 lg:pl-0 flex justify-center items-center bg-[#333333ee] md:bg-light-200 w-full py-16 mt-8 md:rounded-[0.375em_0.375em_0_0]'>

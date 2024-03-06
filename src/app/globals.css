@@ -26,17 +26,15 @@ body {
   scroll-behavior: smooth;
 
   &::-webkit-scrollbar {
-    background-color: #ffffff17;
+    background-color: #dedede;
     width: 14px;
   }
   &::-webkit-scrollbar-thumb {
     background-color: #3655b3;
-    border-radius: 1em;
   }
 
   .content-available {
     display: block;
-    /* padding: 0 1em 1em 1em; */
     display: flex;
     flex-direction: column;
     gap: 1.5em;
