@@ -91,7 +91,7 @@ const Skills = () => {
   return (
     <section
       id='skills-section'
-      className='mt-32 w-[100%] bg-gradient-to-b from-[#dedede] via-light-200 to-[#dedede] flex flex-col justify-center items-center'>
+      className='mt-32 w-[100%] max-[600px]:bg-orange-400 bg-gradient-to-b from-[#dedede] via-light-200 to-[#dedede] flex flex-col justify-center items-center'>
       <h1
         className='text-3xl [letter-spacing:10px] text-[#313131] text-center'
         style={roboto.style}>
@@ -110,8 +110,8 @@ const Skills = () => {
               : 'Permíteme mostrarte algunos de mis servicios.'}
           </span>
         </h1>
-        <div className='grid grid-cols-3 grid-rows-[repeat(2,min-max(100px,auto))] gap-y-[11em] relative w-[80%] m-[0_auto]'>
-          <div className='w-full flex justify-around flex-wrap row-span-1 col-span-full'>
+        <div className='w-[95%] grid grid-cols-3 grid-rows-[repeat(2,min-max(100px,auto))] gap-y-[11em] relative lg:w-[80%] m-[0_auto]'>
+          <div className='max-[825px]:flex-col-reverse max-[825px]:items-center gap-8 w-full flex justify-around flex-wrap row-span-1 col-span-full'>
             <div className='relative w-[12em] h-[25rem] flex flex-col justify-between border-[10px] border-[#252525] bg-white rounded-[25px] before:absolute before:w-full before:h-5 before:rounded-[50%] before:left-0 before:bottom-[-3em] before:bg-[#3737378f] before:z-50'>
               <div className='py-1 rounded-[13px_13px_0_0] w-full bg-[#4a4a4a] px-2 text-white flex justify-between items-center'>
                 <FaWhatsapp className='text-green-400 scale-110' />
@@ -153,8 +153,8 @@ const Skills = () => {
                 <FaBars />
               </div>
             </div>
-            <article className='w-1/2 flex flex-col items-center justify-center gap-8'>
-              <h1 className='text-2xl font-bold text-[#333333c0]'>
+            <article className='max-[500px]:w-[90%] max-[825px]:w-[80%] w-1/2 flex flex-col items-center justify-center gap-6'>
+              <h1 className='text-2xl font-bold text-[#333333c0] text-center'>
                 {engLanguageActive
                   ? `Mobile application design`
                   : 'Diseño de aplicaciones moviles'}
@@ -175,7 +175,7 @@ const Skills = () => {
             </article>
           </div>
 
-          <div className='w-full flex justify-around flex-wrap row-span-2 col-span-full flex-row-reverse'>
+          <div className='max-[825px]:flex-col-reverse max-[825px]:items-center gap-8 w-full flex justify-around flex-wrap row-span-2 col-span-full flex-row-reverse'>
             <div className='flex flex-col justify-center items-center'>
               <div className='h-[13em] w-[22em] rounded-[0.5em_0.5em_0_0] bg-white aaaa border-[1.5em] border-[#2d2d2d] border-b-0'></div>
               <div className='flex items-center relative h-8 w-[22em] rounded-[0_0_0.5em_0.5em] bg-[#2d2d2d]'>
@@ -188,8 +188,8 @@ const Skills = () => {
               <div className='h-8 w-8 bg-[#2d2d2d]'></div>
               <div className='h-4 w-[15em] bg-[#2d2d2d] rounded-[0.5em_0.5em_0_0]'></div>
             </div>
-            <article className='w-1/2 flex flex-col items-center justify-center gap-8'>
-              <h1 className='text-2xl font-bold text-[#333333c0]'>
+            <article className='max-[500px]:w-[90%] max-[825px]:w-[80%] w-1/2 flex flex-col items-center justify-center gap-6'>
+              <h1 className='text-2xl font-bold text-[#333333c0] text-center'>
                 {engLanguageActive
                   ? `Applications and landing pages`
                   : 'Aplicaciones y Landing pages'}
@@ -209,10 +209,11 @@ const Skills = () => {
               </div>
             </article>
           </div>
-          <div className='w-[60%] m-[0_auto] rounded-md row-span-3 col-span-full p-8 bg-[#ececec4f] [backdrop-filter:blur(30px)]'>
+          <div className='max-[500px]:w-[90%] max-[825px]:w-[80%] w-[60%] m-[0_auto] rounded-md row-span-3 col-span-full p-8 bg-[#ececec4f] [backdrop-filter:blur(30px)]'>
             <Image
               src={devs_team}
               alt='devs_team_image'
+              priority
               className='w-auto h-auto '
             />
             <h1 className='text-sm text-center font-extrabold text-[#333333c0]'>
