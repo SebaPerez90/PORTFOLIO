@@ -217,8 +217,8 @@ const Skills = () => {
             />
             <h1 className='text-sm text-center font-extrabold text-[#333333c0]'>
               {engLanguageActive
-                ? `DESARROLLADOR FULLSTACK`
-                : 'FULLSTACK DEVELOPER'}{' '}
+                ? 'FULLSTACK DEVELOPER'
+                : `DESARROLLADOR FULLSTACK`}{' '}
               🤩
             </h1>
             <p className='px-2 text-[0.85em] mt-4 font-medium text-[#3333339e]'>
