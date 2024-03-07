@@ -155,7 +155,9 @@ const Skills = () => {
             </div>
             <article className='w-1/2 flex flex-col items-center justify-center gap-8'>
               <h1 className='text-2xl font-bold text-[#333333c0]'>
-                Diseño de aplicaciones moviles
+                {engLanguageActive
+                  ? `Mobile application design`
+                  : 'Diseño de aplicaciones moviles'}
               </h1>
               <div className='text-sm font-medium text-[#3333339e] border-l-8 border-light-800 bg-[#ececec39] pl-4 pr-2 py-6 '>
                 <p>
