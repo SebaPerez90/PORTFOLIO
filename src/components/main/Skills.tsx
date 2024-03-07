@@ -98,73 +98,114 @@ const Skills = () => {
       </h1>
       <button onClick={() => console.log(theme)}>fetch</button>
 
-      <section className='py-40 w-full h-full'>
+      <article className='py-40 w-full h-full'>
         <h1
           className='text-center text-3xl mb-10 text-[#333333d7]'
           style={roboto.style}>
           What can I offer for you?
         </h1>
-        <div className='relative flex justify-between items-end w-[70%] m-[0_auto] border-2'>
-          <div className='w-[12em] h-[25rem] flex flex-col justify-between border-[10px] border-[#252525] bg-white rounded-[25px]'>
-            <div className='py-1 rounded-[13px_13px_0_0] w-full bg-[#4a4a4a] px-2 text-white flex justify-between items-center'>
-              <div className='flex items-center gap-2 pl-2 text-sm'>
+        <div className='grid grid-cols-2 grid-rows-[repeat(2,min-max(100px,auto))] gap-y-[7em] relative w-[80%] m-[0_auto]'>
+          <div className='w-full flex justify-around flex-wrap row-span-1 col-span-full'>
+            <div className='relative w-[12em] h-[25rem] flex flex-col justify-between border-[10px] border-[#252525] bg-white rounded-[25px] before:absolute before:w-full before:h-5 before:rounded-[50%] before:left-0 before:bottom-[-3em] before:bg-[#3737378f] before:z-50'>
+              <div className='py-1 rounded-[13px_13px_0_0] w-full bg-[#4a4a4a] px-2 text-white flex justify-between items-center'>
                 <FaWhatsapp className='text-green-400 scale-110' />
+                <span className='rounded-full h-[9px] w-[9px] border-black border-4 bg-[#b6b4b4]'></span>
+                <div className='flex'>
+                  <HiWifi />
+                  <FaSignal />
+                  <MdBattery50 />
+                </div>
               </div>
-              <span className='rounded-full h-[9px] w-[9px] border-black border-4 bg-[#b6b4b4]'></span>
-              <div className='flex'>
-                <HiWifi />
-                <FaSignal />
-                <MdBattery50 />
+
+              <article className='before:absolute before:left-0 before: top-0 before:w-full before:h-full before:bg-[#0000004b] before:z-20 relative flex overflow-hidden flex-col items-center justify-center bg-white h-full'>
+                <Image
+                  src={theme === 'dark' ? UI_dark : UI_light}
+                  alt='background-image'
+                  priority
+                  className='w-auto h-auto object-cover absolute z-10 [aspect-ratio:1/2] aaaa'
+                />
+                <span className='z-30 text-[#ffffffb5] text-5xl font-extrabold relative bottom-4'>
+                  {weatherData.temperature}°C
+                </span>
+                <div className='z-30 text-white flex gap-1 items-center bg-[#ffffff33] [backdrop-filter:blur(5px)] rounded-sm p-1'>
+                  <span className='text-xs'>{weatherData.country}</span>
+                  <h1 className='text-base'>{weatherData.city}</h1>
+                </div>
+                <time
+                  className='z-30 text-white text-lg [letter-spacing:2px] font-bold'
+                  ref={dateRef}></time>
+                <div className='z-30 flex w-[70%] translate-y-[1.5em]'>
+                  <span className='bg-indigo-700 p-1 w-max text-[0.6em] rounded-[0.5em_0_0_0.5em]'>
+                    🔎
+                  </span>
+                  <span className='w-full bg-[#ffffff91] [backdrop-filter:blur(1px)] rounded-[0_0.5em_0.5em_0]'></span>
+                </div>
+              </article>
+              <div className='rounded-[0_0_13px_13px] text-xl w-full bg-[#4a4a4a] py-2 font-black text-white flex justify-around'>
+                <IoChevronBackOutline />
+                <IoMdHome />
+                <FaBars />
               </div>
             </div>
-
-            <article className='before:absolute before:left-0 before: top-0 before:w-full before:h-full before:bg-[#0000004b] before:z-20 relative flex overflow-hidden flex-col items-center justify-center bg-white h-full'>
-              <Image
-                src={theme === 'dark' ? UI_dark : UI_light}
-                alt='background-image'
-                priority
-                className='w-auto h-auto object-cover absolute z-10 [aspect-ratio:1/2] aaaa'
-              />
-              <span className='z-30 text-[#ffffffb5] text-5xl font-extrabold relative bottom-4'>
-                {weatherData.temperature}°C
-              </span>
-              <div className='z-30 text-white flex gap-1 items-center bg-[#ffffff33] [backdrop-filter:blur(5px)] rounded-sm p-1'>
-                <span className='text-xs'>{weatherData.country}</span>
-                <h1 className='text-base'>{weatherData.city}</h1>
-              </div>
-              <time
-                className='z-30 text-white text-lg [letter-spacing:2px] font-bold'
-                ref={dateRef}></time>
-              <div className='z-30 flex w-[70%] translate-y-[1.5em]'>
-                <span className='bg-indigo-700 p-1 w-max text-[0.6em] rounded-[0.5em_0_0_0.5em]'>
-                  🔎
-                </span>
-                <span className='w-full bg-[#ffffff91] [backdrop-filter:blur(1px)] rounded-[0_0.5em_0.5em_0]'></span>
+            <article className='w-1/2 flex flex-col items-center justify-center gap-8'>
+              <h1 className='text-2xl font-bold text-[#333333c0]'>
+                Diseño de aplicaciones moviles
+              </h1>
+              <div className='text-sm font-medium text-[#3333339e] border-l-8 border-light-800 bg-[#ececec39] pl-4 pr-2 py-6'>
+                <p>
+                  ¡Hola! ¿Quieres una app móvil que enamore a tus usuarios desde
+                  el primer momento? ¡Estás en el lugar adecuado! Soy un
+                  desarrollador frontend especializado en dar vida a tus ideas
+                  en el mundo digital. Cada detalle de tu app será
+                  cuidadosamente trabajado para asegurar que sea visualmente
+                  atractiva y fácil de usar.
+                </p>
+                <p className='mt-3'>
+                  ¿Listo para destacar en el mundo móvil? ¡Hablemos y
+                  convirtamos tu idea en una realidad digital! 🤯
+                </p>
               </div>
             </article>
-            <div className='rounded-[0_0_13px_13px] text-xl w-full bg-[#4a4a4a] py-2 font-black text-white flex justify-around'>
-              <IoChevronBackOutline />
-              <IoMdHome />
-              <FaBars />
-            </div>
           </div>
-          <div className='bg-black absolute bottom-[-10em] blur-[200px] h-1/2 w-64 [clip-path:ellipse(50%_6%_at_50%_50%)]'></div>
+
+          {/* ¡Hola! Soy un desarrollador web versátil, con experiencia tanto en el frontend como en el backend. Mi objetivo es potenciar tu proyecto con mis habilidades y experiencia. ¿Listo para llevar tu proyecto al siguiente nivel? ¡Hablemos y veamos cómo puedo contribuir al éxito de tu equip */}
 
           {/* other section */}
-          <div className='flex flex-col justify-center items-center'>
-            <div className='h-[18em] w-[28em] rounded-[0.5em_0.5em_0_0] bg-white aaaa border-[1.5em] border-[#2d2d2d] border-b-0'></div>
-            <div className='flex items-center relative h-8 w-[28em] rounded-[0_0_0.5em_0.5em] bg-[#2d2d2d]'>
-              <div className='absolute left-[45%] text-sm text-white font-black flex items-center gap-1'>
-                <Image src={lg_icon} alt='lg_icon' width={18} height={18} />
-                <span>LG</span>
+          <div className='w-full flex justify-around flex-wrap row-span-2 col-span-full flex-row-reverse'>
+            <div className='flex flex-col justify-center items-center'>
+              <div className='h-[13em] w-[22em] rounded-[0.5em_0.5em_0_0] bg-white aaaa border-[1.5em] border-[#2d2d2d] border-b-0'></div>
+              <div className='flex items-center relative h-8 w-[22em] rounded-[0_0_0.5em_0.5em] bg-[#2d2d2d]'>
+                <div className='absolute left-[45%] text-sm text-white font-black flex items-center gap-1'>
+                  <Image src={lg_icon} alt='lg_icon' width={18} height={18} />
+                  <span>LG</span>
+                </div>
+                <FaPowerOff className='absolute right-8 text-white text-lg' />
               </div>
-              <FaPowerOff className='absolute right-8 text-white text-lg' />
+              <div className='h-8 w-8 bg-[#2d2d2d]'></div>
+              <div className='h-4 w-[15em] bg-[#2d2d2d] rounded-[0.5em_0.5em_0_0]'></div>
             </div>
-            <div className='h-12 w-8 bg-[#2d2d2d]'></div>
-            <div className='h-4 w-[20em] bg-[#2d2d2d] rounded-[0.5em_0.5em_0_0]'></div>
+            <article className='w-1/2 flex flex-col items-center justify-center gap-8'>
+              <h1 className='text-2xl font-bold text-[#333333c0]'>
+                Aplicaciones y Landing pages
+              </h1>
+              <div className='text-sm font-medium text-[#3333339e] border-l-8 border-light-800 bg-[#ececec39] pl-4 pr-2 py-6'>
+                <p>
+                  ¡Hola! ¿Quieres llevar tu negocio al siguiente nivel en línea?
+                  ¡Estás en el lugar indicado! Soy un desarrollador web frontend
+                  especializado en crear landing pages, páginas web y
+                  aplicaciones de escritorio que impulsan tu negocio. Convertí
+                  tus ideas en resultados tangibles y visualmente impactantes
+                  que cautiven a tus usuarios.
+                </p>
+                <p className='mt-3'>
+                  ¿Listo para dar el salto digital? ¡Hablemos y hagamos realidad
+                  tus ideas juntos!🚀
+                </p>
+              </div>
+            </article>
           </div>
         </div>
-      </section>
+      </article>
 
       <section className='max-[830px]:gap-16 max-[830px]:flex-wrap gap-8 w-[90%] flex justify-evenly'>
         {skills.map((item, index) => (
