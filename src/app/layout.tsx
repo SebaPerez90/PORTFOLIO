@@ -19,8 +19,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang='en'>
-      <body className='flex flex-col box-border m-0' style={onest.style}>
+    <html style={{ scrollBehavior: 'smooth' }} lang='en'>
+      <body
+        className='flex flex-col box-border m-0 overflow-x-hidden scroll-bar-light dark:scroll-bar-dark'
+        style={onest.style}>
         <NavBar />
         {children}
         <Footer />

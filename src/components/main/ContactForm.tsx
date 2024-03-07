@@ -70,6 +70,7 @@ const Contact = () => {
               <input
                 type='text'
                 name='name'
+                id='name'
                 autoComplete='off'
                 placeholder={
                   engLanguageActive ? 'full name' : 'Nombre completo'
@@ -93,6 +94,7 @@ const Contact = () => {
                 onChange={checkEmail}
                 type='text'
                 name='email'
+                id='email'
                 autoComplete='off'
                 placeholder='email'
                 className='pb-1 pl-1 outline-none border-b-2 w-full placeholder:opacity-75  font-semibold'

@@ -2,37 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-shadow-[14px_30px_20px_-10px_#0000004f] box shadow
-[text-shadow:2px_2px_2px_rgba(0,0,0,0.45)] text shadow
-*/
-
 @layer utilities {
   .custom-scrollbar {
     &::-webkit-scrollbar {
       background-color: transparent;
-      width: 11px;
+      height: 25px;
     }
     &::-webkit-scrollbar-thumb {
       background-color: #7f27ff;
       border-radius: 1em;
+
+      &:hover {
+        background-color: #621fc8;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@layer utilities {
+  .scroll-bar-light {
+    &::-webkit-scrollbar {
+      background-color: #dedede;
+      width: 14px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #3655b3;
+    }
+  }
+}
+
+@layer utilities {
+  .scroll-bar-dark {
+    &::-webkit-scrollbar {
+      background-color: #000;
+      width: 14px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #fff;
     }
   }
 }
 
 html,
 body {
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-
-  &::-webkit-scrollbar {
-    background-color: #dedede;
-    width: 14px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #3655b3;
-  }
-
   .content-available {
     display: block;
     display: flex;
