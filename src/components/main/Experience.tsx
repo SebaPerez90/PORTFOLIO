@@ -68,7 +68,9 @@ const Experience = () => {
 
         <article className='flex flex-col items-center self-center mt-32 w-[80%] m-[0_auto]'>
           <h1 className='text-[#333333ac] text-2xl font-extrabold text-center'>
-            Detalles de mi experiencia
+            {engLanguageActive
+              ? `Details of my experience`
+              : 'Detalles de mi experiencia'}
           </h1>
           <div className='pl-3  mt-6 font-semibold text-[#45454590]'>
             <p>
@@ -144,11 +146,9 @@ const Experience = () => {
             {engLanguageActive ? 'STUDIES' : 'ESTUDIOS'}👨‍🎓
           </h1>
           <p className='w-[90%] md:w-[70%] lg:w-[50%] border-l-8 border-light-800 bg-[#ececec] pl-4 pr-2 py-6 mt-6 font-semibold text-[#686868]'>
-            Comenzé mi inmersión en el mundo de la programación hace 2 años,
-            primero con mucha curiosidad y sin un rumbo. Pero poco a poco,
-            entendiendo como funcionan todas sus partes en conjunto. Con el
-            tiempo, gracias a mi necesidad y ganas de aprender más, desarrollé
-            la habilidad de ser autodidacta.
+            {engLanguageActive
+              ? `I started my immersion in the programming world 2 years ago, initially out of curiosity and without a clear direction. But gradually, I began to understand how all its parts work together. Over time, driven by my need and eagerness to learn more, I developed the ability to be self-taught.`
+              : 'Comenzé mi inmersión en el mundo de la programación hace 2 años, primero con mucha curiosidad y sin un rumbo. Pero poco a poco, entendiendo como funcionan todas sus partes en conjunto. Con el tiempo, gracias a mi necesidad y ganas de aprender más, desarrollé la habilidad de ser autodidacta.'}
           </p>
         </header>
         <div className='flex justify-around w-full items-end z-10 relative before:absolute before:rounded-[50%] before:left-[5%] before:bottom-6 before:w-[90%] before:h-1 before:bg-[#373737] before:-z-10 max-[950px]:flex-col max-[950px]:items-center max-[950px]:h-[auto] max-[950px]:before:[display:none] max-[950px]:after:absolute max-[950px]:after:right-[13%] max-[950px]:after:h-[80%] max-[950px]:after:w-1 max-[950px]:after:top-[15%] max-[950px]:after:bg-[#373737] max-[950px]:after:-z-10 max-[650px]:gap-20 max-[700px]:after:right-[14%]'>
@@ -161,12 +161,9 @@ const Experience = () => {
                 / 10-2022
               </span>
               <p className='text-sm w-full text-[#4c4c4c]'>
-                Bootcamp. Fué mi primer experiencia formal en un carrera IT. Al
-                yo no tener un background en tecnología y estar comenzando mis
-                estudios. Decidí abandonar la carrera porque sentía que no
-                asmilaba bien el contenido , ya que según mi criterio , esa
-                carrera (contrariamente a la publicidad) era para gente con una
-                base sólida.
+                {engLanguageActive
+                  ? `Bootcamp. It was my first formal experience in an IT career. Since I didn't have a background in technology and was just starting my studies, I decided to drop out of the program because I felt that I wasn't grasping the content well. In my opinion, that career (contrary to the advertising) was for people with a solid foundation.`
+                  : 'Bootcamp. Fué mi primer experiencia formal en un carrera IT. Al yo no tener un background en tecnología y estar comenzando mis estudios. Decidí abandonar la carrera porque sentía que no asmilaba bien el contenido, ya que según mi criterio , esa carrera (contrariamente a la publicidad) era para gente con una base sólida.'}
               </p>
             </div>
             <div className='z-10 relative before:absolute before:w-24 before:h-[1px] before:top-0 before:left-[-1.2em] before:-z-10 before:bg-black before:rotate-[90deg] w-14 h-14 max-[950px]:before:rotate-[0deg] max-[950px]:before:left-[-4.2em] max-[950px]:before:top-7'>
@@ -190,10 +187,9 @@ const Experience = () => {
                 / 03-2023
               </span>
               <p className='text-sm w-full text-[#4c4c4c]'>
-                Universidad tecnológica nacional. Por motivos económicos
-                personales se me dificulto poder costear la carrera. Debido a
-                ese motivo, tuve que suspenderla momentaneamente hasta que mi
-                situación cambie.
+                {engLanguageActive
+                  ? `National Technological University. Due to personal financial reasons, I struggled to afford the tuition fees for the program. Because of that, I had to temporarily suspend it until my situation changes.`
+                  : 'Universidad tecnológica nacional. Por motivos económicos personales se me dificulto poder costear la carrera Debido a ese motivo, tuve que suspenderla momentaneamente hasta que mi situación cambie.'}
               </p>
             </div>
             <div className='w-14 h-14 z-10 relative before:absolute before:w-32 before:h-[1px] before:bottom-24 before:left-[-2.5em] before:-z-10 before:bg-black before:rotate-[90deg] max-[950px]:before:rotate-[0deg] max-[950px]:before:left-[-4.5em] max-[950px]:before:top-7'>
@@ -214,12 +210,9 @@ const Experience = () => {
                 {engLanguageActive ? 'state: studying' : 'estado: cursando'}
               </span>
               <p className='text-sm w-full text-[#4c4c4c]'>
-                Decidí retomar la carrera debido a que gracias a mi ansia de
-                conocimiento y curiosidad de siempre querer entender como
-                funciona un software. Adquirí la habilidad de ser autodidacta ,
-                y al poder ahora si estar preparado. Siento que puedo llevar
-                adelante la carrera y ya que el programa que ofrece , puede
-                ayudarme a reforzar mis conocimientos.
+                {engLanguageActive
+                  ? `I decided to resume the program because of my thirst for knowledge and my curiosity to understand how software works. I acquired the ability to be self-taught, and now that I feel prepared, I believe I can pursue the career. The program offered can help me reinforce my knowledge.`
+                  : 'Decidí retomar la carrera debido a que gracias a mi ansia de conocimiento y curiosidad de siempre querer entender como funciona un software. Adquirí la habilidad de ser autodidacta, y al poder ahora si estar preparado. Siento que puedo llevar adelante la carrera y ya que el programa que ofrece , puede ayudarme a reforzar mis conocimientos.'}
               </p>
             </div>
             <div className='w-14 h-14 z-10 relative before:absolute before:w-24 before:h-[1px] before:top-0 before:left-[-1.2em] before:-z-10 before:bg-black before:rotate-[90deg] max-[950px]:before:rotate-[0deg] max-[950px]:before:left-[-4.2em] max-[950px]:before:top-7'>
@@ -234,19 +227,20 @@ const Experience = () => {
         </div>
         <div className='max-[650px]:w-[90%] max-[950px]:w-[95%] flex flex-col items-center w-[60%] rounded-md'>
           <h1 className='text-[#4a4a4ad3] font-extrabold mb-2'>
-            DATO EXTRA IMPORTANTE ⚠️
+            {engLanguageActive
+              ? `IMPORTANT EXTRA DATA`
+              : 'DATO EXTRA IMPORTANTE '}
+            ⚠️
           </h1>
           <p className='max-[650px]:text-xs italic text-sm text-[#4c4c4c] font-light'>
-            También quiero destacar que soy un apasionado por el aprendizaje del
-            idioma ingles. De forma autodidacta, consumo todo tipo de input en
-            ingles para estar inmerso constantemente en él. Ya sea
-            documentación, peliculas enteramente en ingles, subtitulos en
-            ingles, podcasts, dispositivos, etc.
+            {engLanguageActive
+              ? `I also want to highlight that I'm passionate about learning the English language. I self-study and immerse myself constantly in English through various inputs such as documentation, movies entirely in English, English subtitles, podcasts, devices, etc.`
+              : 'También quiero destacar que soy un apasionado por el aprendizaje del idioma ingles. De forma autodidacta, consumo todo tipo de input en ingles para estar inmerso constantemente en él. Ya sea documentación, peliculas enteramente en ingles, subtitulos en ingles, podcasts, dispositivos, etc.'}
           </p>
           <p className='max-[650px]:text-xs italic text-sm text-[#4c4c4c] font-light'>
-            A lo quiero llegar con esto, es que un puesto que requiera ingles no
-            seria un problema ya que mi entusiamo y compromiso por aprender
-            programación es equivalente aprender ingles.
+            {engLanguageActive
+              ? `What I'm aiming to convey with this is that a position requiring English wouldn't be a problem because my enthusiasm and commitment to learning programming is equivalent to learning English.`
+              : 'A lo quiero llegar con esto, es que un puesto que requiera ingles no seria un problema ya que mi entusiamo y compromiso por aprender programación es equivalente aprender ingles.'}
           </p>
         </div>
       </section>
