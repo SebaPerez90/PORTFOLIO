@@ -37,6 +37,12 @@ const NavBar = () => {
       label: 'contact me',
       url: '#contact-section',
     },
+    {
+      titleES: 'skills y servicos',
+      titleEN: 'skills & services',
+      label: 'skill & services',
+      url: '#skills-section',
+    },
   ];
 
   // const handleScroll = () => {

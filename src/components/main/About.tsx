@@ -102,7 +102,7 @@ const About = () => {
             />
           </div>
           <div className='gap-4 md:gap-0 flex flex-col items-center justify-evenly w-3/4 max-[500px]:w-full'>
-            <h1 className='text-2xl text-[#333333bc] font-extrabold'>
+            <h1 className='text-2xl text-[#333333bc] font-extrabold max-[500px]:translate-x-2'>
               {engLanguageActive
                 ? 'Hello There! Soy sebastian 👋'
                 : '¡Hola! Soy Sebastian 👋'}

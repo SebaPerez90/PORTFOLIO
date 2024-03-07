@@ -35,10 +35,13 @@ const Hero = () => {
         <p className='max-[520px]:text-[#545454cb] max-[520px]:w-[90%] text-sm font-semibold text-[#33333391] w-[23em]'>
           {engLanguageActive
             ? `I am a front-end developer living in Buenos Aires, Argentina. With two years of experience in web development, I am currently enrolled in a bootcamp to expand my horizons and enhance my current skill set.`
-            : 'Desarrollor front-end y vivo en Argentina, Buenos Aires. Tengo dos años de experiencia en el desarrollo web. Actualmente estoy cursando un bootcamp para poder ampliar mis horizontes y sumar conocimiento a mi stack actual.'}
+            : 'Desarrollor front-end y vivo en Argentina, Buenos Aires. Tengo dos años de experiencia en el desarrollo web. Actualmente estoy cursando un bootcamp para poder ampliar mis horizontes y sumar conocimiento a mi stack actual'}
+          <br></br>
+          <strong className='bg-green-600 rounded-sm p-1 w-max text-white font-bold text-[0.7em]'>
+            OPEN TO WORK .
+          </strong>
         </p>
-        {/* translate-y-[-1em] self-center */}
-        <button className='flex items-center p-[0.8em_2em] gap-2 text-white rounded-full bg-gradient-to-b from-light-900 via-light-900 font-bold to-[#7d27ffae] border-[1px] border-[#4f2194] hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] duration-200 active:border-[#dedede] hover:bg-[#4f2194] hover:border-light-900 hover:text-[#ffffff93]'>
+        <button className='flex items-center p-[0.8em_2em] gap-2 text-white rounded-full bg-gradient-to-b from-light-900 via-light-900 font-bold to-[#7d27ffae] border-[1px] border-[#4f2194] duration-200 active:border-[#dedede] hover:bg-[#4f2194] hover:border-light-900 hover:text-[#ffffff93]'>
           <FaRegFileAlt />
           resume
         </button>
@@ -54,7 +57,7 @@ const Hero = () => {
           />
         </div>
         <div className='max-[700px]:justify-end z-10 gap-20 translate-x-4 flex flex-col items-center justify-center h-[20em]'>
-          <span className='max-[700px]:[display:none] [rotate:90deg] w-max flex gap-2 items-center text-base font-semibold text-light-900 lg:text-white [#33333391]'>
+          <span className='max-[700px]:[display:none] [rotate:90deg] w-max flex gap-2 items-center text-base font-extrabold text-light-900 lg:text-white [#33333391]'>
             {engLanguageActive ? 'follow me' : 'seguime'}
             <HiOutlineArrowLongRight className='text-3xl' />
           </span>

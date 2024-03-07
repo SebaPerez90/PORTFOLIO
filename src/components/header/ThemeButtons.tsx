@@ -11,11 +11,11 @@ const ThemeButtons = () => {
   const buttonRef: any = useRef(null);
 
   const [theme, setTheme]: any = useState(
-    localStorage.getItem('tema') ?? localStorage.setItem('tema', 'light')
+    localStorage.getItem('theme') ?? localStorage.setItem('theme', 'light')
   );
 
   useEffect(() => {
-    localStorage.setItem('tema', theme);
+    localStorage.setItem('theme', theme);
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {

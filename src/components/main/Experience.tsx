@@ -109,7 +109,7 @@ const Experience = () => {
                   ? `From this experience, I can highlight some benefits:`
                   : 'De esta experiencia, puedo descatar algunos beneficios :'}
               </p>
-              <li className='list-disc marker:text-light-800 flex flex-col items-start gap-4'>
+              <ul className='list-disc marker:text-light-800 flex flex-col items-start gap-4'>
                 <li className='ml-4 pr-8 mt-8'>
                   {engLanguageActive
                     ? `The ability to tolerate work under pressure is essential, as the job of a waiter involves constant demands and pressure, which is also applicable to the IT sector.`
@@ -130,7 +130,7 @@ const Experience = () => {
                     ? `And the most important one... discovering my passion and love for technology. I can spend hours and hours immersing myself more and more and always wanting to learn more.`
                     : 'y las mas importante ... descubrir mi pasión y amor por la tecnologia. Puedo pasar horas y horas sumergiendome más y más y siempre querer aprender más.'}
                 </li>
-              </li>
+              </ul>
             </div>
           </div>
         </article>
@@ -143,7 +143,7 @@ const Experience = () => {
             style={roboto.style}>
             {engLanguageActive ? 'STUDIES' : 'ESTUDIOS'}👨‍🎓
           </h1>
-          <p className='w-[50%] border-l-8 border-light-800 bg-[#f7f7f7] pl-4 pr-2 py-6 mt-6 font-semibold text-[#686868]'>
+          <p className='w-[90%] md:w-[70%] lg:w-[50%] border-l-8 border-light-800 bg-[#ececec] pl-4 pr-2 py-6 mt-6 font-semibold text-[#686868]'>
             Comenzé mi inmersión en el mundo de la programación hace 2 años,
             primero con mucha curiosidad y sin un rumbo. Pero poco a poco,
             entendiendo como funcionan todas sus partes en conjunto. Con el
@@ -232,18 +232,18 @@ const Experience = () => {
             </div>
           </article>
         </div>
-        <div className='max-[950px]:w-[95%] flex flex-col items-center w-[60%] rounded-md'>
+        <div className='max-[650px]:w-[90%] max-[950px]:w-[95%] flex flex-col items-center w-[60%] rounded-md'>
           <h1 className='text-[#4a4a4ad3] font-extrabold mb-2'>
             DATO EXTRA IMPORTANTE ⚠️
           </h1>
-          <p className='italic text-sm text-[#4c4c4c] font-light'>
+          <p className='max-[650px]:text-xs italic text-sm text-[#4c4c4c] font-light'>
             También quiero destacar que soy un apasionado por el aprendizaje del
             idioma ingles. De forma autodidacta, consumo todo tipo de input en
             ingles para estar inmerso constantemente en él. Ya sea
             documentación, peliculas enteramente en ingles, subtitulos en
             ingles, podcasts, dispositivos, etc.
           </p>
-          <p className='italic text-sm text-[#4c4c4c] font-light'>
+          <p className='max-[650px]:text-xs italic text-sm text-[#4c4c4c] font-light'>
             A lo quiero llegar con esto, es que un puesto que requiera ingles no
             seria un problema ya que mi entusiamo y compromiso por aprender
             programación es equivalente aprender ingles.
