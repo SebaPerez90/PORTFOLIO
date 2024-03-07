@@ -9,6 +9,7 @@ import Image from 'next/image';
 import lg_icon from '@/assets/images/lg-icon.webp';
 import UI_dark from '@/assets/images/UI-dark.webp';
 import UI_light from '@/assets/images/UI-light.webp';
+import devs_team from '@/assets/images/devs-team.png';
 
 import { IoMdHome } from 'react-icons/io';
 import { IoChevronBackOutline } from 'react-icons/io5';
@@ -96,15 +97,20 @@ const Skills = () => {
         style={roboto.style}>
         {engLanguageActive ? 'SKILLS & SERVICES' : 'HABILIDADES Y SERVICIOS '}🤓
       </h1>
-      <button onClick={() => console.log(theme)}>fetch</button>
 
       <article className='py-40 w-full h-full'>
-        <h1
-          className='text-center text-3xl mb-10 text-[#333333d7]'
-          style={roboto.style}>
-          What can I offer for you?
+        <h1 className='text-center text-3xl mb-44 font-bold text-light-400'>
+          {engLanguageActive
+            ? 'What can I offer for you? ...'
+            : '¿Qué puedo ofrecerte? ...'}
+          <span className='italic text-2xl text-[#333333cb] font-light'>
+            {' '}
+            {engLanguageActive
+              ? 'let me show you some of my services.'
+              : 'Permíteme mostrarte algunos de mis servicios.'}
+          </span>
         </h1>
-        <div className='grid grid-cols-2 grid-rows-[repeat(2,min-max(100px,auto))] gap-y-[7em] relative w-[80%] m-[0_auto]'>
+        <div className='grid grid-cols-3 grid-rows-[repeat(2,min-max(100px,auto))] gap-y-[11em] relative w-[80%] m-[0_auto]'>
           <div className='w-full flex justify-around flex-wrap row-span-1 col-span-full'>
             <div className='relative w-[12em] h-[25rem] flex flex-col justify-between border-[10px] border-[#252525] bg-white rounded-[25px] before:absolute before:w-full before:h-5 before:rounded-[50%] before:left-0 before:bottom-[-3em] before:bg-[#3737378f] before:z-50'>
               <div className='py-1 rounded-[13px_13px_0_0] w-full bg-[#4a4a4a] px-2 text-white flex justify-between items-center'>
@@ -151,26 +157,22 @@ const Skills = () => {
               <h1 className='text-2xl font-bold text-[#333333c0]'>
                 Diseño de aplicaciones moviles
               </h1>
-              <div className='text-sm font-medium text-[#3333339e] border-l-8 border-light-800 bg-[#ececec39] pl-4 pr-2 py-6'>
+              <div className='text-sm font-medium text-[#3333339e] border-l-8 border-light-800 bg-[#ececec39] pl-4 pr-2 py-6 '>
                 <p>
-                  ¡Hola! ¿Quieres una app móvil que enamore a tus usuarios desde
-                  el primer momento? ¡Estás en el lugar adecuado! Soy un
-                  desarrollador frontend especializado en dar vida a tus ideas
-                  en el mundo digital. Cada detalle de tu app será
-                  cuidadosamente trabajado para asegurar que sea visualmente
-                  atractiva y fácil de usar.
+                  {engLanguageActive
+                    ? `Hey there! Looking for a mobile app that captivates your users from the get-go? You're in the right place! I'm a frontend developer specialized in bringing your ideas to life in the digital world. Every detail of your app will be meticulously crafted to ensure it's visually appealing and user-friendly.`
+                    : '¡Hola! ¿Quieres una app móvil que enamore a tus usuarios desde el primer momento? ¡Estás en el lugar adecuado! Soy un desarrollador frontend especializado en dar vida a tus ideas en el mundo digital. Cada detalle de tu app será cuidadosamente trabajado para asegurar que sea visualmente atractiva y fácil de usar.'}
                 </p>
                 <p className='mt-3'>
-                  ¿Listo para destacar en el mundo móvil? ¡Hablemos y
-                  convirtamos tu idea en una realidad digital! 🤯
+                  {engLanguageActive
+                    ? `Ready to stand out in the mobile world? Let's talk and turn your idea into a digital reality!`
+                    : '¿Listo para destacar en el mundo móvil? ¡Hablemos y convirtamos tu idea en una realidad digital!'}{' '}
+                  🤯
                 </p>
               </div>
             </article>
           </div>
 
-          {/* ¡Hola! Soy un desarrollador web versátil, con experiencia tanto en el frontend como en el backend. Mi objetivo es potenciar tu proyecto con mis habilidades y experiencia. ¿Listo para llevar tu proyecto al siguiente nivel? ¡Hablemos y veamos cómo puedo contribuir al éxito de tu equip */}
-
-          {/* other section */}
           <div className='w-full flex justify-around flex-wrap row-span-2 col-span-full flex-row-reverse'>
             <div className='flex flex-col justify-center items-center'>
               <div className='h-[13em] w-[22em] rounded-[0.5em_0.5em_0_0] bg-white aaaa border-[1.5em] border-[#2d2d2d] border-b-0'></div>
@@ -186,23 +188,42 @@ const Skills = () => {
             </div>
             <article className='w-1/2 flex flex-col items-center justify-center gap-8'>
               <h1 className='text-2xl font-bold text-[#333333c0]'>
-                Aplicaciones y Landing pages
+                {engLanguageActive
+                  ? `Applications and landing pages`
+                  : 'Aplicaciones y Landing pages'}
               </h1>
               <div className='text-sm font-medium text-[#3333339e] border-l-8 border-light-800 bg-[#ececec39] pl-4 pr-2 py-6'>
                 <p>
-                  ¡Hola! ¿Quieres llevar tu negocio al siguiente nivel en línea?
-                  ¡Estás en el lugar indicado! Soy un desarrollador web frontend
-                  especializado en crear landing pages, páginas web y
-                  aplicaciones de escritorio que impulsan tu negocio. Convertí
-                  tus ideas en resultados tangibles y visualmente impactantes
-                  que cautiven a tus usuarios.
+                  {engLanguageActive
+                    ? `Hello! Looking to take your business to the next level online? You're in the right place! I'm a frontend web developer specialized in creating landing pages, websites, and desktop applications that propel your business forward. I turn your ideas into tangible, visually stunning results that captivate your users.`
+                    : '¡Hola! ¿Quieres llevar tu negocio al siguiente nivel en línea? ¡Estás en el lugar indicado! Soy un desarrollador web frontend especializado en crear landing pages, páginas web y aplicaciones de escritorio que impulsan tu negocio. Convertí tus ideas en resultados tangibles y visualmente impactantes que cautiven a tus usuarios.'}
                 </p>
                 <p className='mt-3'>
-                  ¿Listo para dar el salto digital? ¡Hablemos y hagamos realidad
-                  tus ideas juntos!🚀
+                  {engLanguageActive
+                    ? `Ready to take the digital leap? Let's talk and bring your ideas to life together!`
+                    : '¿Listo para dar el salto digital? ¡Hablemos y hagamos realidad tus ideas juntos! '}
+                  🚀
                 </p>
               </div>
             </article>
+          </div>
+          <div className='w-[60%] m-[0_auto] rounded-md row-span-3 col-span-full p-8 bg-[#ececec4f] [backdrop-filter:blur(30px)]'>
+            <Image
+              src={devs_team}
+              alt='devs_team_image'
+              className='w-auto h-auto '
+            />
+            <h1 className='text-sm text-center font-extrabold text-[#333333c0]'>
+              {engLanguageActive
+                ? `DESARROLLADOR FULLSTACK`
+                : 'FULLSTACK DEVELOPER'}{' '}
+              🤩
+            </h1>
+            <p className='px-2 text-[0.85em] mt-4 font-medium text-[#3333339e]'>
+              {engLanguageActive
+                ? `I'm a versatile web developer, experienced in both frontend and backend. My goal is to enhance your project with my skills and expertise. Let's talk and see how I can contribute to your team's success.`
+                : 'Soy un desarrollador web versátil, con experiencia tanto en el frontend como en el backend. Mi objetivo es potenciar tu proyecto con mis habilidades y experiencia. Hablemos y veamos cómo puedo contribuir al éxito de tu equipo.'}
+            </p>
           </div>
         </div>
       </article>

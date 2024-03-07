@@ -76,7 +76,6 @@ const NavBar = () => {
         <Image src={icon} alt='icon' />
         <span>Seba Perez</span>
       </div>
-      {/* w-[35em] bg-gradient-to-l from-light-500 to-[#DCBFFF] */}
       <nav className='[display:none] md:flex justify-end gap-4 pt-2 '>
         {navLinks.map((item, index) => (
           <Link
