@@ -1,6 +1,7 @@
 import { useStore } from '@/store';
 import { Roboto } from 'next/font/google';
 
+import Link from 'next/link';
 import Image from 'next/image';
 import profile_image from '@/assets/images/avatar.webp';
 
@@ -32,12 +33,12 @@ const Hero = () => {
           <strong className='text-light-500'>Seba</strong>
           <b className='text-7xl'>.</b>
         </h1>
-        <p className='max-[520px]:text-[#545454cb] max-[520px]:w-[90%] text-sm font-semibold text-[#33333391] w-[23em]'>
+        <p className='max-[520px]:text-[#3c3c3ccb] max-[520px]:w-[90%] text-sm font-semibold text-[#333333a7] w-[23em]'>
           {engLanguageActive
             ? `I am a front-end developer living in Buenos Aires, Argentina. With two years of experience in web development, I am currently enrolled in a bootcamp to expand my horizons and enhance my current skill set.`
             : 'Desarrollor front-end y vivo en Argentina, Buenos Aires. Tengo dos años de experiencia en el desarrollo web. Actualmente estoy cursando un bootcamp para poder ampliar mis horizontes y sumar conocimiento a mi stack actual'}
           <br></br>
-          <strong className='bg-green-600 rounded-sm p-1 w-max text-white font-bold text-[0.7em]'>
+          <strong className='bg-green-700 rounded-sm p-1 w-max text-white font-bold text-[0.7em]'>
             OPEN TO WORK .
           </strong>
         </p>
@@ -64,16 +65,20 @@ const Hero = () => {
             <HiOutlineArrowLongRight className='text-3xl' />
           </span>
           <div className='max-[700px]:mb-6 max-[700px]:translate-x-24 flex flex-col items-center justify-center gap-2'>
-            <button
+            <Link
+              target='_blank'
+              href={'https://github.com/SebaPerez90'}
               aria-label='social-network-btn'
               className='relative before:absolute before:left-0 before:bottom-0 before:w-full before:h-full hover:before:bg-[#00000023] before:duration-200 before:rounded-full before:scale-[1.9] before:-z-10 text-white bg-black text-3xl  rounded-full hover:outline hover:outline-1 hover:outline-white'>
               <FaGithub />
-            </button>
-            <button
+            </Link>
+            <Link
+              target='_blank'
+              href={'https://www.linkedin.com/in/sebaperez90/'}
               aria-label='social-network-btn'
               className='relative before:absolute before:left-0 before:bottom-0 before:w-full before:h-full hover:before:bg-[#00000023] before:duration-200 before:rounded-full before:scale-[1.7] before:-z-10 mt-4 text-white bg-light-400 hover:border-light-400 p-2 text-xl rounded-full hover:outline hover:outline-1 hover:outline-white'>
               <FaLinkedinIn />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

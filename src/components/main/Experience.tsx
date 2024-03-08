@@ -27,7 +27,7 @@ const Experience = () => {
     <>
       <section className='shadow-[14px_30px_20px_-10px_#0000004f] py-20 bg-white  w-full lg:w-[80%] lg:rounded-lg'>
         <h1
-          className='text-3xl [letter-spacing:10px] text-[#313131be] text-center'
+          className='px-2 text-3xl min-[500px]:[letter-spacing:10px] text-[#313131be] text-center'
           style={roboto.style}>
           {engLanguageActive ? 'WORK EXPERIENCE' : 'EXPERIENCIA LABORAL'}💼
         </h1>
@@ -142,7 +142,7 @@ const Experience = () => {
       <section className='bg-white py-28 flex flex-col items-center gap-28'>
         <header className='max-[950px]:top-[-2em] flex flex-col items-center '>
           <h1
-            className='text-4xl [letter-spacing:15px] text-[#313131be] text-center'
+            className='text-4xl min-[500px]:[letter-spacing:15px] text-[#313131be] text-center'
             style={roboto.style}>
             {engLanguageActive ? 'STUDIES' : 'ESTUDIOS'}👨‍🎓
           </h1>
@@ -152,7 +152,7 @@ const Experience = () => {
               : 'Comenzé mi inmersión en el mundo de la programación hace 2 años, primero con mucha curiosidad y sin un rumbo. Pero poco a poco, entendiendo como funcionan todas sus partes en conjunto. Con el tiempo, gracias a mi necesidad y ganas de aprender más, desarrollé la habilidad de ser autodidacta.'}
           </p>
         </header>
-        <div className='flex justify-around w-full items-end z-10 relative before:absolute before:rounded-[50%] before:left-[5%] before:bottom-6 before:w-[90%] before:h-1 before:bg-[#373737] before:-z-10 max-[950px]:flex-col max-[950px]:items-center max-[950px]:h-[auto] max-[950px]:before:[display:none] max-[950px]:after:absolute max-[950px]:after:right-[13%] max-[950px]:after:h-[80%] max-[950px]:after:w-1 max-[950px]:after:top-[15%] max-[950px]:after:bg-[#373737] max-[950px]:after:-z-10 max-[650px]:gap-20 max-[700px]:after:right-[14%]'>
+        <div className='max-[490px]:after:right-[16%] max-[570px]:after:right-[15%] flex justify-around w-full items-end z-10 relative before:absolute before:rounded-[50%] before:left-[5%] before:bottom-6 before:w-[90%] before:h-1 before:bg-[#373737] before:-z-10 max-[950px]:flex-col max-[950px]:items-center max-[950px]:h-[auto] max-[950px]:before:[display:none] max-[950px]:after:absolute max-[950px]:after:right-[13%] max-[950px]:after:h-[80%] max-[950px]:after:w-1 max-[950px]:after:top-[15%] max-[950px]:after:bg-[#373737] max-[950px]:after:-z-10 max-[650px]:gap-20 max-[700px]:after:right-[14%]'>
           <article className='max-[950px]:h-[20em] max-[950px]:flex-row  max-[950px]:w-[80%]  h-[25em] w-[16em] flex justify-between  items-center flex-col'>
             <div className='max-[950px]:w-[70%] gap-4 flex flex-col justify-around items-center'>
               <h1 className='text-lg font-black'>Soy Henry</h1>
@@ -167,7 +167,7 @@ const Experience = () => {
                   : 'Bootcamp. Fué mi primer experiencia formal en un carrera IT. Al yo no tener un background en tecnología y estar comenzando mis estudios. Decidí abandonar la carrera porque sentía que no asmilaba bien el contenido, ya que según mi criterio , esa carrera (contrariamente a la publicidad) era para gente con una base sólida.'}
               </p>
             </div>
-            <div className='z-10 relative before:absolute before:w-24 before:h-[1px] before:top-0 before:left-[-1.2em] before:-z-10 before:bg-black before:rotate-[90deg] w-14 h-14 max-[950px]:before:rotate-[0deg] max-[950px]:before:left-[-4.2em] max-[950px]:before:top-7'>
+            <div className='max-[570px]:before:[display:none] z-10 relative before:absolute before:w-24 before:h-[1px] before:top-0 before:left-[-1.2em] before:-z-10 before:bg-black before:rotate-[90deg] w-14 h-14 max-[950px]:before:rotate-[0deg] max-[950px]:before:left-[-4.2em] max-[950px]:before:top-7'>
               <Image
                 src={soyHenry_logo}
                 alt='soyHenry-logo'
@@ -193,7 +193,7 @@ const Experience = () => {
                   : 'Universidad tecnológica nacional. Por motivos económicos personales se me dificulto poder costear la carrera Debido a ese motivo, tuve que suspenderla momentaneamente hasta que mi situación cambie.'}
               </p>
             </div>
-            <div className='w-14 h-14 z-10 relative before:absolute before:w-32 before:h-[1px] before:bottom-24 before:left-[-2.5em] before:-z-10 before:bg-black before:rotate-[90deg] max-[950px]:before:rotate-[0deg] max-[950px]:before:left-[-4.5em] max-[950px]:before:top-7'>
+            <div className='max-[570px]:before:[display:none] w-14 h-14 z-10 relative before:absolute before:w-32 before:h-[1px] before:bottom-24 before:left-[-2.5em] before:-z-10 before:bg-black before:rotate-[90deg] max-[950px]:before:rotate-[0deg] max-[950px]:before:left-[-4.5em] max-[950px]:before:top-7'>
               <Image
                 src={utn_logo}
                 alt='utn-logo'
@@ -216,7 +216,7 @@ const Experience = () => {
                   : 'Decidí retomar la carrera debido a que gracias a mi ansia de conocimiento y curiosidad de siempre querer entender como funciona un software. Adquirí la habilidad de ser autodidacta, y al poder ahora si estar preparado. Siento que puedo llevar adelante la carrera y ya que el programa que ofrece , puede ayudarme a reforzar mis conocimientos.'}
               </p>
             </div>
-            <div className='w-14 h-14 z-10 relative before:absolute before:w-24 before:h-[1px] before:top-0 before:left-[-1.2em] before:-z-10 before:bg-black before:rotate-[90deg] max-[950px]:before:rotate-[0deg] max-[950px]:before:left-[-4.2em] max-[950px]:before:top-7'>
+            <div className='max-[570px]:before:[display:none] w-14 h-14 z-10 relative before:absolute before:w-24 before:h-[1px] before:top-0 before:left-[-1.2em] before:-z-10 before:bg-black before:rotate-[90deg] max-[950px]:before:rotate-[0deg] max-[950px]:before:left-[-4.2em] max-[950px]:before:top-7'>
               <Image
                 src={soyHenry_logo}
                 alt='soyHenry-logo'
@@ -226,19 +226,19 @@ const Experience = () => {
             </div>
           </article>
         </div>
-        <div className='max-[650px]:w-[90%] max-[950px]:w-[95%] flex flex-col items-center w-[60%] rounded-md'>
-          <h1 className='text-[#4a4a4ad3] font-extrabold mb-2'>
+        <div className='px-6 py-8 bg-[#ededed] max-[650px]:w-[80%] max-[950px]:w-[90%] flex flex-col items-center w-[60%] rounded-md'>
+          <h1 className='text-[#575757] text-center font-extrabold text-xl mb-6'>
+            <span className='text-4xl'>⚠️</span>
             {engLanguageActive
               ? `IMPORTANT EXTRA DATA`
               : 'DATO EXTRA IMPORTANTE '}
-            ⚠️
           </h1>
-          <p className='max-[650px]:text-xs italic text-sm text-[#4c4c4c] font-light'>
+          <p className='text-sm text-[#3a3a3a] font-medium'>
             {engLanguageActive
               ? `I also want to highlight that I'm passionate about learning the English language. I self-study and immerse myself constantly in English through various inputs such as documentation, movies entirely in English, English subtitles, podcasts, devices, etc.`
               : 'También quiero destacar que soy un apasionado por el aprendizaje del idioma ingles. De forma autodidacta, consumo todo tipo de input en ingles para estar inmerso constantemente en él. Ya sea documentación, peliculas enteramente en ingles, subtitulos en ingles, podcasts, dispositivos, etc.'}
           </p>
-          <p className='max-[650px]:text-xs italic text-sm text-[#4c4c4c] font-light'>
+          <p className='text-sm text-[#3a3a3a] font-medium'>
             {engLanguageActive
               ? `What I'm aiming to convey with this is that a position requiring English wouldn't be a problem because my enthusiasm and commitment to learning programming is equivalent to learning English.`
               : 'A lo quiero llegar con esto, es que un puesto que requiera ingles no seria un problema ya que mi entusiamo y compromiso por aprender programación es equivalente aprender ingles.'}

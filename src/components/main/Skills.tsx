@@ -93,17 +93,17 @@ const Skills = () => {
       id='skills-section'
       className='mt-32 w-[100%] max-[600px]:bg-orange-400 bg-gradient-to-b from-[#dedede] via-light-200 to-[#dedede] flex flex-col justify-center items-center'>
       <h1
-        className='text-3xl [letter-spacing:10px] text-[#313131] text-center'
+        className='px-4 text-3xl min-[500px]:[letter-spacing:10px] text-[#313131] text-center'
         style={roboto.style}>
         {engLanguageActive ? 'SKILLS & SERVICES' : 'HABILIDADES Y SERVICIOS '}🤓
       </h1>
 
       <article className='py-40 w-full h-full'>
-        <h1 className='text-center text-3xl mb-44 font-bold text-light-400'>
+        <h1 className='max-[500px]:text-xl  px-4 text-center text-3xl mb-44 font-bold text-light-400'>
           {engLanguageActive
             ? 'What can I offer for you? ...'
             : '¿Qué puedo ofrecerte? ...'}
-          <span className='italic text-2xl text-[#333333cb] font-light'>
+          <span className='max-[500px]:text-lg italic text-2xl text-[#333333cb] font-light'>
             {' '}
             {engLanguageActive
               ? 'let me show you some of my services.'
@@ -154,12 +154,12 @@ const Skills = () => {
               </div>
             </div>
             <article className='max-[500px]:w-[90%] max-[825px]:w-[80%] w-1/2 flex flex-col items-center justify-center gap-6'>
-              <h1 className='text-2xl font-bold text-[#333333c0] text-center'>
+              <h1 className='text-2xl font-black text-[#333333d4] text-center'>
                 {engLanguageActive
                   ? `Mobile application design`
                   : 'Diseño de aplicaciones moviles'}
               </h1>
-              <div className='text-sm font-medium text-[#3333339e] border-l-8 border-light-800 bg-[#ececec39] pl-4 pr-2 py-6 '>
+              <div className='text-sm font-medium text-[#333333c7] border-l-[12px] border-light-800 bg-[#ececec51] pl-4 pr-2 py-6 '>
                 <p>
                   {engLanguageActive
                     ? `Hey there! Looking for a mobile app that captivates your users from the get-go? You're in the right place! I'm a frontend developer specialized in bringing your ideas to life in the digital world. Every detail of your app will be meticulously crafted to ensure it's visually appealing and user-friendly.`
@@ -189,12 +189,12 @@ const Skills = () => {
               <div className='h-4 w-[15em] bg-[#2d2d2d] rounded-[0.5em_0.5em_0_0]'></div>
             </div>
             <article className='max-[500px]:w-[90%] max-[825px]:w-[80%] w-1/2 flex flex-col items-center justify-center gap-6'>
-              <h1 className='text-2xl font-bold text-[#333333c0] text-center'>
+              <h1 className='text-2xl font-black text-[#333333d4] text-center'>
                 {engLanguageActive
                   ? `Applications and landing pages`
                   : 'Aplicaciones y Landing pages'}
               </h1>
-              <div className='text-sm font-medium text-[#3333339e] border-l-8 border-light-800 bg-[#ececec39] pl-4 pr-2 py-6'>
+              <div className='text-sm font-medium text-[#333333c7] border-l-[12px] border-light-800 bg-[#ececec51] pl-4 pr-2 py-6'>
                 <p>
                   {engLanguageActive
                     ? `Hello! Looking to take your business to the next level online? You're in the right place! I'm a frontend web developer specialized in creating landing pages, websites, and desktop applications that propel your business forward. I turn your ideas into tangible, visually stunning results that captivate your users.`
@@ -234,15 +234,15 @@ const Skills = () => {
       <section className='max-[830px]:gap-16 max-[830px]:flex-wrap gap-8 w-[90%] flex justify-evenly'>
         {skills.map((item, index) => (
           <div
-            className='bg-white p-[2em_2.5em] gap-12 flex flex-col justify-start w-auto shadow-[14px_30px_20px_-10px_#0000004f] rounded-md'
+            className='max-[480px]:w-[90%] w-[80%] sm:w-auto bg-white p-[2em_2.5em] gap-12 flex flex-col sm:justify-start shadow-[14px_30px_20px_-10px_#0000004f] rounded-md'
             key={index}>
-            <h1 className='w-max text-[#333333ac] [letter-spacing:5px] text-2xl font-extrabold text-center'>
+            <h1 className='py-1 w-full sm:w-max text-[#333333ac] [letter-spacing:5px] text-2xl font-black text-center'>
               {item.title}
             </h1>
             <ul className='h-[10em] flex-wrap flex flex-col justify-between items-start gap-4'>
               {item.skills.map((skill, index) => (
                 <li
-                  className='text-xs cursor-default font-semibold text-[#3333339e] h-[3em] gap-2 flex items-center'
+                  className='text-base cursor-default font-medium text-[#757575] h-[2em] gap-2 flex items-center'
                   key={index}>
                   {/* Insert dynamically the icon corresponding to the value of item.skill */}
                   {addSvgIcon(skill)}

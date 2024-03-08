@@ -23,7 +23,7 @@ const Proyects = () => {
       id='projects-section'
       className='mt-32 lg:w-[80%]  md:w-[90%] w-full flex flex-col justify-center items-center'>
       <h1
-        className='text-3xl [letter-spacing:15px] text-[#313131]'
+        className='text-3xl min-[500px]:[letter-spacing:15px] text-[#313131]'
         style={roboto.style}>
         {engLanguageActive ? 'PROJECTS' : 'PROYECTOS'}💻
       </h1>
@@ -34,7 +34,7 @@ const Proyects = () => {
           key={index}>
           <article className='relative rounded-none md:rounded-[0.5em_0_0_0.5em] gap-12 flex flex-col justify-around items-center bg-white w-full py-8'>
             <h2
-              className='text-4xl text-center font-extrabold text-[#454545d3]'
+              className='px-2 text-4xl text-center font-extrabold text-[#454545d3]'
               style={roboto.style}>
               {item.title}
             </h2>
@@ -53,29 +53,33 @@ const Proyects = () => {
 
               <div className='w-[70%] m-[0_auto]'>
                 {engLanguageActive ? (
-                  <p className='font-semibold text-[#45454590] ml-4'>
+                  <p className='font-medium text-[#696969] ml-4'>
                     {item.descriptionES}
                   </p>
                 ) : (
-                  <p className='font-semibold text-[#45454590] ml-4'>
+                  <p className='font-medium text-[#696969] ml-4'>
                     {item.descriptionES}
                   </p>
                 )}
               </div>
             </div>
             <ul className='absolute bottom-[-4.5em] sm:bottom-4 sm:relative flex sm:flex-col-reverse md:flex-row gap-4 lg:gap-10 items-center'>
-              <Link
-                className='flex items-center p-[0.8em_3em] md:p-[0.8em_2em] gap-2 text-white rounded-full bg-gradient-to-b from-light-900 via-light-900 font-bold to-[#7d27ffae] border-[1px] border-[#4f2194] hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] duration-200 active:border-[#dedede] hover:bg-[#4f2194] hover:border-light-900 hover:text-[#ffffff93]'
-                href={item.code}>
-                <FiGithub className='text-xl' />
-                code
-              </Link>
-              <Link
-                className='flex items-center p-[0.8em_2em] gap-2 text-white rounded-full bg-gradient-to-b from-light-900 via-light-900 font-bold to-[#7d27ffae] border-[1px] border-[#4f2194] hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] duration-200 active:border-[#dedede] hover:bg-[#4f2194] hover:border-light-900 hover:text-[#ffffff93]'
-                href={item.preview}>
-                <FaLink className='text-xl' />
-                preview
-              </Link>
+              <li>
+                <Link
+                  className='max-[400px]:p-[0.6em_1em] flex items-center p-[0.8em_3em] md:p-[0.8em_2em] gap-2 text-white rounded-full bg-gradient-to-b from-light-900 via-light-900 font-bold to-[#7d27ffae] border-[1px] border-[#4f2194] hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] duration-200 active:border-[#dedede] hover:bg-[#4f2194] hover:border-light-900 hover:text-[#ffffff93]'
+                  href={item.code}>
+                  <FiGithub className='text-xl' />
+                  code
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className='max-[400px]:p-[0.6em_1em] flex items-center p-[0.8em_2em] gap-2 text-white rounded-full bg-gradient-to-b from-light-900 via-light-900 font-bold to-[#7d27ffae] border-[1px] border-[#4f2194] hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] duration-200 active:border-[#dedede] hover:bg-[#4f2194] hover:border-light-900 hover:text-[#ffffff93]'
+                  href={item.preview}>
+                  <FaLink className='text-xl' />
+                  preview
+                </Link>
+              </li>
             </ul>
           </article>
           <article className='pb-8 pt-24 sm:pt-0 sm:pb-0 w-full flex justify-center bg-light-700 items-center rounded-none md:rounded-[0_0.5em_0.5em_0]'>
@@ -86,7 +90,7 @@ const Proyects = () => {
                   src={item}
                   width={300}
                   height={300}
-                  loading='lazy'
+                  priority
                   alt='screen-shoot'
                   className='sticky left-0 h-full w-full object-cover snap-center'
                 />

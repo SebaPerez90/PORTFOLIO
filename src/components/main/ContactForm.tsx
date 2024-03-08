@@ -48,7 +48,7 @@ const Contact = () => {
       id='contact-section'
       className='pt-20 pb-40 gap-16 flex flex-col items-center justify-around w-full'>
       <h1
-        className='text-center text-3xl [letter-spacing:10px] text-[#313131be]'
+        className='text-center text-3xl min-[500px]:[letter-spacing:10px] text-[#313131be]'
         style={roboto.style}>
         {engLanguageActive ? 'CONTACT ME' : 'CONTÁCTAME'}🤝
       </h1>
