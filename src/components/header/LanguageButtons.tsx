@@ -19,7 +19,7 @@ const LanguageButtons = () => {
   };
 
   return (
-    <button onClick={toggleEfect}>
+    <button aria-label='switch-language-btn' onClick={toggleEfect}>
       {engLanguageActive ? (
         <Image
           src={spanish_icon}

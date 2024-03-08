@@ -57,6 +57,7 @@ const ThemeButtons = () => {
             alt='dark-theme-icon'
           />
           <button
+            aria-label='switch-theme-btn'
             onClick={toggleEfect}
             ref={buttonRef}
             className='bg-[#9147ff] m-[1px] rounded-full border-2 h-7 w-7 z-20'></button>
@@ -64,6 +65,7 @@ const ThemeButtons = () => {
       ) : (
         <div className='border-2 pl-[0.1em] bg-[#ffa600] flex justify-between items-center w-16  h-7 rounded-full overflow-hidden'>
           <button
+            aria-label='switch-theme-btn'
             onClick={toggleEfect}
             ref={buttonRef}
             className='bg-[#ffd16d] rounded-full border-2 h-5 w-5 z-20'></button>
