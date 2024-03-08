@@ -52,7 +52,7 @@ const Contact = () => {
         style={roboto.style}>
         {engLanguageActive ? 'CONTACT ME' : 'CONTÁCTAME'}🤝
       </h1>
-      <section className='after:absolute after:left-0 after:bottom-0 after:w-1/2 after:h-full after:bg-gradient-to-l after:from-blue-50 after:via-white after:to-white after:z-10 before:absolute before:right-0 before:bottom-0 before:w-1/2 before:h-full before:bg-gradient-to-l from-blue-300 via-blue-200 to-blue-50 relative px-12 py-10 rounded-lg shadow-[14px_30px_20px_-10px_#0000004f]  bg-white flex w-[55em] h-auto justify-around overflow-hidden'>
+      <section className='after:absolute after:left-0 after:bottom-0 after:w-1/2 after:h-full after:bg-gradient-to-l after:from-blue-50 after:via-white after:to-white after:z-10 before:absolute before:right-0 before:bottom-0 before:w-1/2 before:h-full before:bg-gradient-to-l from-blue-300 via-blue-200 to-blue-50 relative pl-12 py-10 rounded-lg shadow-[14px_30px_20px_-10px_#0000004f]  bg-white flex w-[55em] h-auto justify-around overflow-hidden'>
         <form
           className='z-20 gap-8 bg-transparent  [min-width:20em] flex flex-col justify-evenly items-start '
           onSubmit={(e) => e.preventDefault()}>
@@ -115,10 +115,15 @@ const Contact = () => {
           </button>
         </form>
         <div className='z-20 flex flex-col items-center justify-center'>
-          <p className='p-4 text-[#404040cb] w-[80%] text-sm font-semibold bg-[#0000000e] rounded-sm [backdrop-filter:blur(5px)]'>
-            Let me know how I can be of service to you or tell me about your
-            user experience or any type of feedback.
-          </p>
+          <div className='p-4 text-[#404040cb] w-[80%] text-sm font-semibold bg-[#0000000e] rounded-sm [backdrop-filter:blur(2px)]'>
+            <h1 className=' text-lg text-[#404040da] font-bold text-center'>
+              Let me know how I can be of service to you! 😁
+            </h1>
+            <p className='mt-1 px-10'>
+              Please share your user experience or any feedback you may have.
+            </p>
+          </div>
+
           <Image
             src={form_image}
             priority
