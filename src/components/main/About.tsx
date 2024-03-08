@@ -18,19 +18,19 @@ const About = () => {
       id='about-section'
       className='mt-20 xl:w-[80%] lg:w-[90%] flex flex-col justify-around items-center'>
       <h1
-        className='text-center text-3xl [letter-spacing:15px] text-[#313131be]'
+        className='text-center text-3xl min-[500px]:[letter-spacing:15px] text-[#313131be]'
         style={roboto.style}>
         {engLanguageActive ? 'ABOUT ME' : 'SOBRE MI'} 🤠
       </h1>
 
-      <div className='pl-0 md:pl-10 lg:pl-0 flex justify-center items-center bg-[#333333ee] md:bg-light-200 w-full py-16 mt-8 md:rounded-[0.375em_0.375em_0_0]'>
-        <div className='z-30 gap-10 md:gap-8 shadow-none md:shadow-[14px_30px_20px_-10px_#0000004f] rounded-md px-6 py-10 flex flex-col justify-around md:justify-evenly items-center h-96 w-max bg-none md:bg-white'>
-          <h2 className='max-[430px]:[letter-spacing:1px] text-balance max-[430px]:text-lg text-xl md:text-[0.8em] text-white md:text-[#333333bc] [letter-spacing:5px] font-extrabold'>
+      <div className='px-0 sm:pl-10 lg:pl-0 flex justify-center items-center bg-light-200 w-full py-16 mt-8 md:rounded-[0.375em_0.375em_0_0]'>
+        <div className='max-[420px]:scale-90 sm:w-full z-20 sm:bg-[#ffffffc6] [backdrop-filter:blur(10px)] gap-8 shadow-[14px_30px_20px_-10px_#0000004f] rounded-md px-6 py-10 flex flex-col ustify-evenly items-center h-96 md:w-max bg-white'>
+          <h2 className='text-[0.8em] text-[#333333bc] [letter-spacing:5px] font-extrabold'>
             {engLanguageActive
               ? 'PERSONAL INFORMATION'
               : 'INFORMACION PERSONAL'}
           </h2>
-          <ul className='max-[430px]:text-xs flex flex-col gap-3 md:gap-2 self-start text-sm cursor-default font-light md:font-semibold text-white md:text-[#33333391]'>
+          <ul className='flex flex-col gap-2 self-start text-sm cursor-default font-semibold text-[#33333391]'>
             <li className='flex items-center gap-2'>
               {engLanguageActive ? 'Full Name' : 'Nombre Completo'}:
               <span className='font-normal'>Sebastian Perez</span>
@@ -62,7 +62,7 @@ const About = () => {
             <li className='flex items-center gap-2'>
               Linkedin:{' '}
               <Link
-                className='md:[letter-spacing:-1px] text-light-200 hover:text-light-100 hover:duration-200 duration-200'
+                className='[letter-spacing:-1px] text-light-200 hover:text-light-100 hover:duration-200 duration-200'
                 href={'https://www.linkedin.com/in/sebaperez90/'}
                 target='_blank'>
                 https://www.linkedin.com/in/sebaperez90
@@ -71,7 +71,7 @@ const About = () => {
             <li className='flex items-center gap-2'>
               Github:{' '}
               <Link
-                className='md:[letter-spacing:-1px] text-light-200 hover:text-light-100 hover:duration-200 duration-200'
+                className='[letter-spacing:-1px] text-light-200 hover:text-light-100 hover:duration-200 duration-200'
                 href={'https://github.com/SebaPerez90'}
                 target='_blank'>
                 https://github.com/SebaPerez90
@@ -80,14 +80,14 @@ const About = () => {
           </ul>
         </div>
 
-        <div className='bg-none z-10 md:bg-transparent min-w-[375px] absolute md:relative flex flex-col items-center justify-center'>
+        <div className='[display:none] max-[800px]:w-full bg-none z-10 sm:flex flex-col items-center justify-center'>
           <Image
             src={developer_cartoon}
             alt='eveloper_cartoon_img'
             priority
-            className='opacity-[.15] md:opacity-100 [filter:drop-shadow(0_0_1px_#000)] h-96 w-max order-1'
+            className='max-[800px]:absolute max-[800px]:right-[-4em] max-[800px]:h-auto max-[800px]:w-auto [filter:drop-shadow(0_0_1px_#000)] h-96 w-full order-1'
           />
-          <span className='w-0 md:w-1/2 h-4 rounded-[50%] bg-[#00000049] absolute bottom-6 order-2'></span>
+          <span className='w-1/2 h-4 rounded-[50%] bg-[#00000049] absolute bottom-6 order-2'></span>
         </div>
       </div>
 
