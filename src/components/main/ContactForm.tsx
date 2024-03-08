@@ -1,9 +1,6 @@
-import { useState, useRef, ChangeEvent } from 'react';
+import { useState, useRef, ChangeEvent, SetStateAction } from 'react';
 import { Roboto } from 'next/font/google';
 import { useStore } from '@/store';
-
-import { FaCheck } from 'react-icons/fa6';
-import { VscSend } from 'react-icons/vsc';
 
 import Image from 'next/image';
 import form_image from '@/assets/images/candidate.webp';
@@ -15,124 +12,123 @@ const roboto = Roboto({
 
 const Contact = () => {
   const { engLanguageActive } = useStore();
-  const [checked, setChecked] = useState(false);
+  const [textAreaLength, setTextAreaLength] = useState(0);
 
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const emailFieldRef = useRef<HTMLInputElement>(null);
-  const errorMessageRef = useRef<HTMLSpanElement>(null);
+  const errorMessageRef: any = useRef<HTMLSpanElement>(null);
+  const emailInputRef: any = useRef<HTMLInputElement>(null);
 
-  // this function check the email input value is a valid address and toggle effect send button if pass the check
   const checkEmail = (e: ChangeEvent<HTMLInputElement>): void => {
     const email = e.target.value;
     const regExp =
       /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
     const verificar = regExp.test(email);
 
+    //first check if the value in input is a valid adrres email
     if (verificar) {
-      errorMessageRef.current
-        ? (errorMessageRef.current.style.opacity = '0')
-        : null;
+      errorMessageRef.current.style.opacity = '0';
+      emailInputRef.current.style.outline = 'none';
 
-      emailFieldRef.current
-        ? emailFieldRef.current.style.removeProperty('border')
-        : null;
-
-      buttonRef.current
-        ? buttonRef.current.classList.toggle('allow-send-form')
-        : null;
-
-      setChecked(true);
+      //then check if the email.value.length > 0
+    } else if (!e.target.value) {
+      errorMessageRef.current.style.opacity = '0';
+      emailInputRef.current.style.outline = 'none';
     } else {
-      errorMessageRef.current
-        ? (errorMessageRef.current.style.opacity = '1')
-        : null;
-      emailFieldRef.current
-        ? (emailFieldRef.current.style.border = '1px solid #ff6565')
-        : null;
+      errorMessageRef.current.style.opacity = '1';
+      emailInputRef.current.style.outline = '2px solid red';
     }
+  };
+
+  //control the length number in text area input
+  const lengthControl = (e: any): void => {
+    setTextAreaLength(e.target.selectionEnd);
   };
 
   return (
     <section
       id='contact-section'
-      className='mt-20 text-center  flex flex-col items-center justify-around w-full'>
-      <div className='relative gap-20 py-16 w-full flex flex-col justify-center items-center bg-gradient-to-b  from-light-400 to-light-200'>
-        <h1
-          className='text-xl [letter-spacing:10px] text-white border-[6px] border-white p-4'
-          style={roboto.style}>
-          {engLanguageActive ? 'CONTACT ME' : 'CONTÁCTAME'}🤝
-        </h1>
-        <section className='z-50 rounded-lg shadow-[14px_30px_20px_-10px_#0000004f]  bg-white flex  w-[50em] h-[28em] justify-around overflow-hidden'>
-          <form
-            className=' bg-white flex flex-col justify-center gap-8 items-center'
-            onSubmit={(e) => e.preventDefault()}>
-            <label htmlFor='name' className=''>
-              <input
-                type='text'
-                name='name'
-                id='name'
-                autoComplete='off'
-                placeholder={
-                  engLanguageActive ? 'full name' : 'Nombre completo'
-                }
-                className='capitalize placeholder:lowercase border-b-2 pb-1 pl-1 outline-none placeholder:opacity-75  font-semibold w-[100%] '
-              />
-            </label>
+      className='pt-20 pb-40 gap-16 flex flex-col items-center justify-around w-full'>
+      <h1
+        className='text-center text-3xl [letter-spacing:10px] text-[#313131be]'
+        style={roboto.style}>
+        {engLanguageActive ? 'CONTACT ME' : 'CONTÁCTAME'}🤝
+      </h1>
+      <section className='after:absolute after:left-0 after:bottom-0 after:w-1/2 after:h-full after:bg-gradient-to-l after:from-blue-50 after:via-white after:to-white after:z-10 before:absolute before:right-0 before:bottom-0 before:w-1/2 before:h-full before:bg-gradient-to-l from-blue-300 via-blue-200 to-blue-50 relative px-12 py-10 rounded-lg shadow-[14px_30px_20px_-10px_#0000004f]  bg-white flex w-[55em] h-auto justify-around overflow-hidden'>
+        <form
+          className='z-20 gap-8 bg-transparent  [min-width:20em] flex flex-col justify-evenly items-start '
+          onSubmit={(e) => e.preventDefault()}>
+          <label
+            htmlFor='name-input-field'
+            className='w-full flex flex-col items-start font-extrabold text-xl text-[#404040b9]'>
+            {engLanguageActive ? 'Name:' : 'Nombre:'}
+            <input
+              type='text'
+              name='user-name'
+              id='name-input-field'
+              autoComplete='off'
+              placeholder='e.g.  sebastian perez'
+              className='rounded-md font-semibold text-sm outline-blue-300 text-[#404040b9] p-2 capitalize placeholder:text-sm placeholder:lowercase placeholder:font-normal border-2 w-full focus:placeholder:opacity-0'
+            />
+          </label>
 
-            <label htmlFor='email' className='relative '>
-              <span className='absolute right-2 text-red-500 text-xl top-2'>
-                {checked ? <FaCheck className='text-green-500 text-sm' /> : '*'}
-              </span>
-              <span
-                ref={errorMessageRef}
-                className='absolute bottom-[-1.5em] w-full text-center text-xs font-semibold text-red-500 opacity-0'>
-                {engLanguageActive
-                  ? 'must be a valid email address'
-                  : 'debe ser una dirección de email valida'}
-              </span>
-              <input
-                onChange={checkEmail}
-                type='text'
-                name='email'
-                id='email'
-                autoComplete='off'
-                placeholder='email'
-                className='pb-1 pl-1 outline-none border-b-2 w-full placeholder:opacity-75  font-semibold'
-                ref={emailFieldRef}
-              />
-            </label>
+          <label
+            htmlFor='email-input-field'
+            className='w-full relative flex flex-col items-start font-extrabold text-xl text-[#404040b9]'>
+            Email:
+            <input
+              onChange={checkEmail}
+              type='text'
+              name='user-email'
+              id='email-input-field'
+              autoComplete='off'
+              placeholder='e.g.  example@gmail.com'
+              className='rounded-md text-sm outline-blue-300 text-[#404040b9] p-2 border-2 w-full placeholder:text-sm placeholder:font-normal focus:placeholder:opacity-0'
+              ref={emailInputRef}
+            />
+            <span
+              ref={errorMessageRef}
+              className='absolute bottom-[-2em] w-max text-center text-sm font-semibold text-red-500 opacity-0'>
+              {engLanguageActive
+                ? 'Must be a valid email address'
+                : 'Debe ser una dirección de email valida'}
+            </span>
+          </label>
 
+          <div className='relative w-full mt-4'>
             <textarea
+              maxLength={150}
+              onChange={lengthControl}
+              autoComplete='off'
               name='message'
               placeholder={
-                engLanguageActive ? 'send you message' : 'Envia tu mensaje'
+                engLanguageActive ? 'your message...' : 'tu mensaje ...'
               }
-              className='h-[30%] w-full outline-none resize-none border-b-2 placeholder:opacity-75 placeholder:absolute placeholder:bottom-0 placeholder:pb-2 placeholder:pl-1  font-semibold'></textarea>
-
-            <button
-              ref={buttonRef}
-              // flex items-center p-[0.8em_2em] gap-2 text-white rounded-full bg-gradient-to-b from-light-900 via-light-900 font-bold to-[#7d27ffae] border-[1px] border-[#4f2194] hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] duration-200 active:border-[#dedede] hover:bg-[#4f2194] hover:border-light-900 hover:text-[#ffffff93]
-              className='cursor-not-allowed'>
-              {engLanguageActive ? 'SEND' : 'ENVIAR'}
-              <VscSend />
-            </button>
-          </form>
-          <div className='relative flex before:absolute before:z-20 before:right-[-12em]  before:rounded-[50%]  before:bottom-0 before:w-[25em] before:h-full before:scale-110 before:bg-[#c89cfe] after:absolute after:z-10 after:right-[-8em] after:rounded-[50%]  after:bottom-0 after:w-[25em] after:h-full after:scale-125 after:bg-[#dcbfff]'>
-            <span className='absolute z-30 right-[-18em] rounded-[50%]  bottom-0 w-[25em] h-full bg-[#9e54f8] '></span>
-            <Image
-              src={form_image}
-              priority
-              alt='form-image-reference'
-              className='w-[20em] h-[20em] z-40'
-            />
+              className='rounded-md focus:placeholder:opacity-0 outline-blue-300 text-[#404040b9] placeholder:text-base placeholder:font-normal p-3 placeholder:translate-y-28 resize-none border-2 w-full h-40'></textarea>
+            <span className='absolute right-5 bottom-5 text-[#404040b9]'>
+              {textAreaLength}/150
+            </span>
           </div>
-        </section>
-      </div>
+
+          <button
+            aria-label='send-btn'
+            className='text-sm self-center w-full translate-y-[-1em] py-3 rounded-lg text-white font-bold hover:duration-200 duration-200 hover:bg-blue-400 bg-light-500  hover:border-light-200 border-2 border-light-500 hover:translate-y-[-1.3em] hover:shadow-[0px_8px_7px_#00000049]'>
+            {engLanguageActive ? 'Send' : 'Enviar'}
+          </button>
+        </form>
+        <div className='z-20 flex flex-col items-center justify-center'>
+          <p className='p-4 text-[#404040cb] w-[80%] text-sm font-semibold bg-[#0000000e] rounded-sm [backdrop-filter:blur(5px)]'>
+            Let me know how I can be of service to you or tell me about your
+            user experience or any type of feedback.
+          </p>
+          <Image
+            src={form_image}
+            priority
+            alt='form-image-reference'
+            className='w-[20em] h-[20em] opacity-75'
+          />
+        </div>
+      </section>
     </section>
   );
 };
 
 export default Contact;
-/*<cite>{`"discipline is our destiny ..."`}</cite>
-
-*/
