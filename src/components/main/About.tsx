@@ -16,21 +16,21 @@ const About = () => {
   return (
     <section
       id='about-section'
-      className='mt-20 xl:w-[80%] lg:w-[90%] flex flex-col justify-around items-center'>
+      className=' mt-20 xl:w-[80%] lg:w-[90%] flex flex-col justify-around items-center'>
       <h1
-        className='text-center text-3xl min-[500px]:[letter-spacing:15px] text-[#313131be]'
+        className='dark:text-white text-center text-5xl min-[500px]:[letter-spacing:15px] text-[#313131be]'
         style={roboto.style}>
         {engLanguageActive ? 'ABOUT ME' : 'SOBRE MI'} 🤠
       </h1>
 
-      <div className='px-0 sm:pl-10 lg:pl-0 flex justify-center items-center bg-light-200 w-full py-16 mt-8 md:rounded-[0.375em_0.375em_0_0]'>
-        <div className='max-[420px]:scale-90 sm:w-full z-20 bg-white sm:bg-[#ffffffc6] [backdrop-filter:blur(10px)] gap-8 shadow-[14px_30px_20px_-10px_#0000004f] rounded-md px-6 py-10 flex flex-col ustify-evenly items-center h-96 md:w-max md:bg-white'>
-          <h2 className='text-lg text-center text-[#333333bc] [letter-spacing:5px] font-extrabold'>
+      <article className='dark:shadow-none dark:bg-theme_dark-main-bg px-0 sm:pl-10 lg:pl-0 flex justify-center items-center bg-light-200 w-full py-16 mt-8 md:rounded-[0.375em_0.375em_0_0]'>
+        <div className='dark:border dark:border-slate-500/30 dark:bg-theme_dark-box-prim max-[420px]:scale-90 sm:w-full z-20 bg-white sm:bg-[#ffffffc6] [backdrop-filter:blur(10px)] gap-8  rounded-md px-6 py-10 flex flex-col ustify-evenly items-center h-96 md:w-max md:bg-white'>
+          <h2 className='dark:text-slate-50 text-lg text-center text-[#333333bc] [letter-spacing:5px] font-extrabold'>
             {engLanguageActive
               ? 'PERSONAL INFORMATION'
               : 'INFORMACION PERSONAL'}
           </h2>
-          <ul className='flex flex-col gap-2 self-start text-sm cursor-default font-semibold text-[#333333b4]'>
+          <ul className='dark:text-zinc-300 flex flex-col gap-2 self-start text-sm cursor-default font-semibold text-[#333333b4]'>
             <li className='flex items-center gap-2'>
               {engLanguageActive ? 'Full Name' : 'Nombre Completo'}:
               <span className='font-medium'>Sebastian Perez</span>
@@ -87,27 +87,27 @@ const About = () => {
             priority
             className='max-[800px]:absolute max-[800px]:right-[-4em] max-[800px]:h-auto max-[800px]:w-auto [filter:drop-shadow(0_0_1px_#000)] h-96 w-full order-1'
           />
-          <span className='max-[800px]:[display:none] w-[65%] h-5 rounded-[50%] bg-[#00000065] absolute bottom-5 order-2'></span>
+          <span className='max-[800px]:[display:none] w-[65%] h-5 rounded-[50%] dark:bg-alternative-100 bg-[#00000065] absolute bottom-5 order-2'></span>
         </div>
-      </div>
+      </article>
 
-      <article className='gap-16 pt-12 pb-16 flex flex-col justify-center shadow-[14px_30px_20px_-10px_#0000004f] md:rounded-[0_0_0.375em_0.375em] bg-white'>
+      <article className='dark:bg-theme_dark-main-bg gap-16 pt-12 pb-16 flex flex-col justify-center shadow-[14px_30px_20px_-10px_#0000004f] md:rounded-[0_0_0.375em_0.375em] bg-white'>
         <div className='flex justify-between'>
           <div className='max-[500px]:[display:none] rounded-[50%] h-[11em] w-[11em]  md:h-[14em] md:w-[14em] xl:h-[17em] xl:w-[17em] overflow-hidden ml-8 translate-x-1 md:translate-x-14'>
             <Image
               src={avatar_profile}
               alt='avatar_profile'
-              className='rounded-[50%] w-full h-full object-cover bg-black'
+              className='rounded-[50%] w-full h-full object-cover bg-black dark:bg-zinc-200'
               priority
             />
           </div>
-          <div className='gap-4 md:gap-0 flex flex-col items-center justify-evenly w-3/4 max-[500px]:w-full'>
-            <h1 className='text-2xl text-[#333333bc] font-extrabold max-[500px]:translate-x-2'>
+          <div className=' gap-4 md:gap-0 flex flex-col items-center justify-evenly w-3/4 max-[500px]:w-full'>
+            <h1 className=' dark:text-slate-50 text-4xl text-[#333333bc] font-extrabold max-[500px]:translate-x-2'>
               {engLanguageActive
                 ? 'Hello There! Soy sebastian 👋'
                 : '¡Hola! Soy Sebastian 👋'}
             </h1>
-            <p className='w-[70%] text-sm font-semibold text-[#33333391]'>
+            <p className=' dark:text-zinc-300 w-[70%] text-sm font-semibold text-[#33333391]'>
               {engLanguageActive
                 ? `I'm a self-taught student currently enrolled in the "Soy Henry" bootcamp. While I primarily focus on front-end development, I also possess knowledge and skills that allow me to work in backend areas. I know I owe some projects showcasing backend experience, but they're on their way 😅.`
                 : 'Soy un estudiante autodidacta actualmente cursando el bootcamp de "Soy Henry". Tengo un mayor enfoque en el desarrollo front-end, pero también tengo conocimientos y herramientas que me pueden permitir trabajar en el área back-end. Sé que estoy en deuda con los proyectos que reflejen la experiencia en el back, pero ya van a llegar 😅'}
@@ -116,15 +116,15 @@ const About = () => {
         </div>
         <hr className='border-[1px] border-light-300 mx-20' />
         <div className='flex flex-col gap-4 items-center pl-4 md:pl-12 md:pr-6 text-sm font-semibold text-[#33333391]'>
-          <h2 className='text-2xl text-[#333333bc] font-extrabold translate-y-[-1em]'>
+          <h2 className='dark:text-slate-50 text-4xl text-[#333333bc] font-extrabold translate-y-[-1em]'>
             {engLanguageActive ? 'Expectations' : 'Expectativas'} 🚀
           </h2>
-          <p className='w-[80%] lg:w-[50em]'>
+          <p className='dark:text-zinc-300 w-[80%] lg:w-[50em]'>
             {engLanguageActive
               ? `My main goal is to enter the professional job market, leveraging fundamental qualities such as determination and perseverance to adapt to any development team. I don't have specific salary expectations because I believe that appropriate compensation should be accompanied by exemplary performance. Therefore, my objective is to continue building knowledge to enhance my professional development.`
               : 'Mi objetivo principal es la inserción al mundo laboral profesional. Aprovechando cualidades fundamentales que poseo como la determinación y la perseverancia para adaptarme a cualquier equipo de desarrollo. No tengo expectativas salariales específicas ya que creo que la remuneración acorde, debe estar acompañada de un desempeño ejemplar. Por lo tanto, mi objetivo es continuar construyendo conocimientos para mejorar mi desarrollo profesional.'}
           </p>
-          <p className='w-[80%] lg:w-[50em]'>
+          <p className='dark:text-zinc-300 w-[80%] lg:w-[50em]'>
             {engLanguageActive
               ? "I also recognize the importance of formal education, so once I'm employed, I intend to continue my academic training."
               : 'También reconozco la importancia de la educación formal, por lo que una vez que esté trabajando, planeo continuar con mi formación académica.'}

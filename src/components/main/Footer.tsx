@@ -11,8 +11,8 @@ const Footer = () => {
   const { engLanguageActive } = useStore();
 
   return (
-    <footer className='flex-wrap relative gap-20 flex justify-center items-end  bg-white w-full pt-12 pb-8'>
-      <div className=' relative w-[30em] h-[20em] overflow-hidden rounded-xl before:animate-[location-animation2_1s_ease-out_alternate-reverse_infinite] before:w-8 before:h-2 before:rounded-[50%] before:absolute before:bottom-[5.3em] before:right-[6em] before:z-30 '>
+    <footer className='dark:border-t-2 dark:border-slate-500/30  dark:bg-theme_dark-main-bg flex-wrap relative gap-20 flex justify-center items-end  bg-white w-full pt-12 pb-8'>
+      <div className='relative w-[30em] h-[20em] overflow-hidden rounded-xl before:animate-[location-animation2_1s_ease-out_alternate-reverse_infinite] before:w-8 before:h-2 before:rounded-[50%] before:absolute before:bottom-[5.3em] before:right-[6em] before:z-30 '>
         <span>
           <FaLocationDot className='animate-[location-animation_1s_ease-out_alternate-reverse_infinite] absolute bottom-[2.7em] right-[5.9rem] z-30 text-red-400 text-4xl [filter:saturate(3)]' />
         </span>
@@ -32,35 +32,45 @@ const Footer = () => {
 
       <div>
         <div className='flex flex-col items-center relative bottom-12'>
-          <h1 className='font-extrabold text-4xl text-light-500'>Seba Perez</h1>
-          <span className='text-[#4f4f4f] text-sm font-bold relative bottom-2 [letter-spacing:-1px]'>
-            {'< Frontend Developer >'}
-          </span>
-          <p className='w-[30em] text-sm font-semibold text-[#4d4d4d] mt-2'>
+          <h1 className='dark:text-zinc-50 font-extrabold text-4xl text-light-500'>
+            Seba Perez
+          </h1>
+          <div className='flex items-center gap-1 dark:text-zinc-400 text-[#4f4f4f] text-base font-bold relative bottom-2 [letter-spacing:-1px]'>
+            <span className='font-black text-3xl dark:text-theme_dark-sup-pink text-light-500'>
+              {'<'}
+            </span>
+            {engLanguageActive
+              ? 'Frontend Developer'
+              : 'Desarrollador Frontend'}
+            <span className='font-black text-3xl dark:text-theme_dark-sup-pink text-light-500'>
+              {'>'}
+            </span>
+          </div>
+          <p className='dark:text-zinc-300 w-[30em] text-sm font-semibold text-[#4d4d4d] mt-2 translate-x-8'>
             {engLanguageActive
               ? 'I really appreciate that you have reached this section of the portfolio. Any kind of feedback is useful to continue learning and improving.'
               : 'Agradezco mucho que hayas llegado hasta esta sección del portfolio. Cualquier tipo de feedback es útil para continuar aprendiendo y mejorando.'}
           </p>
         </div>
-        <ul className='flex justify-center gap-8 font-black text-light-400'>
-          <li className='hover:duration-100 hover:text-light-200 '>
+        <ul className='dark:text-theme_dark-sup-sky flex justify-center gap-8 font-black text-light-400'>
+          <li className='dark:border-theme_dark-sup-sky dark:hover:text-zinc-400 hover:duration-100 hover:text-light-200 '>
             <Link
               href={'https://www.linkedin.com/in/sebaperez90/'}
               target='_blank'>
               Linkedin
             </Link>
           </li>
-          <li className='hover:duration-100 hover:text-light-200 border-l-2 border-light-400 pl-4'>
+          <li className='dark:border-theme_dark-sup-sky dark:hover:text-zinc-400 hover:duration-100 hover:text-light-200 border-l-2 border-light-400 pl-4'>
             <Link href={'https://github.com/SebaPerez90'} target='_blank'>
               Github
             </Link>
           </li>
-          <li className='hover:duration-100 hover:text-light-200 border-l-2 border-light-400 pl-4'>
+          <li className='dark:border-theme_dark-sup-sky dark:hover:text-zinc-400 hover:duration-100 hover:text-light-200 border-l-2 border-light-400 pl-4'>
             <Link href={''} target='_blank'>
               Facebook
             </Link>
           </li>
-          <li className='hover:duration-100 hover:text-light-200 border-l-2 border-light-400 pl-4'>
+          <li className='dark:border-theme_dark-sup-sky dark:hover:text-zinc-400 hover:duration-100 hover:text-light-200 border-l-2 border-light-400 pl-4'>
             <Link href={'#home'}>Home</Link>
           </li>
         </ul>

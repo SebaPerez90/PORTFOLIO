@@ -9,7 +9,7 @@ import Experience from '@/components/main/Experience';
 
 export default function Home() {
   return (
-    <main className='gap-32 flex flex-col justify-around items-center bg-[#dedede]'>
+    <main className='gap-32 flex flex-col justify-around items-center bg-[#dedede] dark:bg-[#313643]'>
       <Hero />
 
       <About />

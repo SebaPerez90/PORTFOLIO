@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer utilities {
-  .custom-scrollbar {
+  .custom-scrollbar-light {
     &::-webkit-scrollbar {
       background-color: transparent;
       height: 25px;
@@ -19,9 +19,16 @@
       }
     }
   }
-}
+  .custom-scrollbar-dark {
+    &::-webkit-scrollbar-thumb {
+      background-color: #38bdf8;
 
-@layer utilities {
+      &:hover {
+        background-color: #2c9ac9;
+        cursor: pointer;
+      }
+    }
+  }
   .scroll-bar-light {
     &::-webkit-scrollbar {
       background-color: #dedede;
@@ -31,17 +38,23 @@
       background-color: #3655b3;
     }
   }
-}
-
-@layer utilities {
   .scroll-bar-dark {
     &::-webkit-scrollbar {
-      background-color: #000;
+      background-color: #313643;
       width: 14px;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: #fff;
+      background-color: #f472b6;
     }
+  }
+}
+
+@layer components {
+  .btn-light {
+    @apply max-[400px]:p-[0.6em_1em] flex items-center p-[0.8em_2em] text-sm gap-2 text-white rounded-full bg-gradient-to-b from-light-900 via-light-900 font-bold to-[#7d27ffae] border-[1px] border-[#4f2194] hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] duration-200 active:border-[#dedede] hover:bg-[#4f2194] hover:border-light-900 hover:text-[#ffffff93];
+  }
+  .btn-dark {
+    @apply dark:text-theme_dark-sup-pink dark:border-theme_dark-sup-pink dark:after:bg-theme_dark-sup-pink mt-10 font-bold p-[0.8em_2em] flex w-max  relative hover:text-white hover:z-10  after:absolute after:left-[50%] after:rounded-[2em] after:bottom-0 after:w-0 after:h-full after:-z-10 rounded-[2em] hover:after:left-[0%] hover:after:w-[100%] active:outline active:outline-2 active:outline-light-600 hover:after:duration-[400ms] hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] duration-300 outline-none;
   }
 }
 
@@ -137,12 +150,12 @@ body {
         content: '';
         position: absolute;
         left: -1.7em;
-        top: 0;
+        top: -1.5em;
         width: 3.2em;
         height: 3.2em;
         border-radius: 50%;
-        background: #fff;
-        border: 6px solid #dedede;
+        background: transparent;
+        border: 10px solid #dedede;
         border-left-color: #4d4dff;
         animation: spiner 500ms ease infinite;
 
@@ -151,6 +164,9 @@ body {
             transform: rotate(360deg);
           }
         }
+      }
+      &::before {
+        background-color: transparent;
       }
     }
     > :nth-child(5) {

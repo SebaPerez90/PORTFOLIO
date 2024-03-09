@@ -5,10 +5,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import profile_image from '@/assets/images/avatar.webp';
 
-import { FaRegFileAlt } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa6';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { HiOutlineArrowLongRight } from 'react-icons/hi2';
+
+import DownloadCvBtn from './DownloadCvBtn';
 
 const roboto = Roboto({
   weight: ['700'],
@@ -17,40 +18,35 @@ const roboto = Roboto({
 
 const Hero = () => {
   const { engLanguageActive } = useStore();
+
   return (
-    <section className='max-[520px]:bg-gradient-to-t max-[520px]:from-white max-[520px]:to-light-700 max-[520px]:pl-8 relative bg-white flex items-center justify-between pl-16 w-full h-[34em] dark:bg-gradient-to-r from-[#0f0c29] to-[#2c2c47] '>
-      <span className='z-10 absolute h-12 w-12 rounded-full bg-[#dcbfff] blur-md [box-shadow:0_0_40px_#dcbfff] duration-300 left-[20%] lg:left-0 top-0 animate-[bouncing2_16s_linear_alternate-reverse_infinite]'></span>
+    <section className='dark:before:bg-theme_dark-main-bg before:absolute before:left-0 before:top-0 before:w-full before:h-full max-[520px]:bg-gradient-to-t max-[520px]:from-white max-[520px]:to-light-700 max-[520px]:pl-8 relative bg-white flex items-center justify-between pl-16 w-full h-[34em] '>
+      <span className='dark:opacity-40 z-10 absolute h-12 w-12 rounded-full bg-[#dcbfff] blur-md [box-shadow:0_0_40px_#dcbfff] duration-300 left-[20%] lg:left-0 top-0 animate-[bouncing2_16s_linear_alternate-reverse_infinite]'></span>
 
-      <span className='z-10 absolute h-8 w-8 rounded-full bg-[#c8ffd4] blur-md [box-shadow:0_0_40px_#c8ffd4] duration-300 right-[10em] lg:right-[50%] top-0 animate-[bouncing_16s_linear_alternate-reverse_infinite]'></span>
+      <span className='dark:opacity-40 z-10 absolute h-8 w-8 rounded-full bg-[#c8ffd4] blur-md [box-shadow:0_0_40px_#c8ffd4] duration-300 right-[10em] lg:right-[50%] top-0 animate-[bouncing_16s_linear_alternate-reverse_infinite]'></span>
 
-      <span className='z-10 absolute h-24 w-24 rounded-full duration-300 left-[50%] lg:left-[25%] bottom-0 bg-light-200 blur-xl animate-[bouncing3_18s_linear_alternate-reverse_infinite]'></span>
+      <span className='dark:opacity-40 z-10 absolute h-24 w-24 rounded-full duration-300 left-[50%] lg:left-[25%] bottom-0 bg-light-200 blur-xl animate-[bouncing3_18s_linear_alternate-reverse_infinite]'></span>
 
-      <article className='max-[700px]:z-30 max-[700px]:w-full z-20 w-[30em] flex flex-col items-start gap-6'>
+      <article className='pr-3 max-[700px]:z-30 max-[700px]:w-full z-20 w-[30em] flex flex-col items-start gap-6'>
         <h1
           style={roboto.style}
-          className='max-[520px]:text-[#3d3d3d] max-[520px]:gap-10 text-[#333333e3] font-extrabold text-7xl [letter-spacing:-1px]'>
+          className='dark:text-slate-50 max-[520px]:text-[#3d3d3d] max-[520px]:gap-10 text-[#333333e3] font-extrabold text-7xl [letter-spacing:-1px]'>
           {engLanguageActive ? "Hello, my name's " : 'Hola mi nombre es '}
-          <strong className='text-light-500'>Seba</strong>
+          <strong className='dark:text-theme_dark-sup-sky text-light-500'>
+            Seba
+          </strong>
           <b className='text-7xl'>.</b>
         </h1>
-        <p className='max-[520px]:text-[#3c3c3ccb] max-[520px]:w-[90%] text-sm font-semibold text-[#333333a7] w-[23em]'>
+        <p className='dark:text-zinc-300 max-[520px]:text-[#3c3c3ccb] max-[520px]:w-[90%] text-sm font-semibold text-[#333333a7] w-[23em]'>
           {engLanguageActive
             ? `I am a front-end developer living in Buenos Aires, Argentina. With two years of experience in web development, I am currently enrolled in a bootcamp to expand my horizons and enhance my current skill set.`
             : 'Desarrollor front-end y vivo en Argentina, Buenos Aires. Tengo dos años de experiencia en el desarrollo web. Actualmente estoy cursando un bootcamp para poder ampliar mis horizontes y sumar conocimiento a mi stack actual'}
-          <br></br>
-          <strong className='bg-green-700 rounded-sm p-1 w-max text-white font-bold text-[0.7em]'>
-            OPEN TO WORK .
-          </strong>
         </p>
-        <button
-          aria-label='display-resume-btn'
-          className='flex items-center p-[0.8em_2em] gap-2 text-white rounded-full bg-gradient-to-b from-light-900 via-light-900 font-bold to-[#7d27ffae] border-[1px] border-[#4f2194] duration-200 active:border-[#dedede] hover:bg-[#4f2194] hover:border-light-900 hover:text-[#ffffff93]'>
-          <FaRegFileAlt />
-          resume
-        </button>
+
+        <DownloadCvBtn />
       </article>
 
-      <div className='max-[700px]:z-50 max-[700px]:absolute max-[700px]:right-36 flex items-end justify-end self-end lg:bg-gradient-to-l from-light-500 to-[#DCBFFF] h-[40em] w-[38em]'>
+      <div className='dark:[background:linear-gradient(to_right,#00000000,#00000000)] max-[700px]:z-40 max-[700px]:absolute max-[700px]:right-36 flex items-end justify-end self-end lg:bg-gradient-to-l from-light-500 to-[#DCBFFF] h-[40em] w-[38em]'>
         <div className='max-[600px]:[display:none] max-[700px]:w-[17em] max-[700px]:h-[17em] max-[700px]:before:[display:none] w-auto h-[23em] relative max-[820px]:absolute max-[820px]:left-[23em] left-24 lg:left-0 before:absolute before:w-[25em] before:h-[25em] before:rounded-full before:-z-10 z-10 before:bg-light-700 lg:before:bg-white before:left-[-5em] before:bottom-0'>
           <Image
             src={profile_image}

@@ -18,7 +18,6 @@ const NavBar = () => {
   const { engLanguageActive } = useStore();
 
   const navLinks: NavLinks[] = [
-    { titleES: 'inicio', titleEN: 'home', label: 'home', url: '/' },
     {
       titleES: 'sobre mi',
       titleEN: 'about',
@@ -38,10 +37,10 @@ const NavBar = () => {
       url: '#contact-section',
     },
     {
-      titleES: 'skills y servicos',
-      titleEN: 'skills & services',
-      label: 'skill & services',
-      url: '#skills-section',
+      titleES: 'servicos',
+      titleEN: 'services',
+      label: 'services',
+      url: '#services-section',
     },
   ];
 
@@ -71,15 +70,15 @@ const NavBar = () => {
   return (
     <header
       id='home'
-      className='max-[520px]:pb-2 z-20 flex justify-between items-center '>
+      className='dark:bg-theme_dark-main-bg dark:z-10 pb-2 max-[520px]:pb-2 z-20 flex justify-between items-center'>
       <div className='pl-8 pt-4 flex items-center gap-2 [letter-spacing:-1px] text-[#333333ac] font-extrabold'>
         <Image src={icon} alt='icon' />
-        <span>Seba Perez</span>
+        <span className='dark:text-zinc-300'>Seba Perez</span>
       </div>
       <nav className='[display:none] md:flex justify-end gap-4 pt-2 '>
         {navLinks.map((item, index) => (
           <Link
-            className='text-sm p-2 pt-4 lg:text-white text-[#383838c4] font-bold lg:[text-shadow:2px_2px_0px_rgba(0,0,0,0.69)] lg:font-normal'
+            className='dark:text-zinc-300 p-2 pt-4 lg:text-white text-[#383838c4] font-bold lg:[text-shadow:1px_1px_1px_#333333ac] '
             aria-label={item.label}
             href={item.url}
             key={index}>

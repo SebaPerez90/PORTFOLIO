@@ -49,7 +49,7 @@ const ThemeButtons = () => {
   return (
     <div className='flex justify-center items-center gap-2 pr-4'>
       {theme === 'dark' ? (
-        <div className='pr-[0.1em] py-[1.1rem] bg-[#9147ff4e] border-[1px] border-[#9147ff] flex justify-between items-center w-20 h-8 rounded-full overflow-hidden'>
+        <div className='pr-[0.1em] py-[1.1rem] bg-theme_dark-box-second border-2 border-theme_dark-sup-pink flex justify-between items-center w-20 h-8 rounded-full overflow-hidden'>
           <Image
             className='scale-75 z-10'
             ref={iconRef}
@@ -60,7 +60,7 @@ const ThemeButtons = () => {
             aria-label='switch-theme-btn'
             onClick={toggleEfect}
             ref={buttonRef}
-            className='bg-[#9147ff] m-[1px] rounded-full border-2 h-7 w-7 z-20'></button>
+            className='bg-theme_dark-sup-pink hover:bg-pink-900 hover:duration-200 m-[1px] rounded-full  h-7 w-7 z-20'></button>
         </div>
       ) : (
         <div className='border-2 pl-[0.1em] bg-[#ffa600] flex justify-between items-center w-16  h-7 rounded-full overflow-hidden'>
