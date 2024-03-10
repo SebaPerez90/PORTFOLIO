@@ -1,4 +1,4 @@
-import { useState, useRef, ChangeEvent, SetStateAction } from 'react';
+import { useState, useRef, ChangeEvent } from 'react';
 import { Roboto } from 'next/font/google';
 import { useStore } from '@/store';
 
@@ -26,15 +26,15 @@ const Contact = () => {
     //first check if the value in input is a valid adrres email
     if (verificar) {
       errorMessageRef.current.style.opacity = '0';
-      emailInputRef.current.style.outline = 'none';
+      emailInputRef.current.style.outlineColor = '#93c5fd';
 
       //then check if the email.value.length > 0
     } else if (!e.target.value) {
       errorMessageRef.current.style.opacity = '0';
-      emailInputRef.current.style.outline = 'none';
+      emailInputRef.current.style.outlineColor = '#93c5fd';
     } else {
       errorMessageRef.current.style.opacity = '1';
-      emailInputRef.current.style.outline = '2px solid red';
+      emailInputRef.current.style.outlineColor = 'red';
     }
   };
 
@@ -54,7 +54,7 @@ const Contact = () => {
       </h1>
       <section className='after:absolute after:left-0 after:bottom-0 after:w-1/2 after:h-full after:bg-gradient-to-l after:from-blue-50 after:via-white after:to-white after:z-10 before:absolute before:right-0 before:bottom-0 before:w-1/2 before:h-full before:bg-gradient-to-l from-blue-300 via-blue-200 to-blue-50 relative pl-12 py-10 rounded-lg shadow-[14px_30px_20px_-10px_#0000004f]  bg-white flex w-[55em] h-auto justify-around overflow-hidden'>
         <form
-          className='z-20 gap-8 bg-transparent  [min-width:20em] flex flex-col justify-evenly items-start '
+          className='z-20 bg-transparent  [min-width:20em] flex flex-col justify-evenly items-start '
           onSubmit={(e) => e.preventDefault()}>
           <label
             htmlFor='name-input-field'
@@ -66,7 +66,7 @@ const Contact = () => {
               id='name-input-field'
               autoComplete='off'
               placeholder='e.g.  sebastian perez'
-              className='rounded-md font-semibold text-sm outline-blue-300 text-[#404040b9] p-2 capitalize placeholder:text-sm placeholder:lowercase placeholder:font-normal border-2 w-full focus:placeholder:opacity-0'
+              className='rounded-md font-semibold text-sm  outline-blue-300 text-[#404040b9] p-2 capitalize placeholder:text-sm placeholder:lowercase placeholder:font-normal border-2 w-full focus:placeholder:opacity-0'
             />
           </label>
 
@@ -80,7 +80,11 @@ const Contact = () => {
               name='user-email'
               id='email-input-field'
               autoComplete='off'
-              placeholder='e.g.  example@gmail.com'
+              placeholder={
+                engLanguageActive
+                  ? 'e.g.  example@gmail.com (optional)'
+                  : 'e.g.  example@gmail.com (opcional)'
+              }
               className='rounded-md text-sm outline-blue-300 text-[#404040b9] p-2 border-2 w-full placeholder:text-sm placeholder:font-normal focus:placeholder:opacity-0'
               ref={emailInputRef}
             />
@@ -115,20 +119,17 @@ const Contact = () => {
           </button>
         </form>
         <div className='z-20 flex flex-col items-center justify-center'>
-          <div className='p-4 text-[#404040cb] w-[80%] text-sm font-semibold bg-[#0000000e] rounded-sm [backdrop-filter:blur(2px)]'>
-            <h1 className=' text-lg text-[#404040da] font-bold text-center'>
-              Let me know how I can be of service to you! 😁
-            </h1>
-            <p className='mt-1 px-10'>
-              Please share your user experience or any feedback you may have.
-            </p>
-          </div>
+          <h1 className='w-[80%] italic text-lg text-[#4d4d4dda] font-semibold  text-center bg-gradient-to-bl from-inherit border to-[#e9e9e9] [clip-path:polygon(0%_0%,100%_0%,100%_73.5%,59.5%_73.5%,54.75%_100%,50%_73.5%,0%_73.5%)] py-12 px-8 pb-24 [transform:translate(-0.5em,4em)] z-20 '>
+            {engLanguageActive
+              ? '"Let me know how I can serve you! "'
+              : 'Déjame saber en que puedo servirte'}
+          </h1>
 
           <Image
             src={form_image}
             priority
             alt='form-image-reference'
-            className='w-[20em] h-[20em] opacity-75'
+            className='z-10 w-[20em] h-[20em] opacity-75'
           />
         </div>
       </section>

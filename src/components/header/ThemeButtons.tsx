@@ -47,7 +47,7 @@ const ThemeButtons = () => {
   };
 
   return (
-    <div className='flex justify-center items-center gap-2 pr-4'>
+    <div className='flex justify-center items-center gap-2'>
       {theme === 'dark' ? (
         <div className='pr-[0.1em] py-[1.1rem] bg-theme_dark-box-second border-2 border-theme_dark-sup-pink flex justify-between items-center w-20 h-8 rounded-full overflow-hidden'>
           <Image

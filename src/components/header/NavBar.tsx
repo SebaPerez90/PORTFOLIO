@@ -1,11 +1,8 @@
 'use client';
 
-import Link from 'next/link';
-import Image from 'next/image';
-import icon from '@/assets/images/icon-hero.png';
-
-import ThemeButtons from '@/components/header/ThemeButtons';
 import { useStore } from '@/store';
+import Link from 'next/link';
+import ThemeButtons from '@/components/header/ThemeButtons';
 
 interface NavLinks {
   titleES: string;
@@ -21,64 +18,60 @@ const NavBar = () => {
     {
       titleES: 'sobre mi',
       titleEN: 'about',
-      label: 'about',
+      label: 'about-section',
       url: '#about-section',
     },
     {
       titleES: 'proyectos',
       titleEN: 'projects',
-      label: 'projects',
+      label: 'projects-section',
       url: '#projects-section',
     },
     {
       titleES: 'contáctame',
       titleEN: 'contact me',
-      label: 'contact me',
+      label: 'contact-section',
       url: '#contact-section',
     },
     {
       titleES: 'servicos',
       titleEN: 'services',
-      label: 'services',
+      label: 'services-section',
       url: '#services-section',
     },
   ];
 
-  // const handleScroll = () => {
-  //   document.addEventListener('scroll', () => {
-  //     if (window.scrollY !== 0) {
-  //       elementRef.current.style.backdropFilter = 'blur(20px)';
-  //       elementRef.current.style.background = '#ffffff0d';
-  //       elementRef.current.style.boxShadow = '0 0 5px #0000008c';
-  //     } else {
-  //       elementRef.current.style.background = 'inherit';
-  //     }
-  //   });
-  // };
-  // handleScroll();
+  const handleScroll = () => {
+    document.addEventListener('scroll', () => {
+      const nav_bar = document.getElementById('nav-bar');
 
-  // const elementRef: any = useRef<HTMLDivElement>(null);
+      if (window.scrollY !== 0) {
+        nav_bar?.classList.add(
+          'bg-[#00000025]',
+          '[backdrop-filter:blur(5px)]',
+          'top-[-0.4em]'
+        );
+      } else {
+        nav_bar?.classList.remove(
+          'bg-[#00000025]',
+          '[backdrop-filter:blur(5px)]',
+          'top-[-0.4em]'
+        );
+      }
+    });
+  };
 
-  // if (window.location.hash === '#projects-section') {
-  //   console.log('ver esto eh, puede ser util');
-  //   console.log(linkRef.current);
-  // } else {
-  //   console.log('es por aca');
-  //   console.log(linkRef.current);
-  // }
+  handleScroll();
 
   return (
-    <header
-      id='home'
-      className='dark:bg-theme_dark-main-bg dark:z-10 pb-2 max-[520px]:pb-2 z-20 flex justify-between items-center'>
-      <div className='pl-8 pt-4 flex items-center gap-2 [letter-spacing:-1px] text-[#333333ac] font-extrabold'>
-        <Image src={icon} alt='icon' />
-        <span className='dark:text-zinc-300'>Seba Perez</span>
-      </div>
-      <nav className='[display:none] md:flex justify-end gap-4 pt-2 '>
+    <header className='duration-300 dark:bg-theme_dark-main-bg m-[0_auto] min-[1400px]:border-l min-[1400px]:border-r border-slate-700/40'>
+      <nav
+        id='nav-bar'
+        className='min-w-max fixed z-50 top-[1em] translate-x-[-15em] border border-slate-500/10 rounded-full bg-[#eeeeee81] dark:bg-[#0000004a] p-2 px-3 duration-300 flex justify-end gap-2 dark:border dark:border-slate-500/30'>
         {navLinks.map((item, index) => (
           <Link
-            className='dark:text-zinc-300 p-2 pt-4 lg:text-white text-[#383838c4] font-bold lg:[text-shadow:1px_1px_1px_#333333ac] '
+            // lg:[text-shadow:1px_1px_1px_#333333ac]
+            className='dark:text-white p-3 text-[#5c6673] font-medium '
             aria-label={item.label}
             href={item.url}
             key={index}>

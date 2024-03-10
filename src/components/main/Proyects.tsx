@@ -83,7 +83,7 @@ const Proyects = () => {
             </ul>
           </article>
           <article className='dark:bg-theme_dark-main-bg pb-8 pt-24 sm:pt-0 sm:pb-0 w-full flex justify-center bg-light-700 items-center rounded-none md:rounded-[0_0.5em_0.5em_0]'>
-            <div className='custom-scrollbar-light dark:custom-scrollbar-dark flex w-[90%] [scroll-snap-type:x_mandatory] overflow-x-auto'>
+            <div className='custom-scrollbar-light dark:custom-scrollbar-dark flex w-[90%] [scroll-snap-type:x_mandatory] overflow-x-auto my-4'>
               {item.screen_shoots.map((item, index) => (
                 <Image
                   key={index}
