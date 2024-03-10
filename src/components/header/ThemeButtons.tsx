@@ -63,14 +63,16 @@ const ThemeButtons = () => {
             className='bg-theme_dark-sup-pink hover:bg-pink-900 hover:duration-200 m-[1px] rounded-full  h-7 w-7 z-20'></button>
         </div>
       ) : (
-        <div className='border-2 pl-[0.1em] bg-[#ffa600] flex justify-between items-center w-16  h-7 rounded-full overflow-hidden'>
+        <div className='border-2 border-[#4d4dffbf] pr-[0.1em] py-[1rem] bg-[#ececec2d] flex justify-between items-center w-20  h-7 rounded-full overflow-hidden'>
           <button
             aria-label='switch-theme-btn'
             onClick={toggleEfect}
             ref={buttonRef}
-            className='bg-[#ffd16d] rounded-full border-2 h-5 w-5 z-20'></button>
+            className='hover:duration-200 bg-[#4d4dffbf] hover:bg-[#4d4dff73] rounded-full h-7 w-7 m-[2px] z-20'></button>
           <Image
-            className='scale-[0.6] relative left-1 z-10'
+            // className='scale-[0.3] relative left-1 z-10'
+            width={30}
+            height={30}
             ref={iconRef}
             src={sun_icon}
             alt='light-theme-icon'

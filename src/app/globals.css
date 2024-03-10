@@ -60,7 +60,10 @@
 
 html,
 body {
-  color: #4d4dff77;
+  .sticky-navbar {
+    backdrop-filter: blur(5px);
+    top: -0.6em;
+  }
   .content-available {
     display: block;
     display: flex;

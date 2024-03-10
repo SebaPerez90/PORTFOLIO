@@ -19,7 +19,7 @@ const config: Config = {
           '500': '#4D4DFF',
           '600': '#c8ffd4',
           '700': '#dcbfff',
-          '800': '#4df672',
+          '800': '#3cc259',
           '900': '#AC87C5',
         },
         theme_dark: {

@@ -1,0 +1,9 @@
+# subir los cvs
+
+# agregar boton de copiar email en servicios
+
+# chequear el fonde una vez descargado el cv
+
+# conectar formspree al form
+
+# fijarse q carajos hacer con el "monitor"
