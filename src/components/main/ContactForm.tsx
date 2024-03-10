@@ -114,7 +114,7 @@ const Contact = () => {
 
           <button
             aria-label='send-btn'
-            className='text-sm self-center w-full translate-y-[-1em] py-3 rounded-lg text-white font-bold hover:duration-200 duration-200 hover:bg-blue-400 bg-light-500  hover:border-light-200 border-2 border-light-500 hover:translate-y-[-1.3em] hover:shadow-[0px_8px_7px_#00000049]'>
+            className='text-sm self-center w-full translate-y-[-1em] py-3 rounded-lg text-white font-bold hover:duration-200 duration-200 hover:bg-blue-400 bg-light-500  hover:border-light-200 border border-light-500/85 hover:translate-y-[-1.3em] hover:shadow-[0px_8px_7px_#00000049]'>
             {engLanguageActive ? 'Send' : 'Enviar'}
           </button>
         </form>

@@ -20,7 +20,7 @@ const config: Config = {
           '600': '#c8ffd4',
           '700': '#dcbfff',
           '800': '#4df672',
-          '900': '#7F27FF',
+          '900': '#AC87C5',
         },
         theme_dark: {
           'font-secon': '#94a3b8',

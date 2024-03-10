@@ -53,11 +53,11 @@ const Proyects = () => {
 
               <div className='w-[70%] m-[0_auto]'>
                 {engLanguageActive ? (
-                  <p className='border dark:bg-theme_dark-box-second text-sm rounded dark:border-slate-500/30 p-4 dark:text-zinc-300 font-medium text-[#696969] ml-4'>
+                  <p className='bg-[#ececec] border dark:bg-theme_dark-box-second text-sm rounded dark:border-slate-500/30 p-4 dark:text-zinc-300 font-medium text-[#696969] ml-4'>
                     {item.descriptionES}
                   </p>
                 ) : (
-                  <p className='border dark:bg-theme_dark-box-second text-sm rounded dark:border-slate-500/30 p-4 dark:text-zinc-300 font-medium text-[#696969] ml-4'>
+                  <p className='bg-[#ececec] border dark:bg-theme_dark-box-second text-sm rounded dark:border-slate-500/30 p-4 dark:text-zinc-300 font-medium text-[#696969] ml-4'>
                     {item.descriptionES}
                   </p>
                 )}
@@ -82,7 +82,7 @@ const Proyects = () => {
               </li>
             </ul>
           </article>
-          <article className='dark:bg-theme_dark-main-bg pb-8 pt-24 sm:pt-0 sm:pb-0 w-full flex justify-center bg-light-700 items-center rounded-none md:rounded-[0_0.5em_0.5em_0]'>
+          <article className='dark:bg-theme_dark-main-bg pb-8 pt-24 sm:pt-0 sm:pb-0 w-full flex justify-center bg-[#ececec] items-center rounded-none md:rounded-[0_0.5em_0.5em_0]'>
             <div className='custom-scrollbar-light dark:custom-scrollbar-dark flex w-[90%] [scroll-snap-type:x_mandatory] overflow-x-auto my-4'>
               {item.screen_shoots.map((item, index) => (
                 <Image
