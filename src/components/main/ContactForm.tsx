@@ -104,7 +104,9 @@ const Contact = () => {
               autoComplete='off'
               name='message'
               placeholder={
-                engLanguageActive ? 'your message...' : 'tu mensaje ...'
+                engLanguageActive
+                  ? 'type your message...'
+                  : 'escribe tu mensaje ...'
               }
               className=' border-2  dark:bg-theme_dark-box-second dark:text-slate-50 dark:border dark:border-slate-600/50 focus:bg-[#f3f3f3bf] max-[900px]:w-[80%] rounded-md text-sm  min-[900px]:text-base focus:placeholder:opacity-0 outline-blue-300 dark:focus:bg-theme_dark-box-thir text-[#404040b9] placeholder:text-base placeholder:font-normal p-3 placeholder:translate-y-28 resize-none  w-full h-40'></textarea>
             <span className='max-[900px]:right-20 absolute right-5 bottom-5 text-[#404040b9] dark:text-zinc-300'>

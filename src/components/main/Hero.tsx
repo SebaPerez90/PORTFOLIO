@@ -39,8 +39,8 @@ const Hero = () => {
         </h1>
         <p className='dark:text-zinc-300 max-[520px]:text-[#3c3c3ccb] max-[520px]:w-[90%] text-sm font-semibold text-[#333333a7] w-[23em]'>
           {engLanguageActive
-            ? `I am a front-end developer living in Buenos Aires, Argentina. With two years of experience in web development, I am currently enrolled in a bootcamp to expand my horizons and enhance my current skill set.`
-            : 'Desarrollor front-end y vivo en Argentina, Buenos Aires. Tengo dos años de experiencia en el desarrollo web. Actualmente estoy cursando un bootcamp para poder ampliar mis horizontes y sumar conocimiento a mi stack actual'}
+            ? `I am a front-end developer living in Buenos Aires, Argentina. With two years of experience in web development, I am currently attending the bootcamp "Soy Henry" to expand my horizons and enhance my current skill set.`
+            : 'Soy Desarrollor front-end y vivo en Argentina, Buenos Aires. Tengo dos años de experiencia en el desarrollo web. Actualmente estoy cursando el bootcamp "Soy Henry" para poder ampliar mis horizontes y sumar conocimiento a mi stack actual'}
         </p>
 
         <DownloadBtn />

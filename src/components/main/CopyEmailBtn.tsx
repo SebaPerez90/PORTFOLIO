@@ -26,10 +26,10 @@ const CopyEmailBtn = () => {
   };
 
   return (
-    <div className='relative self-center flex gap-5 border dark:border-slate-600/50 rounded-md px-4 dark:bg-theme_dark-box-second w-max py-1 mt-6'>
+    <div className='relative self-center flex gap-5 border dark:border-slate-600/50 rounded-md px-4 dark:bg-theme_dark-box-second w-max py-1 mt-6 bg-white'>
       <span
         ref={emailAddressRef}
-        className='dark:text-zinc-50 flex items-center gap-1 text-xs'>
+        className='dark:text-zinc-50  flex items-center gap-1 text-xs'>
         <MdOutlineEmail className='text-red-500 text-lg' />
         sebastian.perez.jobs@gmail.com
       </span>
@@ -37,8 +37,9 @@ const CopyEmailBtn = () => {
         id='copy-text-btn'
         aria-label='copy-text-btn'
         onClick={handleCopyToClipboard}
-        className='rounded-full p-2 border dark:border-theme_dark-box-second dark:hover:bg-theme_dark-box-thir  dark:hover:border-zinc-600 duration-150'>
-        <FaRegCopy className='dark:text-theme_dark-sup-sky text-lg' />
+        className='rounded-full p-3 border dark:border-theme_dark-box-second dark:hover:bg-theme_dark-box-thir  dark:hover:border-zinc-600 duration-150 border-white
+        hover:bg-slate-400/35'>
+        <FaRegCopy className='dark:text-theme_dark-sup-sky text-lg text-light-800' />
       </button>
       <span className='sr-only'>
         This display the message to confirm the copy process
