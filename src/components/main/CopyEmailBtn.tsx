@@ -34,7 +34,6 @@ const CopyEmailBtn = () => {
         sebastian.perez.jobs@gmail.com
       </span>
       <button
-        id='copy-text-btn'
         aria-label='copy-text-btn'
         onClick={handleCopyToClipboard}
         className='rounded-full p-3 border dark:border-theme_dark-box-second dark:hover:bg-theme_dark-box-thir  dark:hover:border-zinc-600 duration-150 border-white

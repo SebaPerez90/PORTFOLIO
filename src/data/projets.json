@@ -7,9 +7,9 @@
     "preview": "https://sebaperez90.github.io/WeatherApp/",
     "skills": ["React.js", "Tailwind CSS", "Javascript"],
     "screen_shoots": [
-      "/svg/project_1/screen-shoot-1.svg",
-      "/svg/project_1/screen-shoot-2.svg",
-      "/svg/project_1/screen-shoot-3.svg"
+      "/images/weather-app/1.webp",
+      "/images/weather-app/2.webp",
+      "/images/weather-app/3.webp"
     ]
   },
   {
@@ -20,9 +20,9 @@
     "preview": "https://sebaperez90.github.io/Rock-Papper-Scissors/",
     "skills": ["React.js", "Tailwind CSS", "Javascript"],
     "screen_shoots": [
-      "/svg/project_2/screen-shoot-1.svg",
-      "/svg/project_2/screen-shoot-2.svg",
-      "/svg/project_2/screen-shoot-3.svg"
+      "/images/rock-papper-scissors/1.webp",
+      "/images/rock-papper-scissors/2.webp",
+      "/images/rock-papper-scissors/3.webp"
     ]
   },
   {
@@ -33,9 +33,9 @@
     "preview": "https://sebaperez90.github.io/ToDo-List/",
     "skills": ["React.js", "Tailwind CSS", "Javascript"],
     "screen_shoots": [
-      "/svg/project_3/screen-shoot-1.svg",
-      "/svg/project_3/screen-shoot-2.svg",
-      "/svg/project_3/screen-shoot-3.svg"
+      "/images/todo-app/1.webp",
+      "/images/todo-app/2.webp",
+      "/images/todo-app/3.webp"
     ]
   },
   {
@@ -46,9 +46,9 @@
     "preview": "https://sebaperez90.github.io/Interactive-Card-Details/",
     "skills": ["React.js", "Javascript", "Sass"],
     "screen_shoots": [
-      "/svg/project_4/screen-shoot-1.svg",
-      "/svg/project_4/screen-shoot-2.svg",
-      "/svg/project_4/screen-shoot-3.svg"
+      "/images/card-details/1.webp",
+      "/images/card-details/2.webp",
+      "/images/card-details/3.webp"
     ]
   },
   {
@@ -59,9 +59,9 @@
     "preview": "https://sebaperez90.github.io/Interactive-Card-Details/",
     "skills": ["React.js", "Javascript", "CSS"],
     "screen_shoots": [
-      "/svg/project_5/screen-shoot-1.svg",
-      "/svg/project_5/screen-shoot-2.svg",
-      "/svg/project_5/screen-shoot-3.svg"
+      "/images/calculator/1.webp",
+      "/images/calculator/2.webp",
+      "/images/calculator/3.webp"
     ]
   },
   {
@@ -72,9 +72,9 @@
     "preview": "https://sebaperez90.github.io/",
     "skills": ["HTML", "CSS", "Javascript"],
     "screen_shoots": [
-      "/svg/project_6/screen-shoot-1.svg",
-      "/svg/project_6/screen-shoot-2.svg",
-      "/svg/project_6/screen-shoot-3.svg"
+      "/images/first-project/1.webp",
+      "/images/first-project/2.webp",
+      "/images/first-project/3.webp"
     ]
   }
 ]

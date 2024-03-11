@@ -1,4 +1,4 @@
-import { useState, useRef, ChangeEvent } from 'react';
+import { useState, useRef, SetStateAction } from 'react';
 import { Roboto } from 'next/font/google';
 import { useStore } from '@/store';
 
@@ -14,21 +14,47 @@ const Contact = () => {
   const { engLanguageActive } = useStore();
   const [textAreaLength, setTextAreaLength] = useState(0);
 
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [formSendSuccessfully, setFormSendSuccessfully] = useState(false);
+
   const errorMessageRef: any = useRef<HTMLSpanElement>(null);
   const emailInputRef: any = useRef<HTMLInputElement>(null);
 
-  const checkEmail = (e: ChangeEvent<HTMLInputElement>): void => {
+  //CAPTURE THE VALUES IN INPUTS : NAME , EMAiL , MESSAGE
+  const capturingInput = (e: { target: any }) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+    if (e.target.name === 'user-email') {
+      checkEmail(e);
+    }
+  };
+
+  //CONTROL THE LENGTH TO THE MESSAGE IN TEXT AREA
+  const lengthControl = (e: {
+    target: { selectionEnd: SetStateAction<number> };
+  }): void => {
+    setTextAreaLength(e.target.selectionEnd);
+
+    capturingInput(e);
+  };
+
+  //CHECK THE BEHAVIOR WHEN THE USER TYPE SOMETHING IN INPUT EMAIL
+  const checkEmail = (e: { target: { value: string } }): void => {
     const email = e.target.value;
     const regExp =
       /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
     const verificar = regExp.test(email);
 
-    //first check if the value in input is a valid adrres email
+    //FIRST CHECK IF THE INPUT VALUE IS A VALID ADRRESS EMAIL
     if (verificar) {
       errorMessageRef.current.style.opacity = '0';
       emailInputRef.current.style.outlineColor = '#93c5fd';
 
-      //then check if the email.value.length > 0
+      //THEN CHECK IF THE EMAIL VALUE LENGTH IS NOT NULL
     } else if (!e.target.value) {
       errorMessageRef.current.style.opacity = '0';
       emailInputRef.current.style.outlineColor = '#93c5fd';
@@ -38,9 +64,25 @@ const Contact = () => {
     }
   };
 
-  //control the length number in text area input
-  const lengthControl = (e: any): void => {
-    setTextAreaLength(e.target.selectionEnd);
+  //FORM HANDLE SUBMIT
+  const sendComent = async (e: any) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('https://formspree.io/f/mbjnlnlq', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setFormSendSuccessfully(true);
+      }
+    } catch (error) {
+      console.error('Request Error:', error);
+    }
   };
 
   return (
@@ -54,19 +96,21 @@ const Contact = () => {
       </h1>
       <section className='before:bg-transparent after:bg-transparent py-9 max-[900px]:w-[90%] w-[55em] duration-300 relative pl-12 md:py-6 rounded-lg shadow-[14px_30px_20px_-10px_#0000004f] flex h-auto justify-around overflow-hidden md:after:absolute after:left-0 after:bottom-0 after:w-1/2 after:h-full after:bg-gradient-to-l after:from-blue-50 after:via-white after:to-white after:z-10 md:before:absolute before:right-0 before:bottom-0 before:w-1/2 before:h-full before:bg-gradient-to-l from-blue-300 via-blue-200 to-blue-50 dark:after:w-0 dark:after:h-0 dark:before:w-0 dark:before:h-0 dark:bg-theme_dark-main-bg'>
         <form
-          className='gap-3 md:gap-0 items-center w-[50%] md:w-[auto] z-20 bg-transparent [min-width:20em] flex flex-col justify-evenly md:items-start'
-          onSubmit={(e) => e.preventDefault()}>
+          onSubmit={sendComent}
+          action='POST'
+          className='gap-3 md:gap-0 items-center w-[50%] md:w-[auto] z-20 bg-transparent [min-width:20em] flex flex-col justify-evenly md:items-start'>
           <label
             htmlFor='name-input-field'
             className='dark:text-zinc-300 w-full flex flex-col items-start font-extrabold text-xl text-[#404040b9]'>
             {engLanguageActive ? 'Name:' : 'Nombre:'}
             <input
+              onChange={capturingInput}
               type='text'
-              name='user-name'
+              name='name'
               id='name-input-field'
               autoComplete='off'
               placeholder='e.g.  sebastian perez'
-              className='border-2  dark:bg-theme_dark-box-second dark:text-slate-50 dark:border dark:border-slate-600/50 focus:bg-[#f3f3f3bf] max-[900px]:w-[80%] rounded-md font-semibold text-sm  outline-blue-300 dark:focus:bg-theme_dark-box-thir text-[#404040b9] p-2 capitalize placeholder:text-sm placeholder:lowercase placeholder:font-normal  w-full focus:placeholder:opacity-0 dark:font-medium'
+              className='border-2  dark:bg-theme_dark-box-second dark:text-slate-50 dark:border dark:border-slate-600/50 bg-[#f3f3f3bf] max-[900px]:w-[80%] rounded-md font-semibold text-sm  outline-blue-300 dark:focus:bg-theme_dark-box-thir text-[#404040b9] p-2 capitalize placeholder:text-sm placeholder:lowercase placeholder:font-normal  w-full focus:placeholder:opacity-0 dark:font-medium'
             />
           </label>
 
@@ -75,9 +119,9 @@ const Contact = () => {
             className='dark:text-zinc-300 w-full relative flex flex-col items-start font-extrabold text-xl text-[#404040b9]'>
             Email:
             <input
-              onChange={checkEmail}
+              onChange={capturingInput}
               type='text'
-              name='user-email'
+              name='email'
               id='email-input-field'
               autoComplete='off'
               placeholder={
@@ -85,7 +129,7 @@ const Contact = () => {
                   ? 'e.g.  example@gmail.com (optional)'
                   : 'e.g.  example@gmail.com (opcional)'
               }
-              className='border-2  dark:bg-theme_dark-box-second dark:text-slate-50 dark:border dark:border-slate-600/50 focus:bg-[#f3f3f3bf] max-[900px]:w-[80%] rounded-md text-sm outline-blue-300 dark:focus:bg-theme_dark-box-thir text-[#404040b9] p-2  w-full placeholder:text-sm placeholder:font-normal focus:placeholder:opacity-0 dark:font-medium'
+              className='border-2  dark:bg-theme_dark-box-second dark:text-slate-50 dark:border dark:border-slate-600/50 bg-[#f3f3f3bf] max-[900px]:w-[80%] rounded-md text-sm outline-blue-300 dark:focus:bg-theme_dark-box-thir text-[#404040b9] p-2  w-full placeholder:text-sm placeholder:font-normal focus:placeholder:opacity-0 dark:font-medium'
               ref={emailInputRef}
             />
             <span
@@ -108,7 +152,7 @@ const Contact = () => {
                   ? 'type your message...'
                   : 'escribe tu mensaje ...'
               }
-              className=' border-2  dark:bg-theme_dark-box-second dark:text-slate-50 dark:border dark:border-slate-600/50 focus:bg-[#f3f3f3bf] max-[900px]:w-[80%] rounded-md text-sm  min-[900px]:text-base focus:placeholder:opacity-0 outline-blue-300 dark:focus:bg-theme_dark-box-thir text-[#404040b9] placeholder:text-base placeholder:font-normal p-3 placeholder:translate-y-28 resize-none  w-full h-40'></textarea>
+              className=' border-2  dark:bg-theme_dark-box-second dark:text-slate-50 dark:border dark:border-slate-600/50 bg-[#f3f3f3bf] max-[900px]:w-[80%] rounded-md text-sm  min-[900px]:text-base focus:placeholder:opacity-0 outline-blue-300 dark:focus:bg-theme_dark-box-thir text-[#404040b9] placeholder:text-base placeholder:font-normal p-3 placeholder:translate-y-28 resize-none  w-full h-40'></textarea>
             <span className='max-[900px]:right-20 absolute right-5 bottom-5 text-[#404040b9] dark:text-zinc-300'>
               {textAreaLength}/150
             </span>

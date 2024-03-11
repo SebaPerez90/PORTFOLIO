@@ -88,8 +88,8 @@ const Proyects = () => {
                 <Image
                   key={index}
                   src={item}
-                  width={300}
-                  height={300}
+                  width={450}
+                  height={450}
                   priority
                   alt='screen-shoot'
                   className='sticky left-0 h-full w-full object-cover snap-center'

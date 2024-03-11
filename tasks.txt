@@ -1,4 +1,1 @@
-# conectar formspree al form
-
 # fijarse q carajos hacer con el "monitor"
-
