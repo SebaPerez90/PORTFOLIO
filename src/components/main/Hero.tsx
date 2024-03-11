@@ -9,7 +9,7 @@ import { FaGithub } from 'react-icons/fa6';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { HiOutlineArrowLongRight } from 'react-icons/hi2';
 
-import DownloadCvBtn from './DownloadCvBtn';
+import DownloadBtn from '@/components/main/DownloadBtn';
 
 const roboto = Roboto({
   weight: ['700'],
@@ -43,7 +43,7 @@ const Hero = () => {
             : 'Desarrollor front-end y vivo en Argentina, Buenos Aires. Tengo dos años de experiencia en el desarrollo web. Actualmente estoy cursando un bootcamp para poder ampliar mis horizontes y sumar conocimiento a mi stack actual'}
         </p>
 
-        <DownloadCvBtn />
+        <DownloadBtn />
       </article>
 
       <div className='dark:[background:linear-gradient(to_right,#00000000,#00000000)] max-[700px]:z-40 max-[700px]:absolute max-[700px]:right-36 flex items-end justify-end self-end lg:bg-gradient-to-l from-light-500 to-[#DCBFFF] h-[40em] w-[38em]'>

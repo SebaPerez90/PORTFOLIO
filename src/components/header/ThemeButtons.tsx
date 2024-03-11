@@ -51,9 +51,11 @@ const ThemeButtons = () => {
       {theme === 'dark' ? (
         <div className='pr-[0.1em] py-[1.1rem] bg-theme_dark-box-second border-2 border-theme_dark-sup-pink flex justify-between items-center w-20 h-8 rounded-full overflow-hidden'>
           <Image
-            className='scale-75 z-10'
+            className='relative left-1 top-[0.15em] z-10'
             ref={iconRef}
-            src={moon_icon}
+            width={30}
+            height={30}
+            src={'/svg/moon-icon.svg'}
             alt='dark-theme-icon'
           />
           <button
@@ -70,11 +72,10 @@ const ThemeButtons = () => {
             ref={buttonRef}
             className='hover:duration-200 bg-[#4d4dffbf] hover:bg-[#4d4dff73] rounded-full h-7 w-7 m-[2px] z-20'></button>
           <Image
-            // className='scale-[0.3] relative left-1 z-10'
             width={30}
             height={30}
             ref={iconRef}
-            src={sun_icon}
+            src={'/svg/sun-icon.svg'}
             alt='light-theme-icon'
           />
         </div>

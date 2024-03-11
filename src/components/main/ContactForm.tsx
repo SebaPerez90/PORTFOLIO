@@ -66,7 +66,7 @@ const Contact = () => {
               id='name-input-field'
               autoComplete='off'
               placeholder='e.g.  sebastian perez'
-              className='dark:bg-theme_dark-box-second dark:text-slate-50 dark:border dark:border-slate-600/50 focus:bg-[#f3f3f3bf] max-[900px]:w-[80%] rounded-md font-semibold text-sm  outline-blue-300 dark:focus:bg-theme_dark-box-thir text-[#404040b9] p-2 capitalize placeholder:text-sm placeholder:lowercase placeholder:font-normal  w-full focus:placeholder:opacity-0 dark:font-medium'
+              className='border-2  dark:bg-theme_dark-box-second dark:text-slate-50 dark:border dark:border-slate-600/50 focus:bg-[#f3f3f3bf] max-[900px]:w-[80%] rounded-md font-semibold text-sm  outline-blue-300 dark:focus:bg-theme_dark-box-thir text-[#404040b9] p-2 capitalize placeholder:text-sm placeholder:lowercase placeholder:font-normal  w-full focus:placeholder:opacity-0 dark:font-medium'
             />
           </label>
 
@@ -85,7 +85,7 @@ const Contact = () => {
                   ? 'e.g.  example@gmail.com (optional)'
                   : 'e.g.  example@gmail.com (opcional)'
               }
-              className='dark:bg-theme_dark-box-second dark:text-slate-50 dark:border dark:border-slate-600/50 focus:bg-[#f3f3f3bf] max-[900px]:w-[80%] rounded-md text-sm outline-blue-300 dark:focus:bg-theme_dark-box-thir text-[#404040b9] p-2  w-full placeholder:text-sm placeholder:font-normal focus:placeholder:opacity-0 dark:font-medium'
+              className='border-2  dark:bg-theme_dark-box-second dark:text-slate-50 dark:border dark:border-slate-600/50 focus:bg-[#f3f3f3bf] max-[900px]:w-[80%] rounded-md text-sm outline-blue-300 dark:focus:bg-theme_dark-box-thir text-[#404040b9] p-2  w-full placeholder:text-sm placeholder:font-normal focus:placeholder:opacity-0 dark:font-medium'
               ref={emailInputRef}
             />
             <span
@@ -106,7 +106,7 @@ const Contact = () => {
               placeholder={
                 engLanguageActive ? 'your message...' : 'tu mensaje ...'
               }
-              className=' dark:bg-theme_dark-box-second dark:text-slate-50 dark:border dark:border-slate-600/50 focus:bg-[#f3f3f3bf] max-[900px]:w-[80%] rounded-md text-sm  min-[900px]:text-base focus:placeholder:opacity-0 outline-blue-300 dark:focus:bg-theme_dark-box-thir text-[#404040b9] placeholder:text-base placeholder:font-normal p-3 placeholder:translate-y-28 resize-none  w-full h-40'></textarea>
+              className=' border-2  dark:bg-theme_dark-box-second dark:text-slate-50 dark:border dark:border-slate-600/50 focus:bg-[#f3f3f3bf] max-[900px]:w-[80%] rounded-md text-sm  min-[900px]:text-base focus:placeholder:opacity-0 outline-blue-300 dark:focus:bg-theme_dark-box-thir text-[#404040b9] placeholder:text-base placeholder:font-normal p-3 placeholder:translate-y-28 resize-none  w-full h-40'></textarea>
             <span className='max-[900px]:right-20 absolute right-5 bottom-5 text-[#404040b9] dark:text-zinc-300'>
               {textAreaLength}/150
             </span>

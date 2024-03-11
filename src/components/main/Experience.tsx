@@ -25,7 +25,9 @@ const Experience = () => {
 
   return (
     <>
-      <section className='shadow-[14px_30px_20px_-10px_#0000004f] py-20 dark:bg-theme_dark-main-bg bg-white  w-full lg:w-[80%] lg:rounded-lg'>
+      <section
+        id='experience-section'
+        className='shadow-[14px_30px_20px_-10px_#0000004f] py-20 dark:bg-theme_dark-main-bg bg-white  w-full lg:w-[80%] lg:rounded-lg'>
         <h1
           className='px-2 text-3xl min-[500px]:[letter-spacing:10px] dark:text-zinc-200 text-[#313131be] text-center'
           style={roboto.style}>

@@ -4,7 +4,7 @@ import { useStore } from '@/store';
 import { FaRegFilePdf } from 'react-icons/fa';
 import { MdDownload } from 'react-icons/md';
 
-const DownloadCvBtn = () => {
+const DownloadBtn = () => {
   const [isDownloaded, setIsDownloaded] = useState(false);
 
   const { engLanguageActive } = useStore();
@@ -28,11 +28,12 @@ const DownloadCvBtn = () => {
     if (download_button) {
       divElement?.classList.add('hidden');
       download_button.style.borderColor = '#22c55e';
+      download_button.style.pointerEvents = 'none';
 
       {
         engLanguageActive
-          ? (download_button.innerHTML = `<span class='text-[#f8fafc] py-[0.15rem]'>Descargado ✔️</span>`)
-          : (download_button.innerHTML = `<span class='text-[#f8fafc] py-[0.15rem]'>Descargado ✔️</span>`);
+          ? (download_button.innerHTML = `<span class='text-[#22c55e] py-[0.15rem]'>Descargado ✔️</span>`)
+          : (download_button.innerHTML = `<span class='text-[#22c55e] py-[0.15rem]'>Descargado ✔️</span>`);
       }
     }
   };
@@ -42,21 +43,13 @@ const DownloadCvBtn = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDownloaded]);
 
-  //WHEN THE USER FINISH THE DOWNLOAD, THE BOX AND CONTENT BOX DISPLAY THE CHANGE
-  const downladSuccess = {
-    backgroundColor: '#1e293b8f',
-    transition: 'background-color 400ms',
-  };
-
   return (
     <div className='flex items-center gap-4'>
       <span className='dark:bg-green-500 cursor-default text-xs bg-green-700 rounded-sm py-3 w-max text-white font-bold px-5'>
         OPEN TO WORK
       </span>
 
-      <div
-        style={isDownloaded ? downladSuccess : {}}
-        className='relative flex flex-col'>
+      <div className='relative flex flex-col'>
         <button
           id='download-btn'
           onClick={changingVisibility}
@@ -78,8 +71,8 @@ const DownloadCvBtn = () => {
               <a
                 aria-label='cv-link'
                 className='text-light-500/75 dark:text-zinc-300 font-semibold text-base flex items-center gap-2 w-max'
-                href='/cv.pdf'
-                download='cv.pdf'>
+                href='/english.pdf'
+                download='english.pdf'>
                 english.pdf{' '}
                 <FaRegFilePdf className='dark:text-theme_dark-sup-pink text-bg-light-500/text-light-500/75' />
               </a>
@@ -90,8 +83,8 @@ const DownloadCvBtn = () => {
               <a
                 aria-label='cv-link'
                 className=' text-light-500/75 dark:text-zinc-300 font-semibold text-base flex items-center gap-2 w-max'
-                href='/cv.pdf'
-                download='cv.pdf'>
+                href='/español.pdf'
+                download='español.pdf'>
                 español.pdf{' '}
                 <FaRegFilePdf className='dark:text-theme_dark-sup-pink text-bg-light-500/text-light-500/75' />
               </a>
@@ -103,4 +96,4 @@ const DownloadCvBtn = () => {
   );
 };
 
-export default DownloadCvBtn;
+export default DownloadBtn;

@@ -22,22 +22,28 @@ const NavBar = () => {
       url: '#about-section',
     },
     {
+      titleES: 'experiencia',
+      titleEN: 'experience',
+      label: 'experience-link',
+      url: '#experience-section',
+    },
+    {
       titleES: 'proyectos',
       titleEN: 'projects',
       label: 'projects-link',
       url: '#projects-section',
     },
     {
-      titleES: 'contáctame',
-      titleEN: 'contact me',
-      label: 'contact-link',
-      url: '#contact-section',
-    },
-    {
       titleES: 'servicios',
       titleEN: 'services',
       label: 'services-link',
       url: '#services-section',
+    },
+    {
+      titleES: 'contáctame',
+      titleEN: 'contact me',
+      label: 'contact-link',
+      url: '#contact-section',
     },
   ];
 
