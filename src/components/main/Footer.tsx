@@ -12,10 +12,9 @@ const Footer = () => {
 
   return (
     <footer className='dark:border-t-2 dark:border-slate-500/30 dark:bg-theme_dark-main-bg flex-wrap relative gap-20 flex justify-center items-end  bg-white w-full pt-12 pb-8'>
-      <div className='max-[520px]:scale-90 relative w-[30em] h-[20em] overflow-hidden rounded-xl before:animate-[location-animation2_1s_ease-out_alternate-reverse_infinite] before:w-8 before:h-2 before:rounded-[50%] before:absolute before:bottom-[5.3em] before:right-[6em] before:z-30 '>
+      <div className='max-[520px]:scale-90 relative w-[30em] h-[20em] overflow-hidden rounded-xl before:animate-[location-animation2_1s_ease-out_alternate-reverse_infinite] before:w-8 before:h-2 before:rounded-[50%] before:absolute before:bottom-[5.3em] before:right-[6em] before:z-30 max-[460px]:before:right-[5em] max-[390px]:before:right-[4em] max-[460px]:before:bottom-[6em]'>
         <span>
-          {/* max-[480px]:right-[5rem] */}
-          <FaLocationDot className=' animate-[location-animation_1s_ease-out_alternate-reverse_infinite] absolute bottom-[2.7em] right-[5.9rem] z-30 text-red-400 text-4xl [filter:saturate(3)]' />
+          <FaLocationDot className='max-[390px]:right-[4rem] max-[460px]:bottom-[6.5rem] max-[460px]:right-[5rem] animate-[location-animation_1s_ease-out_alternate-reverse_infinite] absolute bottom-[2.7em] right-[5.9rem] z-30 text-red-400 text-4xl [filter:saturate(3)]' />
         </span>
         <Image
           src={location_image}
@@ -23,7 +22,7 @@ const Footer = () => {
           priority
           className='w-full h-full object-cover z-10 relative'
         />
-        <div className=' absolute bg-[#00000027] w-full h-full z-20 top-0 flex  items-center justify-center'>
+        <div className='absolute bg-[#00000027] w-full h-full z-20 top-0 flex  items-center justify-center'>
           <address className='max-[420px]:text-sm gap-1 flex items-center justify-center text-base w-max font-medium text-white border p-4 bg-[#00000080] relative bottom-20'>
             <FaLocationDot className='text-red-400 [filter:saturate(3)]' />
             calle 1 nº 626, Berazategui, Buenos Aires
