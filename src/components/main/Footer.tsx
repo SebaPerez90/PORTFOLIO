@@ -11,10 +11,11 @@ const Footer = () => {
   const { engLanguageActive } = useStore();
 
   return (
-    <footer className='dark:border-t-2 dark:border-slate-500/30  dark:bg-theme_dark-main-bg flex-wrap relative gap-20 flex justify-center items-end  bg-white w-full pt-12 pb-8'>
-      <div className='relative w-[30em] h-[20em] overflow-hidden rounded-xl before:animate-[location-animation2_1s_ease-out_alternate-reverse_infinite] before:w-8 before:h-2 before:rounded-[50%] before:absolute before:bottom-[5.3em] before:right-[6em] before:z-30 '>
+    <footer className='dark:border-t-2 dark:border-slate-500/30 dark:bg-theme_dark-main-bg flex-wrap relative gap-20 flex justify-center items-end  bg-white w-full pt-12 pb-8'>
+      <div className='max-[520px]:scale-90 relative w-[30em] h-[20em] overflow-hidden rounded-xl before:animate-[location-animation2_1s_ease-out_alternate-reverse_infinite] before:w-8 before:h-2 before:rounded-[50%] before:absolute before:bottom-[5.3em] before:right-[6em] before:z-30 '>
         <span>
-          <FaLocationDot className='animate-[location-animation_1s_ease-out_alternate-reverse_infinite] absolute bottom-[2.7em] right-[5.9rem] z-30 text-red-400 text-4xl [filter:saturate(3)]' />
+          {/* max-[480px]:right-[5rem] */}
+          <FaLocationDot className=' animate-[location-animation_1s_ease-out_alternate-reverse_infinite] absolute bottom-[2.7em] right-[5.9rem] z-30 text-red-400 text-4xl [filter:saturate(3)]' />
         </span>
         <Image
           src={location_image}
@@ -23,7 +24,7 @@ const Footer = () => {
           className='w-full h-full object-cover z-10 relative'
         />
         <div className=' absolute bg-[#00000027] w-full h-full z-20 top-0 flex  items-center justify-center'>
-          <address className='gap-1 flex items-center justify-center text-base w-max font-medium text-white border-2 p-4 bg-[#00000062] relative bottom-20'>
+          <address className='max-[420px]:text-sm gap-1 flex items-center justify-center text-base w-max font-medium text-white border p-4 bg-[#00000080] relative bottom-20'>
             <FaLocationDot className='text-red-400 [filter:saturate(3)]' />
             calle 1 nº 626, Berazategui, Buenos Aires
           </address>
@@ -46,13 +47,13 @@ const Footer = () => {
               {'>'}
             </span>
           </div>
-          <p className='dark:text-zinc-300 w-[30em] text-sm font-semibold text-[#4d4d4d] mt-2 translate-x-8'>
+          <p className='max-[500px]:px-3 max-[500px]:w-auto dark:text-zinc-300 w-[30em] text-sm font-semibold text-[#4d4d4d] mt-2'>
             {engLanguageActive
               ? 'I really appreciate that you have reached this section of the portfolio. Any kind of feedback is useful to continue learning and improving.'
               : 'Agradezco mucho que hayas llegado hasta esta sección del portfolio. Cualquier tipo de feedback es útil para continuar aprendiendo y mejorando.'}
           </p>
         </div>
-        <ul className='dark:text-theme_dark-sup-sky flex justify-center gap-8 font-black text-light-400'>
+        <ul className='max-[420px]:gap-2 dark:text-theme_dark-sup-sky flex justify-center gap-8 font-black text-light-400'>
           <li className='dark:border-theme_dark-sup-sky dark:hover:text-zinc-400 hover:duration-100 hover:text-light-200 '>
             <Link
               href={'https://www.linkedin.com/in/sebaperez90/'}

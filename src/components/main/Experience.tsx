@@ -240,7 +240,8 @@ const Experience = () => {
             </div>
           </article>
         </div>
-        <div className='dark:border dark:border-slate-500/30 dark:bg-theme_dark-box-second px-6 py-8 bg-[#ededed] max-[650px]:w-[80%] max-[950px]:w-[90%] flex flex-col items-center w-[60%] rounded-md'>
+        {/*   CHEKEAR EL BORDE DE ESTO */}
+        <div className='max-[460px]:w-[98%] dark:border-t dark:border-r dark:border-b dark:border-r-slate-500/30 dark:border-t-slate-500/30 dark:border-b-slate-500/30  border-l-[12px] border-[#f0e244] dark:bg-theme_dark-box-second px-6 py-8 bg-[#ededed] max-[650px]:w-[80%] max-[950px]:w-[90%] flex flex-col items-center w-[60%] rounded-[0_0.4em_0.4em_0]'>
           <h1 className='dark:text-zinc-50 text-[#575757] text-center font-extrabold text-xl mb-6'>
             <span className='text-4xl'>⚠️</span>
             {engLanguageActive

@@ -94,7 +94,7 @@ const Contact = () => {
         style={roboto.style}>
         {engLanguageActive ? 'CONTACT ME' : 'CONTÁCTAME'}🤝
       </h1>
-      <section className='before:bg-transparent after:bg-transparent py-9 max-[900px]:w-[90%] w-[55em] duration-300 relative pl-12 md:py-6 rounded-lg shadow-[14px_30px_20px_-10px_#0000004f] flex h-auto justify-around overflow-hidden md:after:absolute after:left-0 after:bottom-0 after:w-1/2 after:h-full after:bg-gradient-to-l after:from-blue-50 after:via-white after:to-white after:z-10 md:before:absolute before:right-0 before:bottom-0 before:w-1/2 before:h-full before:bg-gradient-to-l from-blue-300 via-blue-200 to-blue-50 dark:after:w-0 dark:after:h-0 dark:before:w-0 dark:before:h-0 dark:bg-theme_dark-main-bg'>
+      <section className='bg-white before:bg-transparent after:bg-transparent py-9 max-[900px]:w-[90%] w-[55em] duration-300 relative pl-12 md:py-6 rounded-lg shadow-[14px_30px_20px_-10px_#0000004f] flex h-auto justify-around overflow-hidden md:after:absolute after:left-0 after:bottom-0 after:w-1/2 after:h-full after:bg-gradient-to-l after:from-blue-50 after:via-white after:to-white after:z-10 md:before:absolute before:right-0 before:bottom-0 before:w-1/2 before:h-full before:bg-gradient-to-l from-blue-300 via-blue-200 to-blue-50 dark:after:w-0 dark:after:h-0 dark:before:w-0 dark:before:h-0 dark:bg-theme_dark-main-bg'>
         <form
           onSubmit={sendComent}
           action='POST'

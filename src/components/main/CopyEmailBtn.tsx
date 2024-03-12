@@ -26,7 +26,7 @@ const CopyEmailBtn = () => {
   };
 
   return (
-    <div className='relative self-center flex gap-5 border dark:border-slate-600/50 rounded-md px-4 dark:bg-theme_dark-box-second w-max py-1 mt-6 bg-white'>
+    <div className='max-[400px]:scale-90 relative self-center flex gap-5 border dark:border-slate-600/50 rounded-md px-4 dark:bg-theme_dark-box-second w-max py-1 mt-6 bg-white'>
       <span
         ref={emailAddressRef}
         className='dark:text-zinc-50  flex items-center gap-1 text-xs'>
@@ -45,7 +45,7 @@ const CopyEmailBtn = () => {
       </span>
       <span
         ref={infoMessajeRef}
-        className='cursor-default absolute right-[-0.6em] w-max top-11 text-green-400 font-black opacity-0 border bg-white dark:border-slate-600/50 dark:bg-theme_dark-box-second p-[0.3em_1em] rounded-md'>
+        className='cursor-default absolute right-[-0.6em] w-max top-14 text-green-400 font-black opacity-0 border bg-white dark:border-slate-600/50 dark:bg-theme_dark-box-second p-[0.7em_1em] rounded-md'>
         {engLanguageActive ? 'coppied!' : 'copiado!'}
       </span>
     </div>

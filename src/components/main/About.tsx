@@ -101,10 +101,10 @@ const About = () => {
               priority
             />
           </div>
-          <div className=' gap-4 md:gap-0 flex flex-col items-center justify-evenly w-3/4 max-[500px]:w-full'>
+          <div className='max-[477px]:text-center max-[477px]:w-full gap-4 md:gap-0 flex flex-col items-center justify-evenly w-3/4 max-[500px]:w-full'>
             <h1 className=' dark:text-slate-50 text-4xl text-[#333333bc] font-extrabold max-[500px]:translate-x-2'>
               {engLanguageActive
-                ? 'Hello There! Soy sebastian 👋'
+                ? 'Hello There! Soy Sebastian 👋'
                 : '¡Hola! Soy Sebastian 👋'}
             </h1>
             <p className=' dark:text-zinc-300 w-[70%] text-sm font-semibold text-[#33333391]'>

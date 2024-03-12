@@ -154,9 +154,9 @@ const Services = () => {
           </article>
         </div>
 
-        <div className='max-[825px]:flex-col-reverse max-[825px]:items-center gap-8 w-full flex justify-around flex-wrap row-span-2 col-span-full flex-row-reverse'>
+        <div className='max-[400px]:translate-x-[-3em] max-[430px]:translate-x-[-2em] max-[470px]:translate-x-[-1em] max-[825px]:flex-col-reverse max-[825px]:items-center gap-8 w-full flex justify-around flex-wrap row-span-2 col-span-full flex-row-reverse'>
           {/*//!monitor */}
-          <div className='flex flex-col justify-center items-center'>
+          <div className='relative max-[380px]:right-3 max-[380px]:scale-[0.7] max-[440px]:scale-75 max-[500px]:scale-90 duration-300 flex flex-col justify-center items-center'>
             <div className='h-[19em] w-[28em] rounded-[0.5em_0.5em_0_0] bg-white border-[1.5em] dark:border-[#292529] border-[#2d2d2d] border-b-0'>
               <div className='w-full bg-slate-500 flex items-center '>
                 <button
@@ -205,7 +205,7 @@ const Services = () => {
             <div className='h-4 w-[15em] dark:bg-[#292529] bg-[#2d2d2d] rounded-[0.5em_0.5em_0_0]'></div>
           </div>
           {/*//!monitor */}
-          <article className='max-[500px]:w-[90%] max-[825px]:w-[80%] w-1/2 flex flex-col items-center justify-center gap-6'>
+          <article className='max-[380px]:translate-x-[-0.5em] max-[500px]:w-[90%] max-[825px]:w-[80%] w-1/2 flex flex-col items-center justify-center gap-6'>
             <h1 className='dark:text-zinc-50 text-2xl font-black text-[#333333d4] text-center'>
               {engLanguageActive
                 ? `Applications and landing pages`
