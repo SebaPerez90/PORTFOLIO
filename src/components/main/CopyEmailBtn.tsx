@@ -45,7 +45,7 @@ const CopyEmailBtn = () => {
       </span>
       <span
         ref={infoMessajeRef}
-        className='cursor-default absolute right-[-0.6em] w-max top-11 text-green-400 font-black opacity-0 border dark:border-slate-600/50 dark:bg-theme_dark-box-second p-[0.3em_1em] rounded-md'>
+        className='cursor-default absolute right-[-0.6em] w-max top-11 text-green-400 font-black opacity-0 border bg-white dark:border-slate-600/50 dark:bg-theme_dark-box-second p-[0.3em_1em] rounded-md'>
         {engLanguageActive ? 'coppied!' : 'copiado!'}
       </span>
     </div>

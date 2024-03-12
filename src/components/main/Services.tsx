@@ -1,11 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { useStore } from '@/store';
+import CopyEmailBtn from '@/components/main/CopyEmailBtn';
 
 import Image from 'next/image';
 import lg_icon from '@/assets/images/lg-icon.webp';
 import UI_dark from '@/assets/images/UI-dark.webp';
 import UI_light from '@/assets/images/UI-light.webp';
 import devs_team from '@/assets/images/devs-team.png';
+import github from '@/assets/images/github.webp';
+import linkedin from '@/assets/images/linkedin.webp';
 
 import { IoMdHome } from 'react-icons/io';
 import { IoChevronBackOutline } from 'react-icons/io5';
@@ -15,22 +18,33 @@ import { HiWifi } from 'react-icons/hi';
 import { MdBattery50 } from 'react-icons/md';
 import { FaSignal } from 'react-icons/fa';
 import { FaPowerOff } from 'react-icons/fa';
-import CopyEmailBtn from '@/components/main/CopyEmailBtn';
+import { FaGithub } from 'react-icons/fa6';
+import { FaLinkedin } from 'react-icons/fa';
 
 const Services = () => {
   const { engLanguageActive } = useStore();
 
-  const [weatherData, setWeatherData]: any = useState({});
-
   const [theme, setTheme]: any = useState();
+  const [currentLayout, setCurrentLayout] = useState('github-layout');
+  const [weatherData, setWeatherData] = useState({
+    temperature: '',
+    country: '',
+    city: '',
+  });
 
   const dateRef = useRef<HTMLTimeElement>(null);
 
-  //! CHEKEAR ESTO ,  Y PONER UNA CONDICION CORRECTA PARA Q ACTUALIZE BLA BLA BLA
+  //CATCH THE CURRENT "LAYOUT" ID
+  const changeLayout = (e: any) => {
+    setCurrentLayout(e.target.id);
+  };
+
+  //CAPTURE THE CURRENT THEME TO CHANGE THE BACKGROUND IMAGE IN UI MOBILE
   useEffect(() => {
     setTheme(localStorage.getItem('theme'));
   }, [theme]);
 
+  //MAKE A FETCH DATA FROM API TO DISPLAY UI MOBILE
   useEffect(() => {
     const getData = async () => {
       const APIkey = '3d9cbbaa2c744ad8b91912d8c0979261';
@@ -48,6 +62,7 @@ const Services = () => {
     getData();
   }, []);
 
+  //GET THE HOUR TO DISPLAY EN UI MOBILE
   setInterval(() => {
     const date = new Date();
     const hours =
@@ -75,7 +90,7 @@ const Services = () => {
       </h1>
       <div className='w-[95%] grid grid-cols-3 grid-rows-[repeat(2,min-max(100px,auto))] gap-y-[11em] relative lg:w-[80%] m-[0_auto]'>
         <div className='max-[825px]:flex-col-reverse max-[825px]:items-center gap-8 w-full flex justify-around flex-wrap row-span-1 col-span-full'>
-          <div className='relative w-[12em] h-[25rem] flex flex-col justify-between border-[10px] border-[#252525] bg-white rounded-[25px] before:absolute before:w-full before:h-5 before:rounded-[50%] before:left-0 before:bottom-[-3em] before:bg-[#3737378f] before:z-50'>
+          <div className='relative w-[12em] h-[25rem] flex flex-col justify-between border-[10px] border-[#252525] bg-white rounded-[25px] before:absolute before:w-full before:h-5 before:rounded-[50%] before:left-0 before:bottom-[-3em] dark:before:bg-[#75757558] before:bg-[#3737378f] before:z-50'>
             <div className='py-1 rounded-[13px_13px_0_0] w-full bg-[#4a4a4a] px-2 text-white flex justify-between items-center'>
               <FaWhatsapp className='text-green-400 scale-110' />
               <span className='rounded-full h-[9px] w-[9px] border-black border-4 bg-[#b6b4b4]'></span>
@@ -140,18 +155,56 @@ const Services = () => {
         </div>
 
         <div className='max-[825px]:flex-col-reverse max-[825px]:items-center gap-8 w-full flex justify-around flex-wrap row-span-2 col-span-full flex-row-reverse'>
+          {/*//!monitor */}
           <div className='flex flex-col justify-center items-center'>
-            <div className='h-[13em] w-[22em] rounded-[0.5em_0.5em_0_0] bg-white aaaa border-[1.5em] border-[#2d2d2d] border-b-0'></div>
-            <div className='flex items-center relative h-8 w-[22em] rounded-[0_0_0.5em_0.5em] bg-[#2d2d2d]'>
+            <div className='h-[19em] w-[28em] rounded-[0.5em_0.5em_0_0] bg-white border-[1.5em] dark:border-[#292529] border-[#2d2d2d] border-b-0'>
+              <div className='w-full bg-slate-500 flex items-center '>
+                <button
+                  id='linkedin-layout'
+                  onClick={changeLayout}
+                  aria-label='linkedin-layout'
+                  className='mt-[0.15rem] ml-[0.15rem] flex items-center py-[0.15rem] px-1 rounded-[0.5em_0.5em_0_0] bg-slate-800 gap-1 text-white text-[0.6rem]'>
+                  <FaGithub />
+                  LinkedIn
+                </button>
+                <button
+                  id='github-layout'
+                  onClick={changeLayout}
+                  aria-label='github-layout'
+                  className='mt-[0.15rem] ml-[0.15rem] flex items-center py-[0.15rem] px-1 rounded-[0.5em_0.5em_0_0] bg-slate-800 gap-1 text-white text-[0.6rem]'>
+                  <FaLinkedin />
+                  Github
+                </button>
+              </div>
+              <div className='w-full h-full '>
+                {currentLayout === 'github-layout' ? (
+                  <Image
+                    src={linkedin}
+                    alt='linkedin'
+                    className='object-cover w-auto h-[93%] '
+                    priority
+                  />
+                ) : (
+                  <Image
+                    src={github}
+                    alt='github'
+                    className='object-cover w-auto h-[93%] '
+                    priority
+                  />
+                )}
+              </div>
+            </div>
+            <div className='flex items-center relative h-8 w-[28em] rounded-[0_0_0.5em_0.5em] dark:bg-[#292529] bg-[#2d2d2d]'>
               <div className='absolute left-[45%] text-sm text-white font-black flex items-center gap-1'>
-                <Image src={lg_icon} alt='lg_icon' width={18} height={18} />
+                <Image src={lg_icon} alt='lg_icon' width={16} height={16} />
                 <span>LG</span>
               </div>
               <FaPowerOff className='absolute right-8 text-white text-lg' />
             </div>
-            <div className='h-8 w-8 bg-[#2d2d2d]'></div>
-            <div className='h-4 w-[15em] bg-[#2d2d2d] rounded-[0.5em_0.5em_0_0]'></div>
+            <div className='h-8 w-8 dark:bg-[#292529] bg-[#2d2d2d]'></div>
+            <div className='h-4 w-[15em] dark:bg-[#292529] bg-[#2d2d2d] rounded-[0.5em_0.5em_0_0]'></div>
           </div>
+          {/*//!monitor */}
           <article className='max-[500px]:w-[90%] max-[825px]:w-[80%] w-1/2 flex flex-col items-center justify-center gap-6'>
             <h1 className='dark:text-zinc-50 text-2xl font-black text-[#333333d4] text-center'>
               {engLanguageActive

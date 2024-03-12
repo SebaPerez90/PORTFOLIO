@@ -27,7 +27,7 @@ const Hero = () => {
 
       <span className='dark:opacity-40 z-10 absolute h-24 w-24 rounded-full duration-300 left-[50%] lg:left-[25%] bottom-0 bg-light-200 blur-xl animate-[bouncing3_18s_linear_alternate-reverse_infinite]'></span>
 
-      <article className='2xl:w-[45em] mt-8 xl:translate-x-20 pr-3 max-[700px]:z-30 max-[700px]:w-full z-20 w-[30em] flex flex-col items-start gap-6'>
+      <article className='2xl:w-[45em] mt-9 xl:translate-x-20 pr-3 max-[700px]:z-30 max-[700px]:w-full z-20 w-[30em] flex flex-col items-start gap-6'>
         <h1
           style={roboto.style}
           className='xl:text-8xl dark:text-slate-50 max-[520px]:text-[#3d3d3d] max-[520px]:gap-10 text-[#333333e3] font-extrabold text-7xl [letter-spacing:-1px]'>
@@ -56,7 +56,7 @@ const Hero = () => {
           />
         </div>
         <div className='max-[700px]:justify-end z-10 gap-20 translate-x-4 flex flex-col items-center justify-center h-[20em]'>
-          <span className='max-[700px]:[display:none] [rotate:90deg] w-max flex gap-2 items-center text-base font-extrabold text-light-900 lg:text-white [#33333391]'>
+          <span className='max-[700px]:[display:none] [rotate:90deg] w-max flex gap-2 items-center text-base font-extrabold text-[#3b3b3b] lg:text-white [#33333391]'>
             {engLanguageActive ? 'follow me' : 'seguime'}
             <HiOutlineArrowLongRight className='text-3xl' />
           </span>
