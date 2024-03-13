@@ -10,11 +10,11 @@
       width: 11px;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: #631fc89e;
+      background-color: #4d4dff;
       border-radius: 1em;
 
       &:hover {
-        background-color: #dcbfff;
+        background-color: #4d4dffa9;
         cursor: pointer;
       }
     }
@@ -51,10 +51,10 @@
 
 @layer components {
   .btn-light {
-    @apply max-[400px]:p-[0.6em_1em] flex items-center p-[0.8em_2em] text-sm gap-2 text-white rounded-full  font-bold hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] duration-200 bg-light-500/75 hover:bg-light-500/45 hover:[outline:1px_solid_#4d4dff77];
+    @apply max-[900px]:w-[80%] max-[900px]:self-start flex items-center gap-1 p-[0.8em_2em] w-max justify-center rounded-full text-white font-bold hover:duration-200 duration-200 hover:bg-blue-400 bg-light-500  hover:border-light-200 border border-light-500/85 hover:shadow-[0px_8px_7px_#00000049];
   }
   .btn-dark {
-    @apply dark:text-theme_dark-sup-pink dark:border-theme_dark-sup-pink dark:after:bg-theme_dark-sup-pink font-bold p-[0.8em_2em] flex w-max  relative hover:text-white hover:z-10  after:absolute after:left-[50%] after:rounded-[2em] after:bottom-0 after:w-0 after:h-full after:-z-10 rounded-[2em] hover:after:left-[0%] hover:after:w-[100%] active:outline active:outline-2 active:outline-light-600 hover:after:duration-[400ms] hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] duration-300 outline-none;
+    @apply dark:text-theme_dark-sup-pink dark:border-theme_dark-sup-pink dark:after:bg-theme_dark-sup-pink font-bold p-[0.8em_2em] flex w-max  relative hover:text-white hover:z-10  after:absolute after:left-[50%] after:rounded-[2em] after:bottom-0 after:w-0 after:h-full after:-z-10 rounded-[2em] hover:after:left-[0%] hover:after:w-[100%] active:outline active:outline-2 active:outline-light-600 hover:after:duration-[400ms] hover:shadow-[0px_8px_7px_#00000049] duration-300 outline-none;
   }
 }
 
@@ -103,6 +103,7 @@ body {
       }
       p {
         background: #ecececc7;
+        padding: 0;
         margin-bottom: 0.3em;
         color: transparent;
         border-radius: 0.2em;

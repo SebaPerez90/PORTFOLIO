@@ -90,7 +90,7 @@ const Contact = () => {
       id='contact-section'
       className='pt-20 pb-40 gap-16 flex flex-col items-center justify-around w-full'>
       <h1
-        className='dark:text-zinc-50 text-center text-4xl min-[500px]:[letter-spacing:10px] text-[#313131be]'
+        className='dark:text-zinc-50 text-center text-4xl min-[500px]:[letter-spacing:10px] text-[#334155]'
         style={roboto.style}>
         {engLanguageActive ? 'CONTACT ME' : 'CONTÁCTAME'}🤝
       </h1>
@@ -101,7 +101,7 @@ const Contact = () => {
           className='gap-3 md:gap-0 items-center w-[50%] md:w-[auto] z-20 bg-transparent [min-width:20em] flex flex-col justify-evenly md:items-start'>
           <label
             htmlFor='name-input-field'
-            className='dark:text-zinc-300 w-full flex flex-col items-start font-extrabold text-xl text-[#404040b9]'>
+            className='dark:text-zinc-300 w-full flex flex-col items-start font-extrabold text-xl text-[#334155]'>
             {engLanguageActive ? 'Name:' : 'Nombre:'}
             <input
               onChange={capturingInput}
@@ -110,13 +110,13 @@ const Contact = () => {
               id='name-input-field'
               autoComplete='off'
               placeholder='e.g.  sebastian perez'
-              className='border-2  dark:bg-theme_dark-box-second dark:text-slate-50 dark:border dark:border-slate-600/50 bg-[#f3f3f3bf] max-[900px]:w-[80%] rounded-md font-semibold text-sm  outline-blue-300 dark:focus:bg-theme_dark-box-thir text-[#404040b9] p-4 capitalize placeholder:text-sm placeholder:lowercase placeholder:font-normal  w-full focus:placeholder:opacity-0 dark:font-medium'
+              className='border-2 dark:bg-theme_dark-box-second dark:text-slate-50 dark:border dark:border-slate-600/50 bg-[#f3f3f3bf] max-[900px]:w-[80%] rounded-md font-semibold text-sm outline-blue-300 dark:focus:bg-theme_dark-box-thir text-[#404040b9] p-4 capitalize placeholder:text-sm placeholder:lowercase placeholder:font-normal w-full focus:placeholder:opacity-0 dark:font-medium'
             />
           </label>
 
           <label
             htmlFor='email-input-field'
-            className='dark:text-zinc-300 w-full relative flex flex-col items-start font-extrabold text-xl text-[#404040b9]'>
+            className='dark:text-zinc-300 w-full relative flex flex-col items-start font-extrabold text-xl text-[#334155]'>
             Email:
             <input
               onChange={capturingInput}
@@ -129,7 +129,7 @@ const Contact = () => {
                   ? 'e.g.  example@gmail.com (optional)'
                   : 'e.g.  example@gmail.com (opcional)'
               }
-              className='border-2  dark:bg-theme_dark-box-second dark:text-slate-50 dark:border dark:border-slate-600/50 bg-[#f3f3f3bf] max-[900px]:w-[80%] rounded-md text-sm outline-blue-300 dark:focus:bg-theme_dark-box-thir text-[#404040b9] p-4  w-full placeholder:text-sm placeholder:font-normal focus:placeholder:opacity-0 dark:font-medium'
+              className='border-2 dark:bg-theme_dark-box-second dark:text-slate-50 dark:border dark:border-slate-600/50 bg-[#f3f3f3bf] max-[900px]:w-[80%] rounded-md text-sm outline-blue-300 dark:focus:bg-theme_dark-box-thir text-[#404040b9] p-4  w-full placeholder:text-sm placeholder:font-normal focus:placeholder:opacity-0 dark:font-medium'
               ref={emailInputRef}
             />
             <span
@@ -160,7 +160,8 @@ const Contact = () => {
 
           <button
             aria-label='send-btn'
-            className='dark:border-theme_dark-sup-sky dark:bg-theme_dark-sup-sky dark:hover:bg-[#38bff875] hover:translate-y-[-0.7em] translate-y-[-0.5em] max-[900px]:w-[80%] max-[900px]:self-start text-sm self-center w-full md:translate-y-[-1em] py-3 rounded-md text-white font-bold hover:duration-200 duration-200 hover:bg-blue-400 bg-light-500  hover:border-light-200 border border-light-500/85 md:hover:translate-y-[-1.3em] hover:shadow-[0px_8px_7px_#00000049]'>
+            // md:translate-y-[-1em] translate-y-[-0.5em]
+            className='min-[900px]:translate-y-[-1em] dark:border-theme_dark-sup-sky dark:bg-theme_dark-sup-sky dark:hover:bg-[#38bff875] hover:translate-y-[-0.7em]  max-[900px]:w-[80%] max-[900px]:self-start text-sm self-center w-full  py-3 rounded-md text-white font-bold hover:duration-200 duration-200 hover:bg-blue-400 bg-light-500  hover:border-light-200 border border-light-500/85 md:hover:translate-y-[-1.3em] hover:shadow-[0px_8px_7px_#00000049]'>
             {engLanguageActive ? 'Send' : 'Enviar'}
           </button>
         </form>

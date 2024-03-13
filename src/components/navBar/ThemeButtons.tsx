@@ -1,8 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 
 import Image from 'next/image';
-import moon_icon from '@/assets/svg/moon-icon.svg';
-import sun_icon from '@/assets/svg/sun-icon.svg';
 
 import LanguageButtons from './LanguageButtons';
 

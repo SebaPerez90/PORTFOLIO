@@ -1,7 +1,7 @@
-// this function insert dynamically the icon corresponding to the value of the skill
+//insert dynamically the icon corresponding to the value of the skill
 // resource : https://svgl.vercel.app/?search=ama
 
-const addSvgIcon = (skill: string) => {
+const Icon = (skill: string) => {
   switch (skill) {
     case 'React.js':
       return (
@@ -231,4 +231,4 @@ const addSvgIcon = (skill: string) => {
   }
 };
 
-export default addSvgIcon;
+export default Icon;

@@ -68,7 +68,7 @@ const NavBar = () => {
         className='max-[500px]:translate-x-[-4.5em]  max-[600px]:scale-[0.85] max-[600px]:translate-x-[-17.5em] max-[800px]:translate-x-[-18em] translate-x-[-20em]  min-w-max fixed z-50 top-2 border border-slate-500/10 rounded-full bg-[#eeeeee81] dark:bg-[#0000004a] p-2 px-3 duration-300 flex justify-end dark:border dark:border-slate-500/30'>
         {navLinks.map((item, index) => (
           <Link
-            className='max-[500px]:hidden dark:hover:text-theme_dark-sup-pink duration-500 hover:text-light-900  p-2  dark:text-white  text-[#5c6673] font-medium '
+            className='max-[500px]:hidden dark:hover:text-theme_dark-sup-pink duration-500 hover:text-light-900  p-2  dark:text-white  text-[#333333] font-medium '
             aria-label={item.label}
             href={item.url}
             key={index}>

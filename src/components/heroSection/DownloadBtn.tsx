@@ -55,7 +55,7 @@ const DownloadBtn = () => {
           onClick={changingVisibility}
           disabled={isDownloaded}
           aria-label='visibility-switch-btn'
-          className='border-light-500/75 text-light-500/75 hover:bg-light-500/10 flex items-center gap-1 w-36 justify-center text-xs border-2 dark:border-theme_dark-sup-sky dark:text-theme_dark-sup-sky py-2 rounded-sm font-bold overflow-hidden dark:hover:bg-theme_dark-sup-sky/30 duration-200 hover:duration-200'>
+          className='border-light-500 text-light-500 hover:bg-light-500/10 flex items-center gap-1 w-36 justify-center text-xs border-2 dark:border-theme_dark-sup-sky dark:text-theme_dark-sup-sky py-2 rounded-sm font-bold overflow-hidden dark:hover:bg-theme_dark-sup-sky/30 duration-200 hover:duration-200'>
           {engLanguageActive ? 'Download CV' : 'Descargar CV'}
           <MdDownload className='text-xl' />
         </button>

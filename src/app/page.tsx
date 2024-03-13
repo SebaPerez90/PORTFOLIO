@@ -1,11 +1,12 @@
 'use client';
 
 import Hero from '@/components/heroSection/Hero';
-import About from '@/components/main/About';
-import Proyects from '@/components/main/Proyects';
-import Skills from '@/components/services&skills/Skills';
+import About from '@/components/projectsSection/About';
+import Proyects from '@/components/projectsSection/Proyects';
 import ContactForm from '@/components/formSection/ContactForm';
 import Experience from '@/components/experience&education/Experience';
+import Education from '@/components/experience&education/Education';
+import Services from '@/components/services&skills/Services';
 
 export default function Home() {
   return (
@@ -16,9 +17,11 @@ export default function Home() {
 
       <Experience />
 
+      <Education />
+
       <Proyects />
 
-      <Skills />
+      <Services />
 
       <ContactForm />
     </main>
