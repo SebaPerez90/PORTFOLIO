@@ -44,7 +44,7 @@ const DownloadBtn = () => {
   }, [isDownloaded]);
 
   return (
-    <div className='flex items-center gap-4'>
+    <div className='z-50 flex items-center gap-4'>
       <span className='dark:bg-green-500 cursor-default text-xs bg-green-700 rounded-sm py-3 w-max text-white font-bold px-5'>
         OPEN TO WORK
       </span>
