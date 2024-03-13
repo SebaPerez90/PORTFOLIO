@@ -2,7 +2,7 @@
 
 import { useStore } from '@/store';
 import Link from 'next/link';
-import ThemeButtons from '@/components/header/ThemeButtons';
+import ThemeButtons from '@/components/navBar/ThemeButtons';
 
 interface NavLinks {
   titleES: string;

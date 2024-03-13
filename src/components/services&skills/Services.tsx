@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useStore } from '@/store';
-import CopyEmailBtn from '@/components/main/CopyEmailBtn';
+import CopyEmailBtn from '@/components/services&skills/CopyEmailBtn';
 
 import Image from 'next/image';
 import lg_icon from '@/assets/images/lg-icon.webp';

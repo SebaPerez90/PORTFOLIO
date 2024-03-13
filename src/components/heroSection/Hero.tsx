@@ -9,7 +9,7 @@ import { FaGithub } from 'react-icons/fa6';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { HiOutlineArrowLongRight } from 'react-icons/hi2';
 
-import DownloadBtn from '@/components/main/DownloadBtn';
+import DownloadBtn from '@/components/heroSection/DownloadBtn';
 
 const roboto = Roboto({
   weight: ['700'],
