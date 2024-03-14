@@ -23,7 +23,7 @@ const Desktop = () => {
   };
 
   return (
-    <div className='mt-28 w-full grid grid-cols-3 grid-rows-[repeat(2,min-max(100px,auto))] gap-y-[9em] relative lg:w-[80%] m-[0_auto]'>
+    <div className='max-[1216px]:mt-44 mt-28 w-full grid grid-cols-3 grid-rows-[repeat(2,min-max(100px,auto))] gap-y-[9em] relative lg:w-[80%] m-[0_auto]'>
       <div className='max-[1216px]:flex-col-reverse items-center gap-8 w-full flex justify-around flex-wrap row-span-2 col-span-full flex-row-reverse'>
         <div className='relative duration-300 flex flex-col justify-center items-center'>
           <div className='max-[500px]:border-[1em] max-[500px]:h-[12em] max-[500px]:w-[22em] h-[19em] w-[28em] rounded-[0.5em_0.5em_0_0] bg-white border-[1.5em] dark:border-[#292529] border-[#2d2d2d] border-b-0'>

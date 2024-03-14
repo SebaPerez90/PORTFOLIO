@@ -51,7 +51,7 @@
 
 @layer components {
   .btn-light {
-    @apply max-[900px]:w-[80%] max-[900px]:self-start flex items-center gap-1 p-[0.8em_2em] w-max justify-center rounded-full text-white font-bold hover:duration-200 duration-200 hover:bg-blue-400 bg-light-500  hover:border-light-200 border border-light-500/85 hover:shadow-[0px_8px_7px_#00000049];
+    @apply flex items-center gap-1  w-max p-[0.8em_2em] justify-center rounded-full text-white font-bold hover:duration-200 duration-200 hover:bg-blue-400 bg-light-500  hover:border-light-200 border border-light-500/85 hover:shadow-[0px_8px_7px_#00000049];
   }
   .btn-dark {
     @apply dark:text-theme_dark-sup-pink dark:border-theme_dark-sup-pink dark:after:bg-theme_dark-sup-pink font-bold p-[0.8em_2em] flex w-max  relative hover:text-white hover:z-10  after:absolute after:left-[50%] after:rounded-[2em] after:bottom-0 after:w-0 after:h-full after:-z-10 rounded-[2em] hover:after:left-[0%] hover:after:w-[100%] active:outline active:outline-2 active:outline-light-600 hover:after:duration-[400ms] hover:shadow-[0px_8px_7px_#00000049] duration-300 outline-none;
@@ -64,6 +64,17 @@ body {
     backdrop-filter: blur(5px);
     top: -0.6em;
   }
+
+  .show-notifications {
+    height: 21.5em;
+
+    > :first-child {
+      display: flex;
+      animation: whatsapp-notification 600ms reverse;
+      animation-fill-mode: backwards;
+    }
+  }
+
   .content-available {
     display: block;
     display: flex;
@@ -191,6 +202,11 @@ body {
     }
   }
 
+  @keyframes whatsapp-notification {
+    to {
+      opacity: 0;
+    }
+  }
   @keyframes location-animation2 {
     to {
       transform: scaleX(1);

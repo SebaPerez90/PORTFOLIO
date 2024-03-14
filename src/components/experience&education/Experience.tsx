@@ -42,7 +42,7 @@ const Experience = () => {
         {workExperience.map((item, key) => (
           <article
             key={key}
-            className='dark:before:bg-theme_dark-sup-sky flex-col items-center gap-3 sm:gap-0 sm:flex-row relative w-full flex justify-around sm:items-start before:absolute before:w-8 before:h-8 before:rounded-full before:bg-light-800 before:left-[-1em] before:top-0'>
+            className='dark:before:bg-theme_dark-sup-sky flex-col items-center gap-3 sm:gap-0 sm:flex-row relative w-full flex justify-around sm:items-start before:absolute before:w-8 before:h-8 before:rounded-full before:bg-light-800 before:left-[-1em] before:top-0 '>
             <div className='flex flex-col items-center'>
               <h1 className='dark:text-slate-50 font-black [letter-spacing:2px] text-light-500 text-center w-full text-3xl'>
                 {item.company}
@@ -54,7 +54,7 @@ const Experience = () => {
                 {item.date}
               </span>
             </div>
-            <p className='dark:text-zinc-300 w-[60%] sm:w-[20em] text-sm lg:text-base text-[#333333] font-semibold p-6 bg-[#f3f3f3] border-l-[12px] dark:border-theme_dark-sup-pink dark:bg-theme_dark-box-second border-light-800'>
+            <p className='dark:text-zinc-300 w-[60%] sm:w-[20em] text-sm lg:text-base text-[#333333] font-semibold p-6 bg-[#f3f3f3] border-l-[12px] dark:border-theme_dark-sup-pink dark:bg-theme_dark-box-second border-light-800 border-r-light-600 border-r border-t-light-600 border-t border-b-light-600 border-b dark:border-r-slate-700/50 dark:border-t-slate-700/50 dark:border-b-slate-700/50 rounded-[0_0.3em_0.3em_0]'>
               {engLanguageActive
                 ? item.tasks_description[0]
                 : item.tasks_description[1]}

@@ -11,7 +11,7 @@ const Footer = () => {
   const { engLanguageActive } = useStore();
 
   return (
-    <footer className='dark:border-t-2 dark:border-slate-500/30 dark:bg-theme_dark-main-bg flex-wrap relative gap-20 flex justify-center items-end  bg-white w-full pt-12 pb-8'>
+    <footer className='scroll-smooth dark:border-t-2 dark:border-slate-500/30 dark:bg-theme_dark-main-bg flex-wrap relative gap-20 flex justify-center items-end  bg-white w-full pt-12 pb-8'>
       <div className='max-[520px]:scale-90 relative w-[30em] h-[20em] overflow-hidden rounded-xl before:animate-[location-animation2_1s_ease-out_alternate-reverse_infinite] before:w-8 before:h-2 before:rounded-[50%] before:absolute before:bottom-[5.3em] before:right-[6em] before:z-30 max-[460px]:before:right-[5em] max-[390px]:before:right-[4em] max-[460px]:before:bottom-[6em]'>
         <span>
           <FaLocationDot className='max-[390px]:right-[4rem] max-[460px]:bottom-[6.5rem] max-[460px]:right-[5rem] animate-[location-animation_1s_ease-out_alternate-reverse_infinite] absolute bottom-[2.7em] right-[5.9rem] z-30 text-red-400 text-4xl [filter:saturate(3)]' />
@@ -55,23 +55,29 @@ const Footer = () => {
         <ul className='max-[420px]:gap-2 dark:text-theme_dark-sup-sky flex justify-center gap-8 font-black text-light-400'>
           <li className='dark:border-theme_dark-sup-sky dark:hover:text-zinc-400 hover:duration-100 hover:text-light-200 '>
             <Link
+              aria-label='network-link'
               href={'https://www.linkedin.com/in/sebaperez90/'}
               target='_blank'>
               Linkedin
             </Link>
           </li>
           <li className='dark:border-theme_dark-sup-sky dark:hover:text-zinc-400 hover:duration-100 hover:text-light-200 border-l-2 border-light-400 pl-4'>
-            <Link href={'https://github.com/SebaPerez90'} target='_blank'>
+            <Link
+              aria-label='network-link'
+              href={'https://github.com/SebaPerez90'}
+              target='_blank'>
               Github
             </Link>
           </li>
           <li className='dark:border-theme_dark-sup-sky dark:hover:text-zinc-400 hover:duration-100 hover:text-light-200 border-l-2 border-light-400 pl-4'>
-            <Link href={''} target='_blank'>
+            <Link aria-label='network-link' href={''} target='_blank'>
               Facebook
             </Link>
           </li>
           <li className='dark:border-theme_dark-sup-sky dark:hover:text-zinc-400 hover:duration-100 hover:text-light-200 border-l-2 border-light-400 pl-4'>
-            <Link href={'#home'}>Home</Link>
+            <Link aria-label='network-link' href={'#home'}>
+              {engLanguageActive ? 'Home' : 'Inicio'}
+            </Link>
           </li>
         </ul>
       </div>

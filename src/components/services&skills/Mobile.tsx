@@ -5,6 +5,7 @@ import CopyEmailBtn from '@/components/services&skills/CopyEmailBtn';
 import Image from 'next/image';
 import UI_dark from '@/assets/images/UI-dark.webp';
 import UI_light from '@/assets/images/UI-light.webp';
+import avatar from '@/assets/images/avatar.webp';
 
 import { IoMdHome } from 'react-icons/io';
 import { IoChevronBackOutline } from 'react-icons/io5';
@@ -18,6 +19,11 @@ const Mobile = () => {
   const { engLanguageActive } = useStore();
 
   const [theme, setTheme]: any = useState();
+
+  const [notification, setNotification] = useState(true);
+
+  const [dateMessage, setDateMessage]: any = useState(null);
+
   const [weatherData, setWeatherData] = useState({
     temperature: '',
     country: '',
@@ -57,17 +63,89 @@ const Mobile = () => {
     const minutes =
       date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
 
+    setDateMessage(`${hours}:${minutes}`);
+
     if (dateRef.current) {
       dateRef.current.innerHTML = `${hours}:${minutes}`;
     }
   }, 1000);
 
+  //EXPAND THE NOTIFICATION PANEL IN UI MOBILE, GO CHECK OUT 🙂!
+  const checkNotification = () => {
+    const notification_panel = document.getElementById(
+      'notification-panel-mobile'
+    );
+    if (notification) {
+      if (notification_panel)
+        notification_panel.classList.add('show-notifications');
+      setNotification(!notification);
+    } else {
+      if (notification_panel)
+        notification_panel.classList.remove('show-notifications');
+      setNotification(!notification);
+    }
+  };
+
   return (
     <div className='max-[1216px]:flex-col-reverse items-center gap-8 w-full flex justify-around flex-wrap row-span-1 col-span-full'>
-      <div className='max-[1216px]:left-0 relative left-20 w-[12em] h-[25rem] flex flex-col justify-between border-[10px] border-[#252525] bg-white rounded-[25px] before:absolute before:w-full before:h-5 before:rounded-[50%] before:left-0 before:bottom-[-3em] dark:before:bg-[#75757558] before:bg-[#3737378f] before:z-50'>
-        <div className='py-1 rounded-[13px_13px_0_0] w-full bg-[#4a4a4a] px-2 text-white flex justify-between items-center'>
-          <FaWhatsapp className='text-green-400 scale-110' />
-          <span className='rounded-full h-[9px] w-[9px] border-black border-4 bg-[#b6b4b4]'></span>
+      <div className='scale-125 max-[1216px]:mt-8 max-[1216px]:left-0 relative left-20 w-[12em] h-[25rem] flex flex-col justify-between border-[10px] border-[#252525] bg-white rounded-[25px] before:absolute before:w-full before:h-5 before:rounded-[50%] before:left-0 before:bottom-[-3em] dark:before:bg-[#75757558] before:bg-[#3737378f] before:z-50'>
+        <div className='relative py-1 rounded-[13px_13px_0_0] w-full bg-[#4a4a4a] px-2 text-white flex justify-between items-center'>
+          <div
+            className='absolute left-0 top-0 w-full duration-700 h-0 rounded-[0.3em_0.3em_0_0] bg-[#4a4a4a33] [backdrop-filter:blur(5px)] z-40'
+            id='notification-panel-mobile'>
+            {/* contains the notification panel 👇*/}
+            <div className='relative hidden items-end px-[0.15rem] flex-col justify-center h-full'>
+              <div className='rounded-[0.3rem] bg-[#3d3d3d] flex flex-col items-start gap-2 justify-end text-xs z-40 px-1 h-auto'>
+                <h1 className='text-base'>
+                  WhatsApp{' | '}
+                  <span className='text-xs'>
+                    1 chat <time>{dateMessage}</time>
+                  </span>
+                </h1>
+                <div className='flex items-center'>
+                  <Image
+                    src={avatar}
+                    width={25}
+                    height={25}
+                    alt='avatar'
+                    className='rounded-full w-auto h-auto'
+                  />
+                  - Seba
+                </div>
+                <p className='pl-[0.15rem] text-base border-t border-slate-500/45 pt-1'>
+                  {engLanguageActive
+                    ? 'Do you need a developer ?'
+                    : 'Necesitas un programador ?'}
+                  🙂
+                </p>
+                <button
+                  aria-label='whatsapp-link'
+                  className='self-center font-black mt-3 mb-1 p-3 hover:bg-[#ffffff23] duration-150 rounded-full'>
+                  <a
+                    id='whatsapp'
+                    href='https://wa.me/1532830604?text=Hola!%20¿Como%20Estas?%20Soy%20Sebastian%20Perez,%20este%20es%20mi%20contacto%20para%20trabajo'
+                    target='_blank'>
+                    {engLanguageActive ? 'Reply' : 'Responder'}
+                  </a>
+                </button>
+              </div>
+
+              <button
+                aria-label='collapse-button'
+                className='absolute bottom-0 left-[35%] font-black py-1'
+                onClick={checkNotification}>
+                close
+              </button>
+            </div>
+            {/* contains the notification panel ☝️*/}
+
+            <button
+              onClick={checkNotification}
+              aria-label='expand/collapse-button'>
+              <FaWhatsapp className='text-green-400 relative left-3 top-1 scale-125 z-10 [filter:contrast(2)] hover:scale-[1.75] duration-100 hover:animate-none animate-[whatsapp-notification_800ms_alternate-reverse_ease-out_infinite]' />
+            </button>
+          </div>
+          <span className='rounded-full h-[9px] w-[9px] relative left-[45%] border-black border-4 bg-[#b6b4b4]'></span>
           <div className='flex'>
             <HiWifi />
             <FaSignal />
@@ -80,9 +158,9 @@ const Mobile = () => {
             src={theme === 'dark' ? UI_dark : UI_light}
             alt='background-image'
             priority
-            className='w-auto h-auto object-cover absolute z-10 [aspect-ratio:1/2] aaaa'
+            className='w-auto h-auto object-cover absolute z-10 [aspect-ratio:1/2]'
           />
-          <span className='z-30 text-[#ffffffb5] text-5xl font-extrabold relative bottom-4'>
+          <span className='z-30 text-slate-50 text-5xl font-extrabold relative bottom-4'>
             {weatherData.temperature}°C
           </span>
           <div className='z-30 text-white flex gap-1 items-center bg-[#ffffff33] [backdrop-filter:blur(5px)] rounded-sm p-1'>
@@ -99,7 +177,7 @@ const Mobile = () => {
             <span className='w-full bg-[#ffffff91] [backdrop-filter:blur(1px)] rounded-[0_0.5em_0.5em_0]'></span>
           </div>
         </div>
-        <div className='rounded-[0_0_13px_13px] text-xl w-full bg-[#4a4a4a] py-2 font-black text-white flex justify-around'>
+        <div className='z-40 rounded-[0_0_13px_13px] text-xl w-full bg-[#4a4a4a] py-2 font-black text-white flex justify-around'>
           <IoChevronBackOutline />
           <IoMdHome />
           <FaBars />
