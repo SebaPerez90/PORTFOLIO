@@ -51,10 +51,10 @@
 
 @layer components {
   .btn-light {
-    @apply flex items-center gap-1  w-max p-[0.8em_2em] justify-center rounded-full text-white font-bold hover:duration-200 duration-200 hover:bg-blue-400 bg-light-500  hover:border-light-200 border border-light-500/85 hover:shadow-[0px_8px_7px_#00000049];
+    @apply active:scale-125 flex items-center gap-1  w-max p-[0.8em_2em] justify-center rounded-full text-white font-bold hover:duration-200 duration-200 hover:bg-blue-400 bg-light-500  hover:border-light-200 border border-light-500/85 hover:shadow-[0px_8px_7px_#00000049];
   }
   .btn-dark {
-    @apply dark:text-theme_dark-sup-pink dark:border-theme_dark-sup-pink dark:after:bg-theme_dark-sup-pink font-bold p-[0.8em_2em] flex w-max  relative hover:text-white hover:z-10  after:absolute after:left-[50%] after:rounded-[2em] after:bottom-0 after:w-0 after:h-full after:-z-10 rounded-[2em] hover:after:left-[0%] hover:after:w-[100%] active:outline active:outline-2 active:outline-light-600 hover:after:duration-[400ms] hover:shadow-[0px_8px_7px_#00000049] duration-300 outline-none;
+    @apply active:scale-125 dark:text-theme_dark-sup-pink dark:border-theme_dark-sup-pink dark:after:bg-theme_dark-sup-pink font-bold p-[0.8em_2em] flex w-max  relative hover:text-white hover:z-10  after:absolute after:left-[50%] after:rounded-[2em] after:bottom-0 after:w-0 after:h-full after:-z-10 rounded-[2em] hover:after:left-[0%] hover:after:w-[100%] active:outline active:outline-2 active:outline-light-600 hover:after:duration-[400ms] hover:shadow-[0px_8px_7px_#00000049] duration-300 outline-none;
   }
 }
 

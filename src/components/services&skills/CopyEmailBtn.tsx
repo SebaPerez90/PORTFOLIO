@@ -36,8 +36,7 @@ const CopyEmailBtn = () => {
       <button
         aria-label='copy-text-btn'
         onClick={handleCopyToClipboard}
-        className='rounded-full p-3 border dark:border-theme_dark-box-second dark:hover:bg-theme_dark-box-thir  dark:hover:border-zinc-600 duration-150 border-white
-        hover:bg-slate-400/35'>
+        className='active:scale-125 rounded-full p-3 border dark:border-theme_dark-box-second dark:hover:bg-theme_dark-box-thir  dark:hover:border-zinc-600 duration-150 border-white hover:bg-slate-400/35'>
         <FaRegCopy className='dark:text-theme_dark-sup-sky text-lg text-light-800' />
       </button>
       <span className='sr-only'>

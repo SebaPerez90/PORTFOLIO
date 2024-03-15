@@ -114,8 +114,8 @@ const Mobile = () => {
                 </div>
                 <p className='pl-[0.15rem] text-base border-t border-slate-500/45 pt-1'>
                   {engLanguageActive
-                    ? 'Do you need a developer ?'
-                    : 'Necesitas un programador ?'}
+                    ? 'Were you looking for a programmer ?'
+                    : '¿Estabas en busca de un programador ?'}
                   🙂
                 </p>
                 <button
