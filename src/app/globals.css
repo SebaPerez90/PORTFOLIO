@@ -64,6 +64,36 @@ body {
     backdrop-filter: blur(5px);
     top: -0.6em;
   }
+  .hamburguer-menu-inactive {
+    animation: effect1 200ms linear forwards;
+    animation-delay: 200ms;
+    transition: all 400ms;
+
+    > :first-child {
+      transform: translate(0, -0.8em);
+    }
+    > :nth-child(2) {
+      opacity: 0;
+      transition: all 400ms;
+    }
+    > :last-child {
+      transform: translate(0, 0.8em);
+    }
+
+    .item1 {
+      transform: rotate(-45deg) translateX(0em) translateY(-0.5em);
+      transition: all 300ms;
+    }
+    .item2 {
+      transform: rotate(45deg) translateX(0.5em) translateY(1em);
+      transition: all 300ms;
+    }
+    @keyframes effect1 {
+      to {
+        transform: rotate(90deg) translate(-0.4em, -1em);
+      }
+    }
+  }
 
   .show-notifications {
     height: 21.5em;
@@ -88,7 +118,7 @@ body {
       h1 {
         background: #ecececc7;
         height: 2em;
-        margin-bottom: 0.3em;
+        margin-bottom: 0.6em;
         color: transparent;
         border-radius: 0.2em;
         position: relative;
@@ -115,7 +145,7 @@ body {
       p {
         background: #ecececc7;
         padding: 0;
-        margin-bottom: 0.3em;
+        margin-bottom: 0.6em;
         color: transparent;
         border-radius: 0.2em;
         position: relative;
@@ -262,7 +292,7 @@ body {
       transform: translate(2em, -5em) scale(1.5) rotate('360deg');
     }
     25% {
-      transform: translate(-3em, -20em) scale(3);
+      transform: translate(-6em, -20em) scale(3);
       filter: blur(40px);
     }
     70% {
@@ -275,13 +305,13 @@ body {
 
   @keyframes desactivating-dark-mode {
     to {
-      transform: translate(3em);
+      transform: translate(6em);
     }
   }
 
   @keyframes activating-dark-mode {
     to {
-      transform: translate(-3em);
+      transform: translate(-6em);
     }
   }
 
@@ -293,7 +323,7 @@ body {
 
   @keyframes moon-effect-icon {
     50% {
-      transform: translateY(-0.3em) scale(0.8);
+      transform: translateY(-0.6em) scale(0.8);
     }
     100% {
       transform: translateY(1.5em);
