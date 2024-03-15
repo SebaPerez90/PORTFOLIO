@@ -49,7 +49,7 @@ const navLinks: NavLinks[] = [
 const NavBar = () => {
   const { engLanguageActive } = useStore();
 
-  const [visibility, setVisibility] = useState(false);
+  // const [visibility, setVisibility] = useState(false);
 
   const handleScroll = () => {
     document.addEventListener('scroll', () => {
@@ -73,7 +73,6 @@ const NavBar = () => {
 
       <nav
         id='nav-bar'
-        style={visibility ? { right: '0' } : {}}
         className='dark:border sm:p-[0.7em_1.5em]  dark:border-slate-500/30 bg-[#eeeeee81] dark:bg-[#0000004a] border border-slate-500/10 sm:rounded-full flex sm:right-0 sm:flex-row sm:items-center sm:lowercase sm:duration-300 sm:gap-6 sm:relative  sm:top-2 capitalize flex-col rounded-[0_0_0_0.4em] p-[1.5em_2.5em_1em_1em] top-0 items-start right-[-14em] absolute gap-8 duration-500'>
         {navLinks.map((item, index) => (
           <Link

@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, forwardRef, useImperativeHandle } from 'react';
 
 const MenuBtn = () => {
   const [active, setActive] = useState(false);
+
+  const [visibility, setVisibility] = useState(false);
 
   const openMenu = () => {
     const bar_1 = document.getElementById('bar_1');
@@ -25,7 +27,7 @@ const MenuBtn = () => {
         bar_3 ? bar_3.classList.toggle('item2') : '';
       }, 400);
     }
-
+    setVisibility(!visibility);
     setActive(!active);
   };
 
