@@ -1,6 +1,6 @@
 import { useState, useRef, SetStateAction } from 'react';
 import { Roboto } from 'next/font/google';
-import { useStore } from '@/store';
+import { useStore } from '@/context/store';
 
 import Image from 'next/image';
 import form_image from '@/assets/images/candidate.webp';

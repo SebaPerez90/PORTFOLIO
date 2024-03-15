@@ -1,4 +1,4 @@
-import { useStore } from '@/store';
+import { useStore } from '@/context/store';
 
 import Link from 'next/link';
 

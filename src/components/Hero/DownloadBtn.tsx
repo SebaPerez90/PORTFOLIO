@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useStore } from '@/store';
+import { useStore } from '@/context/store';
 
 import { FaRegFilePdf } from 'react-icons/fa';
 import { MdDownload } from 'react-icons/md';

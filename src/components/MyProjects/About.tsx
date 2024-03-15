@@ -3,7 +3,7 @@ import Image from 'next/image';
 import avatar_profile from '@/assets/images/avatar.webp';
 import developer_cartoon from '@/assets/images/developer-cartoon.webp';
 
-import { useStore } from '@/store';
+import { useStore } from '@/context/store';
 import Link from 'next/link';
 
 const roboto = Roboto({

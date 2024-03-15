@@ -2,8 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Onest } from 'next/font/google';
 
-import NavBar from '@/components/navBar/NavBar';
-import Footer from '@/components/footer/Footer';
+import NavBar from '@/components/NavBar/NavBar';
+import Footer from '@/components/Footer/Footer';
 
 export const metadata: Metadata = {
   title: 'Sebastian Perez',

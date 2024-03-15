@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useStore } from '@/store';
+import { useStore } from '@/context/store';
 
 import { FaRegCopy } from 'react-icons/fa';
 import { MdOutlineEmail } from 'react-icons/md';

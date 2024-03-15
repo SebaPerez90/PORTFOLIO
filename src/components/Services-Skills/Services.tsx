@@ -1,4 +1,4 @@
-import { useStore } from '@/store';
+import { useStore } from '@/context/store';
 import Mobile from './Mobile';
 import Desktop from './Desktop';
 import Skills from './Skills';

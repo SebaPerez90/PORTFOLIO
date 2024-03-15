@@ -1,4 +1,4 @@
-import { useStore } from '@/store';
+import { useStore } from '@/context/store';
 import { Roboto } from 'next/font/google';
 
 import Image from 'next/image';

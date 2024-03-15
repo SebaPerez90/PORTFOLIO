@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { useStore } from '@/store';
-import CopyEmailBtn from '@/components/services&skills/CopyEmailBtn';
+import { useStore } from '@/context/store';
+import CopyEmailBtn from '@/components/Services-Skills/CopyEmailBtn';
 
 import Image from 'next/image';
 import UI_dark from '@/assets/images/UI-dark.webp';

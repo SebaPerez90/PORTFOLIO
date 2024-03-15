@@ -5,10 +5,10 @@ import { FiGithub } from 'react-icons/fi';
 import { FaLink } from 'react-icons/fa6';
 
 import projects from '@/data/projets.json';
-import Icon from '@/components/services&skills/Icon';
+import Icon from '@/components/Services-Skills/Icon';
 
 import { Roboto } from 'next/font/google';
-import { useStore } from '@/store';
+import { useStore } from '@/context/store';
 
 const roboto = Roboto({
   weight: ['900'],

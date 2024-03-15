@@ -1,7 +1,7 @@
-import { useStore } from '@/store';
+import { useStore } from '@/context/store';
 import { Roboto } from 'next/font/google';
 
-import DownloadBtn from '@/components/heroSection/DownloadBtn';
+import DownloadBtn from '@/components/Hero/DownloadBtn';
 import Avatar from './AvatarHero';
 
 const roboto = Roboto({

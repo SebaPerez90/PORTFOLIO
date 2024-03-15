@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { useStore } from '@/store';
+import { useStore } from '@/context/store';
 import { Roboto } from 'next/font/google';
 
 import workExperience from '@/data/workExperience.json';

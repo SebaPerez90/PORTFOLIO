@@ -1,4 +1,4 @@
-import Icon from '@/components/services&skills/Icon';
+import Icon from '@/components/Services-Skills/Icon';
 import { motion } from 'framer-motion';
 
 interface Skills {

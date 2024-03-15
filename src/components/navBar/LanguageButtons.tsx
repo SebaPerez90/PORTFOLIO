@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useStore } from '@/store';
+import { useStore } from '@/context/store';
 
 import Image from 'next/image';
 import english_icon from '@/assets/images/english-icon.png';
