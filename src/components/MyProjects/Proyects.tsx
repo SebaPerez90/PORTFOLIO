@@ -9,6 +9,7 @@ import Icon from '@/components/Services-Skills/Icon';
 
 import { Roboto } from 'next/font/google';
 import { useStore } from '@/context/store';
+import { motion } from 'framer-motion';
 
 const roboto = Roboto({
   weight: ['900'],
@@ -38,7 +39,11 @@ const Proyects = () => {
               style={roboto.style}>
               {item.title}
             </h2>
-            <div className='relative flex flex-col items-center gap-2'>
+            <motion.div
+              transition={{ delay: 0.2, staggerChildren: 0.3, duration: 1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              className='relative flex flex-col items-center gap-2'>
               <div className='flex justify-center gap-1'>
                 {item.skills.map((skill, index) => (
                   <p
@@ -80,10 +85,14 @@ const Proyects = () => {
                   </Link>
                 </li>
               </ul>
-            </div>
+            </motion.div>
           </article>
           <article className='dark:bg-theme_dark-main-bg pt-9 pb-0 sm:pt-0 sm:pb-0 w-full flex justify-center bg-gradient-to-l from-light-100 to-white items-center rounded-none md:rounded-[0_0.5em_0.5em_0] dark:from-transparent dark:to-transparent'>
-            <div className='custom-scrollbar-light dark:custom-scrollbar-dark flex w-[90%] [scroll-snap-type:x_mandatory] overflow-x-auto my-4'>
+            <motion.div
+              transition={{ delay: 0.2, staggerChildren: 0.3, duration: 0.3 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              className='custom-scrollbar-light dark:custom-scrollbar-dark flex w-[90%] [scroll-snap-type:x_mandatory] overflow-x-auto my-4'>
               {item.screen_shoots.map((item, index) => (
                 <Image
                   key={index}
@@ -95,7 +104,7 @@ const Proyects = () => {
                   className='sticky left-0 h-full w-full object-cover snap-center'
                 />
               ))}
-            </div>
+            </motion.div>
           </article>
         </div>
       ))}

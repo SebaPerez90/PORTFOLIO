@@ -48,7 +48,6 @@ const Skills = () => {
                 transition={{ delay: 0.2, staggerChildren: 0.1 }}
                 initial={{ translateY: '10em', opacity: 0 }}
                 whileInView={{ translateY: '0em', opacity: 1 }}
-                exit={{ opacity: 0 }}
                 viewport={{ once: true, margin: '50px' }}
                 className='dark:bg-slate-400/50 dark:px-2 dark:rounded dark:text-slate-50 text-base cursor-default font-medium text-[#334155] h-[2em] gap-2 flex items-center'
                 key={index}>

@@ -1,7 +1,7 @@
 'use client';
 
 import Hero from '@/components/Hero/Hero';
-import About from '@/components/MyProjects/About';
+import About from '@/components/Hero/About';
 import Proyects from '@/components/MyProjects/Proyects';
 import ContactForm from '@/components/Contact/ContactForm';
 import Experience from '@/components/Experience-Education/Experience';

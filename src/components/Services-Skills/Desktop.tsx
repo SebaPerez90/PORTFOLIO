@@ -11,6 +11,7 @@ import linkedin from '@/assets/images/linkedin.webp';
 import { FaPowerOff } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa6';
 import { FaLinkedin } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const Desktop = () => {
   const { engLanguageActive } = useStore();
@@ -25,7 +26,14 @@ const Desktop = () => {
   return (
     <div className='max-[1216px]:mt-44 mt-28 w-full grid grid-cols-3 grid-rows-[repeat(2,min-max(100px,auto))] gap-y-[9em] relative lg:w-[80%] m-[0_auto]'>
       <div className='max-[1216px]:flex-col-reverse items-center gap-8 w-full flex justify-around flex-wrap row-span-2 col-span-full flex-row-reverse'>
-        <div className='relative duration-300 flex flex-col justify-center items-center'>
+        <motion.div
+          transition={{
+            duration: 0.7,
+            delay: 0.1,
+          }}
+          initial={{ translateX: '25em', opacity: 0 }}
+          whileInView={{ translateX: '0em', opacity: 1 }}
+          className='relative flex flex-col justify-center items-center'>
           <div className='max-[500px]:border-[1em] max-[500px]:h-[12em] max-[500px]:w-[22em] h-[19em] w-[28em] rounded-[0.5em_0.5em_0_0] bg-white border-[1.5em] dark:border-[#292529] border-[#2d2d2d] border-b-0'>
             <div className='w-full bg-slate-500 flex items-center '>
               <button
@@ -63,7 +71,7 @@ const Desktop = () => {
           </div>
           <div className='h-8 w-8 dark:bg-[#292529] bg-[#2d2d2d]'></div>
           <div className='max-[500px]:w-[10em] h-4 w-[15em] dark:bg-[#292529] bg-[#2d2d2d] rounded-[0.5em_0.5em_0_0]'></div>
-        </div>
+        </motion.div>
 
         <article className='max-[1216px]:w-[80%] w-1/2 flex flex-col items-center justify-center gap-6'>
           <h1 className='dark:text-zinc-50 text-3xl font-black text-[#333333] text-center'>

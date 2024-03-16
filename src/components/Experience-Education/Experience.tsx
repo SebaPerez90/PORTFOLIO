@@ -3,6 +3,7 @@ import { useStore } from '@/context/store';
 import { Roboto } from 'next/font/google';
 
 import workExperience from '@/data/workExperience.json';
+import { motion } from 'framer-motion';
 
 const roboto = Roboto({
   weight: ['900'],
@@ -18,7 +19,6 @@ const Experience = () => {
     boxRef.current?.classList.toggle('content-available');
     setVisibility(!visibility);
   };
-
   return (
     <section
       id='experience-section'
@@ -40,7 +40,10 @@ const Experience = () => {
           </span>
         </div>
         {workExperience.map((item, key) => (
-          <article
+          <motion.article
+            transition={{ delay: 0.3, staggerChildren: 0.5, duration: 1 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             key={key}
             className='dark:before:bg-theme_dark-sup-sky flex-col items-center gap-3 sm:gap-0 sm:flex-row relative w-full flex justify-around sm:items-start before:absolute before:w-8 before:h-8 before:rounded-full before:bg-light-800 before:left-[-1em] before:top-0 '>
             <div className='flex flex-col items-center'>
@@ -59,7 +62,7 @@ const Experience = () => {
                 ? item.tasks_description[0]
                 : item.tasks_description[1]}
             </p>
-          </article>
+          </motion.article>
         ))}
       </div>
 
@@ -69,7 +72,7 @@ const Experience = () => {
             ? `Details of my experience`
             : 'Detalles de mi experiencia'}
         </h1>
-        <div className='dark:text-zinc-400 pl-3 mt-6 font-semibold text-[#333333]'>
+        <div className='dark:text-zinc-300 pl-3 mt-6 font-normal text-[#333333]'>
           <p>
             {engLanguageActive
               ? `It's not a loading error 😆 Not yet, but that coveted web developer position is on its way. Well, even though it's not related to the IT field, I spent 11 years working in the gastronomy area. Which, on a personal level, gave me many tools and skills that are necessary in any work environment and for everyday life.`
@@ -98,7 +101,7 @@ const Experience = () => {
           <h1 className='dark:text-slate-50 text-5xl font-extrabold text-center text-[#333333]'>
             Conclusión
           </h1>
-          <p className='dark:text-zinc-400 px-3 text-lg font-semibold text-[#333333]'>
+          <p className='dark:text-zinc-300 px-3 text-lg font-normal text-[#333333]'>
             {engLanguageActive
               ? `Firstly, I understood that being a waiter is not the future I want for my life. This motivated me to dedicate all my effort, passion, and energy to my training in technology. I am a very determined and ambitious person when I set a goal for myself, so I know that I can bring a lot of value to any company.`
               : 'En primer lugar, comprendí que ser mozo no es el futuro que quiero para mi vida. Esto me motivó a dedicar todo mi esfuerzo, pasión y energía a mi formación en tecnología. Soy una persona muy determinada y ambiciosa cuando me propongo una meta, por eso sé que puedo aportar mucho valor a cualquier empresa.'}

@@ -14,6 +14,7 @@ import { FaWhatsapp } from 'react-icons/fa6';
 import { HiWifi } from 'react-icons/hi';
 import { MdBattery50 } from 'react-icons/md';
 import { FaSignal } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const Mobile = () => {
   const { engLanguageActive } = useStore();
@@ -88,7 +89,14 @@ const Mobile = () => {
 
   return (
     <div className='max-[1216px]:flex-col-reverse items-center gap-8 w-full flex justify-around flex-wrap row-span-1 col-span-full'>
-      <div className='scale-125 max-[1216px]:mt-8 max-[1216px]:left-0 relative left-20 w-[12em] h-[25rem] flex flex-col justify-between border-[10px] border-[#252525] bg-white rounded-[25px] before:absolute before:w-full before:h-5 before:rounded-[50%] before:left-0 before:bottom-[-3em] dark:before:bg-[#75757558] before:bg-[#3737378f] before:z-50'>
+      <motion.div
+        transition={{
+          duration: 0.7,
+          delay: 0.1,
+        }}
+        initial={{ translateX: '-20em', opacity: 0 }}
+        whileInView={{ translateX: '0em', opacity: 1 }}
+        className='scale-125 max-[1216px]:mt-8 max-[1216px]:left-0 relative left-20 w-[12em] h-[25rem] flex flex-col justify-between border-[10px] border-[#252525] bg-white rounded-[25px] before:absolute before:w-full before:h-5 before:rounded-[50%] before:left-0 before:bottom-[-3em] dark:before:bg-[#75757558] before:bg-[#3737378f] before:z-50'>
         <div className='relative py-1 rounded-[13px_13px_0_0] w-full bg-[#4a4a4a] px-2 text-white flex justify-between items-center'>
           <div
             className='absolute left-0 top-0 w-full duration-700 h-0 rounded-[0.3em_0.3em_0_0] bg-[#4a4a4a33] [backdrop-filter:blur(5px)] z-40'
@@ -179,10 +187,11 @@ const Mobile = () => {
         </div>
         <div className='z-40 rounded-[0_0_13px_13px] text-xl w-full bg-[#4a4a4a] py-2 font-black text-white flex justify-around'>
           <IoChevronBackOutline />
+          motio
           <IoMdHome />
           <FaBars />
         </div>
-      </div>
+      </motion.div>
 
       <article className='max-[1216px]:w-[80%] w-1/2 flex flex-col items-center justify-center gap-6'>
         <h1 className='dark:text-zinc-50 text-3xl font-black text-[#333333] text-center'>

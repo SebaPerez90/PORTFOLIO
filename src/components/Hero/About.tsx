@@ -1,10 +1,13 @@
 import { Roboto } from 'next/font/google';
+import { useStore } from '@/context/store';
+
 import Image from 'next/image';
 import avatar_profile from '@/assets/images/avatar.webp';
 import developer_cartoon from '@/assets/images/developer-cartoon.webp';
 
-import { useStore } from '@/context/store';
 import Link from 'next/link';
+
+import { motion } from 'framer-motion';
 
 const roboto = Roboto({
   weight: ['900'],
@@ -13,6 +16,7 @@ const roboto = Roboto({
 
 const About = () => {
   const { engLanguageActive } = useStore();
+
   return (
     <section
       id='about-section'
@@ -24,7 +28,11 @@ const About = () => {
       </h1>
 
       <article className='dark:shadow-none dark:bg-theme_dark-main-bg px-0 sm:pl-10 lg:pl-0 flex justify-center items-center bg-light-200 w-full py-16 mt-8 md:rounded-[0.375em_0.375em_0_0]'>
-        <div className='dark:border dark:border-slate-500/30 dark:bg-theme_dark-box-prim max-[420px]:scale-90 sm:w-full z-20 bg-white sm:bg-[#ffffffc6] [backdrop-filter:blur(10px)] gap-8  rounded-md px-6 py-10 flex flex-col ustify-evenly items-center h-96 md:w-max md:bg-white'>
+        <motion.div
+          transition={{ duration: 0.5 }}
+          initial={{ translateX: '-15em', opacity: 0 }}
+          whileInView={{ translateX: '0em', opacity: 1 }}
+          className='dark:border dark:border-slate-500/30 dark:bg-theme_dark-box-prim max-[420px]:scale-90 sm:w-full z-20 bg-white sm:bg-[#ffffffc6] [backdrop-filter:blur(10px)] gap-8  rounded-md px-6 py-10 flex flex-col ustify-evenly items-center h-96 md:w-max md:bg-white'>
           <h2 className='dark:text-slate-50 text-xl text-center text-[#333333] [letter-spacing:2px] font-black'>
             {engLanguageActive
               ? 'PERSONAL INFORMATION'
@@ -78,9 +86,16 @@ const About = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        </motion.div>
 
-        <div className='order-1 min-[800px]:relative [display:none] max-[800px]:w-full bg-none z-10 sm:flex flex-col items-center justify-center'>
+        <motion.div
+          transition={{
+            duration: 3,
+            delay: 0.4,
+          }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          className='order-1 min-[800px]:relative [display:none] max-[800px]:w-full bg-none z-10 sm:flex flex-col items-center justify-center'>
           <Image
             src={developer_cartoon}
             alt='eveloper_cartoon_img'
@@ -88,7 +103,7 @@ const About = () => {
             className='max-[800px]:absolute max-[800px]:right-[-4em] max-[800px]:h-auto max-[800px]:w-auto [filter:drop-shadow(0_0_1px_#000)] h-96 w-full order-1'
           />
           <span className='max-[800px]:[display:none] w-[65%] h-5 rounded-[50%] dark:bg-alternative-100 bg-[#00000065] absolute bottom-5 order-2'></span>
-        </div>
+        </motion.div>
       </article>
 
       <article className='dark:bg-theme_dark-main-bg gap-16 pt-12 pb-16 flex flex-col justify-center shadow-[14px_30px_20px_-10px_#0000004f] md:rounded-[0_0_0.375em_0.375em] bg-white'>
@@ -115,7 +130,11 @@ const About = () => {
           </div>
         </div>
         <hr className='border-[1px] border-light-300 mx-20' />
-        <div className='flex flex-col gap-2 items-center pl-4 md:pl-12 md:pr-6 text-sm font-semibold text-[#333333]'>
+        <motion.div
+          transition={{ duration: 0.6 }}
+          initial={{ translateY: '5em', opacity: 0 }}
+          whileInView={{ translateY: '0em', opacity: 1 }}
+          className='flex flex-col gap-2 items-center pl-4 md:pl-12 md:pr-6 text-sm font-semibold text-[#333333]'>
           <h2 className='dark:text-slate-50 text-5xl text-[#333333] font-extrabold translate-y-[-0.5em]'>
             {engLanguageActive ? 'Expectations' : 'Expectativas'} 🚀
           </h2>
@@ -129,7 +148,7 @@ const About = () => {
               ? "I also recognize the importance of formal education, so once I'm employed, I intend to continue my academic training."
               : 'También reconozco la importancia de la educación formal, por lo que una vez que esté trabajando, planeo continuar con mi formación académica.'}
           </p>
-        </div>
+        </motion.div>
       </article>
     </section>
   );
