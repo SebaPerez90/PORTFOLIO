@@ -305,13 +305,13 @@ body {
 
   @keyframes desactivating-dark-mode {
     to {
-      transform: translate(6em);
+      transform: translate(2.5em);
     }
   }
 
   @keyframes activating-dark-mode {
     to {
-      transform: translate(-6em);
+      transform: translate(-2.5em);
     }
   }
 

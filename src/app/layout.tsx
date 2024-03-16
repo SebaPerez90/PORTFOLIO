@@ -2,8 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Onest } from 'next/font/google';
 
-import NavBar from '@/components/NavBar/NavBar';
 import Footer from '@/components/Footer/Footer';
+import MenuBtn from '@/components/NavBar/MenuBtn';
 
 export const metadata: Metadata = {
   title: 'Sebastian Perez',
@@ -23,7 +23,7 @@ export default function RootLayout({
       <body
         className='flex flex-col box-border m-0 overflow-x-hidden scroll-bar-light dark:scroll-bar-dark'
         style={onest.style}>
-        <NavBar />
+        <MenuBtn />
         {children}
         <Footer />
       </body>

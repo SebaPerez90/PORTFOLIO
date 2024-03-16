@@ -1,11 +1,11 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, MutableRefObject, Dispatch } from 'react';
 
 import Image from 'next/image';
 
 import LanguageButtons from '@/components/NavBar/LanguageButtons';
 
 const ThemeButtons = () => {
-  const iconRef: any = useRef(null);
+  const iconRef: MutableRefObject<any> = useRef(null);
   const buttonRef: any = useRef(null);
 
   const [theme, setTheme]: any = useState(
@@ -60,7 +60,7 @@ const ThemeButtons = () => {
             aria-label='switch-theme-btn'
             onClick={toggleEfect}
             ref={buttonRef}
-            className='bg-theme_dark-sup-pink hover:bg-pink-900 hover:duration-200 m-[1px] rounded-full  h-7 w-7 z-20'></button>
+            className='duration-400 bg-theme_dark-sup-pink hover:bg-pink-900 hover:duration-200 m-[1px] rounded-full  h-7 w-7 z-20'></button>
         </div>
       ) : (
         <div className='border-2 border-[#4d4dffbf] pr-[0.1em] py-[1rem] bg-[#ececec2d] flex justify-between items-center w-20  h-7 rounded-full overflow-hidden'>
@@ -68,7 +68,7 @@ const ThemeButtons = () => {
             aria-label='switch-theme-btn'
             onClick={toggleEfect}
             ref={buttonRef}
-            className='hover:duration-200 bg-[#4d4dffbf] hover:bg-[#4d4dff73] rounded-full h-7 w-7 m-[2px] z-20'></button>
+            className='duration-400 hover:duration-200 bg-[#4d4dffbf] hover:bg-[#4d4dff73] rounded-full h-7 w-7 m-[2px] z-20'></button>
           <Image
             width={30}
             height={30}
