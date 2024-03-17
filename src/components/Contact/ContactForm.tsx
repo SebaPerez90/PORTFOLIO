@@ -9,6 +9,7 @@ import { capturingInput } from './utils/capturingInput';
 import { checkEmailEntry } from './utils/checkEmailEntry';
 
 import ImageForm from './ImageForm';
+import SuccessMessage from './SuccessMessage';
 
 const roboto = Roboto({
   weight: ['700'],
@@ -58,12 +59,12 @@ const Contact = () => {
         style={roboto.style}>
         {engLanguageActive ? 'CONTACT ME' : 'CONTÁCTAME'}🤝
       </h1>
-      <section className='bg-white before:bg-transparent after:bg-transparent py-9 max-[900px]:w-[90%] w-[55em] duration-300 relative pl-12 md:py-6 rounded-lg shadow-[14px_30px_20px_-10px_#0000004f] flex h-auto justify-around overflow-hidden md:after:absolute after:left-0 after:bottom-0 after:w-1/2 after:h-full after:bg-gradient-to-l after:from-blue-50 after:via-white after:to-white after:z-10 md:before:absolute before:right-0 before:bottom-0 before:w-1/2 before:h-full before:bg-gradient-to-l from-blue-300 via-blue-200 to-blue-50 dark:after:w-0 dark:after:h-0 dark:before:w-0 dark:before:h-0 dark:bg-theme_dark-main-bg'>
+      <section className=' bg-white before:bg-transparent after:bg-transparent py-9 max-[900px]:w-[90%] w-[55em] duration-300 relative pl-12 md:py-6 rounded-lg shadow-[14px_30px_20px_-10px_#0000004f] flex h-auto justify-around overflow-hidden md:after:absolute after:left-0 after:bottom-0 after:w-1/2 after:h-full after:bg-gradient-to-l after:from-blue-50 after:via-white after:to-white after:z-10 md:before:absolute before:right-0 before:bottom-0 before:w-1/2 before:h-full before:bg-gradient-to-l from-blue-300 via-blue-200 to-blue-50 dark:after:w-0 dark:after:h-0 dark:before:w-0 dark:before:h-0 dark:bg-theme_dark-main-bg'>
         <AnimatePresence>
           {!formSendSuccessfully && (
             <motion.form
-              transition={{ duration: 0.4 }}
-              exit={{ opacity: 0, scale: 0 }}
+              transition={{ duration: 0.6 }}
+              exit={{ opacity: 0 }}
               // onSubmit={sendComent}
               action='POST'
               className='gap-3 md:gap-0 items-center w-[50%] md:w-[auto] z-20 bg-transparent [min-width:20em] flex flex-col justify-evenly md:items-start'>
@@ -87,7 +88,7 @@ const Contact = () => {
               </motion.label>
 
               <motion.label
-                transition={{ delay: 0.4, duration: 1 }}
+                transition={{ delay: 0.3, duration: 1 }}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -121,7 +122,7 @@ const Contact = () => {
               </motion.label>
 
               <motion.div
-                transition={{ delay: 0.6, duration: 1 }}
+                transition={{ delay: 0.4, duration: 1 }}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -146,7 +147,7 @@ const Contact = () => {
               </motion.div>
 
               <motion.button
-                transition={{ delay: 0.8, duration: 0.2 }}
+                transition={{ delay: 0.5, duration: 0.2 }}
                 initial={{ opacity: 0, scale: 0.7 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -165,6 +166,7 @@ const Contact = () => {
           formSendSuccessfully={formSendSuccessfully}
           formData={formData}
         />
+        {formSendSuccessfully && <SuccessMessage formData={formData} />}
       </section>
     </section>
   );
