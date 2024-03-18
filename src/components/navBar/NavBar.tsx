@@ -12,20 +12,50 @@ const NavBar = ({ visibility }: any) => {
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope);
 
-  const handleScroll = () => {
-    document.addEventListener('scroll', () => {
+  // const handleScroll = () => {
+  //   document.addEventListener('scroll', () => {
+  //     const nav_bar: HTMLElement | null = document.getElementById('nav-bar');
+
+  //     if (window.innerWidth > 640) {
+  //       if (window.scrollY !== 0) {
+  //         nav_bar?.classList.add('sticky-navbar');
+  //       } else nav_bar?.classList.remove('sticky-navbar');
+  //     } else if (nav_bar) {
+  //       nav_bar.style.backdropFilter = 'blur(5px)';
+  //     }
+  //   });
+  // };
+  // handleScroll();
+
+  useEffect(() => {
+    const handleScroll = () => {
       const nav_bar: HTMLElement | null = document.getElementById('nav-bar');
 
-      if (window.innerWidth > 640) {
-        if (window.scrollY !== 0) {
-          nav_bar?.classList.add('sticky-navbar');
-        } else nav_bar?.classList.remove('sticky-navbar');
-      } else if (nav_bar) {
-        nav_bar.style.backdropFilter = 'blur(5px)';
+      if (nav_bar) {
+        if (window.innerWidth > 640) {
+          if (window.scrollY !== 0) {
+            nav_bar?.classList.add('sticky-navbar');
+          } else nav_bar?.classList.remove('sticky-navbar');
+        } else {
+          nav_bar.style.backdropFilter = 'blur(5px)';
+        }
       }
-    });
-  };
-  handleScroll();
+    };
+
+    handleScroll(); // Llamar una vez para configurar el estado inicial
+
+    // Agregar el evento de scroll solo en el lado del cliente
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll);
+    }
+
+    // Limpiar el evento de scroll al desmontar el componente
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (isInView) {

@@ -7,10 +7,14 @@ import ContactForm from '@/components/Contact/ContactForm';
 import Experience from '@/components/Experience-Education/Experience';
 import Education from '@/components/Experience-Education/Education';
 import Services from '@/components/Services-Skills/Services';
+import MenuBtn from '@/components/NavBar/MenuBtn';
+import Footer from '@/components/Footer/Footer';
 
 export default function Home() {
   return (
     <main className='gap-32 flex flex-col justify-around items-center bg-[#dedede] dark:bg-[#313643]'>
+      <MenuBtn />
+
       <Hero />
 
       <Experience />
@@ -24,6 +28,8 @@ export default function Home() {
       <Services />
 
       <ContactForm />
+
+      <Footer />
     </main>
   );
 }
