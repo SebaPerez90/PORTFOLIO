@@ -21,7 +21,7 @@ const Skills = () => {
       {skills.map((item, index) => (
         <div
           key={index}
-          className='min-[1200px]:scale-x-125 w-[275px] px-4 h-52 md:w-auto dark:bg-theme_dark-box-second border border-slate-500/30  bg-white flex flex-col items-center justify-center relative shadow-[14px_30px_20px_-10px_#0000004f] rounded-md'>
+          className='min-[1200px]:scale-125 w-[275px] px-4 h-52 md:w-auto dark:bg-theme_dark-box-second border border-slate-500/30  bg-white flex flex-col items-center justify-center relative shadow-[14px_30px_20px_-10px_#0000004f] rounded-md'>
           <h1 className='dark:text-theme_dark-sup-pink w-full text-light-500 text-2xl font-black text-center absolute top-4'>
             {engLanguageActive ? item.titleEng : item.titleSpan}
           </h1>

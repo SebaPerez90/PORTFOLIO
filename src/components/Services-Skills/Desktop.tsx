@@ -96,7 +96,11 @@ const Desktop = () => {
         </article>
       </div>
 
-      <div className='shadow-[14px_30px_20px_-10px_#0000004f] flex flex-col max-[500px]:w-[90%] max-[825px]:w-[80%] w-[60%] m-[0_auto] rounded-md row-span-3 col-span-full pb-8 dark:bg-theme_dark-box-second bg-white [backdrop-filter:blur(30px)]'>
+      <motion.div
+        initial={{ opacity: 0 }}
+        transition={{ delay: 0.4, duration: 0.7 }}
+        whileInView={{ opacity: 1 }}
+        className='shadow-[14px_30px_20px_-10px_#0000004f] flex flex-col max-[500px]:w-[90%] max-[825px]:w-[80%] w-[60%] m-[0_auto] rounded-md row-span-3 col-span-full pb-8 dark:bg-theme_dark-box-second bg-white [backdrop-filter:blur(30px)]'>
         <Image
           src={devs_team}
           alt='devs_team_image'
@@ -117,7 +121,7 @@ const Desktop = () => {
           </p>
           <CopyEmailBtn />
         </article>
-      </div>
+      </motion.div>
     </div>
   );
 };

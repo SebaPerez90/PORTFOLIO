@@ -20,7 +20,7 @@ const Details = () => {
           ? `Details of my experience`
           : 'Detalles de mi experiencia'}
       </h1>
-      <div className='dark:text-zinc-300 pl-3 mt-6 font-normal text-[#333333]'>
+      <div className='dark:text-zinc-300 pl-3 mt-6 text-[#333333] font-semibold font-sans'>
         <p>
           {engLanguageActive
             ? `It's not a loading error 😆 Not yet, but that coveted web developer position is on its way. Well, even though it's not related to the IT field, I spent 11 years working in the gastronomy area. Which, on a personal level, gave me many tools and skills that are necessary in any work environment and for everyday life.`
@@ -54,7 +54,7 @@ const Details = () => {
         <h1 className='dark:text-slate-50 text-5xl font-extrabold text-center text-[#333333]'>
           Conclusión
         </h1>
-        <p className='dark:text-zinc-300 px-3 text-lg font-normal text-[#333333]'>
+        <p className='dark:text-zinc-300 px-3 text-lg font-semibold font-sans text-[#333333]'>
           {engLanguageActive
             ? `Firstly, I understood that being a waiter is not the future I want for my life. This motivated me to dedicate all my effort, passion, and energy to my training in technology. I am a very determined and ambitious person when I set a goal for myself, so I know that I can bring a lot of value to any company.`
             : 'En primer lugar, comprendí que ser mozo no es el futuro que quiero para mi vida. Esto me motivó a dedicar todo mi esfuerzo, pasión y energía a mi formación en tecnología. Soy una persona muy determinada y ambiciosa cuando me propongo una meta, por eso sé que puedo aportar mucho valor a cualquier empresa.'}

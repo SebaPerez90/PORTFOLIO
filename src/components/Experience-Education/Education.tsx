@@ -37,7 +37,8 @@ const Education = () => {
               {engLanguageActive ? 'state: abandoned' : 'estado: abandonado'} /
               10-2022
             </span>
-            <p className='dark:text-zinc-300 text-sm w-full text-[#334155] text-center'>
+            {/* font-semibold font-sans */}
+            <p className='font-medium dark:text-zinc-300 text-sm  w-full text-[#334155] text-center'>
               {engLanguageActive
                 ? `Bootcamp. As I didn't have a background in technology and was just starting my studies, I decided to drop out of the program. I couldn't grasp the content back then.`
                 : 'Bootcamp. Al yo no tener un background en tecnología y estar comenzando mis estudios. Decidí abandonar la carrera no poder asmilar el contenido en ese entonces.'}
@@ -67,7 +68,7 @@ const Education = () => {
               {engLanguageActive ? 'state: suspended' : 'estado: suspendida'} /
               03-2023
             </span>
-            <p className='dark:text-zinc-300 text-sm w-full text-[#334155] text-center'>
+            <p className='font-medium dark:text-zinc-300 text-sm w-full text-[#334155] text-center'>
               {engLanguageActive
                 ? `National Technological University. Due to personal economic reasons, I am unable to afford the tuition for the program. I had to temporarily suspend my studies until my situation changes.`
                 : 'Universidad. Por motivos económicos personales no puedo costear la carrera, tuve que suspenderla momentaneamente hasta que mi situación cambie.'}
@@ -96,7 +97,7 @@ const Education = () => {
             <span className='dark:text-theme_dark-sup-pink text-xs text-red-700 font-bold'>
               {engLanguageActive ? 'state: studying' : 'estado: cursando'}
             </span>
-            <p className='dark:text-zinc-300 text-sm w-full text-[#334155] text-center'>
+            <p className='font-medium dark:text-zinc-300 text-sm w-full text-[#334155] text-center'>
               {engLanguageActive
                 ? `While I have already acquired a substantial amount of the knowledge provided by the program, it can still be valuable for me to further solidify my existing understanding.`
                 : 'Si bien ya poseo gran parte del conocimiento que el programa ofrece, puede servirme para reforzar mis conocimientos.'}

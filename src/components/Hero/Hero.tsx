@@ -44,7 +44,7 @@ const Hero = () => {
           </strong>
           <b className='text-7xl'>.</b>
         </h1>
-        <p className='2xl:text-lg 2xl:w-full xl:text-base dark:text-slate-50 max-[520px]:text-[#3c3c3ccb] max-[520px]:w-[90%] text-sm font-light text-[#3b3b3b] w-[23em]'>
+        <p className=' 2xl:text-lg 2xl:w-full xl:text-base dark:text-slate-50 max-[520px]:text-[#3c3c3ccb] max-[520px]:w-[90%] text-sm font-semibold font-sans text-[#3b3b3b] w-[23em]'>
           {engLanguageActive
             ? `I am a front-end developer living in Buenos Aires, Argentina. With two years of experience in web development, I am currently attending the bootcamp "Soy Henry" to expand my horizons and enhance my current skill set.`
             : 'Soy Desarrollor front-end y vivo en Argentina, Buenos Aires. Tengo dos años de experiencia en el desarrollo web. Actualmente estoy cursando el bootcamp "Soy Henry" para poder ampliar mis horizontes y sumar conocimiento a mi stack actual'}

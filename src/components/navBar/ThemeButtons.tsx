@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState, MutableRefObject, Dispatch } from 'react';
+import { useRef, useEffect, useState, MutableRefObject } from 'react';
 
 import Image from 'next/image';
 
@@ -8,9 +8,14 @@ const ThemeButtons = () => {
   const iconRef: MutableRefObject<any> = useRef(null);
   const buttonRef: any = useRef(null);
 
-  const [theme, setTheme]: any = useState(
-    localStorage.getItem('theme') ?? localStorage.setItem('theme', 'light')
-  );
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('theme', theme);

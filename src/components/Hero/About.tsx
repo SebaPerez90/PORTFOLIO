@@ -39,35 +39,39 @@ const About = () => {
               : 'INFORMACION PERSONAL'}
           </h2>
           <ul className='dark:text-zinc-300 flex flex-col gap-2 self-start text-sm cursor-default font-semibold text-[#333333]'>
-            <li className='flex items-center gap-2'>
+            <li className='flex font-bold items-center gap-2'>
               {engLanguageActive ? 'Full Name' : 'Nombre Completo'}:
-              <span className='font-medium'>Sebastian Perez</span>
+              <span className='font-medium text-[#6c6c6c]'>
+                Sebastian Perez
+              </span>
             </li>
-            <li className='flex items-center gap-2'>
+            <li className='flex font-bold items-center gap-2'>
               {engLanguageActive ? 'Birthdate' : 'Fecha Nacimiento'}:
-              <span className='font-medium'>05/10/1990</span>
+              <span className='font-medium text-[#6c6c6c]'>05/10/1990</span>
             </li>
-            <li className='flex items-center gap-2'>
+            <li className='flex font-bold items-center gap-2'>
               {engLanguageActive ? 'Adrress' : 'Dirección'}:
-              <span className='font-medium'>Buenos Aires, Berazategui</span>
+              <span className='font-medium text-[#6c6c6c]'>
+                Buenos Aires, Berazategui
+              </span>
             </li>
-            <li className='flex items-center gap-2'>
+            <li className='flex font-bold items-center gap-2'>
               {engLanguageActive ? 'Availability' : 'Disponibilidad'}:
-              <span className='font-medium'>
+              <span className='font-medium text-[#6c6c6c]'>
                 {engLanguageActive
                   ? 'immediate/full-time'
                   : 'inmediata/full-time'}
               </span>
             </li>
-            <li className='flex items-center gap-2'>
+            <li className='flex font-bold items-center gap-2'>
               {engLanguageActive ? 'Time Zone' : 'Zona Horaria'}:
-              <span className='font-normal'>UTC-3</span>
+              <span className='font-medium text-[#6c6c6c]'>UTC-3</span>
             </li>
-            <li className='flex items-center gap-2'>
+            <li className='flex font-bold items-center gap-2'>
               {engLanguageActive ? 'Nationality' : 'Nacionalidad'}:
-              <span className='font-normal'>Argentino</span>
+              <span className='font-medium text-[#6c6c6c]'>Argentino</span>
             </li>
-            <li className='flex items-center gap-2'>
+            <li className='flex font-bold items-center gap-2'>
               Linkedin:{' '}
               <Link
                 className='[letter-spacing:-1px] text-light-500 underline hover:text-light-100 hover:duration-200 duration-200'
@@ -76,7 +80,7 @@ const About = () => {
                 https://www.linkedin.com/in/sebaperez90
               </Link>
             </li>
-            <li className='flex items-center gap-2'>
+            <li className='flex font-bold items-center gap-2'>
               Github:{' '}
               <Link
                 className='[letter-spacing:-1px] text-light-500 underline hover:text-light-100 hover:duration-200 duration-200'

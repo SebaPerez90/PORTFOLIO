@@ -26,7 +26,7 @@ const Services = () => {
           {engLanguageActive
             ? 'What can I offer for you? ...'
             : '¿Qué puedo ofrecerte? ...'}
-          <span className='dark:text-zinc-400 max-[500px]:text-lg italic text-2xl text-[#333333cb] font-light'>
+          <span className='dark:text-zinc-400 max-[500px]:text-lg italic text-2xl text-[#333333cb] font-medium'>
             {' '}
             {engLanguageActive
               ? 'let me show you some of my services.'
