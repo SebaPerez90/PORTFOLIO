@@ -36,13 +36,13 @@ const Footer = () => {
             Seba Perez
           </h1>
           <div className='flex items-center gap-1 dark:text-zinc-400 text-[#4f4f4f] text-base font-bold relative bottom-2 [letter-spacing:-1px]'>
-            <span className='font-black text-3xl dark:text-theme_dark-sup-pink text-light-500'>
+            <span className='font-black text-3xl translate-y-[-0.13em] dark:text-theme_dark-sup-pink text-light-500'>
               {'<'}
             </span>
             {engLanguageActive
               ? 'Frontend Developer'
               : 'Desarrollador Frontend'}
-            <span className='font-black text-3xl dark:text-theme_dark-sup-pink text-light-500'>
+            <span className='font-black text-3xl translate-y-[-0.13em] dark:text-theme_dark-sup-pink text-light-500'>
               {'>'}
             </span>
           </div>

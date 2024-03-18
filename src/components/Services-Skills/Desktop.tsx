@@ -104,9 +104,10 @@ const Desktop = () => {
         <Image
           src={devs_team}
           alt='devs_team_image'
-          width={300}
-          height={300}
+          width={400}
+          height={400}
           loading='lazy'
+          className='m-[0_auto]'
         />
         <article className='px-6 flex flex-col'>
           <h1 className='dark:text-theme_dark-sup-pink text-xl sm:text-3xl text-center font-extrabold text-light-500'>

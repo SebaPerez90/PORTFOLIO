@@ -89,7 +89,7 @@ const Proyects = () => {
               transition={{ delay: 0.2, staggerChildren: 0.3, duration: 0.3 }}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              className='custom-scrollbar-light dark:custom-scrollbar-dark flex w-[90%] [scroll-snap-type:x_mandatory] overflow-x-auto my-4'>
+              className='custom-scrollbar-light dark:custom-scrollbar-dark  py-6 flex w-[90%] [scroll-snap-type:x_mandatory] overflow-x-auto my-4'>
               {item.screen_shoots.map((item, index) => (
                 <Image
                   key={index}
