@@ -7,8 +7,8 @@ import ContactForm from '@/components/Contact/ContactForm';
 import Experience from '@/components/Experience-Education/Experience';
 import Education from '@/components/Experience-Education/Education';
 import Services from '@/components/Services-Skills/Services';
-import MenuBtn from '@/components/NavBar/MenuBtn';
 import Footer from '@/components/Footer/Footer';
+import MenuBtn from '@/components/NavBar/MenuBtn';
 
 export default function Home() {
   return (
