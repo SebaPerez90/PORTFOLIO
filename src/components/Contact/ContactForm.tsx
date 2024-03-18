@@ -59,13 +59,13 @@ const Contact = () => {
         style={roboto.style}>
         {engLanguageActive ? 'CONTACT ME' : 'CONTÁCTAME'}🤝
       </h1>
-      <section className=' bg-white before:bg-transparent after:bg-transparent py-9 max-[900px]:w-[90%] w-[55em] duration-300 relative pl-12 md:py-6 rounded-lg shadow-[14px_30px_20px_-10px_#0000004f] flex h-auto justify-around overflow-hidden md:after:absolute after:left-0 after:bottom-0 after:w-1/2 after:h-full after:bg-gradient-to-l after:from-blue-50 after:via-white after:to-white after:z-10 md:before:absolute before:right-0 before:bottom-0 before:w-1/2 before:h-full before:bg-gradient-to-l from-blue-300 via-blue-200 to-blue-50 dark:after:w-0 dark:after:h-0 dark:before:w-0 dark:before:h-0 dark:bg-theme_dark-main-bg'>
+      <section className='overflow-hidden bg-white  py-9 max-[900px]:w-[90%] w-[55em] duration-300 relative pl-12 md:py-6 rounded-lg flex h-auto justify-around dark:bg-theme_dark-main-bg'>
         <AnimatePresence>
           {!formSendSuccessfully && (
             <motion.form
               transition={{ duration: 0.6 }}
-              exit={{ opacity: 0 }}
-              // onSubmit={sendComent}
+              exit={{ opacity: 0, x: -100 }}
+              onSubmit={sendComent}
               action='POST'
               className='gap-3 md:gap-0 items-center w-[50%] md:w-[auto] z-20 bg-transparent [min-width:20em] flex flex-col justify-evenly md:items-start'>
               <motion.label
@@ -88,7 +88,7 @@ const Contact = () => {
               </motion.label>
 
               <motion.label
-                transition={{ delay: 0.3, duration: 1 }}
+                transition={{ delay: 0.2, duration: 1 }}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -122,7 +122,7 @@ const Contact = () => {
               </motion.label>
 
               <motion.div
-                transition={{ delay: 0.4, duration: 1 }}
+                transition={{ delay: 0.3, duration: 1 }}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -147,15 +147,15 @@ const Contact = () => {
               </motion.div>
 
               <motion.button
-                transition={{ delay: 0.5, duration: 0.2 }}
+                transition={{ delay: 0.4, duration: 0.2 }}
                 initial={{ opacity: 0, scale: 0.7 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 aria-label='send-btn'
-                onClick={(e) => {
-                  e.preventDefault();
-                  setFormSendSuccessfully(!formSendSuccessfully);
-                }}
+                // onClick={(e) => {
+                //   e.preventDefault();
+                //   setFormSendSuccessfully(!formSendSuccessfully);
+                // }}
                 className='active:scale-110 min-[900px]:translate-y-[-1em] dark:border-theme_dark-sup-sky dark:bg-theme_dark-sup-sky dark:hover:bg-[#38bff875] hover:translate-y-[-0.7em]  max-[900px]:w-[80%] max-[900px]:self-start text-sm self-center w-full  py-3 rounded-md text-white font-bold hover:duration-200 duration-200 hover:bg-blue-400 bg-light-500  hover:border-light-200 border border-light-500/85 md:hover:translate-y-[-1.3em] hover:shadow-[0px_8px_7px_#00000049]'>
                 {engLanguageActive ? 'Send' : 'Enviar'}
               </motion.button>
