@@ -13,7 +13,7 @@ import Footer from '@/components/Footer/Footer';
 export default function Home() {
   return (
     <>
-      {/* <MenuBtn /> */}
+      <MenuBtn />
       <main className='gap-32 flex flex-col justify-around items-center bg-[#dedede] dark:bg-[#313643]'>
         <Hero />
 
@@ -29,7 +29,7 @@ export default function Home() {
 
         <ContactForm />
 
-        {/* <Footer /> */}
+        <Footer />
       </main>
     </>
   );
