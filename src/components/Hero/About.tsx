@@ -90,8 +90,8 @@ const About = () => {
 
         <motion.div
           transition={{
-            duration: 3,
-            delay: 0.4,
+            duration: 1,
+            delay: 0.3,
           }}
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -99,7 +99,9 @@ const About = () => {
           <Image
             src={developer_cartoon}
             alt='eveloper_cartoon_img'
-            priority
+            loading='lazy'
+            width={384}
+            height={384}
             className='max-[800px]:absolute max-[800px]:right-[-4em] max-[800px]:h-auto max-[800px]:w-auto [filter:drop-shadow(0_0_1px_#000)] h-96 w-full order-1'
           />
           <span className='max-[800px]:[display:none] w-[65%] h-5 rounded-[50%] dark:bg-alternative-100 bg-[#00000065] absolute bottom-5 order-2'></span>

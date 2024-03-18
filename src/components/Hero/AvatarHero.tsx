@@ -18,7 +18,7 @@ const Avatar = () => {
         <Image
           src={profile_image}
           alt='profile-image'
-          priority
+          loading='lazy'
           className='max-[700px]:translate-x-16 w-full h-full object-cover drop-shadow-[-10px_0px_20px_#000000b3]'
         />
       </div>

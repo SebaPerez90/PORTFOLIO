@@ -96,7 +96,7 @@ const Proyects = () => {
                   src={item}
                   width={500}
                   height={500}
-                  priority
+                  loading='lazy'
                   alt='screen-shoot'
                   className='sticky left-0 h-full w-full object-cover snap-center'
                 />

@@ -19,7 +19,9 @@ const Footer = () => {
         <Image
           src={location_image}
           alt='location_image'
-          priority
+          width={480}
+          height={320}
+          loading='lazy'
           className='w-full h-full object-cover z-10 relative'
         />
         <div className='absolute bg-[#00000027] w-full h-full z-20 top-0 flex  items-center justify-center'>

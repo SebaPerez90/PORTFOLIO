@@ -58,7 +58,7 @@ const Desktop = () => {
                 src={currentLayout === 'github-layout' ? linkedin : github}
                 alt='social-network-image'
                 className='object-cover w-auto h-[93%] max-[500px]:w-full max-[500px]:h-full'
-                priority
+                loading='lazy'
               />
             </div>
           </div>
@@ -100,7 +100,7 @@ const Desktop = () => {
         <Image
           src={devs_team}
           alt='devs_team_image'
-          priority
+          loading='lazy'
           className='w-auto h-auto '
         />
         <article className='px-6 flex flex-col'>

@@ -167,7 +167,7 @@ const Mobile = () => {
           <Image
             src={theme === 'dark' ? UI_dark : UI_light}
             alt='background-image'
-            priority
+            loading='lazy'
             className='w-auto h-auto object-cover absolute z-10 [aspect-ratio:1/2]'
           />
           <span className='z-30 text-slate-50 text-5xl font-extrabold relative bottom-4'>

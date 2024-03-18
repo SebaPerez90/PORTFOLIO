@@ -7,16 +7,16 @@ interface NavLinks {
 
 const navLinks: NavLinks[] = [
   {
-    titleES: 'sobre mi',
-    titleEN: 'about',
-    label: 'about-link',
-    url: '#about-section',
-  },
-  {
     titleES: 'experiencia',
     titleEN: 'experience',
     label: 'experience-link',
     url: '#experience-section',
+  },
+  {
+    titleES: 'sobre mi',
+    titleEN: 'about',
+    label: 'about-link',
+    url: '#about-section',
   },
   {
     titleES: 'proyectos',
