@@ -104,6 +104,8 @@ const Desktop = () => {
         <Image
           src={devs_team}
           alt='devs_team_image'
+          width={300}
+          height={300}
           loading='lazy'
           className='w-auto h-auto '
         />
