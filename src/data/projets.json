@@ -4,7 +4,7 @@
     "descriptionES": "Una aplicación meteorológica que proporciona información actualizada sobre el clima. Los usuarios pueden buscar el clima actual y pronósticos para diferentes ubicaciones. La aplicación muestra datos como temperatura, condiciones climáticas y pronósticos futuros, con una interfaz intuitiva para una experiencia de usuario fluida en dispositivos móviles y de escritorio.",
     "descriptionEN": "",
     "code": "https://github.com/SebaPerez90/WeatherApp",
-    "preview": "https://sebaperez90.github.io/WeatherApp/",
+    "deploy": "https://sebaperez90.github.io/WeatherApp/",
     "skills": ["React.js", "Tailwind CSS", "Javascript"],
     "screen_shoots": [
       "/images/weather-app/1.webp",
@@ -17,7 +17,7 @@
     "descriptionES": "Una versión digital del clásico juego de piedra, papel y tijera. Los usuarios pueden jugar contra la computadora, seleccionando su elección y viendo el resultado de la partida en pantalla. La interfaz es sencilla y accesible en dispositivos móviles y de escritorio.",
     "descriptionEN": "",
     "code": "https://github.com/SebaPerez90/Rock-Papper-Scissors",
-    "preview": "https://sebaperez90.github.io/Rock-Papper-Scissors/",
+    "deploy": "https://sebaperez90.github.io/Rock-Papper-Scissors/",
     "skills": ["React.js", "Tailwind CSS", "Javascript"],
     "screen_shoots": [
       "/images/rock-papper-scissors/1.webp",
@@ -30,7 +30,7 @@
     "descriptionES": "Una aplicación simple de lista de tareas para ayudar a los usuarios a organizar sus actividades diarias. Permite agregar, eliminar y marcar tareas como completadas, con una interfaz fácil de usar tanto en dispositivos móviles como en escritorio.",
     "descriptionEN": "",
     "code": "https://github.com/SebaPerez90/ToDo-List",
-    "preview": "https://sebaperez90.github.io/ToDo-List/",
+    "deploy": "https://sebaperez90.github.io/ToDo-List/",
     "skills": ["React.js", "Tailwind CSS", "Javascript"],
     "screen_shoots": [
       "/images/todo-app/1.webp",
@@ -43,7 +43,7 @@
     "descriptionES": "El proyecto consiste en una aplicación que valida la identidad de una tarjeta en tiempo real. Los usuarios pueden completar un formulario y ver los detalles de la tarjeta actualizarse en tiempo real. La aplicación proporciona retroalimentación inmediata al validar los campos del formulario",
     "descriptionEN": "",
     "code": "https://github.com/SebaPerez90/Interactive-Card-Details",
-    "preview": "https://sebaperez90.github.io/Interactive-Card-Details/",
+    "deploy": "https://sebaperez90.github.io/Interactive-Card-Details/",
     "skills": ["React.js", "Javascript", "Sass"],
     "screen_shoots": [
       "/images/card-details/1.webp",
@@ -56,7 +56,7 @@
     "descriptionES": "Este proyecto es una calculadora desarrollada utilizando React.js. La calculadora ofrece una interfaz intuitiva que permite a los usuarios realizar operaciones matemáticas básicas de manera eficiente",
     "descriptionEN": "",
     "code": "https://github.com/SebaPerez90/Calculator-React.js",
-    "preview": "https://sebaperez90.github.io/Interactive-Card-Details/",
+    "deploy": "https://calculator-react-js-sable.vercel.app/",
     "skills": ["React.js", "Javascript", "CSS"],
     "screen_shoots": [
       "/images/calculator/1.webp",
@@ -69,7 +69,7 @@
     "descriptionES": "Este es el primer proyecto realizado. Mi portfolio, aunque sé que no deberia estar. Decidí dejarlo a modo de capsula del tiempo para ver mi progreso 😅",
     "descriptionEN": "",
     "code": "https://github.com/SebaPerez90/SebaPerez90.github.io",
-    "preview": "https://sebaperez90.github.io/",
+    "deploy": "https://sebaperez90.github.io/",
     "skills": ["HTML", "CSS", "Javascript"],
     "screen_shoots": [
       "/images/first-project/1.webp",

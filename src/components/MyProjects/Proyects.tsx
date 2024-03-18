@@ -70,15 +70,15 @@ const Proyects = () => {
                     className='hover:translate-y-[-0.3rem] btn-light dark:btn-dark dark:bg-gradient-to-t dark:from-theme_dark-main-bg dark:to-theme_dark-main-bg dark:hover:border-theme_dark-sup-pink dark:border-2'
                     href={item.code}>
                     <FiGithub className='text-xl' />
-                    code
+                    Code
                   </Link>
                 </li>
                 <li>
                   <Link
                     className='hover:translate-y-[-0.3rem] btn-light dark:btn-dark dark:bg-gradient-to-t dark:from-theme_dark-main-bg dark:to-theme_dark-main-bg dark:hover:border-theme_dark-sup-pink dark:border-2'
-                    href={item.preview}>
+                    href={item.deploy}>
                     <FaLink className='text-xl' />
-                    preview
+                    Deploy
                   </Link>
                 </li>
               </ul>
