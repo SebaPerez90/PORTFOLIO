@@ -30,7 +30,7 @@ const Contact = () => {
   const emailInputRef: any = useRef<HTMLInputElement>(null);
 
   //FORM HANDLE SUBMIT
-  const sendComent = async (e: any) => {
+  const sendComent = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
     try {
@@ -152,10 +152,6 @@ const Contact = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 aria-label='send-btn'
-                // onClick={(e) => {
-                //   e.preventDefault();
-                //   setFormSendSuccessfully(!formSendSuccessfully);
-                // }}
                 className='active:scale-110 min-[900px]:translate-y-[-1em] dark:border-theme_dark-sup-sky dark:bg-theme_dark-sup-sky dark:hover:bg-[#38bff875] hover:translate-y-[-0.7em]  max-[900px]:w-[80%] max-[900px]:self-start text-sm self-center w-full  py-3 rounded-md text-white font-bold hover:duration-200 duration-200 hover:bg-blue-400 bg-light-500  hover:border-light-200 border border-light-500/85 md:hover:translate-y-[-1.3em] hover:shadow-[0px_8px_7px_#00000049]'>
                 {engLanguageActive ? 'Send' : 'Enviar'}
               </motion.button>

@@ -70,11 +70,6 @@ const Footer = () => {
             </Link>
           </li>
           <li className='dark:border-theme_dark-sup-sky dark:hover:text-zinc-400 hover:duration-100 hover:text-light-200 border-l-2 border-light-400 pl-4'>
-            <Link aria-label='network-link' href={''} target='_blank'>
-              Facebook
-            </Link>
-          </li>
-          <li className='dark:border-theme_dark-sup-sky dark:hover:text-zinc-400 hover:duration-100 hover:text-light-200 border-l-2 border-light-400 pl-4'>
             <Link aria-label='network-link' href={'#home'}>
               {engLanguageActive ? 'Home' : 'Inicio'}
             </Link>

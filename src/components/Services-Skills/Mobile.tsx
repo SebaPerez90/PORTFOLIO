@@ -103,7 +103,9 @@ const Mobile = () => {
             id='notification-panel-mobile'>
             {/* contains the notification panel 👇*/}
             <div className='relative hidden items-end px-[0.15rem] flex-col justify-center h-full'>
-              <div className='rounded-[0.3rem] bg-[#3d3d3d] flex flex-col items-start gap-2 justify-end text-xs z-40 px-1 h-auto'>
+              <motion.div
+                whileTap={{ scale: 1.7, y: -10 }}
+                className='cursor-zoom-in rounded-[0.3rem] bg-[#3d3d3d] flex flex-col items-start gap-2 justify-end text-xs z-40 px-1 h-auto'>
                 <h1 className='text-base'>
                   WhatsApp{' | '}
                   <span className='text-xs'>
@@ -136,7 +138,7 @@ const Mobile = () => {
                     {engLanguageActive ? 'Reply' : 'Responder'}
                   </a>
                 </button>
-              </div>
+              </motion.div>
 
               <button
                 aria-label='collapse-button'
@@ -187,7 +189,6 @@ const Mobile = () => {
         </div>
         <div className='z-40 rounded-[0_0_13px_13px] text-xl w-full bg-[#4a4a4a] py-2 font-black text-white flex justify-around'>
           <IoChevronBackOutline />
-          motio
           <IoMdHome />
           <FaBars />
         </div>

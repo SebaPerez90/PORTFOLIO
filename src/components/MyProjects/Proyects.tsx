@@ -99,7 +99,6 @@ const Proyects = () => {
                   src={item}
                   width={450}
                   height={450}
-                  priority
                   alt='screen-shoot'
                   className='sticky left-0 h-full w-full object-cover snap-center'
                 />

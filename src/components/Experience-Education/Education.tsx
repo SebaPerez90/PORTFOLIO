@@ -4,6 +4,7 @@ import { Roboto } from 'next/font/google';
 import Image from 'next/image';
 import soyHenry_logo from '@/assets/images/soyHenry-logo.webp';
 import utn_logo from '@/assets/images/utn-logo.webp';
+import { motion } from 'framer-motion';
 
 const roboto = Roboto({
   weight: ['900'],
@@ -12,7 +13,6 @@ const roboto = Roboto({
 
 const Education = () => {
   const { engLanguageActive } = useStore();
-
   return (
     <section className='dark:bg-theme_dark-main-bg bg-white py-28 flex flex-col items-center gap-28 w-[80%] shadow-[14px_30px_20px_-10px_#0000004f] rounded-lg'>
       <header className='max-[950px]:top-[-2em] flex flex-col items-center '>
@@ -28,7 +28,11 @@ const Education = () => {
         </p>
       </header>
       <div className='dark:after:bg-zinc-400 max-[490px]:after:right-[16%] max-[570px]:after:right-[15%] flex px-4 justify-around w-full items-end z-10 relative before:absolute before:rounded-[50%] before:left-[5%] before:bottom-6 before:w-[90%] before:h-1 before:bg-[#373737] before:-z-10 max-[950px]:flex-col max-[950px]:items-center max-[950px]:h-[auto] max-[950px]:before:[display:none] max-[950px]:after:absolute max-[950px]:after:right-[13%] max-[950px]:after:h-[80%] max-[950px]:after:w-1 max-[950px]:after:top-[15%] max-[950px]:after:bg-[#373737] max-[950px]:after:-z-10 max-[650px]:gap-20 max-[700px]:after:right-[14%]'>
-        <article className='max-[950px]:h-[20em] max-[950px]:flex-row  max-[950px]:w-[80%]  h-[25em] w-[16em] flex justify-between  items-center flex-col'>
+        <motion.article
+          transition={{ delay: 0.3 }}
+          initial={{ opacity: 0, scale: 0.7 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          className='max-[950px]:h-[20em] max-[950px]:flex-row  max-[950px]:w-[80%]  h-[25em] w-[16em] flex justify-between  items-center flex-col'>
           <div className='max-[950px]:w-[70%] gap-4 flex flex-col justify-around items-center'>
             <h1 className='dark:text-slate-50 text-lg font-black'>Soy Henry</h1>
             <h2 className='dark:text-zinc-400 text-xs font-medium'>
@@ -52,9 +56,13 @@ const Education = () => {
               className='border-[1px] border-black w-full h-full object-cover rounded-full'
             />
           </div>
-        </article>
+        </motion.article>
 
-        <article className='max-[950px]:h-[20em] max-[950px]:flex-row max-[950px]:w-[80%]  h-[25em] w-[16em] flex justify-between  items-center flex-col'>
+        <motion.article
+          transition={{ delay: 0.6 }}
+          initial={{ opacity: 0, scale: 0.7 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          className='max-[950px]:h-[20em] max-[950px]:flex-row max-[950px]:w-[80%]  h-[25em] w-[16em] flex justify-between  items-center flex-col'>
           <div className='max-[950px]:w-[70%] relative gap-4 flex flex-col justify-around items-center'>
             <h1 className='dark:text-slate-50 text-lg font-extrabold'>UTN</h1>
             <h2 className='dark:text-zinc-400 text-xs font-medium'>
@@ -78,9 +86,13 @@ const Education = () => {
               className='border-[1px] border-black w-full h-full object-cover rounded-full'
             />
           </div>
-        </article>
+        </motion.article>
 
-        <article className='max-[950px]:h-[20em] max-[950px]:flex-row max-[950px]:w-[80%]  h-[25em] w-[16em] flex justify-between  items-center flex-col'>
+        <motion.article
+          transition={{ delay: 0.9 }}
+          initial={{ opacity: 0, scale: 0.7 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          className='max-[950px]:h-[20em] max-[950px]:flex-row max-[950px]:w-[80%]  h-[25em] w-[16em] flex justify-between  items-center flex-col'>
           <div className='max-[950px]:w-[70%] relative gap-4 flex flex-col justify-around items-center'>
             <h1 className='dark:text-slate-50 text-lg font-black'>Soy Henry</h1>
             <h2 className='dark:text-zinc-400 text-xs font-medium'>
@@ -103,7 +115,7 @@ const Education = () => {
               className='border-[1px] border-black w-full h-full object-cover rounded-full'
             />
           </div>
-        </article>
+        </motion.article>
       </div>
       <div className=' max-[460px]:w-[98%] dark:border-t dark:border-r dark:border-b dark:border-r-slate-500/30 dark:border-t-slate-500/30 dark:border-b-slate-500/30  border-l-[12px] border-[#f0e244] dark:bg-theme_dark-box-second px-6 py-8 bg-[#ededed] max-[650px]:w-[80%] max-[950px]:w-[90%] flex flex-col items-center w-[60%] rounded-[0_0.4em_0.4em_0]'>
         <h1 className='dark:text-zinc-50 text-[#575757] text-center font-extrabold text-xl mb-6'>

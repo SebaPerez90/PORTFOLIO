@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
 import { useStore } from '@/context/store';
 import { Roboto } from 'next/font/google';
+import { motion } from 'framer-motion';
 
 import workExperience from '@/data/workExperience.json';
-import { motion } from 'framer-motion';
 
 const roboto = Roboto({
   weight: ['900'],
@@ -19,6 +19,7 @@ const Experience = () => {
     boxRef.current?.classList.toggle('content-available');
     setVisibility(!visibility);
   };
+
   return (
     <section
       id='experience-section'
@@ -97,7 +98,12 @@ const Experience = () => {
             : 'Ocultar'}
         </button>
 
-        <div ref={boxRef} className='[display:none]'>
+        <motion.div
+          initial={{ opacity: 0, y: 200 }}
+          transition={{ duration: 0.3 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          ref={boxRef}
+          className='[display:none]'>
           <h1 className='dark:text-slate-50 text-5xl font-extrabold text-center text-[#333333]'>
             Conclusión
           </h1>
@@ -113,33 +119,53 @@ const Experience = () => {
                 : 'De esta experiencia, puedo descatar algunos beneficios :'}
             </p>
             <ul className='flex flex-col items-start gap-4'>
-              <li className='flex gap-2 ml-4 pr-8 mt-8'>
+              <motion.li
+                transition={{ delay: 0.1 }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className='flex gap-2 ml-4 pr-8 mt-8'>
                 <span>⚡</span>
                 {engLanguageActive
                   ? `The ability to tolerate work under pressure is essential, as the job of a waiter involves constant demands and pressure, which is also applicable to the IT sector.`
                   : 'capacidad para tolerar el trabajo bajo presión es esencial, ya que el trabajo de mozo implica exigencia y presión constantes, lo cual también es aplicable a sector IT.'}
-              </li>
-              <li className='flex gap-2 ml-4 pr-8 '>
+              </motion.li>
+              <motion.li
+                transition={{ delay: 0.2 }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className='flex gap-2 ml-4 pr-8 '>
                 <span>⚡</span>
                 {engLanguageActive
                   ? `Interpersonal skills that allow me to adapt to any work environment and team without difficulty.`
                   : 'habilidades interpersonales que me permiten adaptarme a cualquier entorno laboral y equipo de trabajo sin dificultades.'}
-              </li>
-              <li className='flex gap-2 ml-4 pr-8 '>
+              </motion.li>
+              <motion.li
+                transition={{ delay: 0.3 }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className='flex gap-2 ml-4 pr-8 '>
                 <span>⚡</span>
                 {engLanguageActive
                   ? `Problem-solving skills while maintaining composure. Although both sectors involve teamwork, sometimes one must know how to handle oneself in adverse situations.`
                   : 'capidad resolutiva de problemas manteniendo la templanza. A pesar que en ambos sectores se trabaja en equipo, a veces uno mismo debe saber como manejarse en situaciones adversas.'}
-              </li>
-              <li className='flex gap-2 ml-4 pr-8 '>
+              </motion.li>
+              <motion.li
+                transition={{ delay: 0.4 }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className='flex gap-2 ml-4 pr-8 '>
                 <span>⚡</span>
                 {engLanguageActive
                   ? `And the most important one... discovering my passion and love for technology. I can spend hours and hours immersing myself more and more and always wanting to learn more.`
                   : 'y las mas importante ... descubrir mi pasión y amor por la tecnologia. Puedo pasar horas y horas sumergiendome más y más y siempre querer aprender más.'}
-              </li>
+              </motion.li>
             </ul>
           </div>
-        </div>
+        </motion.div>
       </article>
     </section>
   );
