@@ -2,7 +2,7 @@ import { useRef, useEffect, useState, MutableRefObject } from 'react';
 
 import Image from 'next/image';
 
-import LanguageButtons from '@/components/NavBar/LanguageButtons';
+import LanguageButtons from '@/components/Navegation/LanguageButtons';
 
 const ThemeButtons = () => {
   const iconRef: MutableRefObject<any> = useRef(null);

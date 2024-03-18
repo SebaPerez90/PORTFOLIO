@@ -4,7 +4,7 @@ import { useStore } from '@/context/store';
 import { useEffect } from 'react';
 import { stagger, useAnimate, useInView } from 'framer-motion';
 
-import ThemeButtons from '@/components/NavBar/ThemeButtons';
+import ThemeButtons from '@/components/Navegation/ThemeButtons';
 import navLinks from './types';
 
 const NavBar = ({ visibility }: any) => {
