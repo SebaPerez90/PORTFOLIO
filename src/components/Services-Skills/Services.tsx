@@ -1,8 +1,9 @@
 import { useStore } from '@/context/store';
+import { Roboto } from 'next/font/google';
+
 import Mobile from './Mobile';
 import Desktop from './Desktop';
 import Skills from './Skills';
-import { Roboto } from 'next/font/google';
 
 const roboto = Roboto({
   weight: ['900'],
@@ -20,7 +21,7 @@ const Services = () => {
         style={roboto.style}>
         {engLanguageActive ? 'SKILLS & SERVICES' : 'HABILIDADES Y SERVICIOS '}🤓
       </h1>
-      <div className='py-40 w-full h-full'>
+      <div className='py-28 w-full h-full'>
         <h1 className='dark:text-theme_dark-sup-pink max-[500px]:[font-size:1.8em] [font-size:2.5em] px-4 text-center mb-44 font-bold text-light-400'>
           {engLanguageActive
             ? 'What can I offer for you? ...'

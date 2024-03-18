@@ -26,7 +26,7 @@ const CopyEmailBtn = () => {
   };
 
   return (
-    <div className='max-[400px]:scale-90 relative self-center flex gap-5 border dark:border-slate-600/50 rounded-md px-4 dark:bg-theme_dark-box-second w-max py-1 mt-6 bg-white'>
+    <div className='max-[400px]:scale-90 relative self-center flex gap-5 border dark:border-slate-600/50 rounded-md px-4 dark:bg-theme_dark-box-second w-max py-1 mt-6 bg-[#eeeeee]'>
       <span
         ref={emailAddressRef}
         className='dark:text-zinc-50  flex items-center gap-1 text-xs'>
@@ -36,7 +36,7 @@ const CopyEmailBtn = () => {
       <button
         aria-label='copy-text-btn'
         onClick={handleCopyToClipboard}
-        className='active:scale-125 rounded-full p-3 border dark:border-theme_dark-box-second dark:hover:bg-theme_dark-box-thir  dark:hover:border-zinc-600 duration-150 border-white hover:bg-slate-400/35'>
+        className='active:scale-125 rounded-full p-3 border dark:border-theme_dark-box-second dark:hover:bg-theme_dark-box-thir  dark:hover:border-zinc-600 duration-150 border-[#eeeeee] hover:bg-slate-400/35'>
         <FaRegCopy className='dark:text-theme_dark-sup-sky text-lg text-light-800' />
       </button>
       <span className='sr-only'>

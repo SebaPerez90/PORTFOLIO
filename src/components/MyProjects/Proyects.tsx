@@ -5,7 +5,6 @@ import { FiGithub } from 'react-icons/fi';
 import { FaLink } from 'react-icons/fa6';
 
 import projects from '@/data/projets.json';
-import Icon from '@/components/Services-Skills/Icon';
 
 import { Roboto } from 'next/font/google';
 import { useStore } from '@/context/store';
@@ -47,11 +46,9 @@ const Proyects = () => {
               <div className='flex justify-center gap-1'>
                 {item.skills.map((skill, index) => (
                   <p
-                    className='p-[0.6em_0.8em] text-xs cursor-default gap-1 w-max flex items-center bg-slate-700 text-white rounded-md'
-                    key={index}>
-                    {/* Insert dynamically the icon corresponding to the value of item.skill */}
-                    {Icon(skill)}
-                    <span>{skill}</span>
+                    key={index}
+                    className='p-[0.6em_0.8em] text-xs bg-[#e8e8e8]  dark:bg-slate-700  text-[#334155] font-black dark:text-white rounded-md'>
+                    # {skill}
                   </p>
                 ))}
               </div>

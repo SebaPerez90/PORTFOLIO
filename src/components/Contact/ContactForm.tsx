@@ -53,7 +53,7 @@ const Contact = () => {
   return (
     <section
       id='contact-section'
-      className='pt-20 pb-40 gap-16 flex flex-col items-center justify-around w-full'>
+      className='pb-40 gap-16 flex flex-col items-center justify-around w-full'>
       <h1
         className='dark:text-zinc-50 text-center text-4xl min-[500px]:[letter-spacing:10px] text-[#334155]'
         style={roboto.style}>
