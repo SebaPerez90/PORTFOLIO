@@ -7,7 +7,7 @@ import ContactForm from '@/components/Contact/ContactForm';
 import Experience from '@/components/Experience-Education/Experience';
 import Education from '@/components/Experience-Education/Education';
 import Services from '@/components/Services-Skills/Services';
-import Footer from '@/components/Footer/Footer';
+import Footer from '@/components/Foot/Footer';
 import MenuBtn from '@/components/Navegation/MenuBtn';
 
 export default function Home() {
