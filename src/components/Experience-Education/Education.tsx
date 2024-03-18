@@ -21,13 +21,8 @@ const Education = () => {
           style={roboto.style}>
           {engLanguageActive ? 'STUDIES' : 'ESTUDIOS'}👨‍🎓
         </h1>
-        <p className='dark:border-theme_dark-sup-pink dark:text-zinc-300 dark:bg-theme_dark-box-second w-[90%] md:w-[70%] lg:w-[60%] border-l-[12px] border-light-800 bg-[#ececec] pl-4 pr-2 py-6 mt-6 font-semibold text-[#333333]'>
-          {engLanguageActive
-            ? `I started my immersion in the programming world 2 years ago, initially out of curiosity and without a clear direction. But gradually, I began to understand how all its parts work together. Over time, driven by my need and eagerness to learn more, I developed the ability to be self-taught.`
-            : 'Comenzé mi inmersión en el mundo de la programación hace 2 años, primero con mucha curiosidad y sin un rumbo. Pero poco a poco, entendiendo como funcionan todas sus partes en conjunto. Con el tiempo, gracias a mi necesidad y ganas de aprender más, desarrollé la habilidad de ser autodidacta.'}
-        </p>
       </header>
-      <div className='dark:after:bg-zinc-400 max-[490px]:after:right-[16%] max-[570px]:after:right-[15%] flex px-4 justify-around w-full items-end z-10 relative before:absolute before:rounded-[50%] before:left-[5%] before:bottom-6 before:w-[90%] before:h-1 before:bg-[#373737] before:-z-10 max-[950px]:flex-col max-[950px]:items-center max-[950px]:h-[auto] max-[950px]:before:[display:none] max-[950px]:after:absolute max-[950px]:after:right-[13%] max-[950px]:after:h-[80%] max-[950px]:after:w-1 max-[950px]:after:top-[15%] max-[950px]:after:bg-[#373737] max-[950px]:after:-z-10 max-[650px]:gap-20 max-[700px]:after:right-[14%]'>
+      <div className='dark:after:bg-zinc-400 max-[490px]:after:right-[16%] max-[570px]:after:right-[15%] flex pl-8 justify-center gap-12 w-full items-end z-10 relative before:absolute before:rounded-[50%] before:left-[5%] before:bottom-6 before:w-[90%] before:h-1 before:bg-[#373737] before:-z-10 max-[950px]:flex-col max-[950px]:items-center max-[950px]:h-[auto] max-[950px]:before:[display:none] max-[950px]:after:absolute max-[950px]:after:right-[13%] max-[950px]:after:h-[80%] max-[950px]:after:w-1 max-[950px]:after:top-[15%] max-[950px]:after:bg-[#373737] max-[950px]:after:-z-10 max-[650px]:gap-20 max-[700px]:after:right-[14%]'>
         <motion.article
           transition={{ delay: 0.3 }}
           initial={{ opacity: 0, scale: 0.7 }}
@@ -42,10 +37,10 @@ const Education = () => {
               {engLanguageActive ? 'state: abandoned' : 'estado: abandonado'} /
               10-2022
             </span>
-            <p className='dark:text-zinc-300 text-sm w-full text-[#334155]'>
+            <p className='dark:text-zinc-300 text-sm w-full text-[#334155] text-center'>
               {engLanguageActive
-                ? `Bootcamp. It was my first formal experience in an IT career. Since I didn't have a background in technology and was just starting my studies, I decided to drop out of the program because I felt that I wasn't grasping the content well. In my opinion, that career (contrary to the advertising) was for people with a solid foundation.`
-                : 'Bootcamp. Fué mi primer experiencia formal en un carrera IT. Al yo no tener un background en tecnología y estar comenzando mis estudios. Decidí abandonar la carrera porque sentía que no asmilaba bien el contenido, ya que según mi criterio , esa carrera (contrariamente a la publicidad) era para gente con una base sólida.'}
+                ? `Bootcamp. As I didn't have a background in technology and was just starting my studies, I decided to drop out of the program. I couldn't grasp the content back then.`
+                : 'Bootcamp. Al yo no tener un background en tecnología y estar comenzando mis estudios. Decidí abandonar la carrera no poder asmilar el contenido en ese entonces.'}
             </p>
           </div>
           <div className='max-[570px]:before:[display:none] z-10 relative before:absolute before:w-24 before:h-[1px] before:top-0 before:left-[-1.2em] before:-z-10 before:bg-black before:rotate-[90deg] w-14 h-14 max-[950px]:before:rotate-[0deg] max-[950px]:before:left-[-4.2em] max-[950px]:before:top-7'>
@@ -72,10 +67,10 @@ const Education = () => {
               {engLanguageActive ? 'state: suspended' : 'estado: suspendida'} /
               03-2023
             </span>
-            <p className='dark:text-zinc-300 text-sm w-full text-[#334155]'>
+            <p className='dark:text-zinc-300 text-sm w-full text-[#334155] text-center'>
               {engLanguageActive
-                ? `National Technological University. Due to personal financial reasons, I struggled to afford the tuition fees for the program. Because of that, I had to temporarily suspend it until my situation changes.`
-                : 'Universidad tecnológica nacional. Por motivos económicos personales se me dificulto poder costear la carrera Debido a ese motivo, tuve que suspenderla momentaneamente hasta que mi situación cambie.'}
+                ? `National Technological University. Due to personal economic reasons, I am unable to afford the tuition for the program. I had to temporarily suspend my studies until my situation changes.`
+                : 'Universidad. Por motivos económicos personales no puedo costear la carrera, tuve que suspenderla momentaneamente hasta que mi situación cambie.'}
             </p>
           </div>
           <div className='max-[570px]:before:[display:none] w-14 h-14 z-10 relative before:absolute before:w-32 before:h-[1px] before:bottom-24 before:left-[-2.5em] before:-z-10 before:bg-black before:rotate-[90deg] max-[950px]:before:rotate-[0deg] max-[950px]:before:left-[-4.5em] max-[950px]:before:top-7'>
@@ -101,10 +96,10 @@ const Education = () => {
             <span className='dark:text-theme_dark-sup-pink text-xs text-red-700 font-bold'>
               {engLanguageActive ? 'state: studying' : 'estado: cursando'}
             </span>
-            <p className='dark:text-zinc-300 text-sm w-full text-[#334155]'>
+            <p className='dark:text-zinc-300 text-sm w-full text-[#334155] text-center'>
               {engLanguageActive
-                ? `I decided to resume the program because of my thirst for knowledge and my curiosity to understand how software works. I acquired the ability to be self-taught, and now that I feel prepared, I believe I can pursue the career. The program offered can help me reinforce my knowledge.`
-                : 'Decidí retomar la carrera debido a que gracias a mi ansia de conocimiento y curiosidad de siempre querer entender como funciona un software. Adquirí la habilidad de ser autodidacta, y al poder ahora si estar preparado. Siento que puedo llevar adelante la carrera y ya que el programa que ofrece , puede ayudarme a reforzar mis conocimientos.'}
+                ? `While I have already acquired a substantial amount of the knowledge provided by the program, it can still be valuable for me to further solidify my existing understanding.`
+                : 'Si bien ya poseo gran parte del conocimiento que el programa ofrece, puede servirme para reforzar mis conocimientos.'}
             </p>
           </div>
           <div className='max-[570px]:before:[display:none] w-14 h-14 z-10 relative before:absolute before:w-24 before:h-[1px] before:top-0 before:left-[-1.2em] before:-z-10 before:bg-black before:rotate-[90deg] max-[950px]:before:rotate-[0deg] max-[950px]:before:left-[-4.2em] max-[950px]:before:top-7'>
@@ -117,6 +112,7 @@ const Education = () => {
           </div>
         </motion.article>
       </div>
+
       <div className=' max-[460px]:w-[98%] dark:border-t dark:border-r dark:border-b dark:border-r-slate-500/30 dark:border-t-slate-500/30 dark:border-b-slate-500/30  border-l-[12px] border-[#f0e244] dark:bg-theme_dark-box-second px-6 py-8 bg-[#ededed] max-[650px]:w-[80%] max-[950px]:w-[90%] flex flex-col items-center w-[60%] rounded-[0_0.4em_0.4em_0]'>
         <h1 className='dark:text-zinc-50 text-[#575757] text-center font-extrabold text-xl mb-6'>
           <span className='text-4xl'>⚠️</span>

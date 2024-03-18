@@ -126,8 +126,8 @@ const About = () => {
             </h1>
             <p className=' dark:text-zinc-300 w-[70%] text-sm font-semibold text-[#333333]'>
               {engLanguageActive
-                ? `I'm a self-taught student currently enrolled in the "Soy Henry" bootcamp. While I primarily focus on front-end development, I also possess knowledge and skills that allow me to work in backend areas. I know I owe some projects showcasing backend experience, but they're on their way 😅.`
-                : 'Soy un estudiante autodidacta actualmente cursando el bootcamp de "Soy Henry". Tengo un mayor enfoque en el desarrollo front-end, pero también tengo conocimientos y herramientas que me pueden permitir trabajar en el área back-end. Sé que estoy en deuda con los proyectos que reflejen la experiencia en el back, pero ya van a llegar 😅'}
+                ? `I'm a self-taught student currently enrolled in the "Soy Henry" bootcamp. While I primarily focus on front-end development, I also possess knowledge and skills that allow me to work in backend areas.`
+                : 'Soy un estudiante autodidacta actualmente cursando el bootcamp de "Soy Henry". Tengo un mayor enfoque en el desarrollo front-end, pero también tengo conocimientos y herramientas que me pueden permitir trabajar en el área back-end.'}
             </p>
           </div>
         </div>
