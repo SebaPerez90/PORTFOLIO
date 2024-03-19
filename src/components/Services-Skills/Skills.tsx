@@ -14,10 +14,10 @@ const Skills = () => {
         staggerChildren: 0.2,
         type: 'spring',
       }}
-      initial={{ translateX: '-20em', opacity: 0 }}
-      whileInView={{ translateX: '0em', opacity: 1 }}
+      initial={{ x: -200, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
       viewport={{ once: true }}
-      className='flex-col items-center md:flex-row flex md:justify-evenly flex-wrap w-[50em] p-4 gap-12 min-[2100px]:w-[70em] min-[1200px]:gap-24'>
+      className='flex-col items-center md:flex-row flex md:justify-evenly flex-wrap w-[35em] md:w-[50em] p-4 gap-12 min-[2100px]:w-[70em] min-[1200px]:gap-24'>
       {skills.map((item, index) => (
         <div
           key={index}
