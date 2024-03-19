@@ -94,8 +94,8 @@ const Mobile = () => {
           duration: 0.7,
           delay: 0.1,
         }}
-        initial={{ translateX: '-20em', opacity: 0 }}
-        whileInView={{ translateX: '0em', opacity: 1 }}
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
         className='scale-125 max-[1216px]:mt-8 max-[1216px]:left-0 relative left-20 w-[12em] h-[25rem] flex flex-col justify-between border-[10px] border-[#252525] bg-white rounded-[25px] before:absolute before:w-full before:h-5 before:rounded-[50%] before:left-0 before:bottom-[-3em] dark:before:bg-[#75757558] before:bg-[#3737378f] before:z-50'>
         <div className='relative py-1 rounded-[13px_13px_0_0] w-full bg-[#4a4a4a] px-2 text-white flex justify-between items-center'>
           <div

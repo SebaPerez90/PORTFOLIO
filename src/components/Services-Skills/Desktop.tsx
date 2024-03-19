@@ -31,8 +31,8 @@ const Desktop = () => {
             duration: 0.7,
             delay: 0.1,
           }}
-          initial={{ translateX: '25em', opacity: 0 }}
-          whileInView={{ translateX: '0em', opacity: 1 }}
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
           className='relative flex flex-col justify-center items-center'>
           <div className='max-[500px]:border-[1em] max-[500px]:h-[12em] max-[500px]:w-[22em] h-[19em] w-[28em] rounded-[0.5em_0.5em_0_0] bg-white border-[1.5em] dark:border-[#292529] border-[#2d2d2d] border-b-0'>
             <div className='w-full bg-slate-500 flex items-center '>
