@@ -7,8 +7,6 @@ const MenuBtn = () => {
   const [visibility, setVisibility] = useState(false);
 
   return (
-    //   w-full fixed'>
-    // translate-x-[-1em]
     <header className='z-50 top-0 duration-300 w-full fixed sm:flex sm:justify-center max-[640px]:translate-x-[-3em]'>
       <div className='justify-center items-center flex sm:hidden z-50 absolute right-12 top-8'>
         <span className='sr-only'>
