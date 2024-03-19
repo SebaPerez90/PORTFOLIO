@@ -12,26 +12,24 @@ import MenuBtn from '@/components/Navegation/MenuBtn';
 
 export default function Home() {
   return (
-    <>
+    <main className='gap-32 flex flex-col justify-around items-center bg-[#dedede] dark:bg-[#313643]'>
       <MenuBtn />
 
-      <main className='gap-32 flex flex-col justify-around items-center bg-[#dedede] dark:bg-[#313643]'>
-        <Hero />
+      <Hero />
 
-        <Experience />
+      <Experience />
 
-        <About />
+      <About />
 
-        <Education />
+      <Education />
 
-        <Proyects />
+      <Proyects />
 
-        <Services />
+      <Services />
 
-        <ContactForm />
+      <ContactForm />
 
-        <Footer />
-      </main>
-    </>
+      <Footer />
+    </main>
   );
 }

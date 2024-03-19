@@ -97,7 +97,7 @@ const Details = () => {
               <span>⚡</span>
               {engLanguageActive
                 ? `Problem-solving skills while maintaining composure. Although both sectors involve teamwork, sometimes one must know how to handle oneself in adverse situations.`
-                : 'capidad resolutiva de problemas manteniendo la templanza. A pesar que en ambos sectores se trabaja en equipo, a veces uno mismo debe saber como manejarse en situaciones adversas.'}
+                : 'capacidad resolutiva de problemas manteniendo la templanza. A pesar que en ambos sectores se trabaja en equipo, a veces uno mismo debe saber como manejarse en situaciones adversas.'}
             </motion.li>
             <motion.li
               transition={{ delay: 0.4 }}

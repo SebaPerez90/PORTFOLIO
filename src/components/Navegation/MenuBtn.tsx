@@ -7,7 +7,8 @@ const MenuBtn = () => {
   const [visibility, setVisibility] = useState(false);
 
   return (
-    <header className='z-50 duration-300 flex justify-center w-full fixed'>
+    // <header className='z-50 duration-300 flex justify-center w-full fixed'>
+    <header className='z-50 top-0 fixed right-0'>
       <div className='justify-center items-center flex sm:hidden z-50 absolute right-12 top-8'>
         <span className='sr-only'>
           This button is rendered on screen widths less than 640px
