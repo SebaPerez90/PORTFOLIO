@@ -103,31 +103,38 @@ const Mobile = () => {
             id='notification-panel-mobile'>
             {/* contains the notification panel 👇*/}
             <div className='relative hidden items-end px-[0.15rem] flex-col justify-center h-full'>
-              <motion.div
-                whileTap={{ scale: 1.7, y: -10 }}
-                className='cursor-zoom-in rounded-[0.3rem] bg-[#3d3d3d] flex flex-col items-start gap-2 justify-end text-xs z-40 px-1 h-auto'>
-                <h1 className='text-base'>
-                  WhatsApp{' | '}
-                  <span className='text-xs'>
-                    1 chat <time>{dateMessage}</time>
-                  </span>
-                </h1>
-                <div className='flex items-center'>
-                  <Image
-                    src={avatar}
-                    width={25}
-                    height={25}
-                    alt='avatar'
-                    className='rounded-full w-auto h-auto'
-                  />
-                  - Seba
-                </div>
-                <p className='pl-[0.15rem] text-base border-t border-slate-500/45 pt-1'>
-                  {engLanguageActive
-                    ? 'Were you looking for a programmer ?'
-                    : '¿Estabas en busca de un programador ?'}
-                  🙂
-                </p>
+              <div className='cursor-zoom-in rounded-[0.3rem] bg-[#3d3d3d] flex flex-col items-start gap-2 justify-end text-xs z-40 px-1 h-auto'>
+                <motion.div
+                  whileTap={{
+                    scale: 1.8,
+                    y: -10,
+                    backgroundColor: '#3d3d3d',
+                    padding: '0.5em 0.3em',
+                    borderRadius: '0.4em',
+                  }}>
+                  <h1 className='text-base'>
+                    WhatsApp{' | '}
+                    <span className='text-xs'>
+                      1 chat <time>{dateMessage}</time>
+                    </span>
+                  </h1>
+                  <div className='flex items-center'>
+                    <Image
+                      src={avatar}
+                      width={25}
+                      height={25}
+                      alt='avatar'
+                      className='rounded-full w-auto h-auto'
+                    />
+                    - Seba
+                  </div>
+                  <p className='pl-[0.15rem] text-base border-t border-slate-500/45 pt-1'>
+                    {engLanguageActive
+                      ? 'Were you looking for a programmer ?'
+                      : '¿Estabas en busca de un programador ?'}
+                    🙂
+                  </p>
+                </motion.div>
                 <button
                   aria-label='whatsapp-link'
                   className='self-center font-black mt-3 mb-1 p-3 hover:bg-[#ffffff23] duration-150 rounded-full'>
@@ -138,7 +145,7 @@ const Mobile = () => {
                     {engLanguageActive ? 'Reply' : 'Responder'}
                   </a>
                 </button>
-              </motion.div>
+              </div>
 
               <button
                 aria-label='collapse-button'
@@ -152,7 +159,7 @@ const Mobile = () => {
             <button
               onClick={checkNotification}
               aria-label='expand/collapse-button'>
-              <FaWhatsapp className='text-green-400 relative left-3 top-1 scale-125 z-10 [filter:contrast(2)] hover:scale-[1.75] duration-100 hover:animate-none animate-[whatsapp-notification_800ms_alternate-reverse_ease-out_infinite]' />
+              <FaWhatsapp className='text-green-400 relative left-3 top-0 scale-125 z-10 [filter:contrast(2)] hover:scale-[1.75] duration-100 hover:animate-none animate-[whatsapp-notification_800ms_alternate-reverse_ease-out_infinite]' />
             </button>
           </div>
           <span className='rounded-full h-[9px] w-[9px] relative left-[45%] border-black border-4 bg-[#b6b4b4]'></span>
