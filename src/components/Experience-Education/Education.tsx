@@ -14,7 +14,7 @@ const roboto = Roboto({
 const Education = () => {
   const { engLanguageActive } = useStore();
   return (
-    <section className='dark:bg-theme_dark-main-bg bg-white py-28 flex flex-col items-center gap-28 w-[80%] shadow-[14px_30px_20px_-10px_#0000004f] rounded-lg'>
+    <section className='dark:bg-theme_dark-main-bg bg-white py-28 flex flex-col items-center gap-28 w-[95%] sm:w-[80%] shadow-[14px_30px_20px_-10px_#0000004f] rounded-lg'>
       <header className='max-[950px]:top-[-2em] flex flex-col items-center '>
         <h1
           className='dark:text-slate-50 text-5xl min-[500px]:[letter-spacing:10px] text-[#334155] text-center'
