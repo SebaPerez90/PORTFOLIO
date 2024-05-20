@@ -54,7 +54,7 @@ const NavBar = ({ visibility }: any) => {
     <nav
       ref={scope}
       id='nav-bar'
-      style={visibility ? { right: '0em', opacity: '1' } : {}}
+      style={visibility ? { right: '-3em', opacity: '1' } : {}}
       className='dark:border sm:p-[0.7em_1.5em]  dark:border-slate-500/30 bg-[#eeeeeeaa] sm:bg-[#eeeeee81] dark:bg-[#0000008e] sm:dark:bg-[#0000004a] border border-slate-500/10 sm:rounded-full flex sm:right-0 sm:flex-row sm:items-center sm:lowercase sm:duration-300 sm:gap-6 sm:relative  sm:top-2 capitalize flex-col rounded-[0_0_0_0.4em] p-[2em_3em_1.5em_1.5em] top-0 items-start right-[-14em] max-[640px]:opacity-0 absolute gap-10 duration-500'>
       {navLinks.map((item, index) => (
         <Link
