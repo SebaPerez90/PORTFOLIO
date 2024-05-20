@@ -22,7 +22,7 @@ const Avatar = () => {
           className='max-[700px]:translate-x-16 w-full h-full object-cover drop-shadow-[-10px_0px_20px_#000000b3]'
         />
       </div>
-      <div className='max-[440px]:absolute max-[440px]:top-24 max-[440px]:right-[-1em] max-[700px]:justify-end z-30 gap-20 translate-x-4 flex flex-col items-center justify-center h-[20em]'>
+      <div className='max-[440px]:absolute max-[440px]:top-28 max-[440px]:right-[-1em] max-[700px]:justify-end z-30 gap-20 translate-x-4 flex flex-col items-center justify-center h-[20em]'>
         <span className='max-[700px]:[display:none] [rotate:90deg] w-max flex gap-2 items-center text-base font-extrabold text-[#3b3b3b] dark:text-white lg:text-white [#33333391]'>
           {engLanguageActive ? 'follow me' : 'seguime'}
           <HiOutlineArrowLongRight className='text-3xl' />
