@@ -49,7 +49,7 @@ const DownloadBtn = () => {
         OPEN TO WORK
       </span>
 
-      <div className='relative flex flex-col'>
+      <div className='relative flex flex-col z-50'>
         <button
           id='download-btn'
           onClick={changingVisibility}
