@@ -54,7 +54,7 @@ const SuccessMessage = ({ formData }: any) => {
         {engLanguageActive ? 'Send other message' : 'Envia otro mensaje'}
       </button>
       {refresh && (
-        <div className='translate-y-[-2em]'>
+        <div className='translate-y-[-4.5em]'>
           <ContactForm />
         </div>
       )}
