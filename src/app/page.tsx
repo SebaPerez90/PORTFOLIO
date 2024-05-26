@@ -9,7 +9,6 @@ import Education from '@/components/Experience-Education/Education';
 import Services from '@/components/Services-Skills/Services';
 import Footer from '@/components/Foot/Footer';
 import MenuBtn from '@/components/Navegation/MenuBtn';
-import HeroNew from '@/components/New/HeroNew';
 
 export default function Home() {
   return (
