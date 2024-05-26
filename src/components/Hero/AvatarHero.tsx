@@ -2,7 +2,7 @@ import { useStore } from '@/context/store';
 import Image from 'next/image';
 import profile_image from '@/assets/images/avatar.webp';
 import { HiOutlineArrowLongRight } from 'react-icons/hi2';
-import Social from '../New/Social';
+import Social from './Social';
 
 const Avatar = () => {
   const { engLanguageActive } = useStore();
