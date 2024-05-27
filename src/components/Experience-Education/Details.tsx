@@ -14,7 +14,7 @@ const Details = () => {
   };
 
   return (
-    <article className='w-[800px] mt-12'>
+    <article className='w-[800px] max-[450px]:-mt-16 mt-12'>
       <button
         aria-label='expand/collapse-btn'
         className='dark:text-theme_dark-sup-pink dark:border-theme_dark-sup-pink dark:after:bg-theme_dark-sup-pink mt-10 font-bold text-light-500 border-2 border-light-500 p-[0.8em_2em] flex w-max  relative hover:text-white hover:z-10  after:absolute after:left-[50%] after:rounded-[2em] after:bottom-0 after:w-0 after:h-full after:bg-light-500 after:-z-10 rounded-[2em] hover:after:left-[0%] hover:after:w-[100%] active:outline active:outline-2 active:outline-light-200 hover:after:duration-[400ms] hover:translate-y-[-0.3em] hover:shadow-[0px_8px_7px_#00000049] duration-300 outline-none m-[0_auto]'
