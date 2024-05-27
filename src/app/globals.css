@@ -109,11 +109,19 @@ body {
   }
 
   .content-available {
-    display: block;
     display: flex;
     flex-direction: column;
     gap: 1.5em;
-    margin-top: 5em;
+
+    @media (width < 900px) {
+      margin: 0 auto;
+      width: 30em;
+    }
+
+    @media (width < 600px) {
+      scale: 0.8;
+      width: 25em;
+    }
   }
 
   .work-experience-container {

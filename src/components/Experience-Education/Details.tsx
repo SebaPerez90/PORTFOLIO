@@ -32,13 +32,13 @@ const Details = () => {
         transition={{ duration: 0.3 }}
         whileInView={{ opacity: 1, y: 0 }}
         ref={boxRef}
-        className='hidden flex-col items-start'>
+        className='hidden flex-col items-start pt-14 pl-3'>
         <h1 className='dark:text-slate-50 text-[#333333] text-5xl font-extrabold'>
           {engLanguageActive
             ? `Details of my experience`
             : 'Detalles de mi experiencia'}
         </h1>
-        <p className='dark:text-zinc-300 pl-3 text-[#333333] font-semibold font-sans'>
+        <p className='dark:text-zinc-300 text-[#333333] font-semibold font-sans'>
           {engLanguageActive
             ? `I have more than 12 years of experience in the gastronomic sector. I decided not to delve further into the experience related to it, as my current profile is focused on the technology sector. In favor of my past experience, I acquired a set of soft skills that allow me to communicate effectively, tolerate working under pressure, handle clients efficiently, adapt to any work environment, and solve problems.`
             : 'Tengo mas de 12 años en el sector gastronómico. Decidí no ahondar más en la experiencia relacionada al mismo, debido a que mi perfil actualmente está enfocado al sector tecnológico. A favor de mi experiencia pasada, adquiri un set de habilidades blandas que me pueden permitir una comunicación efectiva, tolerar el trabajo bajo presión, trato efectivo con clientes, adaptabilidad a cualquier entorno laboral y resolución de problemas.'}
