@@ -1,7 +1,6 @@
 import { useStore } from '@/context/store';
 import { Roboto } from 'next/font/google';
 import { motion } from 'framer-motion';
-
 import workExperience from '@/data/workExperience.json';
 import Details from './Details';
 
@@ -16,14 +15,14 @@ const Experience = () => {
   return (
     <section
       id='experience-section'
-      className='flex justify-center flex-col items-center'>
+      className='flex flex-col items-center gap-14'>
       <h1
         className='px-2 text-4xl min-[500px]:[letter-spacing:7px] dark:text-zinc-200 text-[#334155] text-center'
         style={roboto.style}>
         {engLanguageActive ? 'WORK EXPERIENCE' : 'EXPERIENCIA LABORAL'}💼
       </h1>
-      <div className='shadow-[14px_30px_20px_-10px_#0000004f] mt-8 pb-12 dark:bg-theme_dark-main-bg bg-white  w-full lg:w-[70%] rounded-lg'>
-        <div className='dark:border-zinc-50 max-[480px]:ml-14 ml-20 m-[0_auto] gap-32 mt-20 w-[90%] border-l-2 border-[#6161619b] flex flex-col justify-around items-center relative work-experience-container z-10 lg:w-[80%]'>
+      <div className='shadow-[14px_30px_20px_-10px_#0000004f] flex flex-col p-[4em_7em] bg-white rounded-lg dark:bg-theme_dark-main-bg'>
+        <div className='relative work-experience-container z-10 gap-32 flex flex-col before:absolute before:h-[90%] before:top-11 before:w-[1px] before:bg-[#6161619b]'>
           <div className='dark:bg-theme_dark-main-bg dark:text-theme_dark-sup-sky absolute left-[-1em] flex gap-4 justify-center pt-6 w-36 h-36 bg-white text-6xl font-black z-50 text-light-500 bottom-[40%]'>
             <span className='animate-[loading_1s_linear_infinite]'>.</span>
             <span className='animate-[loading_1s_linear_infinite] [animation-delay:200ms]'>
@@ -39,8 +38,8 @@ const Experience = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               key={key}
-              className='dark:before:bg-theme_dark-sup-sky flex-col items-center gap-3 sm:gap-0 sm:flex-row relative w-full flex justify-around sm:items-start before:absolute before:w-8 before:h-8 before:rounded-full before:bg-light-800 before:left-[-1em] before:top-0 '>
-              <div className='flex flex-col items-center'>
+              className=' dark:before:bg-theme_dark-sup-sky flex-col items-center gap-3 sm:gap-0 sm:flex-row relative w-full flex justify-between sm:items-start before:absolute before:w-8 before:h-8 before:rounded-full before:bg-light-800 before:left-[-1em] before:top-1'>
+              <div className='px-10 flex flex-col items-center'>
                 <h1 className='dark:text-slate-50 font-black [letter-spacing:2px] text-light-500 text-center w-full text-3xl'>
                   {item.company}
                 </h1>
@@ -59,7 +58,6 @@ const Experience = () => {
             </motion.article>
           ))}
         </div>
-
         <Details />
       </div>
     </section>
