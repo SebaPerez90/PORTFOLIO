@@ -1,12 +1,10 @@
-import { useRef, useEffect, useState, MutableRefObject } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 import Image from 'next/image';
 
-import LanguageButtons from '@/components/Navegation/LanguageButtons';
-
 const ThemeButtons = () => {
-  const iconRef: MutableRefObject<any> = useRef(null);
-  const buttonRef: any = useRef(null);
+  const iconRef = useRef<HTMLImageElement | null>(null);
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
 
   const [theme, setTheme] = useState('light');
 
@@ -32,17 +30,18 @@ const ThemeButtons = () => {
 
   const toggleEfect = () => {
     if (theme === 'dark') {
-      buttonRef.current.style.animation =
+      buttonRef.current!.style.animation =
         'activating-dark-mode 300ms linear 1 forwards';
-      iconRef.current.style.animation =
+      iconRef.current!.style.animation =
         'moon-effect-icon 290ms linear infinite';
       setTimeout(() => {
         toggleTheme();
       }, 320);
     } else {
-      buttonRef.current.style.animation =
+      buttonRef.current!.style.animation =
         'desactivating-dark-mode 300ms linear 1 forwards';
-      iconRef.current.style.animation = 'sun-effect-icon 800ms linear infinite';
+      iconRef.current!.style.animation =
+        'sun-effect-icon 800ms linear infinite';
       setTimeout(() => {
         toggleTheme();
       }, 320);
@@ -83,7 +82,6 @@ const ThemeButtons = () => {
           />
         </div>
       )}
-      <LanguageButtons />
     </div>
   );
 };
