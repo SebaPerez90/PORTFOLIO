@@ -2,7 +2,7 @@ import { useStore } from '@/context/store';
 import { Roboto } from 'next/font/google';
 import { motion } from 'framer-motion';
 import workExperience from '@/data/workExperience.json';
-import Details from './Details';
+// import Details from './Details';
 
 const roboto = Roboto({
   weight: ['900'],
@@ -15,15 +15,20 @@ const Experience = () => {
   return (
     <section
       id='experience-section'
-      className='flex flex-col items-center gap-14'>
+      className='flex flex-col items-center  relative'>
+      <div className='absolute -top-36 flex items-center gap-14'>
+        <span className='bg-light-500 w-44 h-7 [clip-path:ellipse(50%_4%_at_50%_50%)]'></span>
+        <span className='scale-150 text-4xl text-light-500 -top-5 relative'>.</span>
+        <span className='bg-light-500 w-44 h-7 [clip-path:ellipse(50%_4%_at_50%_50%)]'></span>
+      </div>
       <h1
-        className='text-4xl max-[500px]:w-[7em] [letter-spacing:0px] min-[700px]:[letter-spacing:7px] dark:text-zinc-200 text-[#334155] text-center'
+        className='text-4xl max-[500px]:w-[7em] dark:text-zinc-200 text-[#334155] text-center'
         style={roboto.style}>
-        {engLanguageActive ? 'WORK EXPERIENCE 💼' : 'EXPERIENCIA LABORAL 💼'}
+        {engLanguageActive ? 'Experience 💼' : 'Experiencia 💼'}
       </h1>
-      <div className='shadow-[14px_30px_20px_-10px_#0000004f] flex flex-col p-[7em] bg-white rounded-lg dark:bg-theme_dark-main-bg'>
+      <div className='flex flex-col p-[7em] bg-[#e8e8e8] rounded-lg dark:bg-theme_dark-main-bg'>
         <div className='relative work-experience-container z-10 gap-32 flex flex-col before:absolute before:h-[90%] before:top-11 before:w-[1px] before:bg-[#6161619b] max-[900px]:w-auto max-[900px]:m-[0_auto] max-[450px]:translate-x-7 max-[450px]:scale-90'>
-          <div className='dark:bg-theme_dark-main-bg dark:text-theme_dark-sup-sky absolute left-[-1em] flex gap-4 justify-center pt-6 w-36 h-36 bg-white text-6xl font-black z-50 text-light-500 bottom-[36%]'>
+          <div className='dark:bg-theme_dark-main-bg dark:text-theme_dark-sup-sky absolute left-[-1em] flex gap-4 justify-center pt-6 w-36 h-36 bg-[#e8e8e8] text-6xl font-black z-50 text-light-500 bottom-[36%]'>
             <span className='animate-[loading_1s_linear_infinite]'>.</span>
             <span className='animate-[loading_1s_linear_infinite] [animation-delay:200ms]'>
               .
@@ -43,6 +48,7 @@ const Experience = () => {
                 <h1 className='dark:text-slate-50 font-black [letter-spacing:2px] text-light-500 text-center w-full text-3xl'>
                   {item.company}
                 </h1>
+
                 <h2 className='dark:text-theme_dark-sup-pink text-xl font-bold text-[#333333]'>
                   {engLanguageActive ? item.position[0] : item.position[1]}
                 </h2>
@@ -50,7 +56,7 @@ const Experience = () => {
                   {item.date}
                 </span>
               </div>
-              <p className='dark:text-zinc-300 w-[20em] text-sm lg:text-base text-[#333333] font-semibold p-6 bg-[#f3f3f3] border-l-[12px] dark:border-theme_dark-sup-pink dark:bg-theme_dark-box-second border-light-800 border-r-light-600 border-r border-t-light-600 border-t border-b-light-600 border-b dark:border-r-slate-700/50 dark:border-t-slate-700/50 dark:border-b-slate-700/50 rounded-[0_0.3em_0.3em_0]'>
+              <p className='dark:text-zinc-300 w-[20em] text-sm text-[#333333] font-semibold p-6 bg-white border-l-[12px] dark:border-theme_dark-sup-pink dark:bg-theme_dark-box-second border-light-500  dark:border-r-slate-700/50 dark:border-t-slate-700/50 dark:border-b-slate-700/50 rounded-[0_0.3em_0.3em_0]'>
                 {engLanguageActive
                   ? item.tasks_description[0]
                   : item.tasks_description[1]}
@@ -58,7 +64,7 @@ const Experience = () => {
             </motion.article>
           ))}
         </div>
-        <Details />
+        {/* <Details /> */}
       </div>
     </section>
   );

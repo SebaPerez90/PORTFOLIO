@@ -2,8 +2,8 @@
 
 import Hero from '@/components/LandingPage/Hero';
 // import Proyects from '@/components/MyProjects/Proyects';
-// import ContactForm from '@/components/Contact/ContactForm';
-// import Experience from '@/components/Experience-Education/Experience';
+import ContactForm from '@/components/Contact/ContactForm';
+import Experience from '@/components/Experience-Education/Experience';
 // import Education from '@/components/Experience-Education/Education';
 // import Services from '@/components/Services-Skills/Services';
 // import Footer from '@/components/Foot/Footer';
@@ -14,12 +14,10 @@ export default function Home() {
   return (
     <>
       <NavLinks />
-      <main className='flex flex-col justify-around items-center bg-[#dedede] dark:bg-[#313643] overflow-x-hidden'>
-        {/* <MenuBtn /> */}
-
+      <main className='gap-48 flex flex-col justify-around items-center bg-[#e8e8e8] dark:bg-[#313643] overflow-x-hidden'>
         <Hero />
 
-        {/* <Experience /> */}
+        <Experience />
 
         {/* <About /> */}
 
@@ -29,7 +27,7 @@ export default function Home() {
 
         {/* <Services /> */}
 
-        {/* <ContactForm /> */}
+        <ContactForm />
 
         {/* <Footer /> */}
       </main>

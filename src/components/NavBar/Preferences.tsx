@@ -30,11 +30,11 @@ const Preferences = () => {
         <span className='absolute -left-3 top-7 text-[#333333be] dark:text-slate-200 opacity-0 font-semibold text-xs'>
           {engLanguageActive ? 'settings' : 'ajustes'}
         </span>
-        <IoMdSettings />
+        <IoMdSettings className='dark:text-slate-50' />
       </div>
       <div
         ref={menuRef}
-        className='flex flex-col justify-center items-center gap-4 opacity-0 duration-200 border h-36 w-36 absolute -right-14 top-8 z-50 rounded-lg bg-slate-100'>
+        className='flex flex-col justify-center items-center gap-4 opacity-0 duration-200 h-36 w-36 absolute -right-14 top-8 z-50 rounded-lg bg-white dark:bg-theme_dark-box-thir'>
         <ThemeButtons />
         <LanguageButtons />
       </div>

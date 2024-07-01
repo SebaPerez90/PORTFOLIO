@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useStore } from '@/context/store';
-
 import { FaRegFilePdf } from 'react-icons/fa';
 import { MdDownload } from 'react-icons/md';
+import Link from 'next/link';
 
 const DownloadBtn = () => {
   const [isDownloaded, setIsDownloaded] = useState(false);
-
   const { engLanguageActive } = useStore();
 
   //EXPAND AND COLLAPSE THE CV´S OPTIONS
@@ -32,8 +31,10 @@ const DownloadBtn = () => {
 
       {
         engLanguageActive
-          ? (download_button.innerHTML = `<span class='text-[#22c55e] py-[0.15rem]'>Descargado ✔️</span>`)
-          : (download_button.innerHTML = `<span class='text-[#22c55e] py-[0.15rem]'>Descargado ✔️</span>`);
+          ? (download_button.innerHTML =
+              '<span class="text-[#22c55e] py-[0.15rem]">Descargado ✔️</span>')
+          : (download_button.innerHTML =
+              '<span class="text-[#22c55e] py-[0.15rem]">Descargado ✔️</span>');
       }
     }
   };
@@ -45,9 +46,12 @@ const DownloadBtn = () => {
 
   return (
     <div className='z-50 flex items-center gap-4'>
-      <span className='dark:bg-green-500 cursor-default text-xs bg-green-700 rounded-sm py-3 w-max text-white font-bold px-5'>
-        OPEN TO WORK
-      </span>
+      <Link
+        className='bg-light-500 p-3 text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-theme_dark-sup-sky'
+        href={'#contact-section'}
+        aria-label='contact-link'>
+        {engLanguageActive ? 'Get in Touch' : 'Contáctame'}
+      </Link>
 
       <div className='relative flex flex-col z-50'>
         <button
@@ -55,7 +59,7 @@ const DownloadBtn = () => {
           onClick={changingVisibility}
           disabled={isDownloaded}
           aria-label='visibility-switch-btn'
-          className='border-light-500 text-light-500 hover:bg-light-500/10 flex items-center gap-1 w-36 justify-center text-xs border-2 dark:border-theme_dark-sup-sky dark:text-theme_dark-sup-sky py-2 rounded-sm font-bold overflow-hidden dark:hover:bg-theme_dark-sup-sky/30 duration-200 hover:duration-200'>
+          className='border-slate-600 rounded-md text-xs text-slate-600 flex items-center gap-1 w-36 justify-center border dark:border-theme_dark-sup-sky dark:text-theme_dark-sup-sky py-2 font-bold overflow-hidden dark:hover:bg-theme_dark-sup-sky/30 duration-200 hover:duration-200 active:scale-95 hover:bg-light-500/5'>
           {engLanguageActive ? 'Download CV' : 'Descargar CV'}
           <MdDownload className='text-xl' />
         </button>
@@ -66,7 +70,7 @@ const DownloadBtn = () => {
         <div
           id='hidden-element'
           className='hidden absolute bottom-[-7.5em] left-0'>
-          <ul className='flex flex-col gap-5 py-4 px-3 border-2 rounded-md dark:border-slate-700/50 dark:bg-theme_dark-box-second bg-[#ececec]'>
+          <ul className='flex flex-col gap-5 py-4 px-3 border-2 rounded-md dark:border-slate-700/50 dark:bg-theme_dark-box-second bg-white'>
             <li onClick={() => setIsDownloaded(!isDownloaded)}>
               <a
                 aria-label='cv-link'

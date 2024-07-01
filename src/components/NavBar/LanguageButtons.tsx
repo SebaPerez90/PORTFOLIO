@@ -19,29 +19,34 @@ const LanguageButtons = () => {
   };
 
   return (
-    <button
-      aria-label='switch-language-btn'
-      onClick={toggleEfect}>
-      {engLanguageActive ? (
-        <Image
-          src={spanish_icon}
-          alt='english-icon-reference'
-          priority
-          width={35}
-          height={35}
-          ref={buttonRef}
-        />
-      ) : (
-        <Image
-          src={english_icon}
-          alt='icon-reference'
-          priority
-          width={35}
-          height={35}
-          ref={buttonRef}
-        />
-      )}
-    </button>
+    <div className='flex items-center gap-1'>
+      <span className='text-[#333333be] dark:text-slate-200 font-bold text-xs'>
+        {engLanguageActive ? 'ENS' : 'ESP'}
+      </span>
+      <button
+        aria-label='switch-language-btn'
+        onClick={toggleEfect}>
+        {engLanguageActive ? (
+          <Image
+            src={spanish_icon}
+            alt='english-icon-reference'
+            priority
+            width={35}
+            height={35}
+            ref={buttonRef}
+          />
+        ) : (
+          <Image
+            src={english_icon}
+            alt='icon-reference'
+            priority
+            width={35}
+            height={35}
+            ref={buttonRef}
+          />
+        )}
+      </button>
+    </div>
   );
 };
 
