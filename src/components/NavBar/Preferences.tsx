@@ -37,7 +37,10 @@ const Preferences = () => {
       </div>
       <div
         ref={menuRef}
-        className='flex flex-col justify-center items-center gap-4 opacity-0 duration-200 h-36 w-36 absolute -right-14 top-8 z-50 rounded-lg bg-white dark:bg-theme_dark-box-thir'>
+        className='flex flex-col justify-center items-center gap-2 opacity-0 duration-200 h-36 w-36 absolute -right-14 top-8 z-50 rounded-lg bg-white dark:bg-theme_dark-box-thir'>
+        <p className='text-xs font-bold text-[#333333be] dark:text-slate-50'>
+          {engLanguageActive ? 'Prerences:' : 'Prefecencias:'}
+        </p>
         <ThemeButtons />
         <LanguageButtons />
       </div>

@@ -16,11 +16,6 @@ const Experience = () => {
     <section
       id='experience-section'
       className='flex flex-col items-center  relative'>
-      <div className='absolute -top-36 flex items-center gap-14'>
-        <span className='bg-light-500 w-44 h-7 [clip-path:ellipse(50%_4%_at_50%_50%)]'></span>
-        <span className='scale-150 text-4xl text-light-500 -top-5 relative'>.</span>
-        <span className='bg-light-500 w-44 h-7 [clip-path:ellipse(50%_4%_at_50%_50%)]'></span>
-      </div>
       <h1
         className='text-4xl max-[500px]:w-[7em] dark:text-zinc-200 text-[#334155] text-center'
         style={roboto.style}>

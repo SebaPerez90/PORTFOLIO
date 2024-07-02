@@ -23,41 +23,43 @@ const Proyects = () => {
       </h1>
       <div className='flex-wrap flex flex-row justify-center w-[80%] gap-24'>
         {projects.map((element, index) => (
-          <div
-            key={index}
-            className='flex flex-col w-[25em] h-[18em] justify-evenly p-[1em_2em] rounded-md bg-white border border-slate-200 [box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)]'>
-            <div>
-              <h1 className='font-bold text-center text-xl'>{element.title}</h1>
-              <span className='flex justify-center gap-4 mt-4'>
-                {element.skills.map((element, index) => (
-                  <span
-                    key={index}
-                    className='border font-bold text-xs rounded-md p-1 border-slate-600 text-[#404040ce]'>
-                    {element}
-                  </span>
-                ))}
-              </span>
-            </div>
-            <p className='font-medium text-[#2f2f2fe3] text-sm'>
-              {engLanguageActive
-                ? element.descriptionEN
-                : element.descriptionES}
-            </p>
-            <div className='flex justify-center gap-12'>
-              <Link
-                className='bg-light-500 p-3 text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-theme_dark-sup-sky flex items-center'
-                href={element.repository}
-                aria-label='code-link'>
-                <PiGithubLogoFill className='mr-1' />
-                Code
-              </Link>
-              <Link
-                className='bg-light-500 p-3 text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-theme_dark-sup-sky flex items-center'
-                href={element.deploy}
-                aria-label='deploy-link'>
-                <FaLink className='mr-1' />
-                Deploy
-              </Link>
+          <div key={index}>
+            <div className='flex flex-col w-[22em] h-[18em] justify-evenly p-[1em_2em] rounded-md bg-white border border-slate-200 [box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] dark:bg-theme_dark-main-bg dark:border-slate-700'>
+              <div>
+                <h1 className='font-bold text-center text-xl dark:text-theme_dark-sup-sky'>
+                  {element.title}
+                </h1>
+                <span className='flex justify-center gap-4 mt-4'>
+                  {element.skills.map((element, index) => (
+                    <span
+                      key={index}
+                      className='border font-bold text-xs rounded-md p-1 border-slate-600 text-[#404040ce] dark:text-slate-400'>
+                      {element}
+                    </span>
+                  ))}
+                </span>
+              </div>
+              <p className='font-medium text-[#2f2f2fe3] text-sm dark:text-slate-50'>
+                {engLanguageActive
+                  ? element.descriptionEN
+                  : element.descriptionES}
+              </p>
+              <div className='flex justify-center gap-12'>
+                <Link
+                  className='bg-light-500 p-3 text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-theme_dark-sup-sky flex items-center'
+                  href={element.repository}
+                  aria-label='code-link'>
+                  <PiGithubLogoFill className='mr-1' />
+                  Code
+                </Link>
+                <Link
+                  className='bg-light-500 p-3 text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-theme_dark-sup-sky flex items-center'
+                  href={element.deploy}
+                  aria-label='deploy-link'>
+                  <FaLink className='mr-1' />
+                  Deploy
+                </Link>
+              </div>
             </div>
           </div>
         ))}

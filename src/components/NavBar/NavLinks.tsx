@@ -5,22 +5,22 @@ import { useEffect } from 'react';
 
 const navLinks = [
   {
-    titleES: 'Experiencia',
-    titleEN: 'Experience',
-    label: 'experience-link',
-    url: '#experience-section',
+    titleES: 'Inicio',
+    titleEN: 'Home',
+    label: 'home-link',
+    url: '/',
   },
   {
-    titleES: 'Sobre mi',
-    titleEN: 'About',
+    titleES: 'Contacto',
+    titleEN: 'Contact',
+    label: 'contact-link',
+    url: '/contact',
+  },
+  {
+    titleES: 'About',
+    titleEN: 'Sobre mi',
     label: 'about-link',
-    url: '#about-section',
-  },
-  {
-    titleES: 'Proyectos',
-    titleEN: 'Projects',
-    label: 'projects-link',
-    url: '#projects-section',
+    url: '/about',
   },
 ];
 

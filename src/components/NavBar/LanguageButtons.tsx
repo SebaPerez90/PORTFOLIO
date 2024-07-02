@@ -19,9 +19,9 @@ const LanguageButtons = () => {
   };
 
   return (
-    <div className='flex items-center gap-1'>
-      <span className='text-[#333333be] dark:text-slate-200 font-bold text-xs'>
-        {engLanguageActive ? 'ENS' : 'ESP'}
+    <div className='flex items-center'>
+      <span className='text-[#333333be] p-1 border border-slate-600 rounded-md dark:text-slate-200 font-bold text-xs'>
+        {engLanguageActive ? 'English' : 'Español'}
       </span>
       <button
         aria-label='switch-language-btn'
