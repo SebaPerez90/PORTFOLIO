@@ -4,7 +4,7 @@ import { FaRegFilePdf } from 'react-icons/fa';
 import { MdDownload } from 'react-icons/md';
 import Link from 'next/link';
 
-const DownloadBtn = () => {
+const HeroButtons = () => {
   const [isDownloaded, setIsDownloaded] = useState(false);
   const { engLanguageActive } = useStore();
 
@@ -100,4 +100,4 @@ const DownloadBtn = () => {
   );
 };
 
-export default DownloadBtn;
+export default HeroButtons;

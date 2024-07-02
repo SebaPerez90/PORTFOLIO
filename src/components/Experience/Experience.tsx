@@ -1,7 +1,7 @@
 import { useStore } from '@/context/store';
 import { Roboto } from 'next/font/google';
 import { motion } from 'framer-motion';
-import workExperience from '@/data/workExperience.json';
+import experience from '@/utils/experience.json';
 // import Details from './Details';
 
 const roboto = Roboto({
@@ -24,7 +24,7 @@ const Experience = () => {
       <h1
         className='text-4xl max-[500px]:w-[7em] dark:text-zinc-200 text-[#334155] text-center'
         style={roboto.style}>
-        {engLanguageActive ? 'Experience 💼' : 'Experiencia 💼'}
+        {engLanguageActive ? 'Experience.' : 'Experiencia.'}
       </h1>
       <div className='flex flex-col p-[7em] bg-[#e8e8e8] rounded-lg dark:bg-theme_dark-main-bg'>
         <div className='relative work-experience-container z-10 gap-32 flex flex-col before:absolute before:h-[90%] before:top-11 before:w-[1px] before:bg-[#6161619b] max-[900px]:w-auto max-[900px]:m-[0_auto] max-[450px]:translate-x-7 max-[450px]:scale-90'>
@@ -37,7 +37,7 @@ const Experience = () => {
               .
             </span>
           </div>
-          {workExperience.map((item, key) => (
+          {experience.map((item, key) => (
             <motion.article
               transition={{ delay: 0.2, staggerChildren: 0.3, duration: 0.7 }}
               initial={{ opacity: 0 }}

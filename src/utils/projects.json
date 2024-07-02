@@ -1,0 +1,67 @@
+[
+  {
+    "title": "Weather App",
+    "descriptionES": "Aplicación que proporciona clima actual y pronósticos, incluyendo temperatura y condiciones climáticas, con una interfaz intuitiva para móviles y escritorio.",
+    "descriptionEN": "An app providing current weather and forecasts, including temperature and conditions, with an intuitive interface for mobile and desktop.",
+    "repository": "https://github.com/SebaPerez90/WeatherApp",
+    "deploy": "https://sebaperez90.github.io/WeatherApp/",
+    "skills": ["React", "Tailwind", "Javascript"],
+    "screen_shoots": [
+      "/images/weather-app/1.webp",
+      "/images/weather-app/2.webp",
+      "/images/weather-app/3.webp"
+    ]
+  },
+  {
+    "title": "Rock Papper Scissors",
+    "descriptionES": "Versión digital del juego clásico. Los usuarios juegan contra la computadora, eligiendo su opción y viendo el resultado en pantalla. Interfaz sencilla para móviles y escritorio.",
+    "descriptionEN": "Digital version of the classic game. Users play against the computer, choosing their option and seeing the result on screen. Simple interface for mobile and desktop.",
+    "repository": "https://github.com/SebaPerez90/Rock-Papper-Scissors",
+    "deploy": "https://sebaperez90.github.io/Rock-Papper-Scissors/",
+    "skills": ["React", "Tailwind", "Javascript"],
+    "screen_shoots": [
+      "/images/rock-papper-scissors/1.webp",
+      "/images/rock-papper-scissors/2.webp",
+      "/images/rock-papper-scissors/3.webp"
+    ]
+  },
+  {
+    "title": "ToDo List",
+    "descriptionES": "Aplicación de lista de tareas para organizar actividades diarias. Permite agregar, eliminar y marcar tareas como completadas",
+    "descriptionEN": "Task list app to organize daily activities. Allows adding, deleting, and marking tasks as completed.",
+    "repository": "https://github.com/SebaPerez90/ToDo-List",
+    "deploy": "https://sebaperez90.github.io/ToDo-List/",
+    "skills": ["React", "Tailwind", "Javascript"],
+    "screen_shoots": [
+      "/images/todo-app/1.webp",
+      "/images/todo-app/2.webp",
+      "/images/todo-app/3.webp"
+    ]
+  },
+  {
+    "title": "Interactive Card Details",
+    "descriptionES": "Aplicación que valida la identidad de una tarjeta en tiempo real. Los usuarios completan un formulario y ven los detalles de la tarjeta actualizarse instantáneamente.",
+    "descriptionEN": "App that validates card identity in real time. Users fill out a form and see the card details update instantly.",
+    "repository": "https://github.com/SebaPerez90/Interactive-Card-Details",
+    "deploy": "https://sebaperez90.github.io/Interactive-Card-Details/",
+    "skills": ["React", "Javascript", "Sass"],
+    "screen_shoots": [
+      "/images/card-details/1.webp",
+      "/images/card-details/2.webp",
+      "/images/card-details/3.webp"
+    ]
+  },
+  {
+    "title": "Calculator",
+    "descriptionES": "Este proyecto es una calculadora desarrollada utilizando React. Ofrece una interfaz intuitiva que permite a los usuarios realizar operaciones matemáticas básicas de manera eficiente.",
+    "descriptionEN": "This project is a calculator developed using React. It offers an intuitive interface that allows users to perform basic mathematical operations efficiently",
+    "repository": "https://github.com/SebaPerez90/Calculator-React",
+    "deploy": "https://calculator-react-js-sable.vercel.app/",
+    "skills": ["React", "Javascript", "CSS"],
+    "screen_shoots": [
+      "/images/calculator/1.webp",
+      "/images/calculator/2.webp",
+      "/images/calculator/3.webp"
+    ]
+  }
+]

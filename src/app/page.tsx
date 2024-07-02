@@ -1,14 +1,12 @@
 'use client';
 
-import Hero from '@/components/LandingPage/Hero';
-// import Proyects from '@/components/MyProjects/Proyects';
-import ContactForm from '@/components/Contact/ContactForm';
-import Experience from '@/components/Experience-Education/Experience';
-// import Education from '@/components/Experience-Education/Education';
-// import Services from '@/components/Services-Skills/Services';
-// import Footer from '@/components/Foot/Footer';
-// import MenuBtn from '@/components/Navegation/MenuBtn';
+import Hero from '@/components/Landing/Hero';
+import Proyects from '@/components/Proyects';
+import Experience from '@/components/Experience/Experience';
 import NavLinks from '@/components/NavBar/NavLinks';
+import Skills from '@/components/Skills';
+import Footer from '@/components/Footer';
+import Services from '@/components/Services';
 
 export default function Home() {
   return (
@@ -16,19 +14,8 @@ export default function Home() {
       <NavLinks />
       <main className='gap-48 flex flex-col justify-around items-center bg-[#e8e8e8] dark:bg-[#313643] overflow-x-hidden'>
         <Hero />
-
         <Experience />
-
-        {/* <About /> */}
-
-        {/* <Education /> */}
-
-        {/* <Proyects /> */}
-
-        {/* <Services /> */}
-
-        <ContactForm />
-
+        <Services />
         {/* <Footer /> */}
       </main>
     </>

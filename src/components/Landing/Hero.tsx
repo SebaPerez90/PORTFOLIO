@@ -1,7 +1,7 @@
 import { useStore } from '@/context/store';
 import { Roboto } from 'next/font/google';
 import { motion } from 'framer-motion';
-import DownloadBtn from '@/components/LandingPage/DownloadBtn';
+import HeroButtons from '@/components/Landing/HeroButtons';
 import Avatar from './Avatar';
 
 const roboto = Roboto({
@@ -52,7 +52,7 @@ const Hero = () => {
             : 'Soy un desarrollador Fullstack con mayor enfoque en el area Frontend, vivo en Buenos Aires. Puedo darle vida a tu marca con mi ayuda.'}
         </p>
 
-        <DownloadBtn />
+        <HeroButtons />
       </motion.article>
       <Avatar />
     </section>

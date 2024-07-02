@@ -55,9 +55,9 @@ const Contact = () => {
       id='contact-section'
       className='gap-16 flex flex-col items-center justify-around w-full'>
       <h1
-        className='dark:text-zinc-50 text-center text-4xl min-[500px]:[letter-spacing:10px] text-[#334155]'
+        className='dark:text-zinc-50 text-center text-4xl text-[#334155]'
         style={roboto.style}>
-        {engLanguageActive ? 'CONTACT ME' : 'CONTÁCTAME'}🤝
+        {engLanguageActive ? 'Get in Touch.' : 'Contáctame.'}
       </h1>
       <section className='overflow-hidden bg-white  py-9 max-[900px]:w-[90%] w-[55em] duration-300 relative pl-12 md:py-6 rounded-lg flex h-auto justify-around dark:bg-theme_dark-main-bg'>
         <AnimatePresence>

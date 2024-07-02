@@ -22,7 +22,10 @@ const Preferences = () => {
   };
 
   return (
-    <div className='relative'>
+    <div className='relative flex items-center gap-2'>
+      <p className='text-xs font-bold text-[#2f2f2fe3]'>
+        {engLanguageActive ? 'About me' : 'Acerca de mi'}
+      </p>
       <div
         className='cursor-pointer relative after:absolute after:-left-3 after:-bottom-3 after:w-10 after:h-10 dark:hover:after:bg-[#ffffff2a] hover:after:bg-[#0000001a] after:duration-150 after:rounded-full active:scale-90 after:z-10
           social-network'
