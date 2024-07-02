@@ -1,0 +1,20 @@
+[
+  {
+    "contactENG": "Address",
+    "contactESP": "Dirección",
+    "content": "Berazategui, Buenos Aires",
+    "icon": "location"
+  },
+  {
+    "contactENG": "Email",
+    "contactESP": "Correo Electrónico",
+    "content": "sebastian.perez.jobs@gmail.com",
+    "icon": "email"
+  },
+  {
+    "contactENG": "Phone",
+    "contactESP": "Teléfono",
+    "content": "+54 1132830604",
+    "icon": "phone"
+  }
+]

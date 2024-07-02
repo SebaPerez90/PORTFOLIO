@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Social = () => {
   return (
-    <ul className='flex gap-12'>
+    <ul className='flex gap-12 z-50'>
       <Link
         href={'https://github.com/SebaPerez90'}
         target='_blank'

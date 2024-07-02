@@ -15,9 +15,9 @@ const Proyects = () => {
   return (
     <section
       id='projects-section'
-      className='flex flex-col items-center gap-24'>
+      className='flex flex-col items-center gap-24 '>
       <h1
-        className='dark:text-slate-50 text-4xl font-black text-[#334155]'
+        className=' dark:text-slate-50 text-4xl font-black text-[#334155] text-left'
         style={roboto.style}>
         {engLanguageActive ? 'Projects.' : 'Proyectos.'}
       </h1>

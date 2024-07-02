@@ -37,11 +37,11 @@ const Services = () => {
         style={roboto.style}>
         {engLanguageActive ? 'My Services.' : 'Mis Servicios.'}
       </h1>
-      <div className='mt-10 grid grid-cols-1 md:grid-cols-2 w-full gap-2 items-center'>
+      <div className=' mt-10 grid grid-cols-1 md:grid-cols-2 w-full gap-4 items-center'>
         {services.map((element, index) => (
           <div
             key={index}
-            className='border dark:border-slate-700 h-40 w-[22em] rounded-md bg-white justify-self-center p-4 text-center flex flex-col justify-center gap-4 px-6 relative dark:bg-theme_dark-main-bg'>
+            className='border-b-light-800 border-b-4 dark:border-b-theme_dark-sup-pink border dark:border-slate-700 h-40 w-[22em] rounded-md bg-white justify-self-center p-4 text-center flex flex-col justify-center gap-4 px-6 relative dark:bg-theme_dark-main-bg'>
             <span className='dark:text-theme_dark-sup-sky text-light-500 text-4xl absolute top-2 left-2'>
               {renderIcon(element.icon)}
             </span>

@@ -277,49 +277,50 @@ body {
   }
 
   @keyframes bouncing {
-    0 {
-      transform: translate(0em, 15em) scale(1.2);
+    10% {
+      transform: translate(6em, 20em) scale(1.2);
     }
     25% {
-      transform: translate(-2em, -10em) scale(2.5);
+      transform: translate(2em, 16em) scale(4.5);
     }
     70% {
-      transform: translate(-10em, 7em) scale(1.5);
+      transform: translate(-10em, 7em) scale(2);
     }
     100% {
-      transform: translate(-6em, 28em) scale(3);
+      transform: translate(-6em, 11em) scale(3);
     }
   }
 
   @keyframes bouncing2 {
     0% {
-      transform: translate(1em, 12em) scale(1.2);
+      transform: translate(11em, 6em) scale(1.6);
     }
     25% {
-      transform: translate(8.5em, 6em) scale(1.2);
+      transform: translate(28em, 20em) scale(1);
     }
     70% {
-      transform: translate(2em, -5em) scale(2.5);
+      transform: translate(37em, 0em) scale(3);
     }
     100% {
-      transform: translate(5em, 15em) scale(0.8);
+      transform: translate(60em, 16em) scale(1.8);
     }
   }
 
   @keyframes bouncing3 {
-    0% {
-      transform: translate(2em, -5em) scale(1.5) rotate('360deg');
+    10% {
+      transform: translate(0em, 25em) scale(1.5);
     }
     25% {
-      transform: translate(-6em, -20em) scale(3);
-      filter: blur(40px);
+      transform: translate(-26em, 12em) scale(3);
     }
     70% {
-      transform: translate(1em, -8em) scale(1.2);
+      transform: translate(-40em, 18em) scale(1.2);
     }
     100% {
-      transform: translate(-5em, -26em) scale(2);
+      transform: translate(-55em, 5em) scale(2);
     }
+    /* 
+    */
   }
 
   @keyframes desactivating-dark-mode {
@@ -362,19 +363,5 @@ body {
     to {
       transform: translateY(0.5em);
     }
-  }
-}
-
-.pepe {
-  position: relative;
-
-  &::after {
-    position: absolute;
-    content: '';
-    background: red;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
   }
 }

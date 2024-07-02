@@ -5,7 +5,7 @@ import Proyects from '@/components/Proyects';
 import Experience from '@/components/Experience';
 import NavLinks from '@/components/NavBar/NavLinks';
 import Skills from '@/components/Skills';
-import Footer from '@/components/Footer';
+import Footerr from '@/components/Footerr';
 import Services from '@/components/Services';
 
 export default function Home() {
@@ -18,6 +18,7 @@ export default function Home() {
         <Proyects />
         <Skills />
         <Services />
+        <Footerr />
       </main>
     </>
   );

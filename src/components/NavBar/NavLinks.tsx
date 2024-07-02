@@ -51,11 +51,11 @@ const NavLinks = () => {
   return (
     <header
       id='nav-bar'
-      className='flex justify-between w-full fixed left-0 top-0 z-50 p-[1em_4em] bg-white dark:bg-[#0000008e]'>
-      <span className='dark:text-slate-200 text-[#333333be] font-bold text-sm'>
+      className='flex justify-between w-full fixed left-0 top-0 z-50 p-[1em_4em] bg-[#fbfbfb8d] dark:bg-[#00000068]'>
+      <span className='xl:text-lg dark:text-slate-200 text-[#333333be] font-bold text-sm'>
         SebaPerez.
       </span>
-      <nav className='flex gap-7 dark:text-slate-200 text-[#333333be] font-bold text-sm'>
+      <nav className='xl:text-lg flex gap-7 dark:text-slate-200 text-[#333333be] font-bold text-sm'>
         {navLinks.map((element, index) => (
           <Link
             className=''
