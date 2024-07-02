@@ -56,7 +56,7 @@ const Services = () => {
           </div>
         ))}
       </div>
-      <div className='mt- flex flex-col items-center gap-3'>
+      <div className='mt-4 flex flex-col items-center gap-3'>
         <p className='dark:text-slate-50 text-3xl font-semibold text-[#333333e3]'>
           {engLanguageActive
             ? 'Bring your brand to Life!'
