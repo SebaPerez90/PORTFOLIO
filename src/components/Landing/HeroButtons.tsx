@@ -32,9 +32,9 @@ const HeroButtons = () => {
       {
         engLanguageActive
           ? (download_button.innerHTML =
-              '<span class="text-[#22c55e] py-[0.15rem]">Descargado ✔️</span>')
+              '<span class="text-[#22c55e] py-[0.15rem]">Downloaded</span>')
           : (download_button.innerHTML =
-              '<span class="text-[#22c55e] py-[0.15rem]">Descargado ✔️</span>');
+              '<span class="text-[#22c55e] py-[0.15rem]">Descargado</span>');
       }
     }
   };
@@ -47,7 +47,7 @@ const HeroButtons = () => {
   return (
     <div className='z-50 flex items-center gap-4'>
       <Link
-        className='bg-light-500 p-3 text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-theme_dark-sup-sky'
+        className='bg-light-500 p-3 w-max text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-theme_dark-sup-sky'
         href={'#contact-section'}
         aria-label='contact-link'>
         {engLanguageActive ? 'Get in Touch' : 'Contáctame'}
@@ -69,7 +69,7 @@ const HeroButtons = () => {
 
         <div
           id='hidden-element'
-          className='hidden absolute bottom-[-7.5em] left-0'>
+          className='z-50 hidden absolute bottom-[-7.5em] left-0'>
           <ul className='flex flex-col gap-5 py-4 px-3 border-2 rounded-md dark:border-slate-700/50 dark:bg-theme_dark-box-second bg-white'>
             <li onClick={() => setIsDownloaded(!isDownloaded)}>
               <a

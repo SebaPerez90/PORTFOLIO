@@ -365,3 +365,29 @@ body {
     }
   }
 }
+
+@media (640px > width) {
+  .avatar-container {
+    position: relative;
+    right: -2em;
+    > :nth-child(2) {
+      flex-direction: column;
+      span {
+        display: none;
+      }
+    }
+  }
+}
+@media (500px > width) {
+  .avatar-container {
+    width: 100%;
+    align-items: start;
+    padding-left: 2em;
+    > :nth-child(2) {
+      flex-direction: row;
+      span {
+        display: block;
+      }
+    }
+  }
+}

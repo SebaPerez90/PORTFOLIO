@@ -22,7 +22,7 @@ const Skills = () => {
         {skills.map((element, index) => (
           <div
             key={index}
-            className='dark:border-slate-700 dark:bg-theme_dark-main-bg bg-white border border-slate-200 [box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] w-[25em] flex flex-col items-center flex-wrap gap-6 px-6 py-9 rounded-md'>
+            className='dark:border-slate-700 dark:bg-theme_dark-main-bg bg-white border border-slate-200 [box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] w-[20rem] sm:w-[25em] flex flex-col items-center flex-wrap gap-6 px-6 py-9 rounded-md'>
             <h2 className='dark:text-theme_dark-sup-sky font-extrabold text-light-500 text-2xl'>
               {element.field}
             </h2>
@@ -38,7 +38,7 @@ const Skills = () => {
                 : element.skillsEsp.map((element, index) => (
                     <li
                       key={index}
-                      className='border font-bold text-xs rounded-md p-1 border-slate-600 text-[#404040ce]'>
+                      className='border font-bold text-xs rounded-md p-1 border-slate-600 text-[#404040ce] dark:text-slate-400 relative before:absolute before:w-[0.5em] before:h-[0.5em] before:-left-2 before:bottom-2 before:bg-light-800 before:rounded-full'>
                       {element}
                     </li>
                   ))}

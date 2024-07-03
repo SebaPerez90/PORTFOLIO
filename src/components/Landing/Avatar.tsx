@@ -4,8 +4,8 @@ import Social from './Social';
 
 const Avatar = () => {
   return (
-    <div className='z-40 flex flex-col items-center gap-8'>
-      <div className='rounded-[50%] h-[11em] w-[11em] xl:h-[15em] xl:w-[15em] border-4 border-light-500/50 dark:border-theme_dark-sup-pink'>
+    <div className='z-30 flex flex-col items-center gap-8 avatar-container'>
+      <div className='max-[500px]:hidden rounded-[50%] h-[8em] w-[8em] sm:h-[11em] sm:w-[11em] xl:h-[15em] xl:w-[15em] border-4 border-light-500/50 dark:border-theme_dark-sup-pink'>
         <Image
           src={profile_image}
           alt='avatar_profile'
