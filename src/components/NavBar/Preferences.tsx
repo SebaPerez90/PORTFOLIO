@@ -24,13 +24,13 @@ const Preferences = () => {
   return (
     <div className='xl:scale-125 relative flex items-center gap-2'>
       <div
-        className='cursor-pointer relative after:absolute after:-left-3 after:-bottom-3 after:w-10 after:h-10 dark:hover:after:bg-[#ffffff2a] hover:after:bg-[#0000001a] after:duration-150 after:rounded-full active:scale-90 after:z-10
+        className='cursor-pointer relative after:absolute after:-left-2 after:-bottom-2 after:w-10 after:h-10 dark:hover:after:bg-[#ffffff2a] hover:after:bg-[#0000001a] after:duration-150 after:rounded-full active:scale-90 after:z-10
           social-network'
         onClick={expandSettings}>
-        <span className='absolute -left-3 top-7 text-[#333333be] dark:text-slate-200 opacity-0 font-semibold text-xs'>
+        <span className='absolute -left-2 top-9 text-[#333333be] dark:text-slate-200 opacity-0 font-semibold text-xs'>
           {engLanguageActive ? 'settings' : 'ajustes'}
         </span>
-        <IoMdSettings className=' dark:text-slate-50' />
+        <IoMdSettings className='text-light-500 text-2xl dark:text-theme_dark-sup-pink' />
       </div>
       <div
         ref={menuRef}

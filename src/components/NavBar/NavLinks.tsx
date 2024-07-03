@@ -58,7 +58,7 @@ const NavLinks = () => {
       <nav className='xl:text-lg flex gap-7 dark:text-slate-200 text-[#333333be] font-bold text-sm'>
         {navLinks.map((element, index) => (
           <Link
-            className=''
+            className='duration-200 hover:duration-200 hover:text-light-500 dark:hover:text-theme_dark-sup-pink'
             key={index}
             href={element.url}
             aria-label={element.label}>

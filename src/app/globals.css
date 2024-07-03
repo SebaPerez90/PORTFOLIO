@@ -31,11 +31,11 @@
   }
   .scroll-bar-light {
     &::-webkit-scrollbar {
-      background-color: #dedede;
+      background-color: #e8e8e8;
       width: 14px;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: #3655b3;
+      background-color: #4d4dff;
     }
   }
   .scroll-bar-dark {
@@ -319,8 +319,6 @@ body {
     100% {
       transform: translate(-55em, 5em) scale(2);
     }
-    /* 
-    */
   }
 
   @keyframes desactivating-dark-mode {
