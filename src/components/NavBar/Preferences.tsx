@@ -3,6 +3,7 @@ import { IoMdSettings } from 'react-icons/io';
 import { useStore } from '@/context/store';
 import ThemeButtons from './ThemeButtons';
 import LanguageButtons from './LanguageButtons';
+import HamburguerMenu from './HamburguerMenu';
 
 const Preferences = () => {
   const [visibility, setVisibility] = useState<boolean>(false);
@@ -34,13 +35,14 @@ const Preferences = () => {
       </div>
       <div
         ref={menuRef}
-        className='flex flex-col justify-center items-center gap-2 opacity-0 duration-200 h-36 w-36 absolute -right-14 top-8 xl:top-9 z-50 rounded-lg rounded-t-none bg-white dark:bg-theme_dark-box-thir border border-light-500/60 border-t-0 dark:border-theme_dark-sup-pink/50'>
+        className='flex flex-col justify-center items-center gap-2 opacity-0 duration-200 h-36 w-36 absolute -right-14 top-8 xl:top-9 z-30 rounded-lg rounded-t-none bg-white dark:bg-theme_dark-box-thir border border-light-500/60 border-t-0 dark:border-theme_dark-sup-pink/50'>
         <p className='text-xs font-bold text-[#333333be] dark:text-slate-50'>
           {engLanguageActive ? 'Prerences:' : 'Prefecencias:'}
         </p>
         <ThemeButtons />
         <LanguageButtons />
       </div>
+      <HamburguerMenu />
     </div>
   );
 };

@@ -33,7 +33,7 @@ const Hero = () => {
         viewport={{ once: true }}
         className='max-[500px]:w-[80%]  w-[50%] md:w-[32em] flex flex-col items-start gap-4 z-40'>
         <span className='dark:text-slate-200 text-[#333333be] font-semibold translate-y-2'>
-          {engLanguageActive ? 'Hey, I´m Seba👋' : 'Hola!, mi nombre es Seba👋'}
+          {engLanguageActive ? 'Hey! I´m Seba👋' : 'Hola! mi nombre es Seba👋'}
         </span>
         <h1
           style={roboto.style}
