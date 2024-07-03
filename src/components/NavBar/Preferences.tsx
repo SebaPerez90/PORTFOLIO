@@ -35,10 +35,7 @@ const Preferences = () => {
       </div>
       <div
         ref={menuRef}
-        className='flex flex-col justify-center items-center gap-2 opacity-0 duration-200 h-36 w-36 absolute -right-14 top-8 xl:top-9 z-30 rounded-lg rounded-t-none bg-white dark:bg-theme_dark-box-thir border border-light-500/60 border-t-0 dark:border-theme_dark-sup-pink/50'>
-        <p className='text-xs font-bold text-[#333333be] dark:text-slate-50'>
-          {engLanguageActive ? 'Prerences:' : 'Prefecencias:'}
-        </p>
+        className='flex flex-col justify-center items-center gap-2 opacity-0 duration-200 h-36 w-36 absolute -right-14 top-8 xl:top-9 z-30 rounded-md bg-white dark:bg-theme_dark-box-thir border border-light-500/20 dark:border-theme_dark-sup-pink/20 [box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)]'>
         <ThemeButtons />
         <LanguageButtons />
       </div>
