@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { useStore } from '@/context/store';
 import Preferences from './Preferences';
