@@ -30,7 +30,7 @@ const Proyects = () => {
         {projects.map((element, index) => (
           <div
             key={index}
-            className='flex p-10 bg-light-500/20 rounded-md '>
+            className='flex p-10 bg-light-500/20 rounded-md flex-wrap-reverse items-center justify-center'>
             <Swiper
               modules={[Autoplay, Navigation]}
               className='swiper-container z-50 flex w-[22em] h-[18em] '
