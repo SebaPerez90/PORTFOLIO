@@ -2,7 +2,8 @@ import { useStore } from '@/context/store';
 import { Roboto } from 'next/font/google';
 import { motion } from 'framer-motion';
 import experience from '@/utils/experience.json';
-// import Details from './Details';
+import Link from 'next/link';
+import { FaCircleExclamation } from 'react-icons/fa6';
 
 const roboto = Roboto({
   weight: ['900'],
@@ -59,7 +60,20 @@ const Experience = () => {
             </motion.article>
           ))}
         </div>
-        {/* <Details /> */}
+        <div className='flex flex-col items-center gap-3 mt-14 translate-y-8'>
+          <p className='text-base text-[#333333] font-semibold dark:text-slate-50 flex items-center gap-1'>
+            <FaCircleExclamation className='dark:text-theme_dark-sup-pink text-light-500 text-2xl' />
+            {engLanguageActive
+              ? 'If you want to know more about my work experience, you can click here.'
+              : 'Si querés saber más acerca de mi experiencia laboral, podés hacer clic aquí.'}
+          </p>
+          <Link
+            className='bg-light-500 p-3 w-max text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-theme_dark-sup-sky'
+            href={'/about'}
+            aria-label='contact-link'>
+            {engLanguageActive ? 'About me' : 'Sobre mi'}
+          </Link>
+        </div>
       </div>
     </section>
   );
