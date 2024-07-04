@@ -1,14 +1,14 @@
+import 'swiper/css';
+import 'swiper/css/pagination';
 import projects from '@/utils/projects.json';
 import { useStore } from '@/context/store';
 import { Roboto } from 'next/font/google';
 import { FaLink } from 'react-icons/fa6';
 import { PiGithubLogoFill } from 'react-icons/pi';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import Link from 'next/link';
 import Image from 'next/image';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation } from 'swiper/modules';
 
 const roboto = Roboto({
   weight: ['900'],
@@ -32,9 +32,13 @@ const Proyects = () => {
             key={index}
             className='flex p-10 bg-light-500/20 rounded-md flex-wrap-reverse items-center justify-center'>
             <Swiper
-              modules={[Autoplay, Navigation]}
+              modules={[Autoplay, Navigation, Pagination]}
               className='swiper-container z-50 flex w-[22em] h-[18em] '
               slidesPerView={1}
+              pagination={{
+                type: 'bullets',
+                clickable: true,
+              }}
               autoplay={{ delay: 3000, pauseOnMouseEnter: true }}>
               {element.screen_shoots.map((element, index) => (
                 <SwiperSlide

@@ -2,8 +2,9 @@
 
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { useStore } from '@/context/store';
 import { Roboto } from 'next/font/google';
 
@@ -67,21 +68,32 @@ const Carrousel = () => {
   const { engLanguageActive } = useStore();
   return (
     <section className='flex flex-col items-center w-[70%] gap-16'>
-      <h1
-        className='dark:text-slate-50 text-4xl font-black text-[#334155]'
-        style={roboto.style}>
-        {engLanguageActive ? 'Services.' : 'Servicios.'}
-      </h1>
-      <div className='flex border border-red-500 w-[22em] h-[18em] '>
+      <div className='flex border border-red-500 w-[40em] h-auto'>
         <Swiper
           modules={[Autoplay, Navigation]}
           className='swiper-container z-50'
-          slidesPerView={2}
+          slidesPerView={3}
+          spaceBetween={20}
           autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
           onSlideChange={() => console.log('slide change')}>
           {data.map((element, index) => (
             <SwiperSlide key={index}>
               <div className='border border-red-600 w-[10em] text-black bg-cyan-200'>
+                <h3>{element.title}</h3>
+                <p>{element.description}</p>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      <div className='flex border border-red-500 w-[40em] h-[15em]'>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          slidesPerView={3}
+          pagination={{ type: 'bullets', clickable: true }}>
+          {data.map((element, index) => (
+            <SwiperSlide key={index}>
+              <div className='border border-red-600 w-[10em] text-black bg-blue-700'>
                 <h3>{element.title}</h3>
                 <p>{element.description}</p>
               </div>
