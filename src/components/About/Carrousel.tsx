@@ -63,7 +63,7 @@ const roboto = Roboto({
   subsets: ['latin'],
 });
 
-const Services = () => {
+const Carrousel = () => {
   const { engLanguageActive } = useStore();
   return (
     <section className='flex flex-col items-center w-[70%] gap-16'>
@@ -72,13 +72,12 @@ const Services = () => {
         style={roboto.style}>
         {engLanguageActive ? 'Services.' : 'Servicios.'}
       </h1>
-      <div className='flex w-full'>
+      <div className='flex border border-red-500 w-[22em] h-[18em] '>
         <Swiper
           modules={[Autoplay, Navigation]}
           className='swiper-container z-50'
-          spaceBetween={30}
-          slidesPerView={3}
-          autoplay={{ delay: 5000, pauseOnMouseEnter: true }}
+          slidesPerView={2}
+          autoplay={{ delay: 2000, pauseOnMouseEnter: true }}
           onSlideChange={() => console.log('slide change')}>
           {data.map((element, index) => (
             <SwiperSlide key={index}>
@@ -94,4 +93,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Carrousel;

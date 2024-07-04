@@ -23,7 +23,7 @@ const Experience = () => {
       </h1>
       <div className='flex flex-col p-[7em] bg-[#e8e8e8] rounded-lg dark:bg-theme_dark-main-bg'>
         <div className='relative work-experience-container z-10 gap-32 flex flex-col before:absolute before:h-[90%] before:top-11 before:w-[1px] before:bg-[#6161619b] max-[900px]:w-auto max-[900px]:m-[0_auto] max-[450px]:translate-x-7 max-[450px]:scale-90'>
-          <div className='dark:bg-theme_dark-main-bg dark:text-theme_dark-sup-sky absolute left-[-1em] flex gap-4 justify-center pt-6 w-36 h-36 bg-[#e8e8e8] text-6xl font-black z-50 text-light-500 bottom-[36%]'>
+          <div className='dark:bg-theme_dark-main-bg dark:text-theme_dark-sup-sky absolute left-[-1em] flex gap-4 justify-center pt-6 w-36 h-36 bg-[#e8e8e8] text-6xl font-black z-50 text-light-500 bottom-[28%]'>
             <span className='animate-[loading_1s_linear_infinite]'>.</span>
             <span className='animate-[loading_1s_linear_infinite] [animation-delay:200ms]'>
               .

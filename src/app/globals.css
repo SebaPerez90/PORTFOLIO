@@ -63,32 +63,11 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
 
-  /* .sticky-navbar {
-    backdrop-filter: blur(10px);
-    background: inherit;
-  } */
-
   .social-network {
     &:hover {
       span {
         opacity: 1;
       }
-    }
-  }
-
-  .content-available {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-
-    @media (width < 900px) {
-      margin: 0 auto;
-      width: 30em;
-    }
-
-    @media (width < 600px) {
-      scale: 0.8;
-      width: 25em;
     }
   }
 
@@ -194,8 +173,8 @@ body {
         background-color: transparent;
       }
     }
-    > :nth-child(5) {
-      margin-top: 9em;
+    > :nth-child(4) {
+      margin-top: 10em;
     }
 
     @keyframes loading {
@@ -315,6 +294,12 @@ body {
     }
     to {
       transform: translateY(0.5em);
+    }
+  }
+
+  @keyframes disc-shining {
+    to {
+      box-shadow: 0 0 0 1px #3cc259bb;
     }
   }
 }

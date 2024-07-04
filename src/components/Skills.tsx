@@ -31,14 +31,14 @@ const Skills = () => {
                 ? element.skillsEng.map((element, index) => (
                     <li
                       key={index}
-                      className='border font-bold text-xs rounded-md p-1 border-slate-600 text-[#404040ce] dark:text-slate-400 relative before:absolute before:w-[0.5em] before:h-[0.5em] before:-left-2 before:bottom-2 before:bg-light-800 before:rounded-full'>
+                      className='border font-bold text-xs rounded-md p-1 border-slate-600 text-[#404040ce] dark:text-slate-400 relative before:absolute before:w-[0.5em] before:h-[0.5em] before:-left-2 before:bottom-2 before:bg-light-800 before:rounded-full bg-slate-100 dark:bg-theme_dark-box-second before:animate-[disc-shining_800ms_ease-out_alternate-reverse_infinite]'>
                       {element}
                     </li>
                   ))
                 : element.skillsEsp.map((element, index) => (
                     <li
                       key={index}
-                      className='border font-bold text-xs rounded-md p-1 border-slate-600 text-[#404040ce] dark:text-slate-400 relative before:absolute before:w-[0.5em] before:h-[0.5em] before:-left-2 before:bottom-2 before:bg-light-800 before:rounded-full'>
+                      className='border font-bold text-xs rounded-md p-1 border-slate-600 text-[#404040ce] dark:text-slate-400 relative before:absolute before:w-[0.5em] before:h-[0.5em] before:-left-2 before:bottom-2 before:bg-light-800 before:rounded-full bg-slate-100 dark:bg-theme_dark-box-second before:animate-[disc-shining_800ms_ease-out_alternate-reverse_infinite]'>
                       {element}
                     </li>
                   ))}
