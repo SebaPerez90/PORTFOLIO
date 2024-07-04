@@ -21,7 +21,7 @@ const Footer = () => {
   return (
     <footer className='dark:bg-theme_dark-main-bg bg-[#fbfbfb] h-auto gap-16 pb-2 pt-16 w-full flex justify-between flex-col items-center'>
       <div className='flex flex-col items-center gap-12 relative before:absolute before:-bottom-8 before:left-0 before:w-full before:h-[1px] before:bg-light-500/60 dark:before:bg-theme_dark-sup-pink'>
-        <h1 className='font-bold text-xl text-center dark:bg-theme_dark-sup-sky bg-light-500 p-3 w-max m-[0_auto] text-slate-50 rounded-md'>
+        <h1 className='font-bold text-xl text-center border-b-4 border-light-500/60 dark:border-theme_dark-sup-pink p-3 w-max m-[0_auto] dark:text-slate-50'>
           {engLanguageActive ? 'How to contact me :' : 'Como contactarme :'}
         </h1>
         <ul className='pb-8 flex flex-col md:flex-row gap-10 mt-4 dark:text-slate-50'>
