@@ -61,7 +61,7 @@ const About = () => {
                 ? 'Hello There! Soy Sebastian 👋'
                 : '¡Hola! Soy Sebastian 👋'}
             </h1>
-            <p className='border-l-8 border-light-500 dark:border-theme_dark-sup-pink dark:text-slate-50 dark:bg-theme_dark-box-thir bg-[#fbfbfb] px-4 py-4 text-sm font-semibold text-[#333333]'>
+            <p className='border-l-8 border-light-500 dark:border-theme_dark-sup-pink dark:text-slate-50 dark:bg-theme_dark-box-thir bg-[#fbfbfb] px-4 py-4 text-sm font-semibold text-[#333333be]'>
               {engLanguageActive
                 ? 'Fullstack Developer. With over 2 years of experience, I am continuously learning to always give my best.'
                 : 'Desarrollador Fullstack. Con más de 2 años de experiencia formandome para poder brindar lo mejor de mí siempre.'}
@@ -72,7 +72,7 @@ const About = () => {
             </p>
             <Link
               className='bg-light-500 p-3 w-max text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-theme_dark-sup-sky'
-              href={'#contact-section'}
+              href={'/contact'}
               aria-label='contact-link'>
               {engLanguageActive ? 'Get in Touch' : 'Contáctame'}
             </Link>

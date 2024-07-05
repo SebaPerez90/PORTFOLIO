@@ -10,11 +10,14 @@ import Image from 'next/image';
 import contact from '@/assets/images/contact.svg';
 import Footer from '@/components/Footer';
 import { BiSolidZap } from 'react-icons/bi';
+import toast, { Toaster } from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 const Contact = () => {
   const { engLanguageActive } = useStore();
   const [textAreaLength, setTextAreaLength] = useState<number>(0);
   const [formData, setFormData] = useState<IFormData>(FormData);
+  const router = useRouter();
 
   const lengthControl = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setTextAreaLength(e.target.selectionEnd);
@@ -40,6 +43,22 @@ const Contact = () => {
       },
       body: JSON.stringify(formData),
     });
+  };
+  const succesMessage = () => {
+    const message = engLanguageActive
+      ? 'Your message has been send successfully'
+      : 'Tu mensaje fué enviado correctamente';
+    toast.success(message, {
+      duration: 5000,
+      style: {
+        fontWeight: '500',
+        color: '#333333be',
+      },
+      position: 'bottom-right',
+    });
+    setTimeout(() => {
+      router.push('/');
+    }, 5000);
   };
 
   return (
@@ -159,6 +178,7 @@ const Contact = () => {
               </div>
               <button
                 type='submit'
+                onClick={succesMessage}
                 style={
                   formData.name && formData.message
                     ? {
@@ -180,6 +200,7 @@ const Contact = () => {
         </div>
       </main>
       <Footer />
+      <Toaster />
     </>
   );
 };
