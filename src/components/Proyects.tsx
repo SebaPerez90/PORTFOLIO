@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const roboto = Roboto({
   weight: ['900'],
@@ -28,7 +29,13 @@ const Proyects = () => {
       </h1>
       <div className='flex-wrap flex flex-row justify-center w-[80%] gap-24'>
         {projects.map((element, index) => (
-          <div
+          <motion.div
+            transition={{
+              duration: 0.3,
+              delay: 0.2,
+            }}
+            initial={{ scale: 0.5, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
             key={index}
             className='flex p-10 bg-light-500/20 rounded-md flex-wrap-reverse items-center justify-center'>
             <Swiper
@@ -93,7 +100,7 @@ const Proyects = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

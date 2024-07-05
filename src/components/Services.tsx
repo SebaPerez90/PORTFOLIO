@@ -6,6 +6,7 @@ import { PiGearBold } from 'react-icons/pi';
 import { MdOutlineDevices } from 'react-icons/md';
 import { BiSolidRocket } from 'react-icons/bi';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const roboto = Roboto({
   weight: ['900'],
@@ -39,7 +40,14 @@ const Services = () => {
       </h1>
       <div className=' mt-10 grid grid-cols-1 md:grid-cols-2 w-full gap-4 items-center'>
         {services.map((element, index) => (
-          <div
+          <motion.div
+            transition={{
+              duration: 0.5,
+              delay: 0.25,
+              staggerChildren: 2,
+            }}
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
             key={index}
             className='border-b-light-800 border-b-4 dark:border-b-theme_dark-sup-pink border dark:border-slate-700 h-40 w-[22em] rounded-md bg-white justify-self-center p-4 text-center flex flex-col justify-center gap-4 px-6 relative dark:bg-theme_dark-main-bg'>
             <span className='dark:text-theme_dark-sup-sky text-light-500 text-4xl absolute top-2 left-2'>
@@ -53,7 +61,7 @@ const Services = () => {
                 ? element.descriptionEN
                 : element.descriptionES}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
       <div className='mt-4 flex flex-col items-center gap-3'>

@@ -49,7 +49,7 @@ const Contact = () => {
       ? 'Your message has been send successfully'
       : 'Tu mensaje fué enviado correctamente';
     toast.success(message, {
-      duration: 5000,
+      duration: 3000,
       style: {
         fontWeight: '500',
         color: '#333333be',
@@ -58,7 +58,7 @@ const Contact = () => {
     });
     setTimeout(() => {
       router.push('/');
-    }, 5000);
+    }, 3000);
   };
 
   return (
