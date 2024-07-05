@@ -8,6 +8,7 @@ import henry_icon from '@/assets/images/soyHenry-logo.webp';
 import ef_icon from '@/assets/images/ef-icon.webp';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import { motion } from 'framer-motion';
 
 const educations = [
   {
@@ -38,14 +39,22 @@ const About = () => {
       <main className='flex flex-col gap-24 items-center pt-28 bg-[#e2e2e2] dark:bg-theme_dark-main-bg'>
         <section className='flex justify-evenly flex-wrap gap-10 sm:gap-0'>
           <div className='flex flex-col items-center'>
-            <div className='rounded-full h-[14em] w-[14em] overflow-hidden'>
+            <motion.div
+              transition={{
+                duration: 0.3,
+                delay: 0.2,
+              }}
+              initial={{ scale: 0.2, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              className='rounded-full h-[14em] w-[14em] overflow-hidden'>
               <Image
                 src={avatar}
                 alt='avatar'
                 className='w-full h-full object-cover bg-black dark:bg-zinc-200'
                 priority
               />
-            </div>
+            </motion.div>
             <span className='font-bold text-xl mt-2 dark:text-white'>
               Sebastian Perez
             </span>
@@ -55,13 +64,28 @@ const About = () => {
                 : 'Fullstack Developer'}
             </span>
           </div>
-          <div className='flex flex-col gap-8 items-center w-[90%] sm:w-1/2'>
-            <h1 className=' dark:text-slate-50 text-4xl text-[#333333] font-extrabold'>
+          <motion.div
+            transition={{
+              delayChildren: 1,
+            }}
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            className='flex flex-col gap-8 items-center w-[90%] sm:w-1/2'>
+            <motion.h1
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              className=' dark:text-slate-50 text-4xl text-[#333333] font-extrabold'>
               {engLanguageActive
                 ? 'Hello There! Soy Sebastian 👋'
                 : '¡Hola! Soy Sebastian 👋'}
-            </h1>
-            <p className='border-l-8 border-light-500 dark:border-theme_dark-sup-pink dark:text-slate-50 dark:bg-theme_dark-box-thir bg-[#fbfbfb] px-4 py-4 text-sm font-semibold text-[#333333be]'>
+            </motion.h1>
+            <motion.p
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              className='border-l-8 border-light-500 dark:border-theme_dark-sup-pink dark:text-slate-50 dark:bg-theme_dark-box-thir bg-[#fbfbfb] px-4 py-4 text-sm font-semibold text-[#333333be]'>
               {engLanguageActive
                 ? 'Fullstack Developer. With over 2 years of experience, I am continuously learning to always give my best.'
                 : 'Desarrollador Fullstack. Con más de 2 años de experiencia formandome para poder brindar lo mejor de mí siempre.'}
@@ -69,21 +93,29 @@ const About = () => {
               {engLanguageActive
                 ? 'I am a very dedicated and passionate person, and I strive to demonstrate this in every project I undertake. I know I can contribute significantly to any development team because when I set my mind to something, there are no obstacles for me.'
                 : 'Soy una persona muy dedicada y apasionada, trato de demostrarlo en cada proyecto que realizo y sé que puedo aportar mucho a cualquier equipo de desarrallo ya que cuando me propongo algo, para mi no existen obstaculos.'}
-            </p>
+            </motion.p>
             <Link
               className='bg-light-500 p-3 w-max text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-theme_dark-sup-sky'
               href={'/contact'}
               aria-label='contact-link'>
               {engLanguageActive ? 'Get in Touch' : 'Contáctame'}
             </Link>
-          </div>
+          </motion.div>
         </section>
         <section className='rounded-md mb-20'>
           <h1 className=' dark:text-slate-50 text-2xl sm:text-4xl text-[#333333] font-extrabold text-center'>
             {engLanguageActive ? 'More about me' : 'Un poco más Sobre mi'}
           </h1>
           <div className='flex flex-wrap gap-10 justify-around w-full mt-24'>
-            <div className='w-[25em] ml-10 min-[450px]:ml-0 rounded-md shadow-none min-[450px]:[box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] bg-transparent min-[450px]:bg-[#fbfbfb] p-8 dark:bg-theme_dark-box-thir dark:text-slate-50'>
+            <motion.div
+              transition={{
+                duration: 0.6,
+                bounce: 0.3,
+                type: 'spring',
+              }}
+              initial={{ opacity: 0, x: -300 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className='w-[25em] ml-10 min-[450px]:ml-0 rounded-md shadow-none min-[450px]:[box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] bg-transparent min-[450px]:bg-[#fbfbfb] p-8 dark:bg-theme_dark-box-thir dark:text-slate-50'>
               <h2 className='text-center text-2xl font-bold'>
                 {engLanguageActive ? 'Educacion' : 'Education'} 👨‍🎓
               </h2>
@@ -114,8 +146,16 @@ const About = () => {
                   </li>
                 ))}
               </ul>
-            </div>
-            <div className='bg-transparent w-[90%] sm:w-[30em] flex flex-col justify-center relative shadow-none rounded-md min-[450px]:[box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] min-[450px]:bg-[#fbfbfb] p-8 dark:bg-theme_dark-box-thir'>
+            </motion.div>
+            <motion.div
+              transition={{
+                duration: 0.6,
+                bounce: 0.3,
+                type: 'spring',
+              }}
+              initial={{ opacity: 0, x: 300 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className='bg-transparent w-[90%] sm:w-[30em] flex flex-col justify-center relative shadow-none rounded-md min-[450px]:[box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] min-[450px]:bg-[#fbfbfb] p-8 dark:bg-theme_dark-box-thir'>
               <h2 className='text-center text-2xl font-bold dark:text-slate-50'>
                 {engLanguageActive ? 'Experience' : 'Experiencia'} 👨‍💼
               </h2>
@@ -129,7 +169,7 @@ const About = () => {
                   ? 'These skills include effective communication, the ability to work under pressure, efficient customer handling, adaptability to any work environment, and problem-solving. These competencies complement my new professional focus and enable me to face technological challenges with a unique and enriching perspective.'
                   : ' Estas habilidades incluyen comunicación efectiva, capacidad para trabajar bajo presión, trato eficaz con clientes, adaptabilidad a cualquier entorno laboral y resolución de problemas. Estas competencias complementan mi nueva orientación profesional y me permiten enfrentar los desafíos tecnológicos con una perspectiva única y enriquecedora.'}
               </p>
-            </div>
+            </motion.div>
           </div>
         </section>
       </main>
