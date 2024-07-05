@@ -12,6 +12,7 @@ import Footer from '@/components/Footer';
 import { BiSolidZap } from 'react-icons/bi';
 import toast, { Toaster } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   const { engLanguageActive } = useStore();
@@ -66,7 +67,16 @@ const Contact = () => {
       <main className='flex flex-col items-center bg-[#e2e2e2] dark:bg-theme_dark-main-bg'>
         <div className='w-full flex justify-evenly gap-14 pb-16 pt-24 flex-wrap'>
           <div className='max-[550px]:px-10 w-[30em] flex flex-col justify-center items-center'>
-            <div className='flex items-center flex-col gap-1'>
+            <motion.div
+              transition={{
+                bounce: 0.6,
+                duration: 1.5,
+                type: 'spring',
+              }}
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              className='flex items-center flex-col gap-1'>
               <h1 className='font-bold text-4xl text-[#333333be]] text-[#333333e3] dark:text-white'>
                 {engLanguageActive
                   ? 'Bring your brand to life!'
@@ -93,7 +103,7 @@ const Contact = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
             <Image
               src={contact}
               width={350}
@@ -107,7 +117,13 @@ const Contact = () => {
             <h1 className='font-bold text-6xl text-[#333333be]] text-[#333333e3] dark:text-slate-50 max-[500px]:w-2/3 max-[500px]:m-[0_auto] max-[500px]:text-4xl'>
               {engLanguageActive ? 'Get in Touch' : 'Contáctame'}
             </h1>
-            <form
+            <motion.form
+              transition={{
+                duration: 0.3,
+              }}
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
               name='contact-form'
               method='POST'
               onSubmit={sendMessage}
@@ -195,7 +211,7 @@ const Contact = () => {
                 className='bg-light-500 py-3 w-full text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-theme_dark-sup-sky'>
                 {engLanguageActive ? 'Send' : 'Enviar'}
               </button>
-            </form>
+            </motion.form>
           </div>
         </div>
       </main>

@@ -36,6 +36,7 @@ const Proyects = () => {
             }}
             initial={{ scale: 0.5, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
             key={index}
             className='flex p-10 bg-light-500/20 rounded-md flex-wrap-reverse items-center justify-center'>
             <Swiper

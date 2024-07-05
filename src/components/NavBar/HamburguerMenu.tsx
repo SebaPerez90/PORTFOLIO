@@ -6,10 +6,12 @@ import { useStore } from '@/context/store';
 import { IoMdHome } from 'react-icons/io';
 import { FaUserTie } from 'react-icons/fa6';
 import { HiOutlineMailOpen } from 'react-icons/hi';
+import { usePathname } from 'next/navigation';
 
 const HamburguerMenu = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { engLanguageActive } = useStore();
+  const pathname = usePathname();
 
   const openMenu = () => {
     const line_a = document.getElementById('line_a');
@@ -65,19 +67,24 @@ const HamburguerMenu = () => {
           }}
           initial={{ x: 100, opacity: 1 }}
           whileInView={{ x: 0, opacity: 1 }}
-          className='absolute z-30 w-[15em] h-[20em] -right-20 -top-7 bg-[#fbfbfb] dark:bg-theme_dark-box-thir rounded-[0_0_0_0.7em] border border-light-500/20 dark:border-theme_dark-sup-pink/30'>
+          className='absolute z-30 w-[15em] h-[20em] -right-20 -top-7 bg-[#fbfbfb] dark:bg-theme_dark-box-thir rounded-[0_0_0_0.7em] overflow-hidden'>
           <motion.nav
             transition={{ delay: 0.2 }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className='flex flex-col items-center h-full justify-evenly dark:text-slate-200 text-[#333333be] font-bold text-sm z-50'>
+            className='flex flex-col items-center h-full justify-evenly dark:text-slate-200 text-[#333333be] font-bold text-sm z-50 relative before:absolute before:h-full before:w-16 before:bg-light-500 before:left-0 before:bottom-0 dark:before:bg-theme_dark-sup-pink'>
             {navLinks.map((element, index) => (
               <Link
                 className='duration-200 hover:duration-200 hover:text-light-500 dark:hover:text-theme_dark-sup-pink z-50 flex items-center gap-2'
                 key={index}
                 href={element.url}
+                style={
+                  pathname === element.url
+                    ? { borderBottom: '3px solid #38bdf8' }
+                    : undefined
+                }
                 aria-label={element.label}>
-                <span className='text-light-500 dark:text-theme_dark-sup-pink text-xl relative bottom-1'>
+                <span className='text-light-50 text-xl absolute left-8'>
                   {renderIcon(element.url)}
                 </span>
                 {engLanguageActive ? element.titleEN : element.titleES}
