@@ -5,9 +5,11 @@ import { useStore } from '@/context/store';
 import Preferences from './Preferences';
 import { useEffect } from 'react';
 import navLinks from '@/utils/nav-links.json';
+import { usePathname } from 'next/navigation';
 
 const NavLinks = () => {
   const { engLanguageActive } = useStore();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,9 +42,14 @@ const NavLinks = () => {
       <nav className='xl:text-lg hidden md:flex gap-7 dark:text-slate-200 text-[#333333be] font-bold text-sm'>
         {navLinks.map((element, index) => (
           <Link
-            className='duration-200 hover:duration-200 hover:text-light-500 dark:hover:text-theme_dark-sup-pink'
+            className='duration-300 hover:duration-200 hover:text-light-500 dark:hover:text-theme_dark-sup-pink'
             key={index}
             href={element.url}
+            style={
+              pathname === element.url
+                ? { borderBottom: '3px solid #38bdf8' }
+                : undefined
+            }
             aria-label={element.label}>
             {engLanguageActive ? element.titleEN : element.titleES}
           </Link>
