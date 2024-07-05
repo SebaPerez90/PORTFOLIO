@@ -1,0 +1,20 @@
+[
+  {
+    "titleES": "Inicio",
+    "titleEN": "Home",
+    "label": "home-link",
+    "url": "/"
+  },
+  {
+    "titleES": "Contacto",
+    "titleEN": "Contact",
+    "label": "contact-link",
+    "url": "/contact"
+  },
+  {
+    "titleES": "Sobre mi",
+    "titleEN": "About",
+    "label": "about-link",
+    "url": "/about"
+  }
+]

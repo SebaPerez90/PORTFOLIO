@@ -1,3 +1,14 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended" // Carga las reglas recomendadas de TypeScript
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "semi": ["warn", "always"], // Advierte sobre punto y coma al final de las declaraciones
+    "quotes": ["warn", "single"], // Advierte sobre comillas simples para cadenas de texto
+    "@typescript-eslint/no-explicit-any": "warn", // Error si se usa `any` explícitamente
+    "@typescript-eslint/no-unused-vars": "warn"
+  }
 }

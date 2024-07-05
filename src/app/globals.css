@@ -31,11 +31,11 @@
   }
   .scroll-bar-light {
     &::-webkit-scrollbar {
-      background-color: #dedede;
+      background-color: #e8e8e8;
       width: 14px;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: #3655b3;
+      background-color: #4d4dff;
     }
   }
   .scroll-bar-dark {
@@ -63,71 +63,18 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
 
-  .sticky-navbar {
-    backdrop-filter: blur(5px);
-    top: -0.6em;
-  }
-  .hamburguer-menu-inactive {
-    animation: effect1 200ms linear forwards;
-    animation-delay: 200ms;
-    transition: all 400ms;
-
-    > :first-child {
-      transform: translate(0, -0.8em);
-    }
-    > :nth-child(2) {
-      opacity: 0;
-      transition: all 400ms;
-    }
-    > :last-child {
-      transform: translate(0, 0.8em);
-    }
-
-    .item1 {
-      transform: rotate(-45deg) translateX(0em) translateY(-0.5em);
-      transition: all 300ms;
-    }
-    .item2 {
-      transform: rotate(45deg) translateX(0.5em) translateY(1em);
-      transition: all 300ms;
-    }
-    @keyframes effect1 {
-      to {
-        transform: rotate(90deg) translate(-0.4em, -1em);
+  .social-network {
+    &:hover {
+      span {
+        opacity: 1;
       }
-    }
-  }
-
-  .show-notifications {
-    height: 21.7em;
-
-    > :first-child {
-      display: flex;
-      animation: whatsapp-notification 600ms reverse;
-      animation-fill-mode: backwards;
-    }
-  }
-
-  .content-available {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-
-    @media (width < 900px) {
-      margin: 0 auto;
-      width: 30em;
-    }
-
-    @media (width < 600px) {
-      scale: 0.8;
-      width: 25em;
     }
   }
 
   .work-experience-container {
     > :nth-child(2) {
       h1 {
-        background: #ecececc7;
+        background: white;
         height: 2em;
         margin-bottom: 0.6em;
         color: transparent;
@@ -142,8 +89,8 @@ body {
           bottom: -0.5em;
           width: 2em;
           height: 200%;
-          background: #ffffff81;
-          filter: blur(6px);
+          background: #d6d6d681;
+          filter: blur(15px);
           animation: skeleton-loader 800ms ease-out infinite;
 
           @keyframes skeleton-loader {
@@ -154,7 +101,7 @@ body {
         }
       }
       p {
-        background: #ecececc7;
+        background: white;
         padding: 0;
         margin-bottom: 0.6em;
         color: transparent;
@@ -169,8 +116,8 @@ body {
           bottom: -0.5em;
           width: 2em;
           height: 200%;
-          background: #ffffff81;
-          filter: blur(6px);
+          background: #d6d6d681;
+          filter: blur(15px);
           animation: skeleton-loader-paragraph 800ms ease-out infinite;
 
           @keyframes skeleton-loader-paragraph {
@@ -182,7 +129,7 @@ body {
       }
 
       span {
-        background: #ecececc7;
+        background: white;
         padding: 0.5em 1.5em;
         margin-top: 0.5em;
         color: transparent;
@@ -197,8 +144,8 @@ body {
           bottom: -0.5em;
           width: 2em;
           height: 200%;
-          background: #ffffff81;
-          filter: blur(6px);
+          background: #d6d6d681;
+          filter: blur(15px);
           animation: skeleton-loader 800ms ease-out infinite;
         }
       }
@@ -226,8 +173,8 @@ body {
         background-color: transparent;
       }
     }
-    > :nth-child(5) {
-      margin-top: 9em;
+    > :nth-child(4) {
+      margin-top: 10em;
     }
 
     @keyframes loading {
@@ -243,11 +190,6 @@ body {
     }
   }
 
-  @keyframes whatsapp-notification {
-    to {
-      opacity: 0;
-    }
-  }
   @keyframes location-animation2 {
     to {
       transform: scaleX(1);
@@ -269,48 +211,47 @@ body {
   }
 
   @keyframes bouncing {
-    0 {
-      transform: translate(0em, 15em) scale(1.2);
+    10% {
+      transform: translate(6em, 20em) scale(1.2);
     }
     25% {
-      transform: translate(-2em, -10em) scale(2.5);
+      transform: translate(2em, 16em) scale(4.5);
     }
     70% {
-      transform: translate(-10em, 7em) scale(1.5);
+      transform: translate(-10em, 7em) scale(2);
     }
     100% {
-      transform: translate(-6em, 28em) scale(3);
+      transform: translate(-6em, 11em) scale(3);
     }
   }
 
   @keyframes bouncing2 {
     0% {
-      transform: translate(1em, 12em) scale(1.2);
+      transform: translate(11em, 6em) scale(1.6);
     }
     25% {
-      transform: translate(8.5em, 6em) scale(1.2);
+      transform: translate(28em, 20em) scale(1);
     }
     70% {
-      transform: translate(2em, -5em) scale(2.5);
+      transform: translate(37em, 0em) scale(3);
     }
     100% {
-      transform: translate(5em, 15em) scale(0.8);
+      transform: translate(60em, 16em) scale(1.8);
     }
   }
 
   @keyframes bouncing3 {
-    0% {
-      transform: translate(2em, -5em) scale(1.5) rotate('360deg');
+    10% {
+      transform: translate(0em, 25em) scale(1.5);
     }
     25% {
-      transform: translate(-6em, -20em) scale(3);
-      filter: blur(40px);
+      transform: translate(-26em, 12em) scale(3);
     }
     70% {
-      transform: translate(1em, -8em) scale(1.2);
+      transform: translate(-40em, 18em) scale(1.2);
     }
     100% {
-      transform: translate(-5em, -26em) scale(2);
+      transform: translate(-55em, 5em) scale(2);
     }
   }
 
@@ -353,6 +294,38 @@ body {
     }
     to {
       transform: translateY(0.5em);
+    }
+  }
+
+  @keyframes disc-shining {
+    to {
+      box-shadow: 0 0 0 1px #3cc259bb;
+    }
+  }
+}
+
+@media (640px > width) {
+  .avatar-container {
+    position: relative;
+    right: -2em;
+    > :nth-child(2) {
+      flex-direction: column;
+      span {
+        display: none;
+      }
+    }
+  }
+}
+@media (500px > width) {
+  .avatar-container {
+    width: 100%;
+    align-items: start;
+    padding-left: 2em;
+    > :nth-child(2) {
+      flex-direction: row;
+      span {
+        display: block;
+      }
     }
   }
 }

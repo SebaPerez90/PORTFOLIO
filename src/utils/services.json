@@ -1,0 +1,30 @@
+[
+  {
+    "titleEN": "Software Development",
+    "titleES": "Desarrollo de Software",
+    "descriptionEN": "I develop and maintain websites, mobile apps, and desktop applications to meet your business needs.",
+    "descriptionES": "Desarrollo y mantengo sitios web, aplicaciones móviles y aplicaciones de escritorio para satisfacer las necesidades de tu negocio.",
+    "icon": "gear"
+  },
+  {
+    "titleEN": "Branding",
+    "titleES": "Branding",
+    "descriptionEN": "I design unique branding solutions that effectively communicate your brand's identity and values.",
+    "descriptionES": "Diseño soluciones de branding únicas que comuniquen efectivamente la identidad y los valores de tu marca.",
+    "icon": "rocket"
+  },
+  {
+    "titleEN": "Creative Design",
+    "titleES": "Diseño Creativo",
+    "descriptionEN": "I craft visually stunning designs that capture your audience's attention and leave a lasting impression.",
+    "descriptionES": "Creo diseños visualmente impresionantes que capturen la atención de tu audiencia y dejen una impresión duradera.",
+    "icon": "bulb"
+  },
+  {
+    "titleEN": "Fully Responsive",
+    "titleES": "Totalmente Responsivo",
+    "descriptionEN": "I create responsive designs that ensure a seamless experience across all devices and screen sizes.",
+    "descriptionES": "Creo diseños responsivos que aseguren una experiencia perfecta en todos los dispositivos y tamaños de pantalla.",
+    "icon": "devices"
+  }
+]

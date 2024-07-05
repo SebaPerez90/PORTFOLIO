@@ -1,35 +1,23 @@
 'use client';
 
-import Hero from '@/components/Hero/Hero';
-import About from '@/components/Hero/About';
-import Proyects from '@/components/MyProjects/Proyects';
-import ContactForm from '@/components/Contact/ContactForm';
-import Experience from '@/components/Experience-Education/Experience';
-import Education from '@/components/Experience-Education/Education';
-import Services from '@/components/Services-Skills/Services';
-import Footer from '@/components/Foot/Footer';
-import MenuBtn from '@/components/Navegation/MenuBtn';
+import Hero from '@/components/Landing/Hero';
+import Proyects from '@/components/Proyects';
+import Experience from '@/components/Experience';
+import Skills from '@/components/Skills';
+import Footer from '@/components/Footer';
+import Services from '@/components/Services';
 
 export default function Home() {
   return (
-    <main className='gap-32 flex flex-col justify-around items-center bg-[#dedede] dark:bg-[#313643] overflow-x-hidden'>
-      <MenuBtn />
-
-      <Hero />
-
-      <Experience />
-
-      <About />
-
-      <Education />
-
-      <Proyects />
-
-      <Services />
-
-      <ContactForm />
-
-      <Footer />
-    </main>
+    <>
+      <main className='gap-40 flex flex-col justify-around items-center bg-[#e8e8e8] dark:bg-[#313643] overflow-x-hidden'>
+        <Hero />
+        <Experience />
+        <Proyects />
+        <Skills />
+        <Services />
+        <Footer />
+      </main>
+    </>
   );
 }

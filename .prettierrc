@@ -8,5 +8,6 @@
   "tabWidth": 2,
   "printWidth": 80,
   "jsxBracketSameLine": true,
-  "arrowParens": "always"
+  "arrowParens": "always",
+  "singleAttributePerLine": true
 }

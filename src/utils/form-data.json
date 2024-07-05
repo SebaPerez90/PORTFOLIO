@@ -1,0 +1,20 @@
+[
+  {
+    "labelEN": "Name",
+    "labelES": "Nombre",
+    "id": "name",
+    "htmlFor": "name",
+    "inputName": "name",
+    "placeHolderEN": "Your First Name",
+    "placeHolderES": "Tu Nombre"
+  },
+  {
+    "labelEN": "Email",
+    "labelES": "Email",
+    "id": "email",
+    "htmlFor": "email",
+    "inputName": "email",
+    "placeHolderEN": "Your Email",
+    "placeHolderES": "Tu Email"
+  }
+]

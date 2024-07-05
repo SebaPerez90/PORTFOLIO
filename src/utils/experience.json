@@ -1,0 +1,29 @@
+[
+  {
+    "company": "XXXXXXXX",
+    "position": ["Frontend Developer", "Desarrollador Frontend"],
+    "date": "xxxxxxxxx",
+    "tasks_description": [
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit illum natus dolore, amet assumenda, architecto maiores voluptatibus ex aspernatur, omnis error cumque. Perferendis similique quaerat tenetur quo ab sapiente. Omnis.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit illum natus dolore, amet assumenda, architecto maiores voluptatibus ex aspernatur, omnis error cumque. Perferendis similique quaerat tenetur quo ab sapiente. Omnis."
+    ]
+  },
+  {
+    "company": "La Payuca",
+    "position": ["Salon Waiter", "Mozo de Salon"],
+    "date": "06/2022 - 12/2023",
+    "tasks_description": [
+      "General tasks: Mise en place for the corresponding shift, customer service, sales and customer assistance, handling payments, and managing payment methods.",
+      "Tareas generales: Mise an place para el turno correspondiente, atención al cliente, venta y asistencia al cliente, manejo de cobros , como también medios de pago."
+    ]
+  },
+  {
+    "company": "Cabaña las Lilas",
+    "position": ["Salon Waiter", "Mozo de Salon"],
+    "date": "01/2014 - 01/2015",
+    "tasks_description": [
+      "General tasks: Mise en place for the corresponding shift, customer service, sales and customer assistance, handling payments, and managing payment methods.",
+      "Tareas generales: Mise an place para el turno correspondiente, atención al cliente, venta y asistencia al cliente, manejo de cobros , como también medios de pago."
+    ]
+  }
+]
