@@ -155,7 +155,7 @@ const About = () => {
               }}
               initial={{ opacity: 0, x: 300 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className='w-[90%] sm:w-[30em] flex flex-col justify-center relative shadow-none rounded-md min-[450px]:[box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] bg-transparent min-[450px]:bg-[#fbfbfb] p-8 dark:bg-theme_dark-box-thir'>
+              className='w-[90%] sm:w-[30em] flex flex-col justify-center relative shadow-none rounded-md min-[450px]:[box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] bg-transparent min-[450px]:bg-[#fbfbfb] p-8 dark:bg-transparent sm:dark:bg-theme_dark-box-thir'>
               <h2 className='text-center text-2xl font-bold dark:text-slate-50'>
                 {engLanguageActive ? 'Experience' : 'Experiencia'} 👨‍💼
               </h2>
