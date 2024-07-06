@@ -48,7 +48,7 @@ const HeroButtons = () => {
     <div className='z-50 flex items-center gap-4'>
       <Link
         className='bg-light-500 p-3 w-max text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-theme_dark-sup-sky'
-        href={'#contact-section'}
+        href={'/contact'}
         aria-label='contact-link'>
         {engLanguageActive ? 'Get in Touch' : 'Contáctame'}
       </Link>
