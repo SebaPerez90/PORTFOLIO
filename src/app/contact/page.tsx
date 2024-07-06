@@ -187,7 +187,7 @@ const Contact = () => {
                       ? 'How can I help you ?'
                       : 'Como puedo ayudarte ?'
                   }
-                  className='max-[500px]:border-b-light-500 placeholder:opacity-70 placeholder:text-xs placeholder:font-semibold p-[5px] rounded-sm bg-[#e8e8e8] focus:placeholder:opacity-0 placeholder:duration-300 outline-none placeholder:pl-1 focus:bg-[#fbfbfb] duration-300 focus:duration-300 focus:border-b-light-500 border-b-2 caret-light-500 text-sm font-semibold text-[#333333e3] resize-none h-[10em] w-full mt-1 dark:caret-theme_dark-sup-pink dark:focus:border-theme_dark-sup-pink focus:dark:bg-theme_dark-box-thir dark:bg-theme_dark-box-second dark:border-theme_dark-box-second dark:text-slate-50'></textarea>
+                  className='max-[500px]:border-b-light-500 placeholder:opacity-70 placeholder:text-xs placeholder:font-semibold p-2 rounded-sm bg-[#e8e8e8] focus:placeholder:opacity-0 placeholder:duration-300 outline-none placeholder:pl-1 focus:bg-[#fbfbfb] duration-300 focus:duration-300 focus:border-b-light-500 border-b-2 caret-light-500 text-sm font-semibold text-[#333333e3] resize-none h-[10em] w-full mt-1 dark:caret-theme_dark-sup-pink dark:focus:border-theme_dark-sup-pink focus:dark:bg-theme_dark-box-thir dark:bg-theme_dark-box-second dark:border-theme_dark-box-second dark:text-slate-50 '></textarea>
                 <span className='absolute right-4 bottom-5 font-semibold dark:text-zinc-300 opacity-50 text-sm'>
                   {textAreaLength}/200
                 </span>
