@@ -10,6 +10,7 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { FaCircleExclamation } from 'react-icons/fa6';
 
 const roboto = Roboto({
   weight: ['900'],
@@ -41,17 +42,25 @@ const Proyects = () => {
             className='flex p-10 bg-light-500/20 rounded-md flex-wrap-reverse items-center justify-center'>
             <Swiper
               modules={[Autoplay, Navigation, Pagination]}
-              className='swiper-container z-50 flex w-[22em] h-[18em] '
+              className='swiper-container z-40 flex w-[22em] h-[18em] relative'
               slidesPerView={1}
               pagination={{
                 type: 'bullets',
                 clickable: true,
               }}
               autoplay={{ delay: 3000, pauseOnMouseEnter: true }}>
+              {element.development_stage && (
+                <span className='z-50  w-max text-center absolute bottom-0 left-[25%] font-semibold flex items-center justify-center gap-1 bg-yellow-300 rounded-md p-2 text-[#333333cd]'>
+                  <FaCircleExclamation className='text-xl'/>
+                  {engLanguageActive
+                    ? 'Development Stage'
+                    : 'Etapa de Desarrollo'}
+                </span>
+              )}
               {element.screen_shoots.map((element, index) => (
                 <SwiperSlide
                   key={index}
-                  className=' px-5'>
+                  className='px-5 carrousel-images'>
                   <Image
                     src={element}
                     width={500}
@@ -63,16 +72,16 @@ const Proyects = () => {
               ))}
             </Swiper>
             <div>
-              <div className='flex flex-col w-[22em] h-[18em] justify-evenly p-[1em_2em] rounded-md bg-white border border-slate-200 [box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] dark:bg-theme_dark-main-bg dark:border-slate-700'>
+              <div className='flex flex-col gap-5 w-[25em] [min-height:20em] h-auto justify-evenly p-[1em_2em] rounded-md bg-white border border-slate-200 [box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] dark:bg-theme_dark-main-bg dark:border-slate-700'>
                 <div>
                   <h1 className='font-bold text-center text-xl dark:text-theme_dark-sup-sky'>
                     {element.title}
                   </h1>
-                  <span className='flex justify-center gap-4 mt-4'>
+                  <span className='flex justify-center gap-3 mt-4 flex-wrap'>
                     {element.skills.map((element, index) => (
                       <span
                         key={index}
-                        className='border font-bold text-xs rounded-md p-1 border-slate-600 text-[#404040ce] dark:text-slate-400 relative before:absolute before:w-[0.5em] before:h-[0.5em] before:-left-2 before:bottom-2 before:bg-light-800 before:rounded-full bg-slate-100 dark:bg-theme_dark-box-second before:animate-[disc-shining_800ms_ease-out_alternate-reverse_infinite]'>
+                        className='border  font-bold text-xs rounded-md p-1 border-slate-600 text-[#404040ce] dark:text-slate-400 relative before:absolute before:w-[0.5em] before:h-[0.5em] before:-left-2 before:bottom-2 before:bg-light-800 before:rounded-full bg-slate-100 dark:bg-theme_dark-box-second before:animate-[disc-shining_800ms_ease-out_alternate-reverse_infinite]'>
                         {element}
                       </span>
                     ))}

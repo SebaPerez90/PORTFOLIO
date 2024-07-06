@@ -1,5 +1,24 @@
 [
   {
+    "title": "EaseHire",
+    "descriptionES": "Este producto resuelve el problema de encontrar mano de obra confiable para tareas cotidianas en Argentina. Facilita la conexión entre personas con necesidades específicas y aquellas capacitadas para resolverlas, ofreciendo seguridad para ambas partes. Si has usado Facebook Marketplace para buscar un albañil, entenderás su propósito.",
+    "descriptionEN": "This product solves the problem of finding reliable labor for everyday tasks in Argentina. It connects people with specific needs to those capable of fulfilling them, offering security for both parties. If you've used Facebook Marketplace to find a handyman, you'll understand its purpose.",
+    "repository": "https://github.com/SebaPerez90/EaseHire-Back",
+    "deploy": "https://easehire.vercel.app/",
+    "skills": ["NestJS", "Next.js", "Typescript", "PostgreSQL", "CSS"],
+    "screen_shoots": ["/svg/development-stage.svg"],
+    "development_stage": true
+  },
+  {
+    "title": "E-Commerce Platform",
+    "descriptionES": "Aplicación de e-commerce backend genérica lista para ser implementada, desarrollada como proyecto académico. Utiliza NestJS, Docker, TypeScript, PostgreSQL y TypeORM. Además, se implementaron JWT y bcrypt para mayor seguridad.",
+    "descriptionEN": "Generic backend e-commerce application ready to be deployed, developed as an academic project. It uses NestJS, Docker, TypeScript, PostgreSQL, and TypeORM. Additionally, JWT and bcrypt were implemented for enhanced security.",
+    "repository": "https://github.com/SebaPerez90/e-comerce-backend",
+    "deploy": "https://ecomerce-m4.onrender.com/api",
+    "skills": ["NestJS", "Docker", "Typescript", "PostgreSQL", "TypeORM"],
+    "screen_shoots": ["/images/e-comerce-platform.webp"]
+  },
+  {
     "title": "Weather App",
     "descriptionES": "Aplicación que proporciona clima actual y pronósticos, incluyendo temperatura y condiciones climáticas, con una interfaz intuitiva para móviles y escritorio.",
     "descriptionEN": "An app providing current weather and forecasts, including temperature and conditions, with an intuitive interface for mobile and desktop.",
