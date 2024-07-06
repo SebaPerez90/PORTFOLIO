@@ -36,8 +36,8 @@ const About = () => {
   const { engLanguageActive } = useStore();
   return (
     <>
-      <main className='flex flex-col gap-24 items-center pt-28 bg-[#e2e2e2] dark:bg-theme_dark-main-bg'>
-        <section className='flex justify-evenly flex-wrap gap-10 sm:gap-0'>
+      <main className='overflow-hidden flex flex-col items-center gap-24  pt-28 bg-[#e2e2e2] dark:bg-theme_dark-main-bg'>
+        <section className='flex  justify-evenly flex-wrap gap-10 sm:gap-0'>
           <div className='flex flex-col items-center'>
             <motion.div
               transition={{
@@ -115,7 +115,7 @@ const About = () => {
               }}
               initial={{ opacity: 0, x: -300 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className='w-[25em] ml-10 min-[450px]:ml-0 rounded-md shadow-none min-[450px]:[box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] bg-transparent min-[450px]:bg-[#fbfbfb] p-8 dark:bg-theme_dark-box-thir dark:text-slate-50'>
+              className='ml-10 min-[450px]:ml-0 rounded-md shadow-none min-[450px]:[box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] bg-transparent min-[450px]:bg-[#fbfbfb] p-8 dark:bg-theme_dark-box-thir dark:text-slate-50'>
               <h2 className='text-center text-2xl font-bold'>
                 {engLanguageActive ? 'Educacion' : 'Education'} 👨‍🎓
               </h2>
@@ -155,7 +155,7 @@ const About = () => {
               }}
               initial={{ opacity: 0, x: 300 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className='bg-transparent w-[90%] sm:w-[30em] flex flex-col justify-center relative shadow-none rounded-md min-[450px]:[box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] min-[450px]:bg-[#fbfbfb] p-8 dark:bg-theme_dark-box-thir'>
+              className='w-[90%] sm:w-[30em] flex flex-col justify-center relative shadow-none rounded-md min-[450px]:[box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] bg-transparent min-[450px]:bg-[#fbfbfb] p-8 dark:bg-theme_dark-box-thir'>
               <h2 className='text-center text-2xl font-bold dark:text-slate-50'>
                 {engLanguageActive ? 'Experience' : 'Experiencia'} 👨‍💼
               </h2>
