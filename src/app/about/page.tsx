@@ -119,7 +119,7 @@ const About = () => {
               <h2 className='text-center text-2xl font-bold'>
                 {engLanguageActive ? 'Educacion' : 'Education'} 👨‍🎓
               </h2>
-              <ul className='flex flex-col gap-10 mt-10 relative before:absolute before:left-5 before:z-10 before:bottom-0 before:w-[2px] before:h-[18em] before:bg-light-500/30 dark:before:bg-theme_dark-sup-pink'>
+              <ul className='flex flex-col gap-10 mt-10 relative before:absolute before:left-5 before:z-10 before:bottom-4 before:w-[2px] before:h-[15em] before:bg-light-500/30 dark:before:bg-theme_dark-sup-pink'>
                 {educations.map((education, index) => (
                   <li
                     key={index}
