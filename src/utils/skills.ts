@@ -18,6 +18,7 @@ export const skills: Skills[] = [
     skillsEsp: [
       'HTML',
       'CSS',
+      'Typescript',
       'React.js',
       'Tailwind CSS',
       'Javascript',
@@ -50,7 +51,6 @@ export const skills: Skills[] = [
       'NestJS',
       'Docker',
       'TypeORM',
-      'Jira',
     ],
   },
   {
@@ -73,18 +73,20 @@ export const skills: Skills[] = [
     skillsEng: [
       'Collaboration',
       'Effective Communication',
-      'LeaderShip',
+      'Self-sufficient',
       'Proactive',
       'Dedication',
       'SCRUM',
+      'Jira',
     ],
     skillsEsp: [
       'Colaboración',
       'Comunicación Efectiva',
-      'Liderazgo',
+      'Autosuficiente',
       'Proactividad',
       'Dedicación',
       'SCRUM',
+      'Jira',
     ],
   },
 ];
