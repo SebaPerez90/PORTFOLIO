@@ -75,9 +75,9 @@ const HeroButtons = () => {
               <a
                 aria-label='cv-link'
                 className='text-light-500/75 dark:text-zinc-300 font-semibold text-base flex items-center gap-2 w-max'
-                href='/english.pdf'
-                download='english.pdf'>
-                english.pdf{' '}
+                href='/sebastian-perez-en.pdf'
+                download='sebastian-perez-en.pdf'>
+                sebastian-perez-en.pdf{' '}
                 <FaRegFilePdf className='dark:text-theme_dark-sup-pink text-bg-light-500/text-light-500/75' />
               </a>
             </li>
@@ -87,9 +87,9 @@ const HeroButtons = () => {
               <a
                 aria-label='cv-link'
                 className=' text-light-500/75 dark:text-zinc-300 font-semibold text-base flex items-center gap-2 w-max'
-                href='/español.pdf'
-                download='español.pdf'>
-                español.pdf{' '}
+                href='/sebastian-perez-es.pdf'
+                download='sebastian-perez-es.pdf'>
+                sebastian-perez-es.pdf{' '}
                 <FaRegFilePdf className='dark:text-theme_dark-sup-pink text-bg-light-500/text-light-500/75' />
               </a>
             </li>
