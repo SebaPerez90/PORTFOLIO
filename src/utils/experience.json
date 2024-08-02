@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "company": "XXXXXXXX",
-    "position": ["Frontend Developer", "Desarrollador Frontend"],
-    "date": "xxxxxxxxx",
+    "company": "Freelance",
+    "position": ["Fullstack Developer", "Desarrollador Fullstack"],
+    "date": "01/2024 - present",
     "tasks_description": [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit illum natus dolore, amet assumenda, architecto maiores voluptatibus ex aspernatur, omnis error cumque. Perferendis similique quaerat tenetur quo ab sapiente. Omnis.",
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit illum natus dolore, amet assumenda, architecto maiores voluptatibus ex aspernatur, omnis error cumque. Perferendis similique quaerat tenetur quo ab sapiente. Omnis."
+      "I help businesses enhance their efficiency and digital presence through innovative technological solutions. I specialize in developing custom projects that combine attractive design with robust functionality, ensuring effective and high-quality results.",
+      "Mejoro eficiencia y presencia digital de negocios a través de soluciones tecnológicas innovadoras y robustas, garantizando resultados efectivos y de alta calidad."
     ]
   },
   {

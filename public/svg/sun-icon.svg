@@ -4,14 +4,13 @@
   width="40"
   xmlns="http://www.w3.org/2000/svg"
   >
-    <circle cx="21" cy="20" r="9" fill="#fedf9b" />
-    <circle cx="21" cy="20" r="7" fill="#fedf9b" />
-    <path d="M21 6 L21 8" stroke="#fedf9b" stroke-width="3" stroke-linecap="round" />
-    <path d="M21 32 L21 34" stroke="#fedf9b" stroke-width="3" stroke-linecap="round" />
-    <path d="M7 20 L9 20" stroke="#fedf9b" stroke-width="3" stroke-linecap="round" />
-    <path d="M33 20 L35 20" stroke="#fedf9b" stroke-width="3" stroke-linecap="round" />
-    <path d="M10 11 L12 13" stroke="#fedf9b" stroke-width="3" stroke-linecap="round" />
-    <path d="M29 11 L31 9" stroke="#fedf9b" stroke-width="3" stroke-linecap="round" />
-    <path d="M30 28 L32 30" stroke="#fedf9b" stroke-width="3" stroke-linecap="round" />
-    <path d="M11 30 L13 28" stroke="#fedf9b" stroke-width="3" stroke-linecap="round" />
+    <circle cx="21" cy="20" r="9" fill="#4d4dffbf" />
+    <path d="M21 6 L21 8" stroke="#4d4dffbf" stroke-width="3" stroke-linecap="round" />
+    <path d="M21 32 L21 34" stroke="#4d4dffbf" stroke-width="3" stroke-linecap="round" />
+    <path d="M7 20 L9 20" stroke="#4d4dffbf" stroke-width="3" stroke-linecap="round" />
+    <path d="M33 20 L35 20" stroke="#4d4dffbf" stroke-width="3" stroke-linecap="round" />
+    <path d="M10 11 L12 13" stroke="#4d4dffbf" stroke-width="3" stroke-linecap="round" />
+    <path d="M29 11 L31 9" stroke="#4d4dffbf" stroke-width="3" stroke-linecap="round" />
+    <path d="M30 28 L32 30" stroke="#4d4dffbf" stroke-width="3" stroke-linecap="round" />
+    <path d="M11 30 L13 28" stroke="#4d4dffbf" stroke-width="3" stroke-linecap="round" />
 </svg>

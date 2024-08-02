@@ -50,13 +50,13 @@ const HamburguerMenu = () => {
         onClick={openMenu}>
         <span
           id='line_a'
-          className='relative w-8 h-1 bg-light-500 rounded-lg duration-200 dark:bg-theme_dark-sup-pink'></span>
+          className='relative w-8 h-1 bg-light-500 rounded-lg duration-200 dark:bg-dark-pink'></span>
         <span
           id='line_b'
-          className='relative w-8 h-1 bg-light-500 rounded-lg duration-200 dark:bg-theme_dark-sup-pink'></span>
+          className='relative w-8 h-1 bg-light-500 rounded-lg duration-200 dark:bg-dark-pink'></span>
         <span
           id='line_c'
-          className='relative w-8 h-1 bg-light-500 rounded-lg duration-200 dark:bg-theme_dark-sup-pink'></span>
+          className='relative w-8 h-1 bg-light-500 rounded-lg duration-200 dark:bg-dark-pink'></span>
       </div>
       {isOpen && (
         <motion.div
@@ -67,15 +67,15 @@ const HamburguerMenu = () => {
           }}
           initial={{ x: 100, opacity: 1 }}
           whileInView={{ x: 0, opacity: 1 }}
-          className='absolute z-30 w-[15em] h-[20em] -right-20 -top-7 bg-[#fbfbfb] dark:bg-theme_dark-box-thir rounded-[0_0_0_0.7em] overflow-hidden'>
+          className='absolute z-30 w-[15em] h-[20em] -right-20 -top-7 bg-[#fbfbfb] dark:bg-dark-tertiary rounded-[0_0_0_0.7em] overflow-hidden'>
           <motion.nav
             transition={{ delay: 0.2 }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className='flex flex-col items-center h-full justify-evenly dark:text-slate-200 text-[#333333be] font-bold text-sm z-50 relative before:absolute before:h-full before:w-16 before:bg-light-500 before:left-0 before:bottom-0 dark:before:bg-theme_dark-sup-pink'>
+            className='flex flex-col items-center h-full justify-evenly dark:text-slate-200 text-[#333333be] font-bold text-sm z-50 relative before:absolute before:h-full before:w-16 before:bg-light-500 before:left-0 before:bottom-0 dark:before:bg-dark-pink'>
             {navLinks.map((element, index) => (
               <Link
-                className='duration-200 hover:duration-200 hover:text-light-500 dark:hover:text-theme_dark-sup-pink z-50 flex items-center gap-2'
+                className='duration-200 hover:duration-200 hover:text-light-500 dark:hover:text-dark-pink z-50 flex items-center gap-2'
                 key={index}
                 href={element.url}
                 style={

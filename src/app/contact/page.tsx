@@ -64,7 +64,7 @@ const Contact = () => {
 
   return (
     <>
-      <main className='flex flex-col items-center bg-[#e2e2e2] dark:bg-theme_dark-main-bg'>
+      <main className='flex flex-col items-center bg-[#e2e2e2] dark:bg-dark-main'>
         <div className='w-full flex justify-evenly gap-14 pb-16 pt-24 flex-wrap'>
           <div className='max-[550px]:px-10 w-[30em] flex flex-col justify-center items-center'>
             <motion.div
@@ -89,14 +89,14 @@ const Contact = () => {
                 🚀
               </h2>
               <ul className='self-start mt-6'>
-                <p className='py-2 font-bold border-b-2 border-light-500 text-[#333333e3] dark:text-slate-50 dark:border-theme_dark-sup-sky'>
+                <p className='py-2 font-bold border-b-2 border-light-500 text-[#333333e3] dark:text-slate-50 dark:border-dark-sky'>
                   {engLanguageActive ? 'Benefits' : 'Beneficios'}
                 </p>
                 {benefits.map((element, index) => (
                   <li
                     key={index}
                     className='text-[#333333be] font-semibold flex items-center mt-3 gap-1 dark:text-slate-50'>
-                    <BiSolidZap className='text-light-500 dark:text-theme_dark-sup-pink text-2xl' />
+                    <BiSolidZap className='text-light-500 dark:text-dark-pink text-2xl' />
                     {engLanguageActive
                       ? element.benefitsEN
                       : element.benefitsES}
@@ -127,7 +127,7 @@ const Contact = () => {
               name='contact-form'
               method='POST'
               onSubmit={sendMessage}
-              className='max-[500px]:w-[21em] max-[500px]:bg-[#e2e2e2] max-[500px]:shadow-none bg-[#fbfbfb] rounded-md flex flex-col justify-around w-[25em] h-[33em] p-10 dark:bg-theme_dark-box-thir [box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)]'>
+              className='max-[500px]:w-[21em] max-[500px]:bg-[#e2e2e2] max-[500px]:shadow-none bg-[#fbfbfb] rounded-md flex flex-col justify-around w-[25em] h-[33em] p-10 dark:bg-dark-tertiary [box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)]'>
               {form_data.map((element, index) => (
                 <label
                   key={index}
@@ -135,7 +135,7 @@ const Contact = () => {
                   className='flex flex-col font-semibold relative text-[#333333be] dark:text-slate-50'>
                   {engLanguageActive ? element.labelEN : element.labelES}
                   {element.inputName === 'email' && (
-                    <span className='absolute gap-[2px] text-light-500/60 left-0 -bottom-5 flex items-center text-xs dark:text-theme_dark-sup-sky'>
+                    <span className='absolute gap-[2px] text-light-500/60 left-0 -bottom-5 flex items-center text-xs dark:text-dark-sky'>
                       <FaCircleExclamation />
                       {engLanguageActive
                         ? 'optional field / valid email addrress'
@@ -165,7 +165,7 @@ const Contact = () => {
                         ? element.placeHolderEN
                         : element.placeHolderES
                     }
-                    className='max-[500px]:border-b-light-500 placeholder:opacity-70 placeholder:text-xs placeholder:font-semibold p-2 rounded-sm bg-[#e8e8e8] focus:placeholder:opacity-0 placeholder:duration-300 outline-none focus:bg-[#fbfbfb] duration-300 focus:duration-300 focus:border-b-light-500 border-b-2 caret-light-500 text-sm font-semibold text-[#333333e3] mt-1 dark:caret-theme_dark-sup-pink dark:focus:border-theme_dark-sup-pink focus:dark:bg-theme_dark-box-thir dark:bg-theme_dark-box-second dark:border-theme_dark-box-second dark:text-slate-50'
+                    className='max-[500px]:border-b-light-500 placeholder:opacity-70 placeholder:text-xs placeholder:font-semibold p-2 rounded-sm bg-[#e8e8e8] focus:placeholder:opacity-0 placeholder:duration-300 outline-none focus:bg-[#fbfbfb] duration-300 focus:duration-300 focus:border-b-light-500 border-b-2 caret-light-500 text-sm font-semibold text-[#333333e3] mt-1 dark:caret-dark-pink dark:focus:border-dark-pink focus:dark:bg-dark-tertiary dark:bg-dark-secondary dark:border-dark-secondary dark:text-slate-50'
                   />
                 </label>
               ))}
@@ -187,7 +187,7 @@ const Contact = () => {
                       ? 'How can I help you ?'
                       : 'Como puedo ayudarte ?'
                   }
-                  className='max-[500px]:border-b-light-500 placeholder:opacity-70 placeholder:text-xs placeholder:font-semibold p-2 rounded-sm bg-[#e8e8e8] focus:placeholder:opacity-0 placeholder:duration-300 outline-none placeholder:pl-1 focus:bg-[#fbfbfb] duration-300 focus:duration-300 focus:border-b-light-500 border-b-2 caret-light-500 text-sm font-semibold text-[#333333e3] resize-none h-[10em] w-full mt-1 dark:caret-theme_dark-sup-pink dark:focus:border-theme_dark-sup-pink focus:dark:bg-theme_dark-box-thir dark:bg-theme_dark-box-second dark:border-theme_dark-box-second dark:text-slate-50 '></textarea>
+                  className='max-[500px]:border-b-light-500 placeholder:opacity-70 placeholder:text-xs placeholder:font-semibold p-2 rounded-sm bg-[#e8e8e8] focus:placeholder:opacity-0 placeholder:duration-300 outline-none placeholder:pl-1 focus:bg-[#fbfbfb] duration-300 focus:duration-300 focus:border-b-light-500 border-b-2 caret-light-500 text-sm font-semibold text-[#333333e3] resize-none h-[10em] w-full mt-1 dark:caret-dark-pink dark:focus:border-dark-pink focus:dark:bg-dark-tertiary dark:bg-dark-secondary dark:border-dark-secondary dark:text-slate-50 '></textarea>
                 <span className='absolute right-4 bottom-5 font-semibold dark:text-zinc-300 opacity-50 text-sm'>
                   {textAreaLength}/200
                 </span>
@@ -208,7 +208,7 @@ const Contact = () => {
                         transition: 'all 300ms',
                       }
                 }
-                className='bg-light-500 py-3 w-full text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-theme_dark-sup-sky'>
+                className='bg-light-500 py-3 w-full text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-dark-sky'>
                 {engLanguageActive ? 'Send' : 'Enviar'}
               </button>
             </motion.form>
