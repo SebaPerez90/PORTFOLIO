@@ -2,12 +2,12 @@
 
 import Link from 'next/link';
 import { useStore } from '@/context/store';
-// import Preferences from './Preferences';
 import { useEffect } from 'react';
 import navLinks from '@/utils/nav-links.json';
 // import { usePathname } from 'next/navigation';
 import ThemeButtons from './ThemeButtons';
 import LanguageButtons from './LanguageButtons';
+import HamburguerMenu from './HamburguerMenu';
 
 const NavLinks = () => {
   const { engLanguageActive } = useStore();
@@ -37,30 +37,26 @@ const NavLinks = () => {
   return (
     <header
       id='nav-bar'
-      className='flex justify-between items-center w-full fixed left-0 top-0 z-50 p-[1em_4em] bg-[#ffffff8d] dark:bg-[#00000068]'>
+      className='flex justify-between items-center w-full fixed left-0 top-0 z-50 p-[1.5em_4em] bg-[#ffffff8d] dark:bg-[#00000068]'>
       <span className='text-lg text-light-500/70 dark:text-dark-sky font-extrabold'>
         SebaPerez
       </span>
-      <nav className='xl:text-lg hidden md:flex gap-7 dark:text-slate-200 text-[#333333be] font-bold text-sm'>
+      <nav className='xl:text-lg flex gap-7 items-center dark:text-slate-200 text-[#333333be] font-bold max-[500px]:hidden'>
         {navLinks.map((element, index) => (
           <Link
             className='hover:text-light-500/50 dark:hover:text-dark-pink font-semibold duration-300 border-b-2 border-transparent text-slate-600 dark:text-slate-50'
             key={index}
             href={element.url}
-            // style={
-            //   pathname === element.url
-            //     ? { borderBottom: '2px solid rgb(77 77 255 / 0.5)' }
-            //     : undefined
-            // }
             aria-label={element.label}>
             {engLanguageActive ? element.titleEN : element.titleES}
           </Link>
         ))}
+        <div className='flex items-center gap-2 ml-3'>
+          <ThemeButtons />
+          <LanguageButtons />
+        </div>
       </nav>
-      <div className='flex gap-2'>
-        <ThemeButtons />
-        <LanguageButtons />
-      </div>
+      <HamburguerMenu />
     </header>
   );
 };

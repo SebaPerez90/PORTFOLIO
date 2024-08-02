@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section
       id='hero-section'
-      className='relative bg-white flex max-[500px]:flex-col items-center justify-evenly w-full dark:bg-dark-main h-[38em]'>
+      className='relative h-[45em] bg-white flex items-center justify-evenly w-full dark:bg-dark-main sm:h-[38em]'>
       <span className='dark:opacity-50 z-10 absolute h-12 w-12 rounded-full bg-[#d4b0ff]  [box-shadow:0_0_40px_#dcbfff] duration-300 left-0 top-0 blur-md animate-[bouncing2_14s_linear_alternate-reverse_infinite]'></span>
 
       <span className='dark:opacity-40 z-10 absolute h-8 w-8 rounded-full bg-[#beffcc]  [box-shadow:0_0_40px_#c8ffd4] duration-300 right-[50%] top-0 blur-md animate-[bouncing_17s_linear_alternate-reverse_infinite]'></span>
@@ -25,7 +25,7 @@ const Hero = () => {
         initial={{ translateX: '-20em', opacity: 0 }}
         whileInView={{ translateX: '0em', opacity: 1 }}
         viewport={{ once: true }}
-        className='max-[500px]:w-[80%]  w-[50%] md:w-[32em] flex flex-col items-start gap-4 z-40'>
+        className='w-[50%] md:w-[32em] flex flex-col items-start gap-4 z-40'>
         <span className='dark:text-slate-200 text-[#333333be] text-lg font-semibold translate-y-2'>
           {engLanguageActive ? 'Hey! I´m Seba👋' : 'Hola! mi nombre es Seba👋'}
         </span>

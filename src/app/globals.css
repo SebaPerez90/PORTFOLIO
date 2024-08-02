@@ -64,7 +64,7 @@ body {
   font-size: calc(7.5px + 0.5vw);
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  
+
   .social-network {
     &:hover {
       span {
@@ -191,24 +191,19 @@ body {
 @media (640px > width) {
   .avatar-container {
     position: relative;
-    right: -2em;
+    right: 0;
+
+    > :nth-child(1) {
+      position: relative;
+      top: -1em;
+    }
     > :nth-child(2) {
+      position: relative;
+      right: 0;
+      top: 4em;
       flex-direction: column;
       span {
         display: none;
-      }
-    }
-  }
-}
-@media (500px > width) {
-  .avatar-container {
-    width: 100%;
-    align-items: start;
-    padding-left: 2em;
-    > :nth-child(2) {
-      flex-direction: row;
-      span {
-        display: block;
       }
     }
   }

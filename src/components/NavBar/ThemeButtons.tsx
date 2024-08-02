@@ -74,8 +74,8 @@ const ThemeButtons = () => {
             ref={buttonRef}
             className='duration-400 hover:duration-200 bg-[#4d4dffbf] hover:bg-[#4d4dff73] rounded-full h-5 w-5 m-[2px] z-20'></button>
           <Image
-            width={25}
-            height={25}
+            width={20}
+            height={20}
             ref={iconRef}
             src={'/svg/sun-icon.svg'}
             alt='light-theme-icon'
