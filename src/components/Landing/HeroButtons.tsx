@@ -45,9 +45,9 @@ const HeroButtons = () => {
   }, [isDownloaded]);
 
   return (
-    <div className='z-50 flex items-center gap-4'>
+    <div className='z-50 flex items-center gap-4 mt-8'>
       <Link
-        className='bg-light-500 p-3 w-max text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-theme_dark-sup-sky'
+        className='bg-light-500 p-3 w-max text-slate-50 rounded-md font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-dark-sky'
         href={'/contact'}
         aria-label='contact-link'>
         {engLanguageActive ? 'Get in Touch' : 'Contáctame'}
@@ -59,7 +59,7 @@ const HeroButtons = () => {
           onClick={changingVisibility}
           disabled={isDownloaded}
           aria-label='visibility-switch-btn'
-          className='border-slate-600 rounded-md text-xs text-slate-600 flex items-center gap-1 w-36 justify-center border dark:border-theme_dark-sup-sky dark:text-theme_dark-sup-sky py-2 font-bold overflow-hidden dark:hover:bg-theme_dark-sup-sky/30 duration-200 hover:duration-200 active:scale-95 hover:bg-light-500/5'>
+          className='border-slate-600 rounded-md text-slate-600 flex items-center gap-1 justify-center border dark:border-dark-sky dark:text-dark-sky p-3 font-bold overflow-hidden dark:hover:bg-dark-sky/30 duration-200 hover:duration-200 active:scale-95 hover:bg-light-500/5 w-max'>
           {engLanguageActive ? 'Download CV' : 'Descargar CV'}
           <MdDownload className='text-xl' />
         </button>
@@ -70,7 +70,7 @@ const HeroButtons = () => {
         <div
           id='hidden-element'
           className='z-50 hidden absolute bottom-[-7.5em] left-0'>
-          <ul className='flex flex-col gap-5 py-4 px-3 border-2 rounded-md dark:border-slate-700/50 dark:bg-theme_dark-box-second bg-white'>
+          <ul className='flex flex-col gap-5 py-4 px-3 border-2 rounded-md dark:border-slate-700/50 dark:bg-dark-secondary bg-white'>
             <li onClick={() => setIsDownloaded(!isDownloaded)}>
               <a
                 aria-label='cv-link'
@@ -78,7 +78,7 @@ const HeroButtons = () => {
                 href='/sebastian-perez-en.pdf'
                 download='sebastian-perez-en.pdf'>
                 sebastian-perez-en.pdf{' '}
-                <FaRegFilePdf className='dark:text-theme_dark-sup-pink text-bg-light-500/text-light-500/75' />
+                <FaRegFilePdf className='dark:text-dark-pink text-bg-light-500/text-light-500/75' />
               </a>
             </li>
             <li
@@ -90,7 +90,7 @@ const HeroButtons = () => {
                 href='/sebastian-perez-es.pdf'
                 download='sebastian-perez-es.pdf'>
                 sebastian-perez-es.pdf{' '}
-                <FaRegFilePdf className='dark:text-theme_dark-sup-pink text-bg-light-500/text-light-500/75' />
+                <FaRegFilePdf className='dark:text-dark-pink text-bg-light-500/text-light-500/75' />
               </a>
             </li>
           </ul>

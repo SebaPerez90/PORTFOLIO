@@ -36,7 +36,7 @@ const About = () => {
   const { engLanguageActive } = useStore();
   return (
     <>
-      <main className='overflow-hidden flex flex-col items-center gap-24  pt-28 bg-[#e2e2e2] dark:bg-theme_dark-main-bg'>
+      <main className='overflow-hidden flex flex-col items-center gap-24  pt-28 bg-[#e2e2e2] dark:bg-dark-main'>
         <section className='flex  justify-evenly flex-wrap gap-10 sm:gap-0'>
           <div className='flex flex-col items-center'>
             <motion.div
@@ -85,7 +85,7 @@ const About = () => {
               initial={{ y: 100, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
-              className='border-l-8 border-light-500 dark:border-theme_dark-sup-pink dark:text-slate-50 dark:bg-theme_dark-box-thir bg-[#fbfbfb] px-4 py-4 text-sm font-semibold text-[#333333be]'>
+              className='border-l-8 border-light-500 dark:border-dark-pink dark:text-slate-50 dark:bg-dark-tertiary bg-[#fbfbfb] px-4 py-4 text-sm font-semibold text-[#333333be]'>
               {engLanguageActive
                 ? 'Fullstack Developer. With over 2 years of experience, I am continuously learning to always give my best.'
                 : 'Desarrollador Fullstack. Con más de 2 años de experiencia formandome para poder brindar lo mejor de mí siempre.'}
@@ -95,7 +95,7 @@ const About = () => {
                 : 'Soy una persona muy dedicada y apasionada, trato de demostrarlo en cada proyecto que realizo y sé que puedo aportar mucho a cualquier equipo de desarrallo ya que cuando me propongo algo, para mi no existen obstaculos.'}
             </motion.p>
             <Link
-              className='bg-light-500 p-3 w-max text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-theme_dark-sup-sky'
+              className='bg-light-500 p-3 w-max text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-dark-sky'
               href={'/contact'}
               aria-label='contact-link'>
               {engLanguageActive ? 'Get in Touch' : 'Contáctame'}
@@ -115,11 +115,11 @@ const About = () => {
               }}
               initial={{ opacity: 0, x: -300 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className='ml-10 min-[450px]:ml-0 rounded-md shadow-none min-[450px]:[box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] bg-transparent min-[450px]:bg-[#fbfbfb] p-8 dark:bg-theme_dark-box-thir dark:text-slate-50'>
+              className='ml-10 min-[450px]:ml-0 rounded-md shadow-none min-[450px]:[box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] bg-transparent min-[450px]:bg-[#fbfbfb] p-8 dark:bg-dark-tertiary dark:text-slate-50'>
               <h2 className='text-center text-2xl font-bold'>
                 {engLanguageActive ? 'Educacion' : 'Education'} 👨‍🎓
               </h2>
-              <ul className='flex flex-col gap-10 mt-10 relative before:absolute before:left-5 before:z-10 before:bottom-4 before:w-[2px] before:h-[15em] before:bg-light-500/30 dark:before:bg-theme_dark-sup-pink'>
+              <ul className='flex flex-col gap-10 mt-10 relative before:absolute before:left-5 before:z-10 before:bottom-4 before:w-[2px] before:h-[15em] before:bg-light-500/30 dark:before:bg-dark-pink'>
                 {educations.map((education, index) => (
                   <li
                     key={index}
@@ -155,11 +155,11 @@ const About = () => {
               }}
               initial={{ opacity: 0, x: 300 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className='w-[90%] sm:w-[30em] flex flex-col justify-center relative shadow-none rounded-md min-[450px]:[box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] bg-transparent min-[450px]:bg-[#fbfbfb] p-8 dark:bg-transparent sm:dark:bg-theme_dark-box-thir'>
+              className='w-[90%] sm:w-[30em] flex flex-col justify-center relative shadow-none rounded-md min-[450px]:[box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] bg-transparent min-[450px]:bg-[#fbfbfb] p-8 dark:bg-transparent sm:dark:bg-dark-tertiary'>
               <h2 className='text-center text-2xl font-bold dark:text-slate-50'>
                 {engLanguageActive ? 'Experience' : 'Experiencia'} 👨‍💼
               </h2>
-              <p className='text-sm font-semibold text-[#333333cd] mt-8 border-l-8 dark:border-theme_dark-sup-pink dark:text-slate-50 dark:bg-theme_dark-box-thir border-light-500 px-4 bg-slate-100 py-2'>
+              <p className='text-sm font-semibold text-[#333333cd] mt-8 border-l-8 dark:border-dark-pink dark:text-slate-50 dark:bg-dark-tertiary border-light-500 px-4 bg-slate-100 py-2'>
                 {engLanguageActive
                   ? 'I have over 12 years of experience in the gastronomic sector. Although I have decided not to delve deeper into this area, as my profile is now focused on the technology sector, my past experience has allowed me to acquire valuable soft skills.'
                   : 'Cuento con más de 12 años de experiencia en el sector gastronómico. Aunque he decidido no profundizar en esta área, ya que mi perfil ahora está enfocado en el sector tecnológico, mi trayectoria pasada me ha permitido adquirir valiosas habilidades blandas.'}
