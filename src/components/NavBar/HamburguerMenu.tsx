@@ -7,6 +7,9 @@ import { IoMdHome } from 'react-icons/io';
 import { FaUserTie } from 'react-icons/fa6';
 import { HiOutlineMailOpen } from 'react-icons/hi';
 import { usePathname } from 'next/navigation';
+import LanguageButtons from './LanguageButtons';
+import ThemeButtons from './ThemeButtons';
+import { IoMdSettings } from 'react-icons/io';
 
 const HamburguerMenu = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -43,10 +46,10 @@ const HamburguerMenu = () => {
   };
 
   return (
-    <div className='relative'>
+    <div className=' relative min-[500px]:absolute'>
       <div
         aria-label='button-menu'
-        className='md:hidden flex flex-col gap-1 cursor-pointer absolute left-2 -top-2 z-50'
+        className='min-[500px]:hidden flex flex-col gap-1 cursor-pointer absolute left-2 -top-2 z-50'
         onClick={openMenu}>
         <span
           id='line_a'
@@ -67,12 +70,12 @@ const HamburguerMenu = () => {
           }}
           initial={{ x: 100, opacity: 1 }}
           whileInView={{ x: 0, opacity: 1 }}
-          className='absolute z-30 w-[15em] h-[20em] -right-20 -top-7 bg-[#fbfbfb] dark:bg-dark-tertiary rounded-[0_0_0_0.7em] overflow-hidden'>
+          className='absolute z-30 w-[22em] h-[25em] -right-20 -top-10 bg-[#fbfbfb] dark:bg-dark-tertiary rounded-[0_0_0_0.7em] overflow-hidden'>
           <motion.nav
             transition={{ delay: 0.2 }}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className='flex flex-col items-center h-full justify-evenly dark:text-slate-200 text-[#333333be] font-bold text-sm z-50 relative before:absolute before:h-full before:w-16 before:bg-light-500 before:left-0 before:bottom-0 dark:before:bg-dark-pink'>
+            className='flex flex-col items-center h-full justify-evenly dark:text-slate-200 text-[#333333be] font-bold text-sm z-50 relative before:absolute before:h-full before:w-20 before:bg-light-500 before:left-0 before:bottom-0 dark:before:bg-dark-pink'>
             {navLinks.map((element, index) => (
               <Link
                 className='duration-200 hover:duration-200 hover:text-light-500 dark:hover:text-dark-pink z-50 flex items-center gap-2'
@@ -90,6 +93,19 @@ const HamburguerMenu = () => {
                 {engLanguageActive ? element.titleEN : element.titleES}
               </Link>
             ))}
+            <div className='flex items-center gap-2 ml-3'>
+              <IoMdSettings
+                style={{
+                  position: 'absolute',
+                  left: '2rem',
+                  color: '#e8f1ff',
+                  fontSize: '1.25rem',
+                  lineHeight: ' 1.75rem',
+                }}
+              />
+              <ThemeButtons />
+              <LanguageButtons />
+            </div>
           </motion.nav>
         </motion.div>
       )}
