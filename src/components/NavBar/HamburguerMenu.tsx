@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import navLinks from '@/utils/nav-links.json';
 import Link from 'next/link';
 import { useStore } from '@/context/store';
@@ -70,53 +70,57 @@ const HamburguerMenu = () => {
           id='line_c'
           className='relative w-8 h-1 bg-light-500 rounded-lg duration-200 dark:bg-dark-pink'></span>
       </div>
-      {isOpen && (
-        <motion.div
-          transition={{
-            type: 'spring',
-            bounce: 0.5,
-            staggerChildren: 0.4,
-          }}
-          initial={{ x: 100, opacity: 1 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          className='absolute z-30 w-[22em] h-[25em] -right-20 -top-10 bg-[#fbfbfb] dark:bg-dark-tertiary rounded-[0_0_0_0.7em] overflow-hidden'>
-          <motion.nav
-            transition={{ delay: 0.2 }}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className='flex flex-col items-center h-full justify-evenly dark:text-slate-200 text-[#333333be] font-bold text-sm z-50 relative before:absolute before:h-full before:w-20 before:bg-light-500 before:left-0 before:bottom-0 dark:before:bg-dark-pink'>
-            {navLinks.map((element, index) => (
-              <Link
-                className='duration-200 hover:duration-200 hover:text-light-500 dark:hover:text-dark-pink z-50 flex items-center gap-2'
-                key={index}
-                href={element.url}
-                aria-label={element.label}>
-                <span className='text-light-50 text-xl absolute left-8'>
-                  {renderIcon(element.url)}
-                </span>
-                {engLanguageActive ? element.titleEN : element.titleES}
-              </Link>
-            ))}
-            <div className='flex items-center gap-4 ml-3'>
-              <IoMdSettings
-                style={{
-                  position: 'absolute',
-                  left: '2rem',
-                  color: '#e8f1ff',
-                  fontSize: '1.25rem',
-                  lineHeight: ' 1.75rem',
-                }}
-              />
-              <button
-                className='text-2xl font-extrabold text-light-500 dark:text-dark-pink'
-                onClick={() => setTheme(theme === 'dark' ? 'ligth' : 'dark')}>
-                {theme === 'dark' ? <BsMoonStarsFill /> : <IoSunny />}
-              </button>
-              <LanguageButtons />
-            </div>
-          </motion.nav>
-        </motion.div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            transition={{
+              type: 'spring',
+              bounce: 0.5,
+              staggerChildren: 0.4,
+            }}
+            initial={{ x: 100, opacity: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            exit={{ opacity: 0, width: 0 }}
+            className='absolute z-30 w-[21em] h-[25em] -right-20 -top-10 bg-[#fbfbfb] dark:bg-dark-tertiary rounded-[0_0_0_0.7em] overflow-hidden'>
+            <motion.nav
+              transition={{ delay: 0.2 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className='flex flex-col items-center h-full justify-evenly dark:text-slate-200 text-[#333333be] font-bold text-sm z-50 relative before:absolute before:h-full before:w-20 before:bg-light-500 before:left-0 before:bottom-0 dark:before:bg-dark-pink'>
+              {navLinks.map((element, index) => (
+                <Link
+                  className='duration-200 hover:duration-200 hover:text-light-500 dark:hover:text-dark-pink z-50 flex items-center gap-2'
+                  key={index}
+                  href={element.url}
+                  aria-label={element.label}>
+                  <span className='text-light-50 text-xl absolute left-8'>
+                    {renderIcon(element.url)}
+                  </span>
+                  {engLanguageActive ? element.titleEN : element.titleES}
+                </Link>
+              ))}
+              <div className='flex items-center gap-4 ml-3'>
+                <IoMdSettings
+                  style={{
+                    position: 'absolute',
+                    left: '2rem',
+                    color: '#e8f1ff',
+                    fontSize: '1.25rem',
+                    lineHeight: ' 1.75rem',
+                  }}
+                />
+                <button
+                  className='text-2xl font-extrabold text-light-500 dark:text-dark-pink active:scale-75 active:outline active:outline-2 active:outline-light-500/50 rounded-full p-2'
+                  onClick={() => setTheme(theme === 'dark' ? 'ligth' : 'dark')}>
+                  {theme === 'dark' ? <BsMoonStarsFill /> : <IoSunny />}
+                </button>
+                <LanguageButtons />
+              </div>
+            </motion.nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
