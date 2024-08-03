@@ -59,9 +59,14 @@
   }
 }
 
+* {
+  transition: background-color 500ms;
+  box-sizing: border-box;
+}
+
 html,
 body {
-  font-size: calc(7.5px + 0.5vw);
+  font-size: calc(9px + 0.5vw);
   font-family: 'Inter', sans-serif;
   font-weight: 500;
 
@@ -195,7 +200,8 @@ body {
 
     > :nth-child(1) {
       position: relative;
-      top: -1em;
+      top: -2em;
+      right: -1em;
     }
     > :nth-child(2) {
       position: relative;

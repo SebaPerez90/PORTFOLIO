@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import navLinks from '@/utils/nav-links.json';
 import Link from 'next/link';
@@ -6,15 +6,24 @@ import { useStore } from '@/context/store';
 import { IoMdHome } from 'react-icons/io';
 import { FaUserTie } from 'react-icons/fa6';
 import { HiOutlineMailOpen } from 'react-icons/hi';
-import { usePathname } from 'next/navigation';
 import LanguageButtons from './LanguageButtons';
-import ThemeButtons from './ThemeButtons';
 import { IoMdSettings } from 'react-icons/io';
+import { IoSunny } from 'react-icons/io5';
+import { BsMoonStarsFill } from 'react-icons/bs';
 
 const HamburguerMenu = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { engLanguageActive } = useStore();
-  const pathname = usePathname();
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
 
   const openMenu = () => {
     const line_a = document.getElementById('line_a');
@@ -46,7 +55,7 @@ const HamburguerMenu = () => {
   };
 
   return (
-    <div className=' relative min-[500px]:absolute'>
+    <div className=' relative min-[500px]:hidden'>
       <div
         aria-label='button-menu'
         className='min-[500px]:hidden flex flex-col gap-1 cursor-pointer absolute left-2 -top-2 z-50'
@@ -81,11 +90,6 @@ const HamburguerMenu = () => {
                 className='duration-200 hover:duration-200 hover:text-light-500 dark:hover:text-dark-pink z-50 flex items-center gap-2'
                 key={index}
                 href={element.url}
-                style={
-                  pathname === element.url
-                    ? { borderBottom: '3px solid #38bdf8' }
-                    : undefined
-                }
                 aria-label={element.label}>
                 <span className='text-light-50 text-xl absolute left-8'>
                   {renderIcon(element.url)}
@@ -93,7 +97,7 @@ const HamburguerMenu = () => {
                 {engLanguageActive ? element.titleEN : element.titleES}
               </Link>
             ))}
-            <div className='flex items-center gap-2 ml-3'>
+            <div className='flex items-center gap-4 ml-3'>
               <IoMdSettings
                 style={{
                   position: 'absolute',
@@ -103,7 +107,11 @@ const HamburguerMenu = () => {
                   lineHeight: ' 1.75rem',
                 }}
               />
-              <ThemeButtons />
+              <button
+                className='text-2xl font-extrabold text-light-500 dark:text-dark-pink'
+                onClick={() => setTheme(theme === 'dark' ? 'ligth' : 'dark')}>
+                {theme === 'dark' ? <BsMoonStarsFill /> : <IoSunny />}
+              </button>
               <LanguageButtons />
             </div>
           </motion.nav>

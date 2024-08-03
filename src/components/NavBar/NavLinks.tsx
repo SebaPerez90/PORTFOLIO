@@ -38,10 +38,10 @@ const NavLinks = () => {
     <header
       id='nav-bar'
       className='flex justify-between items-center w-full fixed left-0 top-0 z-50 p-[1.5em_4em] bg-[#ffffff8d] dark:bg-[#00000068]'>
-      <span className='text-lg text-light-500/70 dark:text-dark-sky font-extrabold'>
+      <span className='text-lg text-light-500/95 dark:text-dark-sky font-extrabold'>
         SebaPerez
       </span>
-      <nav className='xl:text-lg flex gap-7 items-center dark:text-slate-200 text-[#333333be] font-bold max-[500px]:hidden'>
+      <nav className='xl:text-lg flex gap-7 items-center dark:text-slate-200 text-[#333333be] font-bold max-[500px]:hidden max-[500px]:pointer-events-none'>
         {navLinks.map((element, index) => (
           <Link
             className='hover:text-light-500/50 dark:hover:text-dark-pink font-semibold duration-300 border-b-2 border-transparent text-slate-600 dark:text-slate-50'
