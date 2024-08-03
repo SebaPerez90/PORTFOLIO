@@ -10,10 +10,12 @@ import LanguageButtons from './LanguageButtons';
 import { IoMdSettings } from 'react-icons/io';
 import { IoSunny } from 'react-icons/io5';
 import { BsMoonStarsFill } from 'react-icons/bs';
+import { usePathname } from 'next/navigation';
 
 const HamburguerMenu = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { engLanguageActive } = useStore();
+  const pathname = usePathname();
   const [theme, setTheme] = useState('light');
 
   useEffect(() => {
@@ -93,6 +95,13 @@ const HamburguerMenu = () => {
                   className='duration-200 hover:duration-200 hover:text-light-500 dark:hover:text-dark-pink z-50 flex items-center gap-2'
                   key={index}
                   href={element.url}
+                  style={
+                    pathname === element.url
+                      ? theme === 'dark'
+                        ? { color: '#f472b6' }
+                        : { color: '#4d4dff' }
+                      : undefined
+                  }
                   aria-label={element.label}>
                   <span className='text-light-50 text-xl absolute left-8'>
                     {renderIcon(element.url)}

@@ -27,7 +27,7 @@ const Services = () => {
     <section
       id='services-section'
       className='flex flex-col items-center gap-10'>
-      <h1 className='dark:text-zinc-50 text-4xl text-[#334155] text-center'>
+      <h1 className='dark:text-zinc-50 text-4xl text-[#334155] font-bold text-center'>
         {engLanguageActive ? 'My Services.' : 'Mis Servicios.'}
       </h1>
       <div className=' mt-10 grid grid-cols-1 md:grid-cols-2 w-full gap-4 items-center'>
