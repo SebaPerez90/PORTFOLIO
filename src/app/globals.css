@@ -61,6 +61,7 @@
 
 * {
   transition: background-color 500ms;
+  transition: box-shadow 50ms;
   box-sizing: border-box;
 }
 
