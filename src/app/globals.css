@@ -32,17 +32,18 @@
   }
   .scroll-bar-light {
     &::-webkit-scrollbar {
-      background-color: #e8e8e8;
-      width: 14px;
+      background-color: #fff;
+      width: 8px;
     }
     &::-webkit-scrollbar-thumb {
       background-color: #4d4dff;
+      border-radius: 1em;
     }
   }
   .scroll-bar-dark {
     &::-webkit-scrollbar {
-      background-color: #313643;
-      width: 14px;
+      background-color: #0f172a;
+      width: 8px;
     }
     &::-webkit-scrollbar-thumb {
       background-color: #f472b6;
@@ -50,18 +51,27 @@
   }
 }
 
-@layer components {
-  .btn-light {
-    @apply active:scale-125 flex items-center gap-1  w-max p-[0.8em_2em] justify-center rounded-full text-white font-bold hover:duration-200 duration-200 hover:bg-blue-400 bg-light-500  hover:border-light-200 border border-light-500/85 hover:shadow-[0px_8px_7px_#00000049];
+.scrollbar-modal-dark {
+  &::-webkit-scrollbar {
+    background-color: #0f172a;
+    width: 2px;
   }
-  .btn-dark {
-    @apply active:scale-125 dark:text-dark-pink dark:border-dark-pink dark:after:bg-dark-pink font-bold p-[0.8em_2em] flex w-max  relative hover:text-white hover:z-10  after:absolute after:left-[50%] after:rounded-[2em] after:bottom-0 after:w-0 after:h-full after:-z-10 rounded-[2em] hover:after:left-[0%] hover:after:w-[100%] active:outline active:outline-2 active:outline-light-600 hover:after:duration-[400ms] hover:shadow-[0px_8px_7px_#00000049] duration-300 outline-none;
+  &::-webkit-scrollbar-thumb {
+    background-color: #f472b6;
+  }
+}
+.scrollbar-modal {
+  &::-webkit-scrollbar {
+    background-color: #fff;
+    width: 2px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #4d4dff;
   }
 }
 
 * {
   transition: background-color 500ms;
-  transition: box-shadow 50ms;
   box-sizing: border-box;
 }
 
@@ -71,6 +81,12 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
 
+  @media (height < 200px) {
+    .about_main_container {
+      color:#7a7aff ;
+    }
+  }
+
   .social-network {
     &:hover {
       span {
@@ -79,12 +95,20 @@ body {
     }
   }
 
+  .input_field_container input:focus ~ label,
+  .input_field_container input:valid ~ label {
+    transform: translateY(-2.5em) translateX(-10px) scale(0.9);
+    padding: 0.2em 0.5em;
+    background: inherit;
+    transition: all 200ms;
+    border: none;
+  }
+
   .work-experience-container {
     > :nth-child(4) {
       margin-top: 10em;
       opacity: 0;
     }
-
     @keyframes loading {
       35% {
         transform: translateY(-0.2em);
@@ -95,6 +119,31 @@ body {
       100% {
         transform: translateY(0em);
       }
+    }
+  }
+
+  @keyframes disappearContent2 {
+    0% {
+      opacity: 0;
+      scale: 0;
+    }
+    100% {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+  @keyframes disappearContent {
+    0% {
+      opacity: 0;
+      scale: 0;
+    }
+    80% {
+      opacity: 0;
+      scale: 0;
+    }
+    100% {
+      opacity: 1;
+      scale: 1;
     }
   }
 
