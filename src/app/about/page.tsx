@@ -110,26 +110,26 @@ const About = () => {
               <li>
                 ⚡
                 {engLanguageActive
-                  ? 'Super affordable and personalized prices.'
-                  : 'Precios super accesibles y personalizados.'}
+                  ? ' Super affordable and personalized prices.'
+                  : ' Precios super accesibles y personalizados.'}
               </li>
               <li>
                 ⚡
                 {engLanguageActive
-                  ? 'Free performance test.'
-                  : 'Prueba de rendimiento gratuita.'}
+                  ? ' Free performance test.'
+                  : ' Prueba de rendimiento gratuita.'}
               </li>
               <li>
                 ⚡
                 {engLanguageActive
-                  ? 'You can pay monthly, like a subscription service.'
-                  : 'Podes pagar mes a mes como un servicio.'}
+                  ? ' You can pay monthly, like a subscription service.'
+                  : ' Podes pagar mes a mes como un servicio.'}
               </li>
               <li>
                 ⚡
                 {engLanguageActive
-                  ? 'Pay only if it meets your expectations.'
-                  : 'Paga solo si cumple con tus expectativas.'}
+                  ? ' Pay only if it meets your expectations.'
+                  : ' Paga solo si cumple con tus expectativas.'}
               </li>
             </ul>
             <p>
@@ -170,8 +170,8 @@ const About = () => {
                   : ' 2 años de experiencia '}
               </strong>
               {engLanguageActive
-                ? 'not formally in the tech sector, I live in Buenos Aires.'
-                : 'no formal en el sector tecnológico, vivo en Buenos Aires, Berazategui.'}
+                ? 'not formally in the tech sector, I live in Berazategui, Buenos Aires.'
+                : 'no formal en el sector tecnológico, vivo en Berazategui, Buenos Aires.'}
               <br></br>
               {engLanguageActive ? 'I also have over' : 'También tengo más de'}
               <strong className='font-extrabold text-slate-600 dark:text-white'>
