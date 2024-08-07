@@ -32,18 +32,27 @@ const HamburguerMenu = () => {
     const line_b = document.getElementById('line_b');
     const line_c = document.getElementById('line_c');
     const main_section = document.getElementById('main-section');
+    const contact_section = document.getElementById('contact-section');
+    const footer_section = document.getElementById('footer-section');
+    const about_section = document.getElementById('about-section');
 
     if (isOpen === false) {
       line_a!.classList.add('[rotate:45deg]', 'top-2');
       line_b!.classList.add('opacity-0');
       line_c!.classList.add('[rotate:-45deg]', 'bottom-2');
-      main_section!.classList.add('[filter:blur(5px)]');
+      main_section?.classList.add('[filter:blur(5px)]');
+      contact_section?.classList.add('[filter:blur(5px)]');
+      footer_section?.classList.add('[filter:blur(5px)]');
+      about_section?.classList.add('[filter:blur(5px)]');
       setIsOpen(true);
     } else {
       line_a!.classList.remove('[rotate:45deg]', 'top-2');
       line_b!.classList.remove('opacity-0');
       line_c!.classList.remove('[rotate:-45deg]', 'bottom-2');
-      main_section!.classList.remove('[filter:blur(5px)]');
+      main_section?.classList.remove('[filter:blur(5px)]');
+      contact_section?.classList.remove('[filter:blur(5px)]');
+      footer_section?.classList.remove('[filter:blur(5px)]');
+      about_section?.classList.remove('[filter:blur(5px)]');
       setIsOpen(false);
     }
   };

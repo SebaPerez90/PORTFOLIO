@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { MdArrowBackIosNew } from 'react-icons/md';
 import { MdArrowForwardIos } from 'react-icons/md';
 import Footer from '@/components/Footer';
+import NavLinks from '@/components/NavBar/NavLinks';
 
 const About = () => {
   const { engLanguageActive } = useStore();
@@ -59,7 +60,9 @@ const About = () => {
 
   return (
     <>
+      <NavLinks />
       <main
+      id='about-section'
         ref={main_container_ref}
         className='about_main_container flex justify-between items-center py-40 mt-[4.8rem] h-[42em] bg-white relative before:[transition:all_900ms_ease] [transition:all_900ms] before:absolute before:right-0 before:top-0 before:w-[35%] z-10 before:h-full (before:bg-dark-secondary) before:bg-[#7a7aff] before:z-10
         dark:bg-dark-main'>

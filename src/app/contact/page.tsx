@@ -12,6 +12,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { IoInformationCircle } from 'react-icons/io5';
+import NavLinks from '@/components/NavBar/NavLinks';
 
 const Contact = () => {
   const { engLanguageActive } = useStore();
@@ -63,7 +64,10 @@ const Contact = () => {
 
   return (
     <>
-      <main className='flex flex-col items-center bg-white dark:bg-dark-main  pb-48 lg:pb-24 pt-32'>
+      <NavLinks />
+      <main
+        id='contact-section'
+        className='flex flex-col items-center bg-white dark:bg-dark-main  pb-48 lg:pb-24 pt-32'>
         <div className='[width:clamp(300px,80%,1400px)] mx-8 flex h-full justify-around items-center flex-wrap'>
           <div className='flex flex-col justify-start items-center sm:items-start gap-8'>
             <motion.div
