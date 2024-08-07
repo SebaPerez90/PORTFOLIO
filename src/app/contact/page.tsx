@@ -1,11 +1,9 @@
 'use client';
 
-import form_data from '@/utils/form-data.json';
 import benefits from '@/utils/benefits.json';
 import { useStore } from '@/context/store';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { FormData, IFormData } from './form-data.interface';
-import { FaCircleExclamation } from 'react-icons/fa6';
 import Image from 'next/image';
 import contact from '@/assets/images/contact.svg';
 import Footer from '@/components/Footer';
@@ -27,12 +25,11 @@ const Contact = () => {
   const captureValues = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    if (e.target.name === 'name') {
-      const updatedValue = e.target.value.replace(/[^a-zA-Z\s]/g, '');
-      setFormData({ ...formData, [e.target.name]: updatedValue });
-    } else if (e.target.name === 'email' || e.target.name === 'message') {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
-    }
+    // if (e.target.name === 'name') {
+    //   const updatedValue = e.target.value.replace(/[^a-zA-Z\s]/g, '');
+    //   setFormData({ ...formData, [e.target.name]: updatedValue });
+    // }
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const sendMessage = async (e: FormEvent<HTMLFormElement>) => {
@@ -45,6 +42,7 @@ const Contact = () => {
       body: JSON.stringify(formData),
     });
   };
+
   const succesMessage = () => {
     const message = engLanguageActive
       ? 'Your message has been send successfully'
@@ -64,9 +62,9 @@ const Contact = () => {
 
   return (
     <>
-      <main className='flex flex-col items-center bg-[#e2e2e2] dark:bg-dark-main'>
-        <div className='w-full flex justify-evenly gap-14 pb-16 pt-24 flex-wrap'>
-          <div className='max-[550px]:px-10 w-[30em] flex flex-col justify-center items-center'>
+      <main className='flex flex-col items-center bg-white dark:bg-dark-main pb-24 pt-48'>
+        <div className='[width:clamp(500px,80%,1400px)] gap-8 flex justify-evenly gap-16a items-center flex-wrap'>
+          <div className='max-[550px]:px-10 w-auto flex flex-col justify-center items-center'>
             <motion.div
               transition={{
                 bounce: 0.6,
@@ -76,27 +74,27 @@ const Contact = () => {
               initial={{ x: -100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
-              className='flex items-center flex-col gap-1'>
-              <h1 className='font-bold text-4xl text-[#333333be]] text-[#333333e3] dark:text-white'>
+              className='flex items-start flex-col gap-3'>
+              <h1 className='font-extrabold text-5xl text-balance text-[#333333e3] dark:text-white'>
                 {engLanguageActive
                   ? 'Bring your brand to life!'
                   : 'Dale vida a tu marca!'}
               </h1>
-              <h2 className='font-semibold text-lg text-[#333333be]] text-[#333333be] dark:text-slate-200'>
+              <h2 className='font-medium text-xl text-slate-500 dark:text-slate-300'>
                 {engLanguageActive
                   ? 'Digitize your business now and boost your profits'
                   : 'Digitalizá tu negocio ahora y potencia tus ingresos'}
                 🚀
               </h2>
               <ul className='self-start mt-6'>
-                <p className='py-2 font-bold border-b-2 border-light-500 text-[#333333e3] dark:text-slate-50 dark:border-dark-sky'>
+                <p className='py-2 font-extrabold text-xl border-b-2 border-light-500/70 dark:text-dark-pink text-light-500/90 dark:border-dark-pink'>
                   {engLanguageActive ? 'Benefits' : 'Beneficios'}
                 </p>
                 {benefits.map((element, index) => (
                   <li
                     key={index}
-                    className='text-[#333333be] font-semibold flex items-center mt-3 gap-1 dark:text-slate-50'>
-                    <BiSolidZap className='text-light-500 dark:text-dark-pink text-2xl' />
+                    className='text-[#333333be] font-semibold flex items-center mt-3 gap-1 dark:text-slate-300'>
+                    <BiSolidZap className='text-light-500/85 dark:text-dark-pink text-2xl' />
                     {engLanguageActive
                       ? element.benefitsEN
                       : element.benefitsES}
@@ -113,106 +111,73 @@ const Contact = () => {
               className='w-[350px] h-[350px]'
             />
           </div>
-          <div className='flex flex-col gap-4'>
-            <h1 className='font-bold text-6xl text-[#333333be]] text-[#333333e3] dark:text-slate-50 max-[500px]:w-2/3 max-[500px]:m-[0_auto] max-[500px]:text-4xl'>
-              {engLanguageActive ? 'Get in Touch' : 'Contáctame'}
-            </h1>
-            <motion.form
-              transition={{
-                duration: 0.3,
-              }}
-              initial={{ scale: 0, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              name='contact-form'
-              method='POST'
-              onSubmit={sendMessage}
-              className='max-[500px]:w-[21em] max-[500px]:bg-[#e2e2e2] max-[500px]:shadow-none bg-[#fbfbfb] rounded-md flex flex-col justify-around w-[25em] h-[33em] p-10 dark:bg-dark-tertiary [box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)]'>
-              {form_data.map((element, index) => (
-                <label
-                  key={index}
-                  htmlFor={element.htmlFor}
-                  className='flex flex-col font-semibold relative text-[#333333be] dark:text-slate-50'>
-                  {engLanguageActive ? element.labelEN : element.labelES}
-                  {element.inputName === 'email' && (
-                    <span className='absolute gap-[2px] text-light-500/60 left-0 -bottom-5 flex items-center text-xs dark:text-dark-sky'>
-                      <FaCircleExclamation />
-                      {engLanguageActive
-                        ? 'optional field / valid email addrress'
-                        : 'campo opcional / correo válido'}
-                    </span>
-                  )}
-                  <input
-                    id={element.id}
-                    name={element.inputName}
-                    type='text'
-                    autoComplete='off'
-                    style={
-                      element.inputName === 'name'
-                        ? { textTransform: 'capitalize' }
-                        : undefined
-                    }
-                    value={
-                      element.inputName === 'name'
-                        ? formData.name
-                        : formData.email
-                    }
-                    onChange={(e) => {
-                      captureValues(e);
-                    }}
-                    placeholder={
-                      engLanguageActive
-                        ? element.placeHolderEN
-                        : element.placeHolderES
-                    }
-                    className='max-[500px]:border-b-light-500 placeholder:opacity-70 placeholder:text-xs placeholder:font-semibold p-2 rounded-sm bg-[#e8e8e8] focus:placeholder:opacity-0 placeholder:duration-300 outline-none focus:bg-[#fbfbfb] duration-300 focus:duration-300 focus:border-b-light-500 border-b-2 caret-light-500 text-sm font-semibold text-[#333333e3] mt-1 dark:caret-dark-pink dark:focus:border-dark-pink focus:dark:bg-dark-tertiary dark:bg-dark-secondary dark:border-dark-secondary dark:text-slate-50'
-                  />
-                </label>
-              ))}
-              <div className='relative w-full translate-y-4'>
-                <p className='flex flex-col font-semibold relative text-[#333333be] dark:text-slate-50'>
-                  {engLanguageActive
-                    ? 'How can I help you ?'
-                    : 'Como puedo ayudarte ?'}
-                </p>
-                <textarea
-                  name='message'
-                  maxLength={200}
-                  onChange={(e) => {
-                    lengthControl(e);
-                    captureValues(e);
-                  }}
-                  placeholder={
-                    engLanguageActive
-                      ? 'How can I help you ?'
-                      : 'Como puedo ayudarte ?'
-                  }
-                  className='max-[500px]:border-b-light-500 placeholder:opacity-70 placeholder:text-xs placeholder:font-semibold p-2 rounded-sm bg-[#e8e8e8] focus:placeholder:opacity-0 placeholder:duration-300 outline-none placeholder:pl-1 focus:bg-[#fbfbfb] duration-300 focus:duration-300 focus:border-b-light-500 border-b-2 caret-light-500 text-sm font-semibold text-[#333333e3] resize-none h-[10em] w-full mt-1 dark:caret-dark-pink dark:focus:border-dark-pink focus:dark:bg-dark-tertiary dark:bg-dark-secondary dark:border-dark-secondary dark:text-slate-50 '></textarea>
-                <span className='absolute right-4 bottom-5 font-semibold dark:text-zinc-300 opacity-50 text-sm'>
-                  {textAreaLength}/200
-                </span>
-              </div>
-              <button
-                type='submit'
-                onClick={succesMessage}
-                style={
-                  formData.name && formData.message
-                    ? {
-                        pointerEvents: 'all',
-                        filter: 'grayscale(0)',
-                        transition: 'all 300ms',
-                      }
-                    : {
-                        pointerEvents: 'none',
-                        filter: 'grayscale(1)',
-                        transition: 'all 300ms',
-                      }
-                }
-                className='bg-light-500 py-3 w-full text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-dark-sky'>
-                {engLanguageActive ? 'Send' : 'Enviar'}
-              </button>
-            </motion.form>
-          </div>
+          <motion.form
+            transition={{
+              duration: 0.3,
+            }}
+            initial={{ scale: 0, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            name='contact-form'
+            method='POST'
+            onSubmit={sendMessage}
+            className='flex flex-col justify-around gap-12 w-[25em] h-[33em]'>
+            <div className='input_field_container relative w-full bg-white dark:bg-dark-main'>
+              <input
+                required={true}
+                autoComplete='off'
+                type='text'
+                name='subject'
+                id='subject'
+                onChange={(e) => {
+                  captureValues(e);
+                }}
+                className='dark:border-b-dark-pink dark:border-transparent dark:focus:border-dark-pink dark:focus:bg-dark-main border-b-light-500/40 p-2 pt-5 bg-white outline-none [transition:all_300ms] border-2 border-transparent text-lg text-slate-500 dark:bg-dark-main dark:border-dark-pink dark:text-slate-50 rounded-sm w-full focus:border-2 focus:border-light-500 focus:rounded-md focus:bg-white dark:caret-dark-pink font-medium'
+              />
+              <label
+                htmlFor='Subject'
+                className='absolute font-bold text-light-500/85 left-4 top-7 text-lg [transition:all_400ms] dark:text-dark-pink'>
+                {engLanguageActive ? 'Subject' : 'Asunto'}
+              </label>
+            </div>
+            <div className='input_field_container relative w-full bg-white dark:bg-dark-main'>
+              <input
+                required={true}
+                autoComplete='off'
+                type='text'
+                name='fullName'
+                id='fullName'
+                onChange={(e) => {
+                  captureValues(e);
+                }}
+                className='dark:border-b-dark-pink dark:border-transparent dark:focus:border-dark-pink dark:focus:bg-dark-main border-b-light-500/40 p-2 pt-5 bg-white outline-none [transition:all_300ms] border-2 border-transparent text-lg text-slate-500 dark:bg-dark-main dark:border-dark-pink dark:text-slate-50 rounded-sm w-full focus:border-2 focus:border-light-500 focus:rounded-md focus:bg-white dark:caret-dark-pink font-medium'
+              />
+              <label
+                htmlFor='fullName'
+                className='absolute font-bold text-light-500/85 left-4 top-7 text-lg [transition:all_400ms] dark:text-dark-pink'>
+                {engLanguageActive ? 'Full Name' : 'Nombre Completo'}
+              </label>
+            </div>
+            <div className='input_field_container relative w-full bg-white dark:bg-dark-main'>
+              <textarea
+                name='message'
+                maxLength={200}
+                onChange={(e) => {
+                  lengthControl(e);
+                  captureValues(e);
+                }}
+                className='border-light-500/40 p-2 bg-white outline-none [transition:border_400ms] text-lg text-slate-500 resize-none h-[12em] w-full dark:bg-dark-main dark:text-slate-200 rounded-md border-2 font-medium focus:border-light-500 dark:border-dark-pink focus:dark:border-dark-pink'></textarea>
+              <span className='absolute right-4 bottom-5 font-semibold dark:text-zinc-300 opacity-50 text-sm'>
+                {textAreaLength}/200
+              </span>
+            </div>
+            <button
+              type='submit'
+              onClick={succesMessage}
+              className='bg-light-500 py-3 w-full text-slate-50 rounded-md text-lg font-bold hover:bg-light-500/75 duration-200 hover:duration-200 active:scale-90 dark:bg-dark-sky dark:hover:bg-dark-sky/70 relative bottom-8'>
+              {engLanguageActive ? 'Send' : 'Enviar'}
+            </button>
+          </motion.form>
         </div>
       </main>
       <Footer />

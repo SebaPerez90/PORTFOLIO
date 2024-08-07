@@ -31,16 +31,19 @@ const HamburguerMenu = () => {
     const line_a = document.getElementById('line_a');
     const line_b = document.getElementById('line_b');
     const line_c = document.getElementById('line_c');
+    const main_section = document.getElementById('main-section');
 
     if (isOpen === false) {
       line_a!.classList.add('[rotate:45deg]', 'top-2');
       line_b!.classList.add('opacity-0');
       line_c!.classList.add('[rotate:-45deg]', 'bottom-2');
+      main_section!.classList.add('[filter:blur(5px)]');
       setIsOpen(true);
     } else {
       line_a!.classList.remove('[rotate:45deg]', 'top-2');
       line_b!.classList.remove('opacity-0');
       line_c!.classList.remove('[rotate:-45deg]', 'bottom-2');
+      main_section!.classList.remove('[filter:blur(5px)]');
       setIsOpen(false);
     }
   };
@@ -57,10 +60,10 @@ const HamburguerMenu = () => {
   };
 
   return (
-    <div className=' relative min-[500px]:hidden'>
+    <div className='relative min-[500px]:hidden'>
       <div
         aria-label='button-menu'
-        className='min-[500px]:hidden flex flex-col gap-1 cursor-pointer absolute left-2 -top-2 z-50'
+        className='min-[500px]:hidden flex flex-col gap-1 cursor-pointer absolute left-2 -top-2 z-[70]'
         onClick={openMenu}>
         <span
           id='line_a'
@@ -83,23 +86,25 @@ const HamburguerMenu = () => {
             initial={{ x: 100, opacity: 1 }}
             whileInView={{ x: 0, opacity: 1 }}
             exit={{ opacity: 0, width: 0 }}
-            className='absolute z-30 w-[21em] h-[25em] -right-20 -top-10 bg-[#fbfbfb] dark:bg-dark-tertiary rounded-[0_0_0_0.7em] overflow-hidden'>
+            className='[box-shadow:-4px_10px_27px_0px_rgba(0,0,0,0.11)] absolute z-50 w-[21em] h-[25em] -right-20 -top-10 bg-[#fbfbfb] dark:bg-dark-tertiary rounded-[0_0_0_0.7em] overflow-hidden'>
             <motion.nav
               transition={{ delay: 0.2 }}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className='flex flex-col items-center h-full justify-evenly dark:text-slate-200 text-[#333333be] font-bold text-sm z-50 relative before:absolute before:h-full before:w-20 before:bg-light-500 before:left-0 before:bottom-0 dark:before:bg-dark-pink'>
+              className='flex flex-col items-center h-full justify-evenly dark:text-slate-200  font-bold text-sm z-[60] relative before:absolute before:h-full before:w-20 before:bg-light-500 before:left-0 before:bottom-0 dark:before:bg-dark-pink text-[#4d4dff80]'>
               {navLinks.map((element, index) => (
                 <Link
-                  className='duration-200 hover:duration-200 hover:text-light-500 dark:hover:text-dark-pink z-50 flex items-center gap-2'
+                  className='duration-200 hover:duration-200 hover:text-light-500/50 dark:hover:text-dark-pink z-50 flex items-center gap-2 text-slate-600 dark:text-slate-50'
                   key={index}
                   href={element.url}
                   style={
                     pathname === element.url
-                      ? theme === 'dark'
-                        ? { color: '#f472b6' }
-                        : { color: '#4d4dff' }
+                      ? {
+                          color: 'inherit',
+                          fontWeight: 'bolder',
+                          transition: '200ms',
+                        }
                       : undefined
                   }
                   aria-label={element.label}>

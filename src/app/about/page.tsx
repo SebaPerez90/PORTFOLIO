@@ -2,176 +2,247 @@
 
 import { useStore } from '@/context/store';
 import Image from 'next/image';
-import avatar from '@/assets/images/avatar.webp';
-import utn_icon from '@/assets/images/utn-logo.webp';
-import henry_icon from '@/assets/images/soyHenry-logo.webp';
-import ef_icon from '@/assets/images/ef-icon.webp';
+import freelance_img from '@/assets/images/developer-cartoon.webp';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { MdArrowBackIosNew } from 'react-icons/md';
+import { MdArrowForwardIos } from 'react-icons/md';
 import Footer from '@/components/Footer';
-import { motion } from 'framer-motion';
-
-const educations = [
-  {
-    src: henry_icon,
-    entity: 'Henry',
-    date: 'feb.2024 - jun.2024',
-    title: 'Fullstack Developer',
-  },
-
-  {
-    src: ef_icon,
-    entity: 'EF SET',
-    date: 'jan.2024',
-    title: 'B2 Uppper Intermediate',
-  },
-  {
-    src: utn_icon,
-    entity: 'Universidad Tecnológica Nacional',
-    date: 'ene.2023 - ene.2024',
-    title: 'Técnico en Programación',
-  },
-];
 
 const About = () => {
   const { engLanguageActive } = useStore();
+  const [mainView, setMainView] = useState<boolean>(false);
+  const main_container_ref = useRef<HTMLDivElement | null>(null);
+  const btn_ref = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    if (mainView) {
+      main_container_ref.current?.classList.replace(
+        'before:bg-[#7a7aff]',
+        'before:bg-dark-secondary'
+      );
+      main_container_ref.current?.classList.replace(
+        'before:w-[35%]',
+        'before:w-[100%]'
+      );
+      main_container_ref.current?.classList.add(
+        'before:[transform:translateX(-35%)]'
+      );
+    } else {
+      main_container_ref.current?.classList.replace(
+        'before:bg-dark-secondary',
+        'before:bg-[#7a7aff]'
+      );
+      main_container_ref.current?.classList.replace(
+        'before:w-[100%]',
+        'before:w-[35%]'
+      );
+      main_container_ref.current?.classList.remove(
+        'before:[transform:translateX(-35%)]'
+      );
+    }
+  }, [mainView]);
+
+  const toggleView = () => {
+    setMainView(!mainView);
+    btn_ref.current?.classList.add('animate-[disappearContent_1.1s_ease]');
+
+    if (mainView) {
+      btn_ref.current?.classList.replace('bg-dark-secondary', 'bg-[#7a7aff]');
+    } else {
+      btn_ref.current?.classList.replace('bg-[#7a7aff]', 'bg-dark-secondary');
+    }
+    setTimeout(() => {
+      btn_ref.current?.classList.remove('animate-[disappearContent_1.1s_ease]');
+    }, 1100);
+  };
+
   return (
     <>
-      <main className='overflow-hidden flex flex-col items-center gap-24  pt-28 bg-[#e2e2e2] dark:bg-dark-main'>
-        <section className='flex  justify-evenly flex-wrap gap-10 sm:gap-0'>
-          <div className='flex flex-col items-center'>
-            <motion.div
-              transition={{
-                duration: 0.3,
-                delay: 0.2,
-              }}
-              initial={{ scale: 0.2, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              className='rounded-full h-[14em] w-[14em] overflow-hidden'>
-              <Image
-                src={avatar}
-                alt='avatar'
-                className='w-full h-full object-cover bg-black dark:bg-zinc-200'
-                priority
-              />
-            </motion.div>
-            <span className='font-bold text-xl mt-2 dark:text-white'>
-              Sebastian Perez
-            </span>
-            <span className='font-bold text-sm text-[#333333be] dark:text-slate-300'>
+      <main
+        ref={main_container_ref}
+        className='about_main_container flex justify-between items-center py-40 mt-[4.8rem] h-[42em] bg-white relative before:[transition:all_900ms_ease] [transition:all_900ms] before:absolute before:right-0 before:top-0 before:w-[35%] z-10 before:h-full (before:bg-dark-secondary) before:bg-[#7a7aff] before:z-10
+        dark:bg-dark-main'>
+        <button
+          ref={btn_ref}
+          onClick={toggleView}
+          className='absolute top-[50%] [z-index:100] right-[33.8%] (bg-dark-secondary) bg-[#7a7aff] text-2xl rounded-md py-2 px-2 text-white hover:text-slate-200 [transition:all_200ms]'>
+          {mainView ? (
+            <MdArrowForwardIos className='relative left-2' />
+          ) : (
+            <MdArrowBackIosNew className='relative right-2' />
+          )}
+        </button>
+        {mainView ? (
+          <div
+            className='z-20 flex px-[5%] lg:px-[10%] flex-col justify-center gap-8 h-full w-[65%] opacity-0 text-slate-300'
+            style={
+              mainView === true
+                ? {
+                    animation: 'appearContent 500ms ease-out forwards',
+                    animationDelay: '700ms',
+                  }
+                : undefined
+            }>
+            <h1 className='xl:text-5xl text-4xl font-black text-slate-50'>
               {engLanguageActive
-                ? 'Desarrollador Fullstack'
-                : 'Fullstack Developer'}
-            </span>
+                ? 'I am Sebastian Perez'
+                : 'Soy Sebastian Perez'}
+              <br></br>
+              <strong className='text-dark-sky dark:text-dark-pink'>
+                {engLanguageActive
+                  ? 'Freelance Developer'
+                  : 'Desarrollador Freelance'}
+              </strong>
+              .
+            </h1>
+            <h2 className='text-xl font-bold text-slate-100'>
+              {engLanguageActive
+                ? 'Do you have a project in mind and need to make it a reality?'
+                : '¿Tenés un proyecto en mente y necesitas hacerlo realidad?'}
+            </h2>
+            <p>
+              {engLanguageActive
+                ? 'Imagine having a website or app that not only works perfectly but also boosts your revenue and digital presence. I offer software development and creative design services to transform your ideas into impressive digital products.'
+                : 'Imaginate tener un sitio web o una aplicación que no solo funcione a la perfección, sino que también aumente tus ingresos y presencia digital. Ofrezco servicios de desarrollo de software y diseño creativo para transformar tus ideas en productos digitales impresionantes.'}
+            </p>
+            <ul className='font-bold text-slate-100'>
+              <li>
+                ⚡
+                {engLanguageActive
+                  ? 'Super affordable and personalized prices.'
+                  : 'Precios super accesibles y personalizados.'}
+              </li>
+              <li>
+                ⚡
+                {engLanguageActive
+                  ? 'Free performance test.'
+                  : 'Prueba de rendimiento gratuita.'}
+              </li>
+              <li>
+                ⚡
+                {engLanguageActive
+                  ? 'You can pay monthly, like a subscription service.'
+                  : 'Podes pagar mes a mes como un servicio.'}
+              </li>
+              <li>
+                ⚡
+                {engLanguageActive
+                  ? 'Pay only if it meets your expectations.'
+                  : 'Paga solo si cumple con tus expectativas.'}
+              </li>
+            </ul>
+            <p>
+              {engLanguageActive
+                ? 'Interested? Let´s talk! If you want to turn your idea into reality, don´t hesitate to contact me. Let´s create something amazing together!'
+                : '¿Te interesa? ¡Hablemos! Si querés que tu idea se convierta en realidad, no dudes en contactarme. ¡Vamos a crear algo asombroso juntos!'}
+              🚀
+            </p>
           </div>
-          <motion.div
-            transition={{
-              delayChildren: 1,
-            }}
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            className='flex flex-col gap-8 items-center w-[90%] sm:w-1/2'>
-            <motion.h1
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              className=' dark:text-slate-50 text-4xl text-[#333333] font-extrabold'>
+        ) : (
+          <div
+            className='flex px-[5%] lg:px-[10%] flex-col justify-center gap-8 h-full w-[65%] opacity-0'
+            style={
+              mainView === false
+                ? {
+                    animation: 'disappearContent2 500ms ease-out forwards',
+                    animationDelay: '490ms',
+                  }
+                : undefined
+            }>
+            <h1 className='xl:text-5xl text-4xl font-black text-slate-600 dark:text-slate-50'>
               {engLanguageActive
-                ? 'Hello There! Soy Sebastian 👋'
-                : '¡Hola! Soy Sebastian 👋'}
-            </motion.h1>
-            <motion.p
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              className='border-l-8 border-light-500 dark:border-dark-pink dark:text-slate-50 dark:bg-dark-tertiary bg-[#fbfbfb] px-4 py-4 text-sm font-semibold text-[#333333be]'>
+                ? 'I am Sebastian Perez'
+                : 'Soy Sebastian Perez'}
+              <br></br>
+              <strong className='text-light-500/85 dark:text-dark-pink'>
+                {engLanguageActive
+                  ? 'Fullstack Developer'
+                  : 'Desarrollador Fullstack'}
+              </strong>
+              .
+            </h1>
+            <p className='font-medium dark:text-slate-300 text-slate-500'>
+              {engLanguageActive ? 'I have over' : 'Cuento con más de'}
+              <strong className='font-extrabold text-slate-600 dark:text-white'>
+                {engLanguageActive
+                  ? ' 2 year of experience '
+                  : ' 2 años de experiencia '}
+              </strong>
               {engLanguageActive
-                ? 'Fullstack Developer. With over 2 years of experience, I am continuously learning to always give my best.'
-                : 'Desarrollador Fullstack. Con más de 2 años de experiencia formandome para poder brindar lo mejor de mí siempre.'}
+                ? 'not formally in the tech sector, I live in Buenos Aires.'
+                : 'no formal en el sector tecnológico, vivo en Buenos Aires, Berazategui.'}
+              <br></br>
+              {engLanguageActive ? 'I also have over' : 'También tengo más de'}
+              <strong className='font-extrabold text-slate-600 dark:text-white'>
+                {engLanguageActive
+                  ? ' 12 year of experience '
+                  : ' 12 años de experiencia '}
+              </strong>
+              {engLanguageActive
+                ? 'In the food service sector. I am making a 180-degree shift in my professional profile towards the technology sector. My past experience has allowed me to acquire valuable soft skills that are transferable to the technology sector.'
+                : 'en el sector gastronómico. Estoy dando un giro de 180 grados a mi perfil profesional hacia el sector tecnológico. Mi trayectoria pasada me ha permitido adquirir valiosas habilidades blandas que son transferibles al sector tecnológico.'}
+              <br></br>
               <br></br>
               {engLanguageActive
-                ? 'I am a very dedicated and passionate person, and I strive to demonstrate this in every project I undertake. I know I can contribute significantly to any development team because when I set my mind to something, there are no obstacles for me.'
-                : 'Soy una persona muy dedicada y apasionada, trato de demostrarlo en cada proyecto que realizo y sé que puedo aportar mucho a cualquier equipo de desarrallo ya que cuando me propongo algo, para mi no existen obstaculos.'}
-            </motion.p>
-            <Link
-              className='bg-light-500 p-3 w-max text-slate-50 rounded-md text-xs font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-dark-sky'
-              href={'/contact'}
-              aria-label='contact-link'>
-              {engLanguageActive ? 'Get in Touch' : 'Contáctame'}
-            </Link>
-          </motion.div>
-        </section>
-        <section className='rounded-md mb-20'>
-          <h1 className=' dark:text-slate-50 text-2xl sm:text-4xl text-[#333333] font-extrabold text-center'>
-            {engLanguageActive ? 'More about me' : 'Un poco más Sobre mi'}
-          </h1>
-          <div className='flex flex-wrap gap-10 justify-around w-full mt-24'>
-            <motion.div
-              transition={{
-                duration: 0.6,
-                bounce: 0.3,
-                type: 'spring',
-              }}
-              initial={{ opacity: 0, x: -300 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className='ml-10 min-[450px]:ml-0 rounded-md shadow-none min-[450px]:[box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] bg-transparent min-[450px]:bg-[#fbfbfb] p-8 dark:bg-dark-tertiary dark:text-slate-50'>
-              <h2 className='text-center text-2xl font-bold'>
-                {engLanguageActive ? 'Educacion' : 'Education'} 👨‍🎓
-              </h2>
-              <ul className='flex flex-col gap-10 mt-10 relative before:absolute before:left-5 before:z-10 before:bottom-4 before:w-[2px] before:h-[15em] before:bg-light-500/30 dark:before:bg-dark-pink'>
-                {educations.map((education, index) => (
-                  <li
-                    key={index}
-                    className='z-20'>
-                    <div className='flex gap-8 items-center'>
-                      <Image
-                        src={education.src}
-                        alt={education.entity}
-                        width={40}
-                        height={40}
-                        priority
-                        className='rounded-full border border-light-500/40 object-cover bg-white'
-                      />
-                      <div className='flex flex-col items-start'>
-                        <span className='font-bold text-lg'>
-                          {education.entity}
-                        </span>
-                        <span className='text-xs font-semibold'>
-                          {education.date}
-                        </span>
-                        <span className=''>{education.title}</span>
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-            <motion.div
-              transition={{
-                duration: 0.6,
-                bounce: 0.3,
-                type: 'spring',
-              }}
-              initial={{ opacity: 0, x: 300 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className='w-[90%] sm:w-[30em] flex flex-col justify-center relative shadow-none rounded-md min-[450px]:[box-shadow:7px_9px_9px_-3px_rgba(0,0,0,0.16)] bg-transparent min-[450px]:bg-[#fbfbfb] p-8 dark:bg-transparent sm:dark:bg-dark-tertiary'>
-              <h2 className='text-center text-2xl font-bold dark:text-slate-50'>
-                {engLanguageActive ? 'Experience' : 'Experiencia'} 👨‍💼
-              </h2>
-              <p className='text-sm font-semibold text-[#333333cd] mt-8 border-l-8 dark:border-dark-pink dark:text-slate-50 dark:bg-dark-tertiary border-light-500 px-4 bg-slate-100 py-2'>
+                ? 'Currently, I am seeking job opportunities that will allow me to continue developing professionally.'
+                : 'Actualmente estoy en busqueda oportunidades laborales que me permitan continuar desarrollandome como profesional.'}
+            </p>
+            <ul className='font-medium text-slate-500 dark:text-slate-50 list-disc ml-4 marker:text-light-500/70 dark:marker:text-dark-pink'>
+              <li>
+                {engLanguageActive ? 'Ingles: ' : 'English: '}
+                <strong>B2 - Uppper Intermediate</strong>
+              </li>
+              <li>
+                {engLanguageActive ? 'Time Zone: ' : 'Zona Horaria: '}
+                <strong>GMT-3</strong>
+              </li>
+              <li>
+                {engLanguageActive ? 'Availability: ' : 'Disponibilidad: '}
+                <strong>Full-Time</strong>
+              </li>
+              <li>
                 {engLanguageActive
-                  ? 'I have over 12 years of experience in the gastronomic sector. Although I have decided not to delve deeper into this area, as my profile is now focused on the technology sector, my past experience has allowed me to acquire valuable soft skills.'
-                  : 'Cuento con más de 12 años de experiencia en el sector gastronómico. Aunque he decidido no profundizar en esta área, ya que mi perfil ahora está enfocado en el sector tecnológico, mi trayectoria pasada me ha permitido adquirir valiosas habilidades blandas.'}
-                <br></br>
-                <br></br>
-                {engLanguageActive
-                  ? 'These skills include effective communication, the ability to work under pressure, efficient customer handling, adaptability to any work environment, and problem-solving. These competencies complement my new professional focus and enable me to face technological challenges with a unique and enriching perspective.'
-                  : ' Estas habilidades incluyen comunicación efectiva, capacidad para trabajar bajo presión, trato eficaz con clientes, adaptabilidad a cualquier entorno laboral y resolución de problemas. Estas competencias complementan mi nueva orientación profesional y me permiten enfrentar los desafíos tecnológicos con una perspectiva única y enriquecedora.'}
-              </p>
-            </motion.div>
+                  ? 'Desired Position: '
+                  : 'Posición Deseada: '}
+                <strong>Front-end Developer | Back-end Developer</strong>
+              </li>
+            </ul>
           </div>
-        </section>
+        )}
+        <div className='flex flex-col items-center justify-center h-full w-[35%] z-20'>
+          <div className='h-[22em] w-auto relative before:absolute before:left-12 before:bottom-[1.5em] before:w-[15em] before:h-[8px] before:rounded-[50%] before:bg-black/40 dark:before:bg-black before:[filter:blur(3px)]'>
+            <Image
+              priority
+              src={freelance_img}
+              alt='freelance-img'
+              className='w-full h-full object-cover [filter:drop-shadow(0_0_0.1em_#0000004e)]'
+            />
+          </div>
+          <div className='flex items-center gap-5'>
+            {mainView ? (
+              <Link
+                className='bg-light-500 py-3 px-8 w-max text-slate-50 rounded-md hover:bg-light-500/75 duration-200 hover:duration-200 active:scale-90 dark:bg-dark-sky hover:dark:bg-dark-sky/75 font-medium opacity-0 animate-[appearContent_400ms_ease-out_forwards] [animation-delay:1s] border border-transparent'
+                href={'/contact'}
+                aria-label='contact-link'>
+                {engLanguageActive ? 'Get in Touch' : 'Contáctame'}
+              </Link>
+            ) : (
+              <span
+                className='bg-green-600 border border-slate-500 py-3 px-5 text-slate-50 rounded-md font-medium opacity-0'
+                style={
+                  mainView
+                    ? undefined
+                    : {
+                        animation: 'appearContent 300ms ease-out forwards',
+                        animationDelay: '900ms',
+                      }
+                }>
+                Open to Work
+              </span>
+            )}
+          </div>
+        </div>
       </main>
       <Footer />
     </>
@@ -179,3 +250,5 @@ const About = () => {
 };
 
 export default About;
+{
+}

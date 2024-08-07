@@ -5,18 +5,27 @@ import { MdDownload } from 'react-icons/md';
 import Link from 'next/link';
 
 const HeroButtons = () => {
-  const [isDownloaded, setIsDownloaded] = useState(false);
+  const [isDownloaded, setIsDownloaded] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const { engLanguageActive } = useStore();
 
   //EXPAND AND COLLAPSE THE CV´S OPTIONS
   const changingVisibility = () => {
     const divElement = document.getElementById('hidden-element');
 
-    if (divElement?.classList.contains('hidden')) {
-      divElement?.classList.replace('hidden', 'block');
+    if (isOpen) {
+      divElement?.classList.replace('scale-1', 'scale-0');
+      setIsOpen(false);
     } else {
-      divElement?.classList.replace('block', 'hidden');
+      divElement?.classList.replace('scale-0', 'scale-1');
+      setIsOpen(true);
     }
+    //   divElement?.classList.replace('hidden', 'block');
+    //   divElement?.classList.replace('scale-0', 'scale-1');
+    // } else {
+    //   divElement?.classList.replace('block', 'hidden');
+    //   divElement?.classList.replace('scale-1', 'scale-0');
+    // }
   };
 
   //IF THE USER DOWNLOADS SOME RESUME, THE EVENT CLICK ON THE BUTTON WILL CLEAN UP
@@ -47,7 +56,7 @@ const HeroButtons = () => {
   return (
     <div className='z-50 flex items-center gap-4 mt-8'>
       <Link
-        className='bg-light-500 p-3 w-max text-slate-50 rounded-md font-bold hover:bg-light-400 duration-200 hover:duration-200 active:scale-95 dark:bg-dark-sky'
+        className='bg-light-500 px-8 py-3 w-max text-slate-50 rounded-md font-bold hover:bg-light-500/80 duration-200 hover:duration-200 active:scale-95 dark:bg-dark-sky dark:hover:bg-dark-sky/70'
         href={'/contact'}
         aria-label='contact-link'>
         {engLanguageActive ? 'Get in Touch' : 'Contáctame'}
@@ -59,7 +68,7 @@ const HeroButtons = () => {
           onClick={changingVisibility}
           disabled={isDownloaded}
           aria-label='visibility-switch-btn'
-          className='border-slate-600 rounded-md text-slate-600 flex items-center gap-1 justify-center border dark:border-dark-sky dark:text-dark-sky p-3 font-bold overflow-hidden dark:hover:bg-dark-sky/30 duration-200 hover:duration-200 active:scale-95 hover:bg-light-500/5 w-max'>
+          className='border-slate-500 rounded-md text-slate-500 flex items-center gap-1 justify-center border dark:border-dark-sky dark:text-dark-sky p-3 font-bold overflow-hidden duration-300 hover:duration-300 active:scale-95 bg-white dark:bg-dark-main dark:hover:bg-dark-tertiary/70 hover:bg-slate-300/50 w-max'>
           {engLanguageActive ? 'Download CV' : 'Descargar CV'}
           <MdDownload className='text-xl' />
         </button>
@@ -69,28 +78,28 @@ const HeroButtons = () => {
 
         <div
           id='hidden-element'
-          className='z-50 hidden absolute bottom-[-7.5em] left-0'>
-          <ul className='flex flex-col gap-5 py-4 px-3 border-2 rounded-md dark:border-slate-700/50 dark:bg-dark-secondary bg-white'>
+          className='z-50 scale-0 [transition:all_200ms] absolute bottom-[-8em] left-0'>
+          <ul className='flex flex-col p-1 gap-2 border-2 rounded-md dark:border-slate-700/50 dark:bg-dark-secondary bg-white'>
             <li onClick={() => setIsDownloaded(!isDownloaded)}>
               <a
                 aria-label='cv-link'
-                className='text-light-500/75 dark:text-zinc-300 font-semibold text-base flex items-center gap-2 w-max'
+                className='dark:hover:bg-dark-tertiary/70 hover:bg-slate-300/50 hover:duration-300 duration-300 text-slate-500 py-3 px-3  dark:text-zinc-300 font-semibold text-base flex justify-center items-center gap-2 w-[11em]'
                 href='/sebastian-perez-en.pdf'
                 download='sebastian-perez-en.pdf'>
-                sebastian-perez-en.pdf{' '}
-                <FaRegFilePdf className='dark:text-dark-pink text-bg-light-500/text-light-500/75' />
+                cv-english.pdf{' '}
+                <FaRegFilePdf className='dark:text-dark-pink text-light-500/75' />
               </a>
             </li>
             <li
               onClick={() => setIsDownloaded(!isDownloaded)}
-              className='pt-3 border-t-2 dark:border-slate-700/50 '>
+              className='border-t-2 dark:border-slate-700/50 '>
               <a
                 aria-label='cv-link'
-                className=' text-light-500/75 dark:text-zinc-300 font-semibold text-base flex items-center gap-2 w-max'
+                className='dark:hover:bg-dark-tertiary/70 hover:bg-slate-300/50 hover:duration-300 duration-300 text-slate-500 py-3 px-3  dark:text-zinc-300 font-semibold text-base flex justify-center items-center gap-2 w-[11em]'
                 href='/sebastian-perez-es.pdf'
                 download='sebastian-perez-es.pdf'>
-                sebastian-perez-es.pdf{' '}
-                <FaRegFilePdf className='dark:text-dark-pink text-bg-light-500/text-light-500/75' />
+                cv-español.pdf{' '}
+                <FaRegFilePdf className='dark:text-dark-pink text-light-500/75' />
               </a>
             </li>
           </ul>
