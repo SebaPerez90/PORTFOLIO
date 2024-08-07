@@ -17,29 +17,49 @@ const About = () => {
   const btn_ref = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
-    if (mainView) {
+    if (mainView && window.innerWidth > 640) {
       main_container_ref.current?.classList.replace(
         'before:bg-[#7a7aff]',
         'before:bg-dark-secondary'
       );
       main_container_ref.current?.classList.replace(
-        'before:w-[35%]',
-        'before:w-[100%]'
+        'sm:before:w-[35%]',
+        'sm:before:w-[100%]'
       );
       main_container_ref.current?.classList.add(
         'before:[transform:translateX(-35%)]'
       );
-    } else {
+    } else if (mainView === false && window.innerWidth > 640) {
+      main_container_ref.current?.classList.replace(
+        'before:bg-dark-secondary',
+        'before:bg-[#7a7aff]'
+      );
+      main_container_ref.current?.classList.replace(
+        'sm:before:w-[100%]',
+        'sm:before:w-[35%]'
+      );
+      main_container_ref.current?.classList.remove(
+        'before:[transform:translateX(-35%)]'
+      );
+    }
+
+    if (mainView && window.innerWidth < 640) {
+      main_container_ref.current?.classList.replace(
+        'before:bg-[#7a7aff]',
+        'before:bg-dark-secondary'
+      );
+      main_container_ref.current?.classList.replace(
+        'before:w-0',
+        'before:w-[100%]'
+      );
+    } else if (mainView === false && window.innerWidth < 640) {
       main_container_ref.current?.classList.replace(
         'before:bg-dark-secondary',
         'before:bg-[#7a7aff]'
       );
       main_container_ref.current?.classList.replace(
         'before:w-[100%]',
-        'before:w-[35%]'
-      );
-      main_container_ref.current?.classList.remove(
-        'before:[transform:translateX(-35%)]'
+        'before:w-0'
       );
     }
   }, [mainView]);
@@ -48,10 +68,14 @@ const About = () => {
     setMainView(!mainView);
     btn_ref.current?.classList.add('animate-[disappearContent_1.1s_ease]');
 
-    if (mainView) {
+    if (mainView && window.innerWidth > 640) {
       btn_ref.current?.classList.replace('bg-dark-secondary', 'bg-[#7a7aff]');
     } else {
       btn_ref.current?.classList.replace('bg-[#7a7aff]', 'bg-dark-secondary');
+    }
+
+    if (window.innerWidth < 640) {
+      btn_ref.current?.classList.replace('bg-dark-secondary', 'bg-[#7a7aff]');
     }
     setTimeout(() => {
       btn_ref.current?.classList.remove('animate-[disappearContent_1.1s_ease]');
@@ -62,23 +86,20 @@ const About = () => {
     <>
       <NavLinks />
       <main
-      id='about-section'
+        id='about-section'
         ref={main_container_ref}
-        className='about_main_container flex justify-between items-center py-40 mt-[4.8rem] h-[42em] bg-white relative before:[transition:all_900ms_ease] [transition:all_900ms] before:absolute before:right-0 before:top-0 before:w-[35%] z-10 before:h-full (before:bg-dark-secondary) before:bg-[#7a7aff] before:z-10
+        className='about_main_container flex justify-between items-center py-40 mt-[4.8rem] h-[49em] sm:h-[42em] bg-white relative before:[transition:all_900ms_ease] [transition:all_900ms] before:absolute before:right-0 before:top-0  before:w-0 sm:before:w-[35%] z-10 before:h-full before:bg-[#7a7aff] before:z-10
         dark:bg-dark-main'>
         <button
           ref={btn_ref}
           onClick={toggleView}
-          className='absolute top-[50%] [z-index:100] right-[33.8%] (bg-dark-secondary) bg-[#7a7aff] text-2xl rounded-md py-2 px-2 text-white hover:text-slate-200 [transition:all_200ms]'>
-          {mainView ? (
-            <MdArrowForwardIos className='relative left-2' />
-          ) : (
-            <MdArrowBackIosNew className='relative right-2' />
-          )}
+          className='absolute top-[50%] [z-index:100] right-[-0.3em] sm:right-[33.8%] (bg-dark-secondary) bg-[#7a7aff] text-2xl rounded-md py-2 text-white hover:text-slate-200 [transition:all_200ms] sm:px-0 px-3 test'>
+          {mainView ? <MdArrowForwardIos /> : <MdArrowBackIosNew />}
+          <span className='absolute text-lg font-medium -left-2 text-slate-50 opacity-0 top-12 [text-shadow:0_0_3px_#000]'>☝️ click</span>
         </button>
         {mainView ? (
           <div
-            className='z-20 flex px-[5%] lg:px-[10%] flex-col justify-center gap-8 h-full w-[65%] opacity-0 text-slate-300'
+            className='z-20 flex px-[5%] lg:px-[10%] flex-col justify-center gap-8 h-full sm:w-[65%] opacity-0 text-slate-300'
             style={
               mainView === true
                 ? {
@@ -87,7 +108,7 @@ const About = () => {
                   }
                 : undefined
             }>
-            <h1 className='xl:text-5xl text-4xl font-black text-slate-50'>
+            <h1 className='xl:text-5xl m-[0_auto] text-4xl font-black text-slate-50'>
               {engLanguageActive
                 ? 'I am Sebastian Perez'
                 : 'Soy Sebastian Perez'}
@@ -141,10 +162,17 @@ const About = () => {
                 : '¿Te interesa? ¡Hablemos! Si querés que tu idea se convierta en realidad, no dudes en contactarme. ¡Vamos a crear algo asombroso juntos!'}
               🚀
             </p>
+
+            <Link
+              className='block m-[0_auto] mt-5 sm:hidden bg-light-500 py-3 px-8 w-max text-slate-50 rounded-md hover:bg-light-500/75 duration-200 hover:duration-200 active:scale-90 dark:bg-dark-sky hover:dark:bg-dark-sky/75 font-medium opacity-0 animate-[appearContent_400ms_ease-out_forwards] [animation-delay:1s] border border-transparent'
+              href={'/contact'}
+              aria-label='contact-link'>
+              {engLanguageActive ? 'Get in Touch' : 'Contáctame'}
+            </Link>
           </div>
         ) : (
           <div
-            className='flex px-[5%] lg:px-[10%] flex-col justify-center gap-8 h-full w-[65%] opacity-0'
+            className='flex px-[5%] lg:px-[10%] flex-col justify-center gap-8 h-full sm:w-[65%] opacity-0'
             style={
               mainView === false
                 ? {
@@ -153,7 +181,7 @@ const About = () => {
                   }
                 : undefined
             }>
-            <h1 className='xl:text-5xl text-4xl font-black text-slate-600 dark:text-slate-50'>
+            <h1 className='xl:text-5xl m-[0_auto] text-4xl font-black text-slate-600 dark:text-slate-50'>
               {engLanguageActive
                 ? 'I am Sebastian Perez'
                 : 'Soy Sebastian Perez'}
@@ -211,9 +239,21 @@ const About = () => {
                 <strong>Front-end Developer | Back-end Developer</strong>
               </li>
             </ul>
+            <span
+              className='sm:hidden m-[0_auto] block bg-green-600 border border-slate-500 py-3 px-5 text-slate-50 rounded-md font-medium opacity-0'
+              style={
+                mainView
+                  ? undefined
+                  : {
+                      animation: 'appearContent 300ms ease-out forwards',
+                      animationDelay: '900ms',
+                    }
+              }>
+              Open to Work 👨‍💼
+            </span>
           </div>
         )}
-        <div className='flex flex-col items-center justify-center h-full w-[35%] z-20'>
+        <div className='hidden sm:flex flex-col items-center justify-center h-full w-[35%] z-20'>
           <div className='h-[22em] w-auto relative before:absolute before:left-12 before:bottom-[1.5em] before:w-[15em] before:h-[8px] before:rounded-[50%] before:bg-black/40 dark:before:bg-black before:[filter:blur(3px)]'>
             <Image
               priority
@@ -241,7 +281,7 @@ const About = () => {
                         animationDelay: '900ms',
                       }
                 }>
-                Open to Work
+                Open to Work 👨‍💼
               </span>
             )}
           </div>
