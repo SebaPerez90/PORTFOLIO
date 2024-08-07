@@ -164,8 +164,9 @@ const Contact = () => {
                 <span>
                   <IoInformationCircle className='text-2xl text-light-500/85 dark:text-dark-sky absolute left-[-1em] top-[0.3em]' />
                 </span>
-                Puedes darme los detalles de tu idea o contarme de que manera
-                puedo ayudarte.
+                {engLanguageActive
+                  ? 'You can give me the details of your idea or tell me how I can help you.'
+                  : 'Puedes darme los detalles de tu idea o contarme de que manera puedo ayudarte.'}
               </p>
               <textarea
                 name='message'
