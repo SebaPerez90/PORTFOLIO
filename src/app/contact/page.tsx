@@ -11,6 +11,7 @@ import { BiSolidZap } from 'react-icons/bi';
 import toast, { Toaster } from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
+import { IoInformationCircle } from 'react-icons/io5';
 
 const Contact = () => {
   const { engLanguageActive } = useStore();
@@ -62,9 +63,9 @@ const Contact = () => {
 
   return (
     <>
-      <main className='flex flex-col items-center bg-white dark:bg-dark-main pb-24 pt-48'>
-        <div className='[width:clamp(500px,80%,1400px)] gap-8 flex justify-evenly gap-16a items-center flex-wrap'>
-          <div className='max-[550px]:px-10 w-auto flex flex-col justify-center items-center'>
+      <main className='flex flex-col items-center bg-white dark:bg-dark-main  pb-48 lg:pb-24 pt-32'>
+        <div className='[width:clamp(300px,80%,1400px)] mx-8 flex h-full justify-around items-center flex-wrap'>
+          <div className='flex flex-col justify-start items-center sm:items-start gap-8'>
             <motion.div
               transition={{
                 bounce: 0.6,
@@ -108,7 +109,7 @@ const Contact = () => {
               height={350}
               priority
               alt='contact-img'
-              className='w-[350px] h-[350px]'
+              className='h-[350px] w-[350px]'
             />
           </div>
           <motion.form
@@ -132,11 +133,11 @@ const Contact = () => {
                 onChange={(e) => {
                   captureValues(e);
                 }}
-                className='dark:border-b-dark-pink dark:border-transparent dark:focus:border-dark-pink dark:focus:bg-dark-main border-b-light-500/40 p-2 pt-5 bg-white outline-none [transition:all_300ms] border-2 border-transparent text-lg text-slate-500 dark:bg-dark-main dark:border-dark-pink dark:text-slate-50 rounded-sm w-full focus:border-2 focus:border-light-500 focus:rounded-md focus:bg-white dark:caret-dark-pink font-medium'
+                className='text-2xl dark:border-b-dark-pink dark:border-transparent dark:focus:border-dark-pink dark:focus:bg-dark-main border-b-light-500/40 p-2 pt-5 bg-white outline-none [transition:all_300ms] border-2 border-transparent lg:text-lg text-slate-500 dark:bg-dark-main dark:border-dark-pink dark:text-slate-50 rounded-sm w-full focus:border-2 focus:border-light-500 focus:rounded-md focus:bg-white dark:caret-dark-pink font-medium'
               />
               <label
-                htmlFor='Subject'
-                className='absolute font-bold text-light-500/85 left-4 top-7 text-lg [transition:all_400ms] dark:text-dark-pink'>
+                htmlFor='subject'
+                className='absolute font-bold text-light-500 opacity-60 left-4 top-7 text-lg [transition:all_400ms] dark:text-dark-pink'>
                 {engLanguageActive ? 'Subject' : 'Asunto'}
               </label>
             </div>
@@ -145,20 +146,27 @@ const Contact = () => {
                 required={true}
                 autoComplete='off'
                 type='text'
-                name='fullName'
-                id='fullName'
+                name='name'
+                id='name'
                 onChange={(e) => {
                   captureValues(e);
                 }}
-                className='dark:border-b-dark-pink dark:border-transparent dark:focus:border-dark-pink dark:focus:bg-dark-main border-b-light-500/40 p-2 pt-5 bg-white outline-none [transition:all_300ms] border-2 border-transparent text-lg text-slate-500 dark:bg-dark-main dark:border-dark-pink dark:text-slate-50 rounded-sm w-full focus:border-2 focus:border-light-500 focus:rounded-md focus:bg-white dark:caret-dark-pink font-medium'
+                className='text-2xl dark:border-b-dark-pink dark:border-transparent dark:focus:border-dark-pink dark:focus:bg-dark-main border-b-light-500/40 p-2 pt-5 bg-white outline-none [transition:all_300ms] border-2 border-transparent lg:text-lg text-slate-500 dark:bg-dark-main dark:border-dark-pink dark:text-slate-50 rounded-sm w-full focus:border-2 focus:border-light-500 focus:rounded-md focus:bg-white dark:caret-dark-pink font-medium'
               />
               <label
-                htmlFor='fullName'
-                className='absolute font-bold text-light-500/85 left-4 top-7 text-lg [transition:all_400ms] dark:text-dark-pink'>
-                {engLanguageActive ? 'Full Name' : 'Nombre Completo'}
+                htmlFor='name'
+                className='absolute font-bold text-light-500 opacity-60 left-4 top-7 text-lg [transition:all_400ms] dark:text-dark-pink'>
+                {engLanguageActive ? 'Name' : 'Nombre'}
               </label>
             </div>
-            <div className='input_field_container relative w-full bg-white dark:bg-dark-main'>
+            <div className='input_field_container flex flex-col items-start gap-4 relative w-full bg-white dark:bg-dark-main'>
+              <p className='font-semibold text-slate-500 dark:text-slate-300 flex items-center text-base lg:text-sm gap-2'>
+                <span>
+                  <IoInformationCircle className='text-2xl text-light-500/85 dark:text-dark-sky absolute left-[-1em] top-[0.3em]' />
+                </span>
+                Puedes darme los detalles de tu idea o contarme de que manera
+                puedo ayudarte.
+              </p>
               <textarea
                 name='message'
                 maxLength={200}
@@ -166,8 +174,8 @@ const Contact = () => {
                   lengthControl(e);
                   captureValues(e);
                 }}
-                className='border-light-500/40 p-2 bg-white outline-none [transition:border_400ms] text-lg text-slate-500 resize-none h-[12em] w-full dark:bg-dark-main dark:text-slate-200 rounded-md border-2 font-medium focus:border-light-500 dark:border-dark-pink focus:dark:border-dark-pink'></textarea>
-              <span className='absolute right-4 bottom-5 font-semibold dark:text-zinc-300 opacity-50 text-sm'>
+                className='border-light-500/40  p-2 bg-white outline-none [transition:border_400ms] text-2xl lg:text-lg text-slate-500 resize-none h-[12em] w-full dark:bg-dark-main dark:text-slate-200 rounded-md border-2 font-medium focus:border-light-500 dark:border-dark-pink focus:dark:border-dark-pink'></textarea>
+              <span className='absolute right-4 bottom-5 font-semibold dark:text-zinc-300 opacity-50  text-base lg:text-sm'>
                 {textAreaLength}/200
               </span>
             </div>

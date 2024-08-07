@@ -99,6 +99,7 @@ body {
   .input_field_container input:valid ~ label {
     transform: translateY(-2.5em) translateX(-10px) scale(0.9);
     padding: 0.2em 0.5em;
+    opacity: 1;
     background: inherit;
     transition: all 200ms;
     border: none;
