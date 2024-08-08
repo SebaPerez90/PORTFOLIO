@@ -69,10 +69,10 @@ const HamburguerMenu = () => {
   };
 
   return (
-    <div className='relative min-[500px]:hidden'>
+    <div className='relative sm:hidden'>
       <div
         aria-label='button-menu'
-        className='min-[500px]:hidden flex flex-col gap-1 cursor-pointer absolute left-2 -top-2 z-[70]'
+        className='sm:hidden flex flex-col gap-1 cursor-pointer absolute left-2 -top-2 z-[70]'
         onClick={openMenu}>
         <span
           id='line_a'

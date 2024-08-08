@@ -53,7 +53,7 @@ const NavLinks = () => {
       <span className='text-xl text-light-500/85 dark:text-dark-sky font-extrabold'>
         SebaPerez
       </span>
-      <nav className='xl:text-lg flex gap-7 items-center font-bold max-[500px]:hidden max-[500px]:pointer-events-none text-[#4d4dff80] dark:text-dark-pink'>
+      <nav className='xl:text-lg sm:flex gap-7 items-center font-bold hidden pointer-events-none sm:pointer-events-auto text-[#4d4dff80] dark:text-dark-pink'>
         {navLinks.map((element, index) => (
           <Link
             className='duration-300 hover:text-light-500/50 dark:hover:text-dark-pink font-semibold border-b-2 border-transparent text-slate-600 dark:text-slate-50'

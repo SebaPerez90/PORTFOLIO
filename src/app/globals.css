@@ -81,10 +81,9 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
 
-  @media (height < 200px) {
-    .about_main_container {
-      color:#7a7aff ;
-    }
+  .test:hover span {
+    opacity: 1;
+    transition: all 300ms;
   }
 
   .social-network {
