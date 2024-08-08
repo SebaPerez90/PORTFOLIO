@@ -1,7 +1,8 @@
 import { useStore } from '@/context/store';
 import { motion } from 'framer-motion';
-import HeroButtons from '@/components/Landing/HeroButtons';
+import DowloadCVButton from '@/components/Landing/DowloadCVButton';
 import Avatar from './Avatar';
+import Link from 'next/link';
 
 const Hero = () => {
   const { engLanguageActive } = useStore();
@@ -37,7 +38,9 @@ const Hero = () => {
           Developer
         </h1>
         <p className='dark:text-slate-200 text-[#333333be] w-[40ch] text-xl max-[500px]:w-[30ch]'>
-          {engLanguageActive ? 'I live in Buenos Aires and have more than ' : 'Vivo en Buenos Aires y cuento con más '}
+          {engLanguageActive
+            ? 'I live in Buenos Aires and have more than '
+            : 'Vivo en Buenos Aires y cuento con más '}
           <strong className='font-extrabold dark:text-white text-slate-600'>
             {engLanguageActive
               ? '2 years of experience '
@@ -48,7 +51,16 @@ const Hero = () => {
             : 'en desarrollo de software, especializado en frontend. Juntos, podemos transformar tu idea en realidad'}
         </p>
 
-        <HeroButtons />
+        {/* <HeroButtons /> */}
+        <div className='z-50 flex items-center gap-4 mt-8'>
+          <Link
+            className='bg-light-500 px-8 py-3 w-max text-slate-50 rounded-md font-bold hover:bg-light-500/80 duration-200 hover:duration-200 active:scale-95 dark:bg-dark-sky dark:hover:bg-dark-sky/70'
+            href={'/contact'}
+            aria-label='contact-link'>
+            {engLanguageActive ? 'Get in Touch' : 'Contáctame'}
+          </Link>
+          <DowloadCVButton />
+        </div>
       </motion.div>
       <Avatar />
     </section>

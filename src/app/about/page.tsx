@@ -9,6 +9,7 @@ import { MdArrowBackIosNew } from 'react-icons/md';
 import { MdArrowForwardIos } from 'react-icons/md';
 import Footer from '@/components/Footer';
 import NavLinks from '@/components/NavBar/NavLinks';
+import DowloadCVButton from '@/components/Landing/DowloadCVButton';
 
 const About = () => {
   const { engLanguageActive } = useStore();
@@ -88,14 +89,16 @@ const About = () => {
       <main
         id='about-section'
         ref={main_container_ref}
-        className='about_main_container flex justify-between items-center py-40 mt-[4.8rem] h-[49em] sm:h-[42em] bg-white relative before:[transition:all_900ms_ease] [transition:all_900ms] before:absolute before:right-0 before:top-0  before:w-0 sm:before:w-[35%] z-10 before:h-full before:bg-[#7a7aff] before:z-10
+        className='overflow-x-hidden about_main_container flex justify-between items-center py-40 mt-[4.8rem] h-[49em] sm:h-[42em] bg-white relative before:[transition:all_900ms_ease] [transition:all_900ms] before:absolute before:right-0 before:top-0  before:w-0 sm:before:w-[35%] z-10 before:h-full before:bg-[#7a7aff] before:z-10
         dark:bg-dark-main'>
         <button
           ref={btn_ref}
           onClick={toggleView}
           className='absolute top-[50%] [z-index:100] right-[-0.3em] sm:right-[33.8%] (bg-dark-secondary) bg-[#7a7aff] text-2xl rounded-md py-2 text-white hover:text-slate-200 [transition:all_200ms] sm:px-0 px-3 test'>
           {mainView ? <MdArrowForwardIos /> : <MdArrowBackIosNew />}
-          <span className='absolute text-lg font-medium -left-2 text-slate-50 opacity-0 top-12 [text-shadow:0_0_3px_#000]'>☝️ click</span>
+          <span className='absolute text-lg font-medium -left-2 text-slate-50 opacity-0 top-12 [text-shadow:0_0_3px_#000]'>
+            ☝️ click
+          </span>
         </button>
         {mainView ? (
           <div
@@ -239,8 +242,8 @@ const About = () => {
                 <strong>Front-end Developer | Back-end Developer</strong>
               </li>
             </ul>
-            <span
-              className='sm:hidden m-[0_auto] block bg-green-600 border border-slate-500 py-3 px-5 text-slate-50 rounded-md font-medium opacity-0'
+            <div
+              className='sm:hidden m-[0_auto] flex items-center gap-2 opacity-0'
               style={
                 mainView
                   ? undefined
@@ -249,17 +252,20 @@ const About = () => {
                       animationDelay: '900ms',
                     }
               }>
-              Open to Work 👨‍💼
-            </span>
+              <span className='bg-green-600 border border-slate-500 py-3 px-5 text-slate-50 rounded-md font-medium'>
+                Open to Work 👨‍💼
+              </span>
+              <DowloadCVButton />
+            </div>
           </div>
         )}
-        <div className='hidden sm:flex flex-col items-center justify-center h-full w-[35%] z-20'>
+        <div className='hidden sm:flex flex-col items-center justify-start h-full w-[35%] z-20'>
           <div className='h-[22em] w-auto relative before:absolute before:left-12 before:bottom-[1.5em] before:w-[15em] before:h-[8px] before:rounded-[50%] before:bg-black/40 dark:before:bg-black before:[filter:blur(3px)]'>
             <Image
               priority
               src={freelance_img}
               alt='freelance-img'
-              className='w-full h-full object-cover [filter:drop-shadow(0_0_0.1em_#0000004e)]'
+              className='w-full h-full object-cover [filter:drop-shadow(0_0_0.1em_#0000004e)] '
             />
           </div>
           <div className='flex items-center gap-5'>
@@ -271,8 +277,8 @@ const About = () => {
                 {engLanguageActive ? 'Get in Touch' : 'Contáctame'}
               </Link>
             ) : (
-              <span
-                className='bg-green-600 border border-slate-500 py-3 px-5 text-slate-50 rounded-md font-medium opacity-0'
+              <div
+                className='flex flex-col lg:flex-row items-center gap-2 opacity-0'
                 style={
                   mainView
                     ? undefined
@@ -281,8 +287,11 @@ const About = () => {
                         animationDelay: '900ms',
                       }
                 }>
-                Open to Work 👨‍💼
-              </span>
+                <span className='bg-green-600 border border-slate-500 py-3 px-5 text-slate-50 rounded-md font-medium'>
+                  Open to Work 👨‍💼
+                </span>
+                <DowloadCVButton />
+              </div>
             )}
           </div>
         </div>
