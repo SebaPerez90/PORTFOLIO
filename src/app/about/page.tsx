@@ -10,12 +10,19 @@ import { MdArrowForwardIos } from 'react-icons/md';
 import Footer from '@/components/Footer';
 import NavLinks from '@/components/NavBar/NavLinks';
 import DowloadCVButton from '@/components/Landing/DowloadCVButton';
+// import { usePathname } from 'next/navigation';
 
 const About = () => {
   const { engLanguageActive } = useStore();
   const [mainView, setMainView] = useState<boolean>(false);
   const main_container_ref = useRef<HTMLDivElement | null>(null);
   const btn_ref = useRef<HTMLButtonElement | null>(null);
+
+  // const pathname = usePathname();
+
+  // useEffect(() => {
+  //   document.getElementById('nav-bar')?.classList.add('[filter:blur(30px)]');
+  // }, [pathname]);
 
   useEffect(() => {
     if (mainView && window.innerWidth > 640) {
@@ -270,7 +277,7 @@ const About = () => {
           </div>
         )}
         <div className='hidden sm:flex flex-col items-center justify-start h-full w-[35%] z-20'>
-          <div className='h-[22em] w-auto relative before:absolute before:left-12 before:bottom-[1.5em] before:w-[15em] before:h-[8px] before:rounded-[50%] before:bg-black/40 dark:before:bg-black before:[filter:blur(3px)]'>
+          <div className='h-[22em] xl:h-[30em] w-auto relative before:absolute before:left-12 xl:before:w-[20em] xl:before:left-16 xl:before:bottom-[2em] before:bottom-[1.5em] before:w-[15em] before:h-[8px] before:rounded-[50%] before:bg-black/40 dark:before:bg-black before:[filter:blur(3px)]'>
             <Image
               priority
               src={freelance_img}
