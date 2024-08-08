@@ -80,15 +80,15 @@ const Contact = () => {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               className='flex items-start flex-col gap-3'>
-              <h1 className='font-extrabold text-5xl text-balance text-[#333333e3] dark:text-white'>
+              <h1 className='font-extrabold text-6xl text-balance text-[#333333e3] dark:text-white'>
                 {engLanguageActive
                   ? 'Bring your brand to life!'
                   : 'Dale vida a tu marca!'}
               </h1>
-              <h2 className='font-medium text-xl text-slate-500 dark:text-slate-300'>
+              <h2 className='font-medium text-xl text-slate-500/85 dark:text-slate-300'>
                 {engLanguageActive
-                  ? 'Digitize your business now and boost your profits'
-                  : 'Digitalizá tu negocio ahora y potencia tus ingresos'}
+                  ? 'Digitize your business now and boost your profits '
+                  : 'Digitalizá tu negocio ahora y potencia tus ingresos '}
                 🚀
               </h2>
               <ul className='self-start mt-6'>
@@ -98,7 +98,7 @@ const Contact = () => {
                 {benefits.map((element, index) => (
                   <li
                     key={index}
-                    className='text-[#333333be] font-semibold flex items-center mt-3 gap-1 dark:text-slate-300'>
+                    className='text-[#333333be] font-semibold text-lg flex items-center mt-3 gap-1 dark:text-slate-300'>
                     <BiSolidZap className='text-light-500/85 dark:text-dark-pink text-2xl' />
                     {engLanguageActive
                       ? element.benefitsEN
