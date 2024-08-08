@@ -28,7 +28,7 @@ const About = () => {
         'sm:before:w-[100%]'
       );
       main_container_ref.current?.classList.add(
-        'before:[transform:translateX(-35%)]'
+        'before:[transform:translateX(-34.5%)]'
       );
     } else if (mainView === false && window.innerWidth > 640) {
       main_container_ref.current?.classList.replace(
@@ -40,7 +40,7 @@ const About = () => {
         'sm:before:w-[35%]'
       );
       main_container_ref.current?.classList.remove(
-        'before:[transform:translateX(-35%)]'
+        'before:[transform:translateX(-34.5%)]'
       );
     }
 
@@ -89,12 +89,11 @@ const About = () => {
       <main
         id='about-section'
         ref={main_container_ref}
-        className='overflow-x-hidden about_main_container flex justify-between items-center py-40 mt-[4.8rem] h-[49em] sm:h-[42em] bg-white relative before:[transition:all_900ms_ease] [transition:all_900ms] before:absolute before:right-0 before:top-0  before:w-0 sm:before:w-[35%] z-10 before:h-full before:bg-[#7a7aff] before:z-10
-        dark:bg-dark-main'>
+        className='overflow-x-hidden about_main_container flex justify-between items-center py-40 mt-[4.8rem] h-[51em] sm:h-[48em] bg-white relative before:[transition:all_900ms_ease] [transition:all_900ms] before:absolute before:right-0 before:top-0  before:w-0 sm:before:w-[35%] z-10 before:h-full before:bg-[#7a7aff] before:z-10 dark:bg-dark-main'>
         <button
           ref={btn_ref}
           onClick={toggleView}
-          className='absolute top-[50%] [z-index:100] right-[-0.3em] sm:right-[33.8%] (bg-dark-secondary) bg-[#7a7aff] text-2xl rounded-md py-2 text-white hover:text-slate-200 [transition:all_200ms] sm:px-0 px-3 test'>
+          className='absolute top-[50%] [z-index:100] right-[-0.3em] sm:right-[34%] (bg-dark-secondary) bg-[#7a7aff] text-2xl rounded-md py-2 text-white hover:text-slate-200 [transition:all_200ms] sm:px-0 px-3 about_toggle_btn'>
           {mainView ? <MdArrowForwardIos /> : <MdArrowBackIosNew />}
           <span className='absolute text-lg font-medium -left-2 text-slate-50 opacity-0 top-12 [text-shadow:0_0_3px_#000]'>
             ☝️ click
@@ -102,7 +101,7 @@ const About = () => {
         </button>
         {mainView ? (
           <div
-            className='z-20 flex px-[5%] lg:px-[10%] flex-col justify-center gap-8 h-full sm:w-[65%] opacity-0 text-slate-300'
+            className='z-20 flex px-[7%] lg:px-[10%] flex-col justify-center gap-8 h-full sm:w-[65%] opacity-0 text-slate-300'
             style={
               mainView === true
                 ? {
@@ -134,6 +133,9 @@ const About = () => {
                 : 'Imaginate tener un sitio web o una aplicación que no solo funcione a la perfección, sino que también aumente tus ingresos y presencia digital. Ofrezco servicios de desarrollo de software y diseño creativo para transformar tus ideas en productos digitales impresionantes.'}
             </p>
             <ul className='font-bold text-slate-100'>
+              <p className='text-lg mb-3 font-bold'>
+                {engLanguageActive ? 'Benefits' : 'Beneficios'}
+              </p>
               <li>
                 ⚡
                 {engLanguageActive
@@ -175,7 +177,7 @@ const About = () => {
           </div>
         ) : (
           <div
-            className='flex px-[5%] lg:px-[10%] flex-col justify-center gap-8 h-full sm:w-[65%] opacity-0'
+            className='flex px-[7%] lg:px-[10%] flex-col justify-center gap-8 h-full sm:w-[65%] opacity-0'
             style={
               mainView === false
                 ? {
@@ -197,15 +199,18 @@ const About = () => {
               .
             </h1>
             <p className='font-medium dark:text-slate-300 text-slate-500'>
-              {engLanguageActive ? 'I have over' : 'Cuento con más de'}
+              {engLanguageActive
+                ? 'I have a strong focus on frontend development and live in Berazategui, Buenos Aires. I have over'
+                : 'Tengo un fuerte enfoque en el área frontend y vivo en Berazategui, Buenos Aires. Cuento con más'}
               <strong className='font-extrabold text-slate-600 dark:text-white'>
                 {engLanguageActive
                   ? ' 2 year of experience '
                   : ' 2 años de experiencia '}
               </strong>
               {engLanguageActive
-                ? 'not formally in the tech sector, I live in Berazategui, Buenos Aires.'
-                : 'no formal en el sector tecnológico, vivo en Berazategui, Buenos Aires.'}
+                ? 'in the tech sector, with experience in technologies like React, CSS (and all its variants), JavaScript, and TypeScript, among others. On the backend side, I complement my skills with Node, Express, and PostgreSQL, among others.'
+                : 'en el sector tecnológico en tecnologías como React, CSS (y todas sus variantes), Javacript y Typescript entre otras. En el área backend complemento con Node, Express y PostgreSQL entre otras.'}
+              <br></br>
               <br></br>
               {engLanguageActive ? 'I also have over' : 'También tengo más de'}
               <strong className='font-extrabold text-slate-600 dark:text-white'>
@@ -216,30 +221,35 @@ const About = () => {
               {engLanguageActive
                 ? 'In the food service sector. I am making a 180-degree shift in my professional profile towards the technology sector. My past experience has allowed me to acquire valuable soft skills that are transferable to the technology sector.'
                 : 'en el sector gastronómico. Estoy dando un giro de 180 grados a mi perfil profesional hacia el sector tecnológico. Mi trayectoria pasada me ha permitido adquirir valiosas habilidades blandas que son transferibles al sector tecnológico.'}
-              <br></br>
-              <br></br>
-              {engLanguageActive
-                ? 'Currently, I am seeking job opportunities that will allow me to continue developing professionally.'
-                : 'Actualmente estoy en busqueda oportunidades laborales que me permitan continuar desarrollandome como profesional.'}
             </p>
-            <ul className='font-medium text-slate-500 dark:text-slate-50 list-disc ml-4 marker:text-light-500/70 dark:marker:text-dark-pink'>
+            <p className='font-extrabold text-slate-600 dark:text-white'>
+              {engLanguageActive
+                ? 'Currently, I am seeking job opportunities that will boost my career and allow me to continue developing professionally.'
+                : 'Actualmente estoy en busqueda oportunidades laborales que impulsen mi carrera y me permitan continuar desarrollandome como profesional.'}
+            </p>
+            <ul className='font-medium text-slate-500 dark:text-slate-50 list-disc marker:text-light-500/70 dark:marker:text-dark-pink'>
+              <p className='border-b-2 border-b-light-500/40 w-max text-lg mb-3 font-bold  dark:border-b-dark-pink'>
+                {engLanguageActive
+                  ? 'Personal Information:'
+                  : 'Datos Personales:'}
+              </p>
+              <li>
+                {engLanguageActive
+                  ? 'Desired Position: '
+                  : 'Posición Deseada: '}
+                <strong>Front-end Developer | Back-end Developer</strong>
+              </li>
               <li>
                 {engLanguageActive ? 'Ingles: ' : 'English: '}
                 <strong>B2 - Uppper Intermediate</strong>
-              </li>
-              <li>
-                {engLanguageActive ? 'Time Zone: ' : 'Zona Horaria: '}
-                <strong>GMT-3</strong>
               </li>
               <li>
                 {engLanguageActive ? 'Availability: ' : 'Disponibilidad: '}
                 <strong>Full-Time</strong>
               </li>
               <li>
-                {engLanguageActive
-                  ? 'Desired Position: '
-                  : 'Posición Deseada: '}
-                <strong>Front-end Developer | Back-end Developer</strong>
+                {engLanguageActive ? 'Time Zone: ' : 'Zona Horaria: '}
+                <strong>GMT-3</strong>
               </li>
             </ul>
             <div

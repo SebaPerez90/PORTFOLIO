@@ -81,7 +81,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
 
-  .test:hover span {
+  .about_toggle_btn:hover span {
     opacity: 1;
     transition: all 300ms;
   }
