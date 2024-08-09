@@ -10,19 +10,12 @@ import { MdArrowForwardIos } from 'react-icons/md';
 import Footer from '@/components/Footer';
 import NavLinks from '@/components/NavBar/NavLinks';
 import DowloadCVButton from '@/components/Landing/DowloadCVButton';
-// import { usePathname } from 'next/navigation';
 
 const About = () => {
   const { engLanguageActive } = useStore();
   const [mainView, setMainView] = useState<boolean>(false);
   const main_container_ref = useRef<HTMLDivElement | null>(null);
   const btn_ref = useRef<HTMLButtonElement | null>(null);
-
-  // const pathname = usePathname();
-
-  // useEffect(() => {
-  //   document.getElementById('nav-bar')?.classList.add('[filter:blur(30px)]');
-  // }, [pathname]);
 
   useEffect(() => {
     if (mainView && window.innerWidth > 640) {
@@ -96,7 +89,7 @@ const About = () => {
       <main
         id='about-section'
         ref={main_container_ref}
-        className='overflow-x-hidden about_main_container flex justify-between items-center py-40 mt-[4.8rem] h-[51em] sm:h-[48em] bg-white relative before:[transition:all_900ms_ease] [transition:all_900ms] before:absolute before:right-0 before:top-0  before:w-0 sm:before:w-[35%] z-10 before:h-full before:bg-[#7a7aff] before:z-10 dark:bg-dark-main'>
+        className='overflow-hidden about_main_container flex justify-between items-center py-40 mt-[4.7rem] h-[51em] sm:h-[48em] bg-white relative before:[transition:all_900ms_ease] [transition:all_900ms] before:absolute before:right-0 before:top-0  before:w-0 sm:before:w-[35%] z-10 before:h-full before:bg-[#7a7aff] before:z-10 dark:bg-dark-main'>
         <button
           ref={btn_ref}
           onClick={toggleView}
@@ -282,10 +275,10 @@ const About = () => {
               priority
               src={freelance_img}
               alt='freelance-img'
-              className='w-full h-full object-cover [filter:drop-shadow(0_0_0.1em_#0000004e)] '
+              className='w-full h-full object-cover [filter:drop-shadow(0_0_0.1em_#0000004e)]'
             />
           </div>
-          <div className='flex items-center gap-5'>
+          <div className='flex items-center gap-5 max-[830px]:absolute max-[830px]:bottom-[10em]'>
             {mainView ? (
               <Link
                 className='bg-light-500 py-3 px-8 w-max text-slate-50 rounded-md hover:bg-light-500/75 duration-200 hover:duration-200 active:scale-90 dark:bg-dark-sky hover:dark:bg-dark-sky/75 font-medium opacity-0 animate-[appearContent_400ms_ease-out_forwards] [animation-delay:1s] border border-transparent'

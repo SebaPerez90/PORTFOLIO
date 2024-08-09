@@ -13,9 +13,10 @@ const Footer = () => {
 
   useEffect(() => {
     if (pathname === '/about') {
+      document.getElementById('footer-section')?.classList.add('bg-white');
       document
         .getElementById('footer-section')
-        ?.classList.add('dark:bg-[#0f172a]', 'bg-white');
+        ?.classList.replace('dark:bg-dark-secondary', 'dark:bg-dark-main');
     }
   }, [pathname]);
 

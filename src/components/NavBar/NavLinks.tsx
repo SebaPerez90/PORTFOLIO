@@ -50,7 +50,7 @@ const NavLinks = () => {
     <header
       id='nav-bar'
       className='flex justify-between items-center w-full fixed left-0 top-0 z-50 p-[1.5em_4em] duration-1000'>
-      <span className='text-xl text-light-500/85 dark:text-dark-sky font-extrabold'>
+      <span className='text-xl text-light-500/85 dark:text-dark-pink font-extrabold'>
         SebaPerez
       </span>
       <nav className='xl:text-lg sm:flex gap-7 items-center font-bold hidden pointer-events-none sm:pointer-events-auto text-[#4d4dff80] dark:text-dark-pink'>
