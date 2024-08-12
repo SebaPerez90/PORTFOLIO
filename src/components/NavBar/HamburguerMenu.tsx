@@ -76,13 +76,13 @@ const HamburguerMenu = () => {
         onClick={openMenu}>
         <span
           id='line_a'
-          className='relative w-8 h-1 bg-light-500 rounded-lg duration-200 dark:bg-dark-pink'></span>
+          className='relative w-8 h-1 bg-light-500 rounded-lg [transition:all_200ms] dark:bg-dark-pink'></span>
         <span
           id='line_b'
-          className='relative w-8 h-1 bg-light-500 rounded-lg duration-200 dark:bg-dark-pink'></span>
+          className='relative w-8 h-1 bg-light-500 rounded-lg [transition:all_200ms] dark:bg-dark-pink'></span>
         <span
           id='line_c'
-          className='relative w-8 h-1 bg-light-500 rounded-lg duration-200 dark:bg-dark-pink'></span>
+          className='relative w-8 h-1 bg-light-500 rounded-lg [transition:all_200ms] dark:bg-dark-pink'></span>
       </div>
       <AnimatePresence>
         {isOpen && (
