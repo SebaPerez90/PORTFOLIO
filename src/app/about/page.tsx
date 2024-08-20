@@ -275,7 +275,7 @@ const About = () => {
               priority
               src={freelance_img}
               alt='freelance-img'
-              className='w-full h-full object-cover [filter:drop-shadow(0_0_0.1em_#0000004e)]'
+              className='w-full h-full object-cover [filter:drop-shadow(0_0_0.1em_#0000004e)] animate-[appearContent_300ms_ease-out]'
             />
           </div>
           <div className='flex items-center gap-5 max-[830px]:absolute max-[830px]:bottom-[10em]'>
