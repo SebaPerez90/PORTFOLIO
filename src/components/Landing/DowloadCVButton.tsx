@@ -68,7 +68,7 @@ const DowloadCVButton = () => {
               aria-label='cv-link'
               className='dark:hover:bg-dark-tertiary/70 hover:bg-slate-300/50 hover:duration-300 duration-300 text-slate-500 py-3 px-3  dark:text-zinc-300 font-semibold text-base flex justify-center items-center gap-2 w-[11em]'
               href='/sebastian-perez-en.pdf'
-              download='sebastian-perez-en.pdf'>
+              download='sebastian_perez.pdf'>
               cv-english.pdf{' '}
               <FaRegFilePdf className='dark:text-dark-pink text-light-500/75' />
             </a>
@@ -80,7 +80,7 @@ const DowloadCVButton = () => {
               aria-label='cv-link'
               className='dark:hover:bg-dark-tertiary/70 hover:bg-slate-300/50 hover:duration-300 duration-300 text-slate-500 py-3 px-3  dark:text-zinc-300 font-semibold text-base flex justify-center items-center gap-2 w-[11em]'
               href='/sebastian-perez-es.pdf'
-              download='sebastian-perez-es.pdf'>
+              download='sebastian-perez.pdf'>
               cv-español.pdf{' '}
               <FaRegFilePdf className='dark:text-dark-pink text-light-500/75' />
             </a>

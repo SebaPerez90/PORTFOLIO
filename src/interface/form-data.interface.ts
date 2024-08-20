@@ -4,8 +4,3 @@ export interface IFormData {
   message: string;
 }
 
-export const FormData = {
-  subject: '',
-  name: '',
-  message: '',
-};
