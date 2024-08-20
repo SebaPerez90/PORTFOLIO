@@ -84,6 +84,7 @@ body {
   .about_toggle_btn:hover span {
     opacity: 1;
     transition: all 300ms;
+    color: #894166;
   }
 
   .social-network {
@@ -94,6 +95,10 @@ body {
     }
   }
 
+  .links:hover span {
+    opacity: 1;
+    transition: all 200ms;
+  }
   .input_field_container input:focus ~ label,
   .input_field_container input:valid ~ label {
     transform: translateY(-2.5em) translateX(-10px) scale(0.9);

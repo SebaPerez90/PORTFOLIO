@@ -32,23 +32,24 @@ const Hero = () => {
         </span>
         <h1 className='text-7xl xl:text-8xl dark:text-slate-50 text-[#333333e3] font-black'>
           <strong className='dark:text-dark-sky text-light-500/85'>
-            Fullstack
+            Front
           </strong>
+          end
           <br></br>
           Developer
         </h1>
         <p className='dark:text-slate-200 text-[#333333be] w-[40ch] text-xl max-[500px]:w-[30ch]'>
           {engLanguageActive
             ? 'I live in Buenos Aires and have more than '
-            : 'Vivo en Buenos Aires y cuento con más '}
+            : 'Vivo en Buenos Aires y cuento con más de '}
           <strong className='font-extrabold dark:text-white text-slate-600'>
             {engLanguageActive
               ? '2 years of experience '
               : '2 años de experiencia '}
           </strong>
           {engLanguageActive
-            ? 'in software development, specializing in frontend. Together, we can bring your idea to life.'
-            : 'en desarrollo de software, especializado en frontend. Juntos, podemos transformar tu idea en realidad'}
+            ? 'in the software development field. Thanks to my versatility, I also have solid experience in the Backend area.'
+            : 'en el área de desarrollo de software. Gracias a mi versatilidad, también tengo una sólida experiencia en el área Backend.'}
         </p>
 
         {/* <HeroButtons /> */}

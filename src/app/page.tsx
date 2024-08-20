@@ -7,6 +7,7 @@ import Skills from '@/components/Skills';
 import Footer from '@/components/Footer';
 import Services from '@/components/Services';
 import NavLinks from '@/components/NavBar/NavLinks';
+import SideMenu from '@/components/SideMenu';
 
 export default function Home() {
   return (
@@ -14,7 +15,8 @@ export default function Home() {
       <NavLinks />
       <main
         id='main-section'
-        className='[transition:filter_500ms] flex flex-col justify-around items-center bg-[#ffff] dark:bg-dark-main overflow-x-hidden'>
+        className='[transition:filter_500ms] flex flex-col justify-around items-center bg-[#ffff] dark:bg-dark-main overflow-x-hidden relative'>
+        <SideMenu />
         <Hero />
         <Experience />
         <Proyects />
