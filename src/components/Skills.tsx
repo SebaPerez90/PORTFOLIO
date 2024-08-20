@@ -2,6 +2,7 @@ import { useStore } from '@/context/store';
 import { Roboto } from 'next/font/google';
 import { skills } from '@/utils/skills';
 import { motion } from 'framer-motion';
+import { ISkills } from '@/interface/skills.interface';
 
 const roboto = Roboto({
   weight: ['900'],
@@ -10,6 +11,7 @@ const roboto = Roboto({
 
 const Skills = () => {
   const { engLanguageActive } = useStore();
+
   return (
     <section
       id='skills-section'
@@ -20,7 +22,7 @@ const Skills = () => {
         {engLanguageActive ? 'Skills.' : 'Habilidades.'}
       </h1>
       <div className='max-[550px]:[grid-template-columns:repeat(1,fit-content(80%))] justify-center [grid-template-columns:repeat(2,fit-content(350px))] grid gap-10 px-11'>
-        {skills.map((element, index) => (
+        {skills.map((element: ISkills, index) => (
           <motion.div
             transition={{
               bounce: 0.45,

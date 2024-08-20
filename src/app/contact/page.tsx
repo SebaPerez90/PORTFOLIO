@@ -3,7 +3,7 @@
 import benefits from '@/utils/benefits.json';
 import { useStore } from '@/context/store';
 import { ChangeEvent, FormEvent, useState } from 'react';
-import { FormData, IFormData } from './form-data.interface';
+import { IFormData } from '../../interface/form-data.interface';
 import Image from 'next/image';
 import contact from '@/assets/images/contact.svg';
 import Footer from '@/components/Footer';
@@ -17,7 +17,11 @@ import NavLinks from '@/components/NavBar/NavLinks';
 const Contact = () => {
   const { engLanguageActive } = useStore();
   const [textAreaLength, setTextAreaLength] = useState<number>(0);
-  const [formData, setFormData] = useState<IFormData>(FormData);
+  const [formData, setFormData] = useState<IFormData>({
+    subject: '',
+    name: '',
+    message: '',
+  });
   const router = useRouter();
 
   const lengthControl = (e: ChangeEvent<HTMLTextAreaElement>) => {

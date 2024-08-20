@@ -1,9 +1,4 @@
-interface Skills {
-  field: string;
-  skillsEng: string[];
-  skillsEsp: string[];
-}
-export const skills: Skills[] = [
+export const skills = [
   {
     field: 'Frontend',
     skillsEng: [
