@@ -84,6 +84,7 @@ body {
   .about_toggle_btn:hover span {
     opacity: 1;
     transition: all 300ms;
+    color: #894166;
   }
 
   .social-network {
