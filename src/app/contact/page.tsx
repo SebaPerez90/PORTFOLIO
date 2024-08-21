@@ -5,7 +5,7 @@ import { useStore } from '@/context/store';
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
 import { IFormData } from '../../interface/form-data.interface';
 import Image from 'next/image';
-import contact from '@/assets/images/contact.svg';
+import contact from '@/assets/svgs/contact.svg';
 import Footer from '@/components/Footer';
 import { BiSolidZap } from 'react-icons/bi';
 import toast, { Toaster } from 'react-hot-toast';
@@ -131,7 +131,7 @@ const Contact = () => {
       <NavLinks />
       <main
         id='contact-section'
-        className='flex flex-col items-center bg-white dark:bg-dark-main gap-32 pb-48 lg:pb-24 pt-28'>
+        className='flex flex-col items-center bg-white dark:bg-dark-main gap-24 pb-48 lg:pb-24 pt-28'>
         <div className='flex flex-col items-center gap-5'>
           <h1 className='font-extrabold text-5xl text-balance text-[#333333e3] dark:text-white text-center mx-4'>
             <strong className='text-light-500/80 dark:text-dark-pink text-6xl'>
@@ -153,8 +153,8 @@ const Contact = () => {
             🚀
           </h2>
         </div>
-        <div className='[width:clamp(300px,90%,1200px)] mx-8 flex h-full justify-around items-center flex-wrap gap-12'>
-          <div className='flex flex-col justify-start items-center sm:items-start gap-8'>
+        <div className='[width:clamp(300px,90%,1200px)] mx-8 flex h-full justify-around items-start flex-wrap gap-12'>
+          <div className='flex flex-col justify-start items-center sm:items-start gap-8 '>
             <motion.div
               transition={{
                 bounce: 0.6,
@@ -166,7 +166,7 @@ const Contact = () => {
               viewport={{ once: true }}
               className='flex items-start  flex-col gap-3'>
               <ul className='self-start mt-6'>
-                <p className='py-2 font-extrabold text-xl border-b-2 border-light-500/70 dark:text-dark-pink text-light-500/90 dark:border-dark-pink'>
+                <p className='mb-4 font-extrabold text-xl border-b-2 border-light-500/70 dark:text-dark-pink text-light-500/90 dark:border-dark-pink'>
                   {engLanguageActive ? 'Benefits' : 'Beneficios'}
                 </p>
                 {benefits.map((element, index) => (
@@ -190,17 +190,11 @@ const Contact = () => {
               className='h-[350px] w-[350px] animate-[appearContent_300ms_ease-out]'
             />
           </div>
-          <motion.form
-            transition={{
-              duration: 0.3,
-            }}
-            initial={{ scale: 0, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
+          <form
             name='contact-form'
             method='POST'
             onSubmit={succesMessage}
-            className='flex flex-col justify-around gap-7 w-[35em] md:w-[25em]'>
+            className='flex flex-col justify-around gap-7 w-[35em] md:w-[25em] animate-[disappearContent_900ms_ease]'>
             <div className='input_field_container relative w-full bg-white dark:bg-dark-main'>
               <input
                 required={true}
@@ -259,7 +253,7 @@ const Contact = () => {
               {wrongEmail ? (
                 <span className='absolute flex items-center gap-1 font-medium w-max left-0 -bottom-8 text-red-700'>
                   <IoInformationCircle />
-                  Ingresa una dirección de email válido
+                  {engLanguageActive ? 'Enter a valid email address' : 'Ingresa una dirección de email válido'}
                 </span>
               ) : null}
             </div>
@@ -283,7 +277,7 @@ const Contact = () => {
               className='btn_primary'>
               {engLanguageActive ? 'Send' : 'Enviar'}
             </button>
-          </motion.form>
+          </form>
         </div>
       </main>
       <Footer />

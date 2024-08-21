@@ -29,6 +29,7 @@ const LanguageButtons = () => {
         width={25}
         height={25}
         ref={buttonRef}
+        className='xl:w-[40px] xl:h-[40px]'
       />
     </button>
   );

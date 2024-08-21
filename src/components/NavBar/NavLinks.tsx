@@ -72,7 +72,7 @@ const NavLinks = () => {
             {engLanguageActive ? element.titleEN : element.titleES}
           </Link>
         ))}
-        <div className='flex items-center gap-2 ml-3'>
+        <div className='flex items-center gap-2 xl:gap-4 ml-3'>
           <ThemeButtons />
           <LanguageButtons />
         </div>
