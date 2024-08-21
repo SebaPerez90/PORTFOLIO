@@ -131,7 +131,7 @@ const Contact = () => {
       <NavLinks />
       <main
         id='contact-section'
-        className='flex flex-col items-center bg-white dark:bg-dark-main gap-32 pb-48 lg:pb-24 pt-28'>
+        className='flex flex-col items-center bg-white dark:bg-dark-main gap-24 pb-48 lg:pb-24 pt-28'>
         <div className='flex flex-col items-center gap-5'>
           <h1 className='font-extrabold text-5xl text-balance text-[#333333e3] dark:text-white text-center mx-4'>
             <strong className='text-light-500/80 dark:text-dark-pink text-6xl'>
@@ -153,8 +153,8 @@ const Contact = () => {
             🚀
           </h2>
         </div>
-        <div className='[width:clamp(300px,90%,1200px)] mx-8 flex h-full justify-around items-center flex-wrap gap-12'>
-          <div className='flex flex-col justify-start items-center sm:items-start gap-8'>
+        <div className='[width:clamp(300px,90%,1200px)] mx-8 flex h-full justify-around items-start flex-wrap gap-12'>
+          <div className='flex flex-col justify-start items-center sm:items-start gap-8 '>
             <motion.div
               transition={{
                 bounce: 0.6,
@@ -166,7 +166,7 @@ const Contact = () => {
               viewport={{ once: true }}
               className='flex items-start  flex-col gap-3'>
               <ul className='self-start mt-6'>
-                <p className='py-2 font-extrabold text-xl border-b-2 border-light-500/70 dark:text-dark-pink text-light-500/90 dark:border-dark-pink'>
+                <p className='mb-4 font-extrabold text-xl border-b-2 border-light-500/70 dark:text-dark-pink text-light-500/90 dark:border-dark-pink'>
                   {engLanguageActive ? 'Benefits' : 'Beneficios'}
                 </p>
                 {benefits.map((element, index) => (
