@@ -2,7 +2,7 @@
 
 import benefits from '@/utils/benefits.json';
 import { useStore } from '@/context/store';
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
 import { IFormData } from '../../interface/form-data.interface';
 import Image from 'next/image';
 import contact from '@/assets/images/contact.svg';
@@ -17,12 +17,37 @@ import NavLinks from '@/components/NavBar/NavLinks';
 const Contact = () => {
   const { engLanguageActive } = useStore();
   const [textAreaLength, setTextAreaLength] = useState<number>(0);
+  const [wrongEmail, setWrongEmail] = useState<boolean>(true);
   const [formData, setFormData] = useState<IFormData>({
     subject: '',
     name: '',
+    email: '',
     message: '',
   });
+
   const router = useRouter();
+  const send_btn = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    // Disable the send button function until the fields are completed
+    if (
+      wrongEmail === false &&
+      formData.email &&
+      formData.name &&
+      formData.subject &&
+      formData.message
+    ) {
+      send_btn.current?.classList.replace('btn_disabled', 'btn_primary');
+    } else if (wrongEmail === true) {
+      send_btn.current?.classList.replace('btn_primary', 'btn_disabled');
+    }
+  }, [
+    formData.email,
+    formData.message,
+    formData.name,
+    formData.subject,
+    wrongEmail,
+  ]);
 
   const lengthControl = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setTextAreaLength(e.target.selectionEnd);
@@ -31,39 +56,74 @@ const Contact = () => {
   const captureValues = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    // if (e.target.name === 'name') {
-    //   const updatedValue = e.target.value.replace(/[^a-zA-Z\s]/g, '');
-    //   setFormData({ ...formData, [e.target.name]: updatedValue });
-    // }
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    if (name === 'name') {
+      const updatedValue = value.replace(/[^a-zA-Z\s]/g, '');
+      setFormData({ ...formData, [name]: updatedValue });
+    } else if (name === 'email') {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (emailRegex.test(value)) {
+        setFormData({ ...formData, [name]: value });
+        setWrongEmail(false);
+      } else {
+        setWrongEmail(true);
+      }
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
-  const sendMessage = async (e: FormEvent<HTMLFormElement>) => {
+  const sendForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await fetch('https://formspree.io/f/mbjnlnlq', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_FORMSPREE_SERVICE}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (!response.ok) throw new Error('Error al registrar');
+      const data = await response.json();
+
+      setTimeout(() => {
+        router.push('/');
+      }, 3000);
+
+      return data;
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  const succesMessage = () => {
-    const message = engLanguageActive
-      ? 'Your message has been send successfully'
-      : 'Tu mensaje fué enviado correctamente';
-    toast.success(message, {
-      duration: 3000,
-      style: {
-        fontWeight: '500',
-        color: '#333333be',
+  const succesMessage = (e: FormEvent<HTMLFormElement>) => {
+    const myPromise = sendForm(e);
+
+    toast.promise(
+      myPromise,
+      {
+        loading: engLanguageActive ? 'Sending data...' : 'Enviando datos...',
+        success: engLanguageActive ? 'Message sent!' : 'Mensaje enviado!',
+        error: engLanguageActive ? 'An error occurred' : 'Ocurrio un error',
       },
-      position: 'bottom-right',
-    });
-    setTimeout(() => {
-      router.push('/');
-    }, 3000);
+      {
+        style: {
+          width: '260px',
+          textAlign: 'center',
+          padding: '1.1em',
+          fontSize: '1.3em',
+        },
+        success: {
+          duration: 3000,
+        },
+      }
+    );
   };
 
   return (
@@ -71,8 +131,29 @@ const Contact = () => {
       <NavLinks />
       <main
         id='contact-section'
-        className='flex flex-col items-center bg-white dark:bg-dark-main  pb-48 lg:pb-24 pt-32'>
-        <div className='[width:clamp(300px,80%,1400px)] mx-8 flex h-full justify-around items-center flex-wrap'>
+        className='flex flex-col items-center bg-white dark:bg-dark-main gap-32 pb-48 lg:pb-24 pt-28'>
+        <div className='flex flex-col items-center gap-5'>
+          <h1 className='font-extrabold text-5xl text-balance text-[#333333e3] dark:text-white text-center mx-4'>
+            <strong className='text-light-500/80 text-6xl'>
+              {engLanguageActive ? 'Contact me' : 'Contáctame'}
+            </strong>
+            <br></br>
+            <strong className='text-4xl [line-height:2em]'>
+              {engLanguageActive ? 'and' : 'y'}
+            </strong>
+            <br></br>
+            {engLanguageActive
+              ? 'Bring your project to life!'
+              : 'Dale vida a tu proyecto!'}
+          </h1>
+          <h2 className='text-center mx-6 font-medium text-xl text-slate-500/85 dark:text-slate-300'>
+            {engLanguageActive
+              ? 'Digitize your business now and boost your profits '
+              : 'Digitalizá tu negocio ahora y potencia tus ingresos '}
+            🚀
+          </h2>
+        </div>
+        <div className='[width:clamp(300px,90%,1200px)] mx-8 flex h-full justify-around items-center flex-wrap gap-12'>
           <div className='flex flex-col justify-start items-center sm:items-start gap-8'>
             <motion.div
               transition={{
@@ -83,18 +164,7 @@ const Contact = () => {
               initial={{ x: -100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
-              className='flex items-start flex-col gap-3'>
-              <h1 className='font-extrabold text-6xl text-balance text-[#333333e3] dark:text-white'>
-                {engLanguageActive
-                  ? 'Bring your brand to life!'
-                  : 'Dale vida a tu marca!'}
-              </h1>
-              <h2 className='font-medium text-xl text-slate-500/85 dark:text-slate-300'>
-                {engLanguageActive
-                  ? 'Digitize your business now and boost your profits '
-                  : 'Digitalizá tu negocio ahora y potencia tus ingresos '}
-                🚀
-              </h2>
+              className='flex items-start  flex-col gap-3'>
               <ul className='self-start mt-6'>
                 <p className='py-2 font-extrabold text-xl border-b-2 border-light-500/70 dark:text-dark-pink text-light-500/90 dark:border-dark-pink'>
                   {engLanguageActive ? 'Benefits' : 'Beneficios'}
@@ -117,7 +187,7 @@ const Contact = () => {
               height={350}
               priority
               alt='contact-img'
-              className='h-[350px] w-[350px]'
+              className='h-[350px] w-[350px] animate-[appearContent_300ms_ease-out]'
             />
           </div>
           <motion.form
@@ -129,11 +199,12 @@ const Contact = () => {
             viewport={{ once: true }}
             name='contact-form'
             method='POST'
-            onSubmit={sendMessage}
-            className='flex flex-col justify-around gap-12 w-[25em] h-[33em]'>
+            onSubmit={succesMessage}
+            className='flex flex-col justify-around gap-7 w-[35em] md:w-[25em]'>
             <div className='input_field_container relative w-full bg-white dark:bg-dark-main'>
               <input
                 required={true}
+                value={formData.subject}
                 autoComplete='off'
                 type='text'
                 name='subject'
@@ -141,17 +212,18 @@ const Contact = () => {
                 onChange={(e) => {
                   captureValues(e);
                 }}
-                className='text-2xl dark:border-b-dark-pink dark:border-transparent dark:focus:border-dark-pink dark:focus:bg-dark-main border-b-light-500/40 p-2 pt-5 bg-white outline-none [transition:all_300ms] border-2 border-transparent lg:text-lg text-slate-500 dark:bg-dark-main dark:border-dark-pink dark:text-slate-50 rounded-sm w-full focus:border-2 focus:border-light-500 focus:rounded-md focus:bg-white dark:caret-dark-pink font-medium'
+                className='text-2xl dark:border-dark-pink dark:focus:border-dark-pink dark:focus:bg-dark-main border-light-500/50 p-4 bg-white outline-none [transition:all_300ms] border-2 lg:text-lg text-slate-600 dark:bg-dark-main dark:text-slate-50  w-full focus:border-2 focus:border-light-500 focus:rounded-md focus:bg-white dark:caret-dark-pink font-medium rounded-md'
               />
               <label
                 htmlFor='subject'
-                className='absolute font-bold text-light-500 opacity-60 left-4 top-7 text-lg [transition:all_400ms] dark:text-dark-pink'>
+                className='absolute font-bold text-light-500/80  left-4 top-5 text-lg [transition:all_400ms] dark:text-dark-pink'>
                 {engLanguageActive ? 'Subject' : 'Asunto'}
               </label>
             </div>
             <div className='input_field_container relative w-full bg-white dark:bg-dark-main'>
               <input
                 required={true}
+                value={formData.name}
                 autoComplete='off'
                 type='text'
                 name='name'
@@ -159,23 +231,39 @@ const Contact = () => {
                 onChange={(e) => {
                   captureValues(e);
                 }}
-                className='text-2xl dark:border-b-dark-pink dark:border-transparent dark:focus:border-dark-pink dark:focus:bg-dark-main border-b-light-500/40 p-2 pt-5 bg-white outline-none [transition:all_300ms] border-2 border-transparent lg:text-lg text-slate-500 dark:bg-dark-main dark:border-dark-pink dark:text-slate-50 rounded-sm w-full focus:border-2 focus:border-light-500 focus:rounded-md focus:bg-white dark:caret-dark-pink font-medium'
+                className='capitalize text-2xl dark:focus:border-dark-pink dark:focus:bg-dark-main border-light-500/50 p-4 bg-white outline-none [transition:all_300ms] border-2 lg:text-lg text-slate-600 dark:bg-dark-main dark:border-dark-pink dark:text-slate-50  w-full focus:border-2 focus:border-light-500 focus:rounded-md focus:bg-white dark:caret-dark-pink font-medium rounded-md'
               />
               <label
                 htmlFor='name'
-                className='absolute font-bold text-light-500 opacity-60 left-4 top-7 text-lg [transition:all_400ms] dark:text-dark-pink'>
-                {engLanguageActive ? 'Name' : 'Nombre'}
+                className='absolute font-bold text-light-500/80 left-4 top-5 text-lg [transition:all_400ms] dark:text-dark-pink'>
+                {engLanguageActive ? 'Full name' : 'Nombre completo'}
               </label>
             </div>
-            <div className='input_field_container flex flex-col items-start gap-4 relative w-full bg-white dark:bg-dark-main'>
-              <p className='font-semibold text-slate-500 dark:text-slate-300 flex items-center text-base lg:text-sm gap-2'>
-                <span>
-                  <IoInformationCircle className='text-2xl text-light-500/85 dark:text-dark-sky absolute left-[-1em] top-[0.3em]' />
+            <div className='input_field_container relative w-full bg-white dark:bg-dark-main'>
+              <input
+                required={true}
+                autoComplete='off'
+                type='text'
+                name='email'
+                id='email'
+                onChange={(e) => {
+                  captureValues(e);
+                }}
+                className='lowercase text-2xl dark:focus:border-dark-pink dark:focus:bg-dark-main border-light-500/50 p-4 bg-white outline-none [transition:all_300ms] border-2 lg:text-lg text-slate-600 dark:bg-dark-main dark:border-dark-pink dark:text-slate-50  w-full focus:border-2 focus:border-light-500 focus:rounded-md focus:bg-white dark:caret-dark-pink font-medium rounded-md'
+              />
+              <label
+                htmlFor='email'
+                className='absolute font-bold text-light-500/80 left-4 top-5 text-lg [transition:all_400ms] dark:text-dark-pink'>
+                {engLanguageActive ? 'Email' : 'Correo electrónico'}
+              </label>
+              {wrongEmail ? (
+                <span className='absolute flex items-center gap-1 font-medium w-max left-0 -bottom-8 text-red-700'>
+                  <IoInformationCircle />
+                  Ingresa una dirección de email válido
                 </span>
-                {engLanguageActive
-                  ? 'You can give me the details of your idea or tell me how I can help you.'
-                  : 'Puedes darme los detalles de tu idea o contarme de que manera puedo ayudarte.'}
-              </p>
+              ) : null}
+            </div>
+            <div className='input_field_container flex flex-col items-start gap-4 relative w-full mt-6 bg-white dark:bg-dark-main'>
               <textarea
                 name='message'
                 maxLength={200}
@@ -183,15 +271,16 @@ const Contact = () => {
                   lengthControl(e);
                   captureValues(e);
                 }}
-                className='border-light-500/40  p-2 bg-white outline-none [transition:border_400ms] text-2xl lg:text-lg text-slate-500 resize-none h-[12em] w-full dark:bg-dark-main dark:text-slate-200 rounded-md border-2 font-medium focus:border-light-500 dark:border-dark-pink focus:dark:border-dark-pink'></textarea>
+                className='border-light-500/40  p-4 bg-white outline-none [transition:border_400ms] text-2xl lg:text-lg text-slate-600 resize-none h-[12em] w-full dark:bg-dark-main dark:text-slate-200 rounded-md border-2 font-medium focus:border-light-500 dark:border-dark-pink focus:dark:border-dark-pink
+                '></textarea>
               <span className='absolute right-4 bottom-5 font-semibold dark:text-zinc-300 opacity-50  text-base lg:text-sm'>
                 {textAreaLength}/200
               </span>
             </div>
             <button
+              ref={send_btn}
               type='submit'
-              onClick={succesMessage}
-              className='bg-light-500 py-3 w-full text-slate-50 rounded-md text-lg font-bold hover:bg-light-500/75 duration-200 hover:duration-200 active:scale-90 dark:bg-dark-sky dark:hover:bg-dark-sky/70 relative bottom-8'>
+              className='btn_primary'>
               {engLanguageActive ? 'Send' : 'Enviar'}
             </button>
           </motion.form>

@@ -3,6 +3,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn_primary {
+    @apply bg-light-500 py-4 w-1/2 m-[0_auto] text-slate-50 rounded-xl text-lg  hover:bg-light-500/75 duration-200 hover:duration-200 active:scale-90 dark:bg-dark-sky dark:hover:bg-dark-sky/70 -translate-y-3;
+  }
+  .btn_disabled {
+    @apply pointer-events-none border-zinc-700 bg-zinc-700  text-slate-300  px-8 rounded-xl font-semibold cursor-pointer border py-4 duration-200 w-1/2 m-[0_auto] -translate-y-3;
+  }
+}
+
 @layer utilities {
   .custom-scrollbar-light {
     &::-webkit-scrollbar {
@@ -84,7 +94,6 @@ body {
   .about_toggle_btn:hover span {
     opacity: 1;
     transition: all 300ms;
-    color: #894166;
   }
 
   .social-network {

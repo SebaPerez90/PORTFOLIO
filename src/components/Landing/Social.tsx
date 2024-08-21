@@ -7,6 +7,7 @@ const Social = () => {
   return (
     <ul className='flex gap-12 z-40'>
       <Link
+        rel='noreferrer noopener'
         href={'https://github.com/SebaPerez90'}
         target='_blank'
         aria-label='social-network-link'
@@ -17,6 +18,7 @@ const Social = () => {
         </span>
       </Link>
       <Link
+        rel='noreferrer noopener'
         href={'https://x.com/_SebaPerez_'}
         target='_blank'
         aria-label='social-network-link'
@@ -27,6 +29,7 @@ const Social = () => {
         </span>
       </Link>
       <Link
+        rel='noreferrer noopener'
         href={'https://www.linkedin.com/in/sebaperez90/'}
         target='_blank'
         aria-label='social-network-link'
