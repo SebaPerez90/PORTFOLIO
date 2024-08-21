@@ -48,7 +48,7 @@ const Skills = () => {
                       whileInView={{ y: 0, opacity: 1 }}
                       viewport={{ once: true }}
                       key={index}
-                      className='border font-bold text-base md:text-xs rounded-md p-1 border-slate-600 text-[#404040ce] dark:text-slate-400 relative before:absolute before:w-[0.5em] before:h-[0.5em] before:-left-3 md:before:-left-2 before:bottom-2 before:bg-light-800 before:rounded-full bg-slate-100 dark:bg-dark-secondary before:animate-[disc-shining_800ms_ease-out_alternate-reverse_infinite]'>
+                      className='border font-bold text-base sm:text-xs rounded-md p-1 border-slate-600 text-[#404040ce] dark:text-slate-400 relative before:absolute before:w-[0.5em] before:h-[0.5em] before:-left-3 md:before:-left-2 before:bottom-2 before:bg-light-800 before:rounded-full bg-slate-100 dark:bg-dark-secondary before:animate-[disc-shining_800ms_ease-out_alternate-reverse_infinite]'>
                       {element}
                     </motion.li>
                   ))
@@ -59,7 +59,7 @@ const Skills = () => {
                       whileInView={{ y: 0, opacity: 1 }}
                       viewport={{ once: true }}
                       key={index}
-                      className='border font-bold text-base md:text-xs rounded-md p-1 border-slate-600 text-[#404040ce] dark:text-slate-400 relative before:absolute before:w-[0.5em] before:h-[0.5em] before:-left-3 md:before:-left-2 before:bottom-2 before:bg-light-800 before:rounded-full bg-slate-100 dark:bg-dark-secondary before:animate-[disc-shining_800ms_ease-out_alternate-reverse_infinite]'>
+                      className='border font-bold text-base sm:text-xs rounded-md p-1 border-slate-600 text-[#404040ce] dark:text-slate-400 relative before:absolute before:w-[0.5em] before:h-[0.5em] before:-left-3 md:before:-left-2 before:bottom-2 before:bg-light-800 before:rounded-full bg-slate-100 dark:bg-dark-secondary before:animate-[disc-shining_800ms_ease-out_alternate-reverse_infinite]'>
                       {element}
                     </motion.li>
                   ))}

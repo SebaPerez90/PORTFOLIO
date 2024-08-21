@@ -134,7 +134,7 @@ const Contact = () => {
         className='flex flex-col items-center bg-white dark:bg-dark-main gap-32 pb-48 lg:pb-24 pt-28'>
         <div className='flex flex-col items-center gap-5'>
           <h1 className='font-extrabold text-5xl text-balance text-[#333333e3] dark:text-white text-center mx-4'>
-            <strong className='text-light-500/80 text-6xl'>
+            <strong className='text-light-500/80 dark:text-dark-pink text-6xl'>
               {engLanguageActive ? 'Contact me' : 'Contáctame'}
             </strong>
             <br></br>

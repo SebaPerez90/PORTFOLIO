@@ -19,6 +19,8 @@ const About = () => {
 
   useEffect(() => {
     if (mainView && window.innerWidth > 640) {
+      console.log(mainView);
+
       main_container_ref.current?.classList.replace(
         'before:bg-[#7a7aff]',
         'before:bg-dark-secondary'
@@ -89,14 +91,21 @@ const About = () => {
       <main
         id='about-section'
         ref={main_container_ref}
-        className='overflow-hidden about_main_container flex justify-between items-center py-40 mt-[4.7rem] h-[51em] sm:h-[48em] bg-white relative before:[transition:all_900ms_ease] [transition:all_900ms] before:absolute before:right-0 before:top-0  before:w-0 sm:before:w-[35%] z-10 before:h-full before:bg-[#7a7aff] before:z-10 dark:bg-dark-main'>
+        className='overflow-hidden about_main_container flex justify-between items-center py-32 mt-[4.7rem] h-[51em] sm:h-[48em] bg-white relative before:[transition:all_900ms_ease] [transition:all_900ms] before:absolute before:right-0 before:top-0  before:w-0  z-10 before:h-full before:bg-[#7a7aff] before:z-10 dark:bg-dark-main sm:before:w-[35%] sm:before:animate-[transformWidht_400ms_ease-out]'>
         <button
           ref={btn_ref}
           onClick={toggleView}
-          className='absolute top-[50%] [z-index:100] right-[-0.3em] sm:right-[34%] (bg-dark-secondary) bg-[#7a7aff] text-2xl rounded-md py-2 text-white hover:text-slate-200 [transition:all_200ms] sm:px-0 px-3 about_toggle_btn'>
-          {mainView ? <MdArrowForwardIos /> : <MdArrowBackIosNew />}
-          <span className='absolute text-lg font-medium -left-2 text-slate-50 opacity-0 top-12 [text-shadow:0_0_3px_#000]'>
-            ☝️ click
+          className='absolute top-[50%] [z-index:100] right-[-1em]  sm:right-[31.5%] bg-[#7a7aff] text-2xl py-3 text-white hover:text-slate-200 [transition:all_200ms] w-20 about_toggle_btn rounded-full animate-[disappearContent_800ms_ease-out]'
+          style={
+            mainView ? { paddingLeft: '1.8em' } : { paddingLeft: '0.3em' }
+          }>
+          {mainView ? (
+            <MdArrowForwardIos className='-translate-x-8 sm:translate-x-0' />
+          ) : (
+            <MdArrowBackIosNew />
+          )}
+          <span className='absolute text-lg font-medium text-slate-50 right-[31.5%] opacity-0 [text-shadow:0_0_3px_#000] -bottom-16'>
+            ☝️<br></br>click
           </span>
         </button>
         {mainView ? (
@@ -111,16 +120,13 @@ const About = () => {
                 : undefined
             }>
             <h1 className='xl:text-5xl m-[0_auto] text-4xl font-black text-slate-50'>
-              {engLanguageActive
-                ? 'I am Sebastian Perez'
-                : 'Soy Sebastian Perez'}
+              {engLanguageActive ? 'I am Seba' : 'Soy Seba'}
               <br></br>
               <strong className='text-dark-sky dark:text-dark-pink'>
-                {engLanguageActive
-                  ? 'Freelance Developer'
-                  : 'Desarrollador Freelance'}
+                {engLanguageActive ? 'Freelance' : 'Freelance'}
               </strong>
-              .
+              <br></br>
+              {engLanguageActive ? 'Developer' : 'Desarrollador'}.
             </h1>
             <h2 className='text-xl font-bold text-slate-100'>
               {engLanguageActive
@@ -177,7 +183,7 @@ const About = () => {
           </div>
         ) : (
           <div
-            className='flex px-[7%] lg:px-[10%] flex-col justify-center gap-8 h-full sm:w-[65%] opacity-0'
+            className='flex px-[7%] lg:px-[10%] flex-col justify-center gap-12 sm:gap-8 h-full sm:w-[65%] opacity-0'
             style={
               mainView === false
                 ? {
@@ -186,48 +192,31 @@ const About = () => {
                   }
                 : undefined
             }>
-            <h1 className='xl:text-5xl m-[0_auto] text-4xl font-black text-slate-600 dark:text-slate-50'>
-              {engLanguageActive
-                ? 'I am Sebastian Perez'
-                : 'Soy Sebastian Perez'}
+            <h1 className='z-10 xl:text-5xl m-[0_auto] text-4xl font-black text-slate-600 dark:text-slate-50 text-start'>
+              {engLanguageActive ? 'I am Seba' : 'Soy Seba'}
               <br></br>
               <strong className='text-light-500/85 dark:text-dark-pink'>
-                {engLanguageActive
-                  ? 'Fullstack Developer'
-                  : 'Desarrollador Fullstack'}
+                Front
               </strong>
-              .
+              end
+              <br></br>
+              {engLanguageActive ? 'Developer' : 'Desarrollador'}
             </h1>
-            <p className='font-medium dark:text-slate-300 text-slate-500'>
+            <p className='z-10 font-medium dark:text-slate-300 text-slate-500'>
               {engLanguageActive
-                ? 'I have a strong focus on frontend development and live in Berazategui, Buenos Aires. I have over'
-                : 'Tengo un fuerte enfoque en el área frontend y vivo en Berazategui, Buenos Aires. Cuento con más'}
-              <strong className='font-extrabold text-slate-600 dark:text-white'>
-                {engLanguageActive
-                  ? ' 2 year of experience '
-                  : ' 2 años de experiencia '}
-              </strong>
-              {engLanguageActive
-                ? 'in the tech sector, with experience in technologies like React, CSS (and all its variants), JavaScript, and TypeScript, among others. On the backend side, I complement my skills with Node, Express, and PostgreSQL, among others.'
-                : 'en el sector tecnológico en tecnologías como React, CSS (y todas sus variantes), Javacript y Typescript entre otras. En el área backend complemento con Node, Express y PostgreSQL entre otras.'}
+                ? 'I worked for over 12 years in the hospitality industry as a waiter. During that time, I grew significantly both professionally and personally.'
+                : 'Trabajé por más de 12 años en el sector gastronómico, como mozo de salón. En el transcurso de ese tiempo crecí mucho profesionalmente y como persona.'}
               <br></br>
-              <br></br>
-              {engLanguageActive ? 'I also have over' : 'También tengo más de'}
-              <strong className='font-extrabold text-slate-600 dark:text-white'>
-                {engLanguageActive
-                  ? ' 12 year of experience '
-                  : ' 12 años de experiencia '}
-              </strong>
               {engLanguageActive
-                ? 'In the food service sector. I am making a 180-degree shift in my professional profile towards the technology sector. My past experience has allowed me to acquire valuable soft skills that are transferable to the technology sector.'
-                : 'en el sector gastronómico. Estoy dando un giro de 180 grados a mi perfil profesional hacia el sector tecnológico. Mi trayectoria pasada me ha permitido adquirir valiosas habilidades blandas que son transferibles al sector tecnológico.'}
+                ? 'I am aware of the potential I have to offer, I can handle constant work pressure, and I know how to adapt to any team. This makes me the ideal player.'
+                : 'Conozco el potencial que tengo para ofrecer, puedo tolerar la presión laboral constante y sé adaptarme a cualquier equipo de trabajo. Lo que me convierte en el jugador ideal.'}
             </p>
-            <p className='font-extrabold text-slate-600 dark:text-white'>
+            <p className='z-10 font-extrabold text-slate-600 dark:text-white'>
               {engLanguageActive
                 ? 'Currently, I am seeking job opportunities that will boost my career and allow me to continue developing professionally.'
                 : 'Actualmente estoy en busqueda oportunidades laborales que impulsen mi carrera y me permitan continuar desarrollandome como profesional.'}
             </p>
-            <ul className='font-medium text-slate-500 dark:text-slate-50 list-disc marker:text-light-500/70 dark:marker:text-dark-pink'>
+            <ul className='z-10 font-medium text-slate-500 dark:text-slate-50 list-disc marker:text-light-500/70 dark:marker:text-dark-pink'>
               <p className='border-b-2 border-b-light-500/40 w-max text-lg mb-3 font-bold  dark:border-b-dark-pink'>
                 {engLanguageActive
                   ? 'Personal Information:'
@@ -237,7 +226,7 @@ const About = () => {
                 {engLanguageActive
                   ? 'Desired Position: '
                   : 'Posición Deseada: '}
-                <strong>Front-end Developer | Back-end Developer</strong>
+                <strong>Frontend Developer | Backend Developer</strong>
               </li>
               <li>
                 {engLanguageActive ? 'Ingles: ' : 'English: '}
