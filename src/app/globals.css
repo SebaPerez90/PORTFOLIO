@@ -136,6 +136,13 @@ body {
     }
   }
 
+  @keyframes transformWidht {
+    0% {
+      width: 0%;
+      background: #fff;
+    }
+  }
+
   @keyframes disappearContent2 {
     0% {
       opacity: 0;

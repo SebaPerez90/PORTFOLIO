@@ -51,7 +51,7 @@ const DowloadCVButton = () => {
         onClick={changingVisibility}
         disabled={isDownloaded}
         aria-label='visibility-switch-btn'
-        className='border-slate-500 rounded-md text-slate-500 flex items-center gap-1 justify-center border dark:border-dark-sky dark:text-dark-sky p-3 font-bold overflow-hidden duration-300 hover:duration-300 active:scale-95 bg-white dark:bg-inherit dark:hover:bg-dark-tertiary/70 hover:bg-slate-200 w-max'>
+        className='border-slate-500 rounded-md text-slate-500 flex items-center gap-1 justify-center border dark:border-slate-50 dark:text-slate-50 p-3 font-bold overflow-hidden duration-300 hover:duration-300 active:scale-95 bg-white dark:bg-inherit dark:hover:bg-dark-tertiary/70 hover:bg-slate-200 w-max'>
         {engLanguageActive ? 'Download CV' : 'Descargar CV'}
         <MdDownload className='text-xl' />
       </button>

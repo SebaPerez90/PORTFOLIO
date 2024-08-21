@@ -55,7 +55,7 @@ const Hero = () => {
         {/* <HeroButtons /> */}
         <div className='z-50 flex items-center gap-4 mt-8'>
           <Link
-            className='bg-light-500 px-8 py-3 w-max text-slate-50 rounded-md font-bold hover:bg-light-500/80 duration-200 hover:duration-200 active:scale-95 dark:bg-dark-sky dark:hover:bg-dark-sky/70'
+            className='bg-light-500 px-8 py-3 w-max text-slate-50 rounded-md  hover:bg-light-500/80 duration-200 hover:duration-200 active:scale-95 dark:bg-dark-sky dark:hover:bg-dark-sky/70'
             href={'/contact'}
             aria-label='contact-link'>
             {engLanguageActive ? 'Get in Touch' : 'Contáctame'}

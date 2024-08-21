@@ -52,7 +52,8 @@ const Proyects = () => {
               viewport={{ once: true }}
               key={index}
               className='flex items-center gap-6 flex-wrap justify-center'>
-              <div className='w-[25.5em] sm:w-[33em] h-auto rounded-md [background:linear-gradient(to_right,#373b44,#4286f4,#373b44)]'>
+              <div className='w-[25.5em] sm:w-[33em] h-auto rounded-md [background:radial-gradient(circle,#fff,#4d4dff81)]
+              dark:[background:radial-gradient(circle,#1e293b,#974770)]'>
                 {element.screen_shoots.map((element, index) => (
                   <div
                     key={index}
