@@ -5,7 +5,7 @@ import { useStore } from '@/context/store';
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from 'react';
 import { IFormData } from '../../interface/form-data.interface';
 import Image from 'next/image';
-import contact from '@/assets/images/contact.svg';
+import contact from '@/assets/svgs/contact.svg';
 import Footer from '@/components/Footer';
 import { BiSolidZap } from 'react-icons/bi';
 import toast, { Toaster } from 'react-hot-toast';
@@ -190,17 +190,11 @@ const Contact = () => {
               className='h-[350px] w-[350px] animate-[appearContent_300ms_ease-out]'
             />
           </div>
-          <motion.form
-            transition={{
-              duration: 0.3,
-            }}
-            initial={{ scale: 0, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
+          <form
             name='contact-form'
             method='POST'
             onSubmit={succesMessage}
-            className='flex flex-col justify-around gap-7 w-[35em] md:w-[25em]'>
+            className='flex flex-col justify-around gap-7 w-[35em] md:w-[25em] animate-[disappearContent_900ms_ease]'>
             <div className='input_field_container relative w-full bg-white dark:bg-dark-main'>
               <input
                 required={true}
@@ -259,7 +253,7 @@ const Contact = () => {
               {wrongEmail ? (
                 <span className='absolute flex items-center gap-1 font-medium w-max left-0 -bottom-8 text-red-700'>
                   <IoInformationCircle />
-                  Ingresa una dirección de email válido
+                  {engLanguageActive ? 'Enter a valid email address' : 'Ingresa una dirección de email válido'}
                 </span>
               ) : null}
             </div>
@@ -283,7 +277,7 @@ const Contact = () => {
               className='btn_primary'>
               {engLanguageActive ? 'Send' : 'Enviar'}
             </button>
-          </motion.form>
+          </form>
         </div>
       </main>
       <Footer />

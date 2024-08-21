@@ -262,6 +262,16 @@ body {
       box-shadow: 0 0 0 1px #3cc259bb;
     }
   }
+
+  @keyframes stars {
+    to {
+      filter: blur(1px);
+      scale: 1.5;
+      box-shadow: inset 0 0 10px #f5f5cf, 0 0 10px #f5f5cf, 0 0 10px #f5f5cf,
+        0 0 10px #f5f5cf, 0 0 10px #f5f5cf;
+      opacity: 1;
+    }
+  }
 }
 
 @media (640px > width) {

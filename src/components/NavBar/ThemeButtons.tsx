@@ -50,7 +50,7 @@ const ThemeButtons = () => {
   return (
     <>
       {theme === 'dark' ? (
-        <div className='pr-[0.1em] py-[0.8rem] bg-dark-secondary border-2 border-dark-pink flex justify-between items-center w-[4rem] h-3 rounded-full overflow-hidden'>
+        <div className='pr-[0.1em] py-[0.8rem] bg-dark-secondary border-2 border-dark-pink flex justify-between items-center w-[4rem] h-3 scale-100 xl:scale-125 rounded-full overflow-hidden'>
           <Image
             className='relative left-1 top-[0.15em] z-10'
             ref={iconRef}
@@ -66,7 +66,7 @@ const ThemeButtons = () => {
             className='duration-400 bg-dark-pink hover:bg-pink-900 hover:duration-200 m-[1px] rounded-full  h-5 w-5 z-20'></button>
         </div>
       ) : (
-        <div className='border-2 border-[#4d4dffbf] pr-[0.1em] py-[0.8rem] bg-[#ececec2d] flex justify-between items-center w-[4rem] h-3 rounded-full overflow-hidden'>
+        <div className='border-2 border-[#4d4dffbf] pr-[0.1em] py-[0.8rem] bg-[#ececec2d] flex justify-between items-center w-[4rem] scale-100 xl:scale-125 h-3 rounded-full overflow-hidden'>
           <button
             aria-label='switch-theme-btn'
             onClick={toggleEfect}

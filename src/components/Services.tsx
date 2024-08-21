@@ -3,7 +3,7 @@ import services from '@/utils/services.json';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import contact_me from '@/assets/images/message-me.svg';
+import contact_me from '@/assets/svgs/message-me.svg';
 
 const Services = () => {
   const { engLanguageActive } = useStore();
