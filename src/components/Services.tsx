@@ -63,8 +63,8 @@ const Services = () => {
                 : 'Enviame un mensaje contadome tu necesidad para asesorarte de la mejor manera.'}
               <br></br>
               {engLanguageActive
-                ? 'Bring your brand to life with my help!'
-                : 'Dale vida tu marca con mi ayuda!'}
+                ? 'Bring your project to life and increase your profits!'
+                : 'Dale vida tu proyecto y potenciá tus ingresos!'}
             </p>
           </div>
           <Link
