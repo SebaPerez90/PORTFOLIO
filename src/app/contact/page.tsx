@@ -85,13 +85,16 @@ const Contact = () => {
 
     await new Promise((resolve) => setTimeout(resolve, 1000));
     try {
-      const response = await fetch('https://formspree.io/f/mbjnlnlq', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_FORMSPREE_SERVICE}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (!response.ok) throw new Error('Error al registrar');
       const data = await response.json();
@@ -113,13 +116,12 @@ const Contact = () => {
     toast.promise(
       myPromise,
       {
-        loading: engLanguageActive ? 'Sending data...' : 'Enviando datos...',
+        loading: engLanguageActive ? 'Sending...' : 'Enviando...',
         success: engLanguageActive ? 'Message sent!' : 'Mensaje enviado!',
         error: engLanguageActive ? 'An error occurred' : 'Ocurrio un error',
       },
       {
         style: {
-          width: '270px',
           textAlign: 'center',
           padding: '1.1em',
           fontSize: '1.3em',
@@ -211,11 +213,11 @@ const Contact = () => {
                 onChange={(e) => {
                   captureValues(e);
                 }}
-                className='text-2xl dark:border-dark-pink dark:focus:border-dark-pink dark:focus:bg-dark-main border-light-500/50 p-4 bg-white outline-none [transition:all_300ms] border-2 lg:text-lg text-slate-600 dark:bg-dark-main dark:text-slate-50  w-full focus:border-2 focus:border-light-500 focus:rounded-md focus:bg-white dark:caret-dark-pink font-medium rounded-md'
+                className='text-2xl dark:border-dark-pink/50 dark:focus:border-dark-pink dark:focus:bg-dark-main border-light-500/50 p-4 bg-white outline-none [transition:all_300ms] border-2 lg:text-lg text-slate-600 dark:bg-dark-main dark:text-slate-50  w-full focus:border-2 focus:border-light-500 focus:rounded-md focus:bg-white dark:caret-dark-pink font-medium rounded-md'
               />
               <label
                 htmlFor='subject'
-                className='absolute font-bold text-light-500/80  left-4 top-5 text-lg [transition:all_400ms] dark:text-dark-pink'>
+                className='absolute text-light-500  left-4 top-5 text-lg [transition:all_400ms] dark:text-dark-pink opacity-60'>
                 {engLanguageActive ? 'Subject' : 'Asunto'}
               </label>
             </div>
@@ -230,11 +232,11 @@ const Contact = () => {
                 onChange={(e) => {
                   captureValues(e);
                 }}
-                className='capitalize text-2xl dark:focus:border-dark-pink dark:focus:bg-dark-main border-light-500/50 p-4 bg-white outline-none [transition:all_300ms] border-2 lg:text-lg text-slate-600 dark:bg-dark-main dark:border-dark-pink dark:text-slate-50  w-full focus:border-2 focus:border-light-500 focus:rounded-md focus:bg-white dark:caret-dark-pink font-medium rounded-md'
+                className='capitalize text-2xl dark:focus:border-dark-pink dark:focus:bg-dark-main border-light-500/50 p-4 bg-white outline-none [transition:all_300ms] border-2 lg:text-lg text-slate-600 dark:bg-dark-main dark:border-dark-pink/50 dark:text-slate-50  w-full focus:border-2 focus:border-light-500 focus:rounded-md focus:bg-white dark:caret-dark-pink font-medium rounded-md'
               />
               <label
                 htmlFor='name'
-                className='absolute font-bold text-light-500/80 left-4 top-5 text-lg [transition:all_400ms] dark:text-dark-pink'>
+                className='absolute text-light-500 left-4 top-5 text-lg [transition:all_400ms] dark:text-dark-pink opacity-60'>
                 {engLanguageActive ? 'Full name' : 'Nombre completo'}
               </label>
             </div>
@@ -248,11 +250,11 @@ const Contact = () => {
                 onChange={(e) => {
                   captureValues(e);
                 }}
-                className='lowercase text-2xl dark:focus:border-dark-pink dark:focus:bg-dark-main border-light-500/50 p-4 bg-white outline-none [transition:all_300ms] border-2 lg:text-lg text-slate-600 dark:bg-dark-main dark:border-dark-pink dark:text-slate-50  w-full focus:border-2 focus:border-light-500 focus:rounded-md focus:bg-white dark:caret-dark-pink font-medium rounded-md'
+                className='lowercase text-2xl dark:focus:border-dark-pink dark:focus:bg-dark-main border-light-500/50 p-4 bg-white outline-none [transition:all_300ms] border-2 lg:text-lg text-slate-600 dark:bg-dark-main dark:border-dark-pink/50 dark:text-slate-50  w-full focus:border-2 focus:border-light-500 focus:rounded-md focus:bg-white dark:caret-dark-pink font-medium rounded-md'
               />
               <label
                 htmlFor='email'
-                className='absolute font-bold text-light-500/80 left-4 top-5 text-lg [transition:all_400ms] dark:text-dark-pink'>
+                className='absolute text-light-500 left-4 top-5 text-lg [transition:all_400ms] dark:text-dark-pink opacity-60'>
                 {engLanguageActive ? 'Email' : 'Correo electrónico'}
               </label>
               {wrongEmail ? (
