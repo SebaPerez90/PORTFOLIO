@@ -13,11 +13,15 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { IoInformationCircle } from 'react-icons/io5';
 import NavLinks from '@/components/NavBar/NavLinks';
+import { GrCheckmark } from 'react-icons/gr';
 
 const Contact = () => {
   const { engLanguageActive } = useStore();
   const [textAreaLength, setTextAreaLength] = useState<number>(0);
   const [wrongEmail, setWrongEmail] = useState<boolean>(true);
+  const [buttonState, setButtonState] = useState<
+    'submit' | 'loading' | 'success'
+  >('submit');
   const [formData, setFormData] = useState<IFormData>({
     subject: '',
     name: '',
@@ -76,6 +80,9 @@ const Contact = () => {
 
   const sendForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setButtonState('loading');
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     await new Promise((resolve) => setTimeout(resolve, 1000));
     try {
       const response = await fetch(
@@ -91,6 +98,7 @@ const Contact = () => {
 
       if (!response.ok) throw new Error('Error al registrar');
       const data = await response.json();
+      setButtonState('success');
 
       setTimeout(() => {
         router.push('/');
@@ -194,7 +202,7 @@ const Contact = () => {
             name='contact-form'
             method='POST'
             onSubmit={succesMessage}
-            className='flex flex-col justify-around gap-7 w-[35em] md:w-[25em] animate-[disappearContent_900ms_ease]'>
+            className='[transition:all_1s] flex flex-col justify-around gap-7 w-[35em] md:w-[25em] animate-[disappearContent_900ms_ease] h-auto pb-2'>
             <div className='input_field_container relative w-full bg-white dark:bg-dark-main'>
               <input
                 required={true}
@@ -253,7 +261,9 @@ const Contact = () => {
               {wrongEmail ? (
                 <span className='absolute flex items-center gap-1 font-medium w-max left-0 -bottom-8 text-red-700'>
                   <IoInformationCircle />
-                  {engLanguageActive ? 'Enter a valid email address' : 'Ingresa una dirección de email válido'}
+                  {engLanguageActive
+                    ? 'Enter a valid email address'
+                    : 'Ingresa una dirección de email válido'}
                 </span>
               ) : null}
             </div>
@@ -274,8 +284,20 @@ const Contact = () => {
             <button
               ref={send_btn}
               type='submit'
-              className='btn_primary'>
-              {engLanguageActive ? 'Send' : 'Enviar'}
+              className={
+                buttonState === 'submit'
+                  ? 'btn_primary active:scale-100'
+                  : 'btn_primary active:scale-100 animate-[removeBackground_100ms_linear_forwards]'
+              }>
+              {buttonState === 'loading' ? (
+                <div className='loader m-[0_auto] bg-light-500 dark:bg-dark-sky'></div>
+              ) : buttonState === 'success' ? (
+                <GrCheckmark className='text-6xl animate-[disappearContent_300ms_ease-out] m-[0_auto] rounded-full border p-3 bg-green-600 text-slate-50' />
+              ) : engLanguageActive ? (
+                'Submit'
+              ) : (
+                'Enviar'
+              )}
             </button>
           </form>
         </div>

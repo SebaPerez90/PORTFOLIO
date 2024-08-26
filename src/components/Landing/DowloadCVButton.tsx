@@ -62,7 +62,7 @@ const DowloadCVButton = () => {
       <div
         id='hidden-element'
         className='z-50 scale-0 [transition:all_150ms] absolute bottom-[-8em] left-0'>
-        <ul className='flex flex-col p-1 gap-2 border-2 rounded-md dark:border-slate-700/50 dark:bg-dark-secondary bg-white'>
+        <ul className='flex flex-col p-1 gap-2 border-2 rounded-md dark:border-slate-700/50 dark:bg-dark-secondary [z-index:100] bg-white'>
           <li onClick={() => setIsDownloaded(!isDownloaded)}>
             <a
               aria-label='cv-link'

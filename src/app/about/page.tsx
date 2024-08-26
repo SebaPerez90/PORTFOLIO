@@ -91,7 +91,7 @@ const About = () => {
       <main
         id='about-section'
         ref={main_container_ref}
-        className='overflow-hidden about_main_container flex justify-between items-center py-32 mt-[4.7rem] h-[51em] sm:h-[48em] bg-white relative before:[transition:all_900ms_ease] [transition:all_900ms] before:absolute before:right-0 before:top-0  before:w-0  z-10 before:h-full before:bg-[#7a7aff] before:z-10 dark:bg-dark-main sm:before:w-[35%] sm:before:animate-[transformWidht_400ms_ease-out]'>
+        className='overflow-hidden about_main_container flex justify-between items-center py-32 mt-[4.7rem] h-auto sm:h-[48em] bg-white relative before:[transition:all_900ms_ease] [transition:all_900ms] before:absolute before:right-0 before:top-0  before:w-0  z-10 before:h-full before:bg-[#7a7aff] before:z-10 dark:bg-dark-main sm:before:w-[35%] sm:before:animate-[transformWidht_400ms_ease-out]'>
         <button
           ref={btn_ref}
           onClick={toggleView}
