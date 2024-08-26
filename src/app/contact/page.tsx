@@ -85,16 +85,13 @@ const Contact = () => {
 
     await new Promise((resolve) => setTimeout(resolve, 1000));
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_FORMSPREE_SERVICE}`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch('https://formspree.io/f/mbjnlnlq', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
       if (!response.ok) throw new Error('Error al registrar');
       const data = await response.json();
@@ -122,7 +119,7 @@ const Contact = () => {
       },
       {
         style: {
-          width: '260px',
+          width: '270px',
           textAlign: 'center',
           padding: '1.1em',
           fontSize: '1.3em',
